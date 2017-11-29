@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="generator" content="pandoc">
+        <meta name="author" content="Cédric Esnault" />
+        <title>Technologies de Cloud Computing</title>
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="reveal.js/lib/font/lato/lato.css">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+        <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+        <link rel="stylesheet" href="css/ign.css"/>
+
+        <!-- Printing and PDF exports -->
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script type="text/javascript">
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'reveal.js/css/print/'+ (window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper') + '.css';
+            link.media = 'print';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script type="text/javascript" type="text/javascript" src="reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+        <!-- -H/- -include-in-header -->
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="master.js"></script>
+
+    </head>
+    <body>
+        <!-- -B/- -include-before-body -->
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+
+                <section>
+                    <h1>Technologies de Cloud Computing</h1>
+                    <h2>M-TSI</h2>
+                    <h3>Cédric Esnault</h3>
+                    <h4>12/12/2017 - IGN/ENSG</h4>
+                    <aside class="notes">
+
+                    </aside>
+
+                </section>
+
+                <!-- - -toc/- -table-of-contents -->
+
+            <!-- ne pas indenter le $body$ sinon les codes (highlight) vont l'être aussi !!! -->
+<section><section id="cloud-computing" class="titleslide slide level1"><h1>Cloud Computing</h1></section><section id="plan-de-la-présentation" class="slide level2 planPrez">
+<h1>Plan de la présentation</h1>
+<ul>
+<li class="fragment">Concepts / Définitions
+<ul>
+<li class="fragment">a</li>
+<li class="fragment">b</li>
+</ul></li>
+<li class="fragment">Technologies
+<ul>
+<li class="fragment">c</li>
+</ul></li>
+<li class="fragment">Enjeux / Avenir
+<ul>
+<li class="fragment">d</li>
+<li class="fragment">e</li>
+</ul></li>
+</ul>
+<aside class="notes">
+</aside>
+</section></section>
+<section><section id="concepts-définitions" class="titleslide slide level1"><h1>Concepts / Définitions</h1></section><section id="les-origines" class="slide level2">
+<h1>Les Origines</h1>
+<ul>
+<li class="fragment">Hérité de l'informatique client-serveur sur des <strong>MainFrame</strong> (L'accès distant était alors représenté par un nuage)</li>
+<li class="fragment">Vers 2000, les hébegeurs proposent des applications pré-installées dans leur datacenters (Email, CRM ...)</li>
+<li class="fragment">Apparition du terme &quot;Cloud&quot; vers 2006 via les services Amazon</li>
+</ul>
+<p><code class="note fragment">Amazon a eu l'idée de mettre à la disposition du public son énorme infrastructure mondiale, dimensionnée pour les pics (Noël...) et sous-utilisée le reste du temps</code></p>
+<aside class="notes">
+</aside>
+</section><section id="un-besoin-dindustrialisation" class="slide level2">
+<h1>Un besoin d'industrialisation</h1>
+<ul>
+<li class="fragment">Les entreprises souhaitent en finir avec les pannes informatiques =&gt; industrialiser les processus du SI, limiter l'intervention humaine, automatiser</li>
+<li class="fragment">Ceci nécéssite des infrastructures importantes pour que l'investissement en vaille la peine</li>
+<li class="fragment">Cela libère des ressources IT pour faire du Business plutôt que réparer le SI</li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="un-besoin-de-rationalisation" class="slide level2">
+<h1>Un besoin de rationalisation</h1>
+<ul>
+<li class="fragment">Baisse des coûts, utiliser au maximum l'investissement du très cher matériel informatique</li>
+<li class="fragment">Les solutions sont multiples
+<ul>
+<li class="fragment">Urbanisation du SI
+<ul>
+<li class="fragment">POS</li>
+<li class="fragment">modularité</li>
+<li class="fragment">subsidiarité</li>
+<li class="fragment">limiter les adhérences</li>
+</ul></li>
+<li class="fragment">Élasticité / Scalabilité
+<ul>
+<li class="fragment">absorber les pics de charges</li>
+<li class="fragment">repartir les resources physiques</li>
+<li class="fragment">aaa</li>
+</ul></li>
+</ul></li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="la-difficulté-de-la-transformation" class="slide level2">
+<h1>La difficulté de la transformation</h1>
+<ul>
+<li class="fragment">Infrastructure
+<ul>
+<li class="fragment">=&gt; externaliser dans le cloud public</li>
+</ul></li>
+<li class="fragment">Applicatif
+<ul>
+<li class="fragment">=&gt; reconstruire les Applications Legacy</li>
+</ul></li>
+<li class="fragment">Formation
+<ul>
+<li class="fragment">=&gt; Développer les méthodes Agiles</li>
+</ul></li>
+<li class="fragment">sécurité/confidentialité
+<ul>
+<li class="fragment">=&gt; intégrer la sécurité à tous les niveaux</li>
+</ul></li>
+</ul>
+<aside class="notes">
+</aside>
+</section></section>
+<section><section id="définitions" class="titleslide slide level1"><h1>Définitions</h1></section><section id="les-formes-de-cloud" class="slide level2">
+<h1>Les formes de Cloud</h1>
+<ul>
+<li class="fragment">SaaS</li>
+<li class="fragment">Paas</li>
+<li class="fragment">Iaas</li>
+<li class="fragment">Xaas</li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="les-modes-daccès-au-cloud" class="slide level2">
+<h1>Les modes d'accès au cloud</h1>
+<ul>
+<li class="fragment">Privé</li>
+<li class="fragment">Public</li>
+<li class="fragment">Hybride</li>
+</ul>
+<aside class="notes">
+</aside>
+</section></section>
+<section><section id="saas" class="titleslide slide level1"><h1>SaaS</h1></section><section id="software-as-a-service" class="slide level2">
+<h1>Software As A Service</h1>
+<p>C'est une application identifié, fournie à la demande pour un utilisateur, l'application et les données sont hébergées dans les datacenter du fournisseur. En général elle est hautement configurable. * Wordpress.com * Solutions de paiement en ligne * Messagerie/Bureautique (office 365) On peut intégrer les offres de sauvegarde en ligne dans cette catégorie (icloud / dropbox ...).</p>
+<p>Usages</p>
+<p>Technologies</p>
+<p>Avantages inconveniant risques?</p>
+<aside class="notes">
+</aside>
+</section></section>
+<section><section id="paas" class="titleslide slide level1"><h1>Paas</h1></section><section id="platform-as-a-service" class="slide level2">
+<h1>Platform As A Service</h1>
+<p>Cette fois ci, le fournisseur propose un support pour votre propre application. Un Paas est constitué d'outils permettant la compilation et/ou le déploiement de code source dans un langage défini. Ce code est ensuite instancié (ou pas) à la manière du <strong>Saas</strong> pour mettre à disposition l'application developée. * Google App Engine * Heroku * ...</p>
+<p>Usages</p>
+<p>Technologies</p>
+<p>Avantages inconveniant risques?</p>
+<aside class="notes">
+</aside>
+</section></section>
+<section><section id="iaas" class="titleslide slide level1"><h1>Iaas</h1></section><section id="infrastructure-as-a-service" class="slide level2">
+<h1>Infrastructure As A Service</h1>
+<p>C'est la base du Cloud Computing, ici le fournisseur offre du CPU, de la RAM, du stockage, du réseau et éventuellements d'autres services d'infrastructures (FireWall, VPN ...). Le client construit son architecture, ajoute des réseaux, des machines virtuelles, des volumes de stockages persistant... Il installe ensuite les systèmes d'exploitations qu'il désire, les application qu'il souhaite et propose (ou non) ces services sur le réseau (internet ou autre). Le tout est facturé à la consomation.</p>
+<p>Usages</p>
+<p>Technologies</p>
+<p>Avantages inconveniant risques?</p>
+<aside class="notes">
+</aside>
+</section></section>
+<section><section id="xaas" class="titleslide slide level1"><h1>Xaas</h1></section><section id="x-pour-nimporte-quoi-everything-as-a-service" class="slide level2">
+<h1><strong>X</strong> pour n'importe quoi (Everything) As A Service</h1>
+<ul>
+<li class="fragment"><aside class="notes"></li>
+</ul>
+</aside>
+</section></section>
+<section><section id="cloud-privé" class="titleslide slide level1"><h1>Cloud Privé</h1></section></section>
+<section><section id="cloud-public" class="titleslide slide level1"><h1>Cloud Public</h1></section></section>
+<section><section id="cloud-hybride" class="titleslide slide level1"><h1>Cloud Hybride</h1></section></section>
+<section><section id="technologies" class="titleslide slide level1"><h1>Technologies</h1></section><section id="aezaezaezaezaeza" class="slide level2">
+<h1>AEZAEZAEZAEZAEZA</h1>
+<pre><code>     - Environnement
+     - Ressources
+         - Serveurs
+         - Réseau
+         - Stockage
+    - Virtualisation
+        - Virtu/paravirtu
+        - Conteneurs
+        - Convergence
+    - Répartition
+        - Informatique répartie
+     - Abstraction (api)
+         - Interopérabilité
+         - InfraAsCode
+         - WebServices
+        - Microservices
+     - Exemples ( Iaas Paas Saas ...)
+
+</code></pre>
+</section></section>
+<section><section id="enjeux-avenir" class="titleslide slide level1"><h1>Enjeux / Avenir</h1></section><section id="sûreté-sécurité-confidentialité" class="slide level2">
+<h1>  Sûreté / sécurité / confidentialité</h1>
+</section><section id="interopérabilité" class="slide level2">
+<h1> Interopérabilité</h1>
+</section><section id="open-source" class="slide level2">
+<h1>Open source</h1>
+</section><section id="trafic-réseau" class="slide level2">
+<h1> Trafic réseau</h1>
+</section><section id="écologie" class="slide level2">
+<h1> Écologie</h1>
+</section></section>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="reveal.js/lib/js/head.min.js"></script>
+        <script type="text/javascript" src="reveal.js/js/reveal.js"></script>
+
+        <script type="text/javascript">
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                /* mettre une taille en pixel sinon l'overview ne fonctionne plus */
+                /*width: 1024,
+                height: 768,*/
+                controls: true,
+                progress: true,
+                history: true,
+                center: false,
+                minScale: 0.2,
+                maxScale: 1.5,
+                slideNumber: true,
+                autoSlide: 0,
+                theme: 'default',
+                transition: 'default',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    // { src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    // { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    /* ne pas activer highlight sinon la colorisation syntaxique ne fonctionne plus ? */
+                    // { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    //{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }//,
+                    // { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
+                    // { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+            
+            /* Set Title on progress*/
+            var currentIndexh=0;
+            Reveal.addEventListener( 'slidechanged', function( event ) {
+                if(currentIndexh!=event.indexh){
+                    var title=document.querySelector(".reveal section.stack.present section.titleslide h1").textContent;
+                    document.querySelector(".reveal .progress span").innerHTML=title;
+                }
+            } );
+            /* Retire les fragments de nieme niveau*/
+            var unfragment=document.querySelectorAll(".reveal section ul li li")
+            for (var i=0; i<unfragment.length; i++){
+                unfragment[i].classList.remove("fragment");
+            }
+            /* Ajoute les fragments aux images animées */
+            var fragmentedImages=document.querySelectorAll("img[alt=planning2],img[alt=planning3],img[alt=planning4],img[alt=planning5],img[alt=organigramme2],img[alt=organigramme3],img[alt=organigramme4],img[alt=organigramme5],img[alt=plateform2],img[alt=plateform3],img[alt=forgeDocker2]");
+            for (var i=0; i<fragmentedImages.length; i++){
+                fragmentedImages[i].classList.add("fragment");
+            }
+            /* Fragment spécifique première page */
+            var planItem=document.querySelectorAll("section.planPrez ul li");
+            for (var i=0; i<planItem.length; i++){
+                planItem[i].classList.add("grow");
+            }
+
+
+
+        </script>
+        <!-- -A/- -include-after-body -->
+        </div>
+    </body>
+</html>
+

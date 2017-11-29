@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html$if(lang)$ lang="$lang$"$endif$>
+    <head>
+        <meta charset="utf-8">
+        <meta name="generator" content="pandoc">
+$for(author-meta)$
+        <meta name="author" content="$author-meta$" />
+$endfor$
+$if(date-meta)$
+        <meta name="dcterms.date" content="$date-meta$" />
+$endif$
+        <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="$revealjs-url$/css/reveal.css">
+        <link rel="stylesheet" href="$revealjs-url$/lib/font/lato/lato.css">
+        <!-- For syntax highlighting -->
+$if(highlighting-css)$
+        <style type="text/css">code{white-space: pre;}</style>
+        <style type="text/css">
+$highlighting-css$
+        </style>
+$endif$
+$if(highlight-style)$
+        <link rel="stylesheet" href="$revealjs-url$/lib/css/$highlight-style$.css">
+$else$
+        <link rel="stylesheet" href="$revealjs-url$/lib/css/zenburn.css">
+$endif$
+
+$if(theme)$
+        <link rel="stylesheet" href="$revealjs-url$/css/theme/$theme$.css" id="theme">
+$else$
+        <link rel="stylesheet" href="$revealjs-url$/css/theme/simple.css" id="theme">
+$endif$
+$for(css)$
+        <link rel="stylesheet" href="$css$"/>
+$endfor$
+
+        <!-- Printing and PDF exports -->
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script type="text/javascript">
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '$revealjs-url$/css/print/'+ (window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper') + '.css';
+            link.media = 'print';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script type="text/javascript" type="text/javascript" src="$revealjs-url$/lib/js/html5shiv.js"></script>
+        <![endif]-->
+$if(math)$
+        $math$
+$endif$
+        <!-- -H/- -include-in-header -->
+$for(header-includes)$
+        $header-includes$
+$endfor$
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="master.js"></script>
+
+    </head>
+    <body>
+        <!-- -B/- -include-before-body -->
+$for(include-before)$
+$include-before$
+$endfor$
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+
+$if(title)$
+                <section>
+                    <h1>$title$</h1>
+                    <h2>$sub-title$</h2>
+                    $for(author)$<h3>$author$</h3>$endfor$
+                    <h4>$date$</h4>
+                    <aside class="notes">
+
+                    </aside>
+
+                </section>
+
+                <!-- - -toc/- -table-of-contents -->
+$if(toc)$
+                <section>
+                    <h2>Outline</h2>
+                        <nav id="$idprefix$TOC">
+$toc$
+                        </nav>
+                </section>
+$endif$
+$endif$
+
+            <!-- ne pas indenter le $$body$$ sinon les codes (highlight) vont l'être aussi !!! -->
+$body$
+            </div>
+        </div>
+
+        <script type="text/javascript" src="$revealjs-url$/lib/js/head.min.js"></script>
+        <script type="text/javascript" src="$revealjs-url$/js/reveal.js"></script>
+
+        <script type="text/javascript">
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                /* mettre une taille en pixel sinon l'overview ne fonctionne plus */
+                /*width: 1024,
+                height: 768,*/
+                controls: true,
+                progress: true,
+                history: true,
+                center: $if(center)$$center$$else$false$endif$,
+                minScale: $if(minScale)$$minScale$$else$0.2$endif$,
+                maxScale: $if(maxScale)$$maxScale$$else$1.5$endif$,
+                slideNumber: $if(slideNumber)$true$else$false$endif$,
+                autoSlide: $if(duration)$$duration$$else$0$endif$,
+                theme: '$if(theme)$$theme$$else$default$endif$',
+                transition: '$if(transition)$$transition$$else$default$endif$',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: '$revealjs-url$/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    // { src: '$revealjs-url$/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    // { src: '$revealjs-url$/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    /* ne pas activer highlight sinon la colorisation syntaxique ne fonctionne plus ? */
+                    // { src: '$revealjs-url$/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    //{ src: '$revealjs-url$/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '$revealjs-url$/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }//,
+                    // { src: '$revealjs-url$/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
+                    // { src: '$revealjs-url$/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+            
+            /* Set Title on progress*/
+            var currentIndexh=0;
+            Reveal.addEventListener( 'slidechanged', function( event ) {
+                if(currentIndexh!=event.indexh){
+                    var title=document.querySelector(".reveal section.stack.present section.titleslide h1").textContent;
+                    document.querySelector(".reveal .progress span").innerHTML=title;
+                }
+            } );
+            /* Retire les fragments de nieme niveau*/
+            var unfragment=document.querySelectorAll(".reveal section ul li li")
+            for (var i=0; i<unfragment.length; i++){
+                unfragment[i].classList.remove("fragment");
+            }
+            /* Ajoute les fragments aux images animées */
+            var fragmentedImages=document.querySelectorAll("img[alt=planning2],img[alt=planning3],img[alt=planning4],img[alt=planning5],img[alt=organigramme2],img[alt=organigramme3],img[alt=organigramme4],img[alt=organigramme5],img[alt=plateform2],img[alt=plateform3],img[alt=forgeDocker2]");
+            for (var i=0; i<fragmentedImages.length; i++){
+                fragmentedImages[i].classList.add("fragment");
+            }
+            /* Fragment spécifique première page */
+            var planItem=document.querySelectorAll("section.planPrez ul li");
+            for (var i=0; i<planItem.length; i++){
+                planItem[i].classList.add("grow");
+            }
+
+
+
+        </script>
+        <!-- -A/- -include-after-body -->
+$for(include-after)$
+$include-after$
+$endfor$
+        </div>
+    </body>
+</html>
+
