@@ -81,7 +81,7 @@
 <aside class="notes">
 </aside>
 </section></section>
-<section><section id="concepts-définitions" class="titleslide slide level1"><h1>Concepts / Définitions</h1></section><section id="les-origines" class="slide level2">
+<section><section id="concepts" class="titleslide slide level1"><h1>Concepts</h1></section><section id="les-origines" class="slide level2">
 <h1>Les Origines</h1>
 <ul>
 <li class="fragment">Hérité de l'informatique client-serveur sur des <strong>MainFrame</strong> (L'accès distant était alors représenté par un nuage)</li>
@@ -93,8 +93,9 @@
 </aside>
 </section><section id="un-besoin-dindustrialisation" class="slide level2">
 <h1>Un besoin d'industrialisation</h1>
+<p>Les entreprises souhaitent en finir avec les pannes informatiques.</p>
 <ul>
-<li class="fragment">Les entreprises souhaitent en finir avec les pannes informatiques =&gt; industrialiser les processus du SI, limiter l'intervention humaine, automatiser</li>
+<li class="fragment">Industrialiser les processus du SI, limiter l'intervention humaine, automatiser</li>
 <li class="fragment">Ceci nécéssite des infrastructures importantes pour que l'investissement en vaille la peine</li>
 <li class="fragment">Cela libère des ressources IT pour faire du Business plutôt que réparer le SI</li>
 </ul>
@@ -102,8 +103,8 @@
 </aside>
 </section><section id="un-besoin-de-rationalisation" class="slide level2">
 <h1>Un besoin de rationalisation</h1>
+<p>Les entreprises ont besoin de baisser les coûts et d'utiliser au maximum l'investissement du très cher matériel informatique.</p>
 <ul>
-<li class="fragment">Baisse des coûts, utiliser au maximum l'investissement du très cher matériel informatique</li>
 <li class="fragment">Les solutions sont multiples
 <ul>
 <li class="fragment">Urbanisation du SI
@@ -117,7 +118,7 @@
 <ul>
 <li class="fragment">absorber les pics de charges</li>
 <li class="fragment">repartir les resources physiques</li>
-<li class="fragment">aaa</li>
+<li class="fragment">TODO</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -128,40 +129,70 @@
 <ul>
 <li class="fragment">Infrastructure
 <ul>
-<li class="fragment">=&gt; externaliser dans le cloud public</li>
+<li class="fragment">Il faut repenser le SI</li>
+<li class="fragment">Considérer l'externalisation dans le cloud public</li>
 </ul></li>
 <li class="fragment">Applicatif
 <ul>
-<li class="fragment">=&gt; reconstruire les Applications Legacy</li>
+<li class="fragment">Il faut reconstruire les applications <em>Legacy</em></li>
+<li class="fragment">Il faut construire des applications Cloud-ready</li>
 </ul></li>
 <li class="fragment">Formation
 <ul>
-<li class="fragment">=&gt; Développer les méthodes Agiles</li>
+<li class="fragment">Il faut développer les méthodes Agiles</li>
+<li class="fragment">Il faut former les agents aux technologies du Cloud</li>
+<li class="fragment">Il faut pousser le modèle <strong>Devops</strong></li>
 </ul></li>
 <li class="fragment">sécurité/confidentialité
 <ul>
-<li class="fragment">=&gt; intégrer la sécurité à tous les niveaux</li>
+<li class="fragment">Il faut intégrer la sécurité à tous les niveaux</li>
+<li class="fragment">Il faut faire confiance</li>
 </ul></li>
 </ul>
 <aside class="notes">
 </aside>
 </section></section>
-<section><section id="définitions" class="titleslide slide level1"><h1>Définitions</h1></section><section id="les-formes-de-cloud" class="slide level2">
-<h1>Les formes de Cloud</h1>
+<section><section id="définitions" class="titleslide slide level1"><h1>Définitions</h1></section><section id="cloud" class="slide level2">
+<h1>Cloud</h1>
+<p>Le terme Cloud est devenu très englobant. Aujourd'hui il regroupe la fourniture d'un service, son mode d'accès et son infrastructure. Les aspects principaux du Cloud sont (non exhaustif):</p>
+<ul>
+<li class="fragment">Des ressources infinies</li>
+<li class="fragment">Un accès distant</li>
+<li class="fragment">Une tarification à l'usage</li>
+<li class="fragment">un dynamisme (en opposition à statique)</li>
+</ul>
+</section><section id="vision-nist" class="slide level2">
+<h1>vision NIST</h1>
+<blockquote>
+<p>Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction. This cloud model is composed of five essential characteristics, three service models, and four deployment models.</p>
+</blockquote>
+</section><section id="les-caracteristiques" class="slide level2 cloudCarac">
+<h1>Les caracteristiques</h1>
+<ul>
+<li class="fragment">Libre service à la demande</li>
+<li class="fragment">Accès réseau à haut débits</li>
+<li class="fragment">Pool de ressources isolables</li>
+<li class="fragment">Provisionnement et élastique rapide</li>
+<li class="fragment">Supervision (mesure)</li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="les-modèles-daccès" class="slide level2 cloudAccess">
+<h1>Les modèles d'accès</h1>
+<ul>
+<li class="fragment">Privé</li>
+<li class="fragment">Public</li>
+<li class="fragment">Hybride</li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="les-modèles-de-déploiement" class="slide level2 cloudDeploy">
+<h1>Les modèles de déploiement</h1>
 <ul>
 <li class="fragment">SaaS</li>
 <li class="fragment">Paas</li>
 <li class="fragment">Iaas</li>
 <li class="fragment">Xaas</li>
-</ul>
-<aside class="notes">
-</aside>
-</section><section id="les-modes-daccès-au-cloud" class="slide level2">
-<h1>Les modes d'accès au cloud</h1>
-<ul>
-<li class="fragment">Privé</li>
-<li class="fragment">Public</li>
-<li class="fragment">Hybride</li>
 </ul>
 <aside class="notes">
 </aside>
@@ -180,7 +211,7 @@
 <p>Cette fois ci, le fournisseur propose un support pour votre propre application. Un Paas est constitué d'outils permettant la compilation et/ou le déploiement de code source dans un langage défini. Ce code est ensuite instancié (ou pas) à la manière du <strong>Saas</strong> pour mettre à disposition l'application developée. * Google App Engine * Heroku * ...</p>
 <p>Usages</p>
 <p>Technologies</p>
-<p>Avantages inconveniant risques?</p>
+<p>Avantages inconvenients risques?</p>
 <aside class="notes">
 </aside>
 </section></section>
@@ -189,52 +220,116 @@
 <p>C'est la base du Cloud Computing, ici le fournisseur offre du CPU, de la RAM, du stockage, du réseau et éventuellements d'autres services d'infrastructures (FireWall, VPN ...). Le client construit son architecture, ajoute des réseaux, des machines virtuelles, des volumes de stockages persistant... Il installe ensuite les systèmes d'exploitations qu'il désire, les application qu'il souhaite et propose (ou non) ces services sur le réseau (internet ou autre). Le tout est facturé à la consomation.</p>
 <p>Usages</p>
 <p>Technologies</p>
-<p>Avantages inconveniant risques?</p>
+<p>Avantages inconvenients risques?</p>
 <aside class="notes">
 </aside>
 </section></section>
 <section><section id="xaas" class="titleslide slide level1"><h1>Xaas</h1></section><section id="x-pour-nimporte-quoi-everything-as-a-service" class="slide level2">
 <h1><strong>X</strong> pour n'importe quoi (Everything) As A Service</h1>
-<ul>
-<li class="fragment"><aside class="notes"></li>
-</ul>
+<p>On peut étendre la notion de <strong>As A Service</strong> à d'autre types de services. Stockage, sécurité, base de données... Une évolution récente et notable concerne l'évolution du Paas avec le service <strong>Lambda</strong>. Avec Lambda, vous pousser le code d'une fonction dans le service et celle ci est exécuté, ne consomant que ce qui est nécéssaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés pas tranche de 100ms d'éxécution. On parle de <strong>Serverless Computing</strong></p>
+<p>Usages</p>
+<p>Technologies</p>
+<p>Avantages inconvenients risques?</p>
+<aside class="notes">
 </aside>
 </section></section>
-<section><section id="cloud-privé" class="titleslide slide level1"><h1>Cloud Privé</h1></section></section>
-<section><section id="cloud-public" class="titleslide slide level1"><h1>Cloud Public</h1></section></section>
-<section><section id="cloud-hybride" class="titleslide slide level1"><h1>Cloud Hybride</h1></section></section>
-<section><section id="technologies" class="titleslide slide level1"><h1>Technologies</h1></section><section id="aezaezaezaezaeza" class="slide level2">
-<h1>AEZAEZAEZAEZAEZA</h1>
-<pre><code>     - Environnement
-     - Ressources
-         - Serveurs
-         - Réseau
-         - Stockage
-    - Virtualisation
-        - Virtu/paravirtu
-        - Conteneurs
-        - Convergence
-    - Répartition
-        - Informatique répartie
-     - Abstraction (api)
-         - Interopérabilité
-         - InfraAsCode
-         - WebServices
-        - Microservices
-     - Exemples ( Iaas Paas Saas ...)
-
-</code></pre>
+<section><section id="cloud-privé" class="titleslide slide level1"><h1>Cloud Privé</h1></section><section id="définition" class="slide level2">
+<h1>Définition</h1>
 </section></section>
-<section><section id="enjeux-avenir" class="titleslide slide level1"><h1>Enjeux / Avenir</h1></section><section id="sûreté-sécurité-confidentialité" class="slide level2">
-<h1>  Sûreté / sécurité / confidentialité</h1>
+<section><section id="cloud-public" class="titleslide slide level1"><h1>Cloud Public</h1></section><section id="définition-1" class="slide level2">
+<h1>Définition</h1>
+</section></section>
+<section><section id="cloud-hybride" class="titleslide slide level1"><h1>Cloud Hybride</h1></section><section id="définition-2" class="slide level2">
+<h1>Définition</h1>
+</section></section>
+<section><section id="les-technologies-du-cloud" class="titleslide slide level1"><h1>Les technologies du Cloud</h1></section><section id="environnement" class="slide level2">
+<h1>Environnement</h1>
+<p>virtu ha localisation pra/pca cdn</p>
+<p>devops</p>
+</section></section>
+<section><section id="ressources-physiques" class="titleslide slide level1"><h1>Ressources Physiques</h1></section><section id="datacenters" class="slide level2">
+<h1>Datacenters</h1>
+</section><section id="serveurs" class="slide level2">
+<h1>Serveurs</h1>
+</section><section id="réseau" class="slide level2">
+<h1>Réseau</h1>
+</section><section id="stockage" class="slide level2">
+<h1>Stockage</h1>
+</section></section>
+<section><section id="virtualisation" class="titleslide slide level1"><h1>Virtualisation</h1></section><section id="virtuparavirtu" class="slide level2">
+<h1>Virtu/paravirtu</h1>
+</section><section id="conteneurs" class="slide level2">
+<h1>Conteneurs</h1>
+</section><section id="convergence" class="slide level2">
+<h1>Convergence</h1>
+</section></section>
+<section><section id="mots-clés" class="titleslide slide level1"><h1>Mots clés</h1></section><section id="abstraction-api" class="slide level2">
+<h1>Abstraction (api)</h1>
 </section><section id="interopérabilité" class="slide level2">
+<h1>Interopérabilité</h1>
+</section><section id="infraascode" class="slide level2">
+<h1>InfraAsCode</h1>
+</section><section id="webservices" class="slide level2">
+<h1>WebServices</h1>
+</section><section id="serverless" class="slide level2">
+<h1>ServerLess</h1>
+</section><section id="microservices" class="slide level2">
+<h1>Microservices</h1>
+</section><section id="autonomic-computing" class="slide level2">
+<h1>autonomic computing</h1>
+<p>(IBM autoréparation des programme)</p>
+</section><section id="systèmes-repartis" class="slide level2">
+<h1>Systèmes repartis</h1>
+<ul>
+<li class="fragment">scalable</li>
+<li class="fragment">hétérogènes</li>
+</ul>
+<p>ex: seti@home</p>
+</section></section>
+<section><section id="enjeux-avenir" class="titleslide slide level1"><h1>Enjeux / Avenir</h1></section><section id="sécurité" class="slide level2">
+<h1>sécurité</h1>
+<ul>
+<li class="fragment"><p>Cloud SEcurity Aliance</p></li>
+<li class="fragment"><p>Localisation</p></li>
+<li class="fragment"><p>Audit</p></li>
+<li class="fragment"><p>mise à jour</p></li>
+</ul>
+</section><section id="responsabilitées" class="slide level2">
+<h1> Responsabilitées</h1>
+</section><section id="confidentialité" class="slide level2">
+<h1>confidentialité</h1>
+<ul>
+<li class="fragment">Chiffrement</li>
+<li class="fragment">isolation</li>
+</ul>
+</section><section id="interopérabilité-1" class="slide level2">
 <h1> Interopérabilité</h1>
+<ul>
+<li class="fragment">Facilité par les outils d'automatisation et l'utilisation massive de l'opensource</li>
+<li class="fragment">Difficile au niveau des données</li>
+</ul>
 </section><section id="open-source" class="slide level2">
 <h1>Open source</h1>
 </section><section id="trafic-réseau" class="slide level2">
 <h1> Trafic réseau</h1>
 </section><section id="écologie" class="slide level2">
 <h1> Écologie</h1>
+</section></section>
+<section><section id="try-the-cloud" class="titleslide slide level1"><h1>Try the Cloud</h1></section><section id="saas-1" class="slide level2">
+<h1>Saas</h1>
+<pre><code>SaaS : créer un wordpress</code></pre>
+</section><section id="paas-1" class="slide level2">
+<h1>Paas</h1>
+<pre><code>Paas : déployer une appli heroku</code></pre>
+</section><section id="iaas-1" class="slide level2">
+<h1>Iaas</h1>
+<pre><code>Iaas : Utiliser un devstack : créer une appli Rok4?</code></pre>
+</section><section id="faas" class="slide level2">
+<h1>Faas</h1>
+<pre><code>FaaS?  </code></pre>
+</section><section id="saas-2" class="slide level2">
+<h1>Saas</h1>
+<pre><code>public cloud :  ex on azure OR aws</code></pre>
 </section></section>
             </div>
         </div>
