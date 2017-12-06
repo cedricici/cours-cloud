@@ -85,7 +85,7 @@
 <h1>Les Origines</h1>
 <ul>
 <li class="fragment">Hérité de l'informatique client-serveur sur des <strong>MainFrame</strong> (L'accès distant était alors représenté par un nuage)</li>
-<li class="fragment">Vers 2000, les hébegeurs proposent des applications pré-installées dans leur datacenters (Email, CRM ...)</li>
+<li class="fragment">Vers 2000, les hébergeurs proposent des applications pré-installées dans leur datacenters (Email, CRM ...)</li>
 <li class="fragment">Apparition du terme &quot;Cloud&quot; vers 2006 via les services Amazon</li>
 </ul>
 <p><code class="note fragment">Amazon a eu l'idée de mettre à la disposition du public son énorme infrastructure mondiale, dimensionnée pour les pics (Noël...) et sous-utilisée le reste du temps</code></p>
@@ -96,8 +96,8 @@
 <p>Les entreprises souhaitent en finir avec les pannes informatiques.</p>
 <ul>
 <li class="fragment">Industrialiser les processus du SI, limiter l'intervention humaine, automatiser</li>
-<li class="fragment">Ceci nécéssite des infrastructures importantes pour que l'investissement en vaille la peine</li>
-<li class="fragment">Cela libère des ressources IT pour faire du Business plutôt que réparer le SI</li>
+<li class="fragment">Ceci nécessite des infrastructures importantes pour que l'investissement en vaille la peine</li>
+<li class="fragment">Cela libère des ressources IT pour faire du <em>Business</em> plutôt que réparer le SI</li>
 </ul>
 <aside class="notes">
 </aside>
@@ -117,25 +117,29 @@
 <li class="fragment">Élasticité / Scalabilité
 <ul>
 <li class="fragment">absorber les pics de charges</li>
-<li class="fragment">repartir les resources physiques</li>
-<li class="fragment">TODO</li>
+<li class="fragment">repartir les ressources physiques</li>
 </ul></li>
 </ul></li>
 </ul>
 <aside class="notes">
+<p>POS : Plan d'occupation du Sol appliqué au SI</p>
 </aside>
-</section><section id="la-difficulté-de-la-transformation" class="slide level2">
-<h1>La difficulté de la transformation</h1>
+</section><section id="transformation-difficile" class="slide level2">
+<h1>Transformation difficile</h1>
 <ul>
 <li class="fragment">Infrastructure
 <ul>
 <li class="fragment">Il faut repenser le SI</li>
-<li class="fragment">Considérer l'externalisation dans le cloud public</li>
+<li class="fragment">Considérer l'externalisation dans le Cloud public</li>
+</ul></li>
+<li class="fragment">Architecture
+<ul>
+<li class="fragment">Il faut adapter les modèles d’architectures <em>Legacy</em></li>
 </ul></li>
 <li class="fragment">Applicatif
 <ul>
 <li class="fragment">Il faut reconstruire les applications <em>Legacy</em></li>
-<li class="fragment">Il faut construire des applications Cloud-ready</li>
+<li class="fragment">Il faut construire des applications <em>Cloud-ready</em></li>
 </ul></li>
 <li class="fragment">Formation
 <ul>
@@ -154,54 +158,79 @@
 </section></section>
 <section><section id="définitions" class="titleslide slide level1"><h1>Définitions</h1></section><section id="cloud" class="slide level2">
 <h1>Cloud</h1>
-<p>Le terme Cloud est devenu très englobant. Aujourd'hui il regroupe la fourniture d'un service, son mode d'accès et son infrastructure. Les aspects principaux du Cloud sont (non exhaustif):</p>
-<ul>
-<li class="fragment">Des ressources infinies</li>
-<li class="fragment">Un accès distant</li>
-<li class="fragment">Une tarification à l'usage</li>
-<li class="fragment">un dynamisme (en opposition à statique)</li>
-</ul>
-</section><section id="vision-nist" class="slide level2">
-<h1>vision NIST</h1>
+<p>Le terme Cloud est devenu très englobant. Aujourd'hui il regroupe la fourniture d'un service, son mode d'accès et son infrastructure. Plusieurs organismes ont essayé de normaliser la définition du <strong>Cloud computing</strong></p>
+</section><section id="définition-du-nist" class="slide level2">
+<h1>Définition du NIST</h1>
+<p><strong>National Institute of Standards and Technology</strong></p>
 <blockquote>
 <p>Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction. This cloud model is composed of five essential characteristics, three service models, and four deployment models.</p>
 </blockquote>
-</section><section id="les-caracteristiques" class="slide level2 cloudCarac">
-<h1>Les caracteristiques</h1>
+</section><section id="les-caractéristiques" class="slide level2 cloudCarac">
+<h1>Les caractéristiques</h1>
 <ul>
-<li class="fragment">Libre service à la demande</li>
-<li class="fragment">Accès réseau à haut débits</li>
-<li class="fragment">Pool de ressources isolables</li>
-<li class="fragment">Provisionnement et élastique rapide</li>
-<li class="fragment">Supervision (mesure)</li>
+<li class="fragment">Libre-service et à la demande (paiement à l’usage)</li>
+<li class="fragment">Accessible sur l'ensemble d'un réseau</li>
+<li class="fragment">Mutualisation des ressources (Multi tenant)</li>
+<li class="fragment">S’adapter rapidement à une variation du besoin</li>
+<li class="fragment">Mesurable (statistiques d’usage, ressources …)</li>
 </ul>
 <aside class="notes">
 </aside>
-</section><section id="les-modèles-daccès" class="slide level2 cloudAccess">
-<h1>Les modèles d'accès</h1>
+</section><section id="cloud-1" class="slide level2">
+<h1>Cloud</h1>
 <ul>
-<li class="fragment">Privé</li>
-<li class="fragment">Public</li>
-<li class="fragment">Hybride</li>
+<li class="fragment">Niveau de service : Engagement sur :
+<ul>
+<li class="fragment">Disponibilité garantie (en %)</li>
+<li class="fragment">Garantie de temps d’intervention et rétablissement</li>
+<li class="fragment">Qualité de service (performance)</li>
+</ul></li>
+<li class="fragment">Confidentialité : Vigilance sur :
+<ul>
+<li class="fragment">Les systèmes de gestion des accès / mécanismes de cloisonnement entre clients</li>
+<li class="fragment">Localisation des centre de données (hors UE) et nationalité du fournisseur (EU, Patriot Act)</li>
+</ul></li>
 </ul>
 <aside class="notes">
 </aside>
-</section><section id="les-modèles-de-déploiement" class="slide level2 cloudDeploy">
-<h1>Les modèles de déploiement</h1>
+</section><section id="cloud-2" class="slide level2">
+<h1>Cloud</h1>
 <ul>
-<li class="fragment">SaaS</li>
-<li class="fragment">Paas</li>
-<li class="fragment">Iaas</li>
-<li class="fragment">Xaas</li>
+<li class="fragment">Responsabilités :
+<ul>
+<li class="fragment">Définir les périmètres respectifs</li>
+<li class="fragment">Établir des pénalités et permettre des audits</li>
+</ul></li>
+<li class="fragment">Réversibilité (Entrante et Sortante)
+<ul>
+<li class="fragment">S’assurer de la possibilité d'export des données et de leurs exploitabilités</li>
+</ul></li>
 </ul>
+</section><section id="modèle-de-service" class="slide level2 cloudServices figcenter">
+<h1>Modèle de service</h1>
+<figure>
+<img src="img/Colloc.png" />
+</figure>
+<aside class="notes">
+</aside>
+</section><section id="modèles-de-déploiement" class="slide level2 cloudDeploy figcenter">
+<h1>Modèles de déploiement</h1>
+<figure>
+<img src="img/Clouds.png" />
+</figure>
 <aside class="notes">
 </aside>
 </section></section>
 <section><section id="saas" class="titleslide slide level1"><h1>SaaS</h1></section><section id="software-as-a-service" class="slide level2">
 <h1>Software As A Service</h1>
 <p>C'est une application identifié, fournie à la demande pour un utilisateur, l'application et les données sont hébergées dans les datacenter du fournisseur. En général elle est hautement configurable. * Wordpress.com * Solutions de paiement en ligne * Messagerie/Bureautique (office 365) On peut intégrer les offres de sauvegarde en ligne dans cette catégorie (icloud / dropbox ...).</p>
-<p>Usages</p>
-<p>Technologies</p>
+</section><section id="software-as-a-service-1" class="slide level2 figcenter">
+<h1>Software As A Service</h1>
+<figure>
+<img src="img/saas.png" />
+</figure>
+</section><section id="usages" class="slide level2">
+<h1>Usages</h1>
 <p>Avantages inconveniant risques?</p>
 <aside class="notes">
 </aside>
@@ -209,27 +238,37 @@
 <section><section id="paas" class="titleslide slide level1"><h1>Paas</h1></section><section id="platform-as-a-service" class="slide level2">
 <h1>Platform As A Service</h1>
 <p>Cette fois ci, le fournisseur propose un support pour votre propre application. Un Paas est constitué d'outils permettant la compilation et/ou le déploiement de code source dans un langage défini. Ce code est ensuite instancié (ou pas) à la manière du <strong>Saas</strong> pour mettre à disposition l'application developée. * Google App Engine * Heroku * ...</p>
-<p>Usages</p>
-<p>Technologies</p>
-<p>Avantages inconvenients risques?</p>
+</section><section id="platform-as-a-service-1" class="slide level2 figcenter">
+<h1>Platform As A Service</h1>
+<figure>
+<img src="img/paas.png" />
+</figure>
+</section><section id="usages-1" class="slide level2">
+<h1>Usages</h1>
+<p>Avantages inconvénients risques?</p>
 <aside class="notes">
 </aside>
 </section></section>
 <section><section id="iaas" class="titleslide slide level1"><h1>Iaas</h1></section><section id="infrastructure-as-a-service" class="slide level2">
 <h1>Infrastructure As A Service</h1>
 <p>C'est la base du Cloud Computing, ici le fournisseur offre du CPU, de la RAM, du stockage, du réseau et éventuellements d'autres services d'infrastructures (FireWall, VPN ...). Le client construit son architecture, ajoute des réseaux, des machines virtuelles, des volumes de stockages persistant... Il installe ensuite les systèmes d'exploitations qu'il désire, les application qu'il souhaite et propose (ou non) ces services sur le réseau (internet ou autre). Le tout est facturé à la consomation.</p>
-<p>Usages</p>
-<p>Technologies</p>
-<p>Avantages inconvenients risques?</p>
+</section><section id="infrastructure-as-a-service-1" class="slide level2 figcenter">
+<h1>Infrastructure As A Service</h1>
+<figure>
+<img src="img/iaas.png" />
+</figure>
+</section><section id="usages-2" class="slide level2">
+<h1>Usages</h1>
+<p>Avantages inconvénients risques?</p>
 <aside class="notes">
 </aside>
 </section></section>
-<section><section id="xaas" class="titleslide slide level1"><h1>Xaas</h1></section><section id="x-pour-nimporte-quoi-everything-as-a-service" class="slide level2">
-<h1><strong>X</strong> pour n'importe quoi (Everything) As A Service</h1>
-<p>On peut étendre la notion de <strong>As A Service</strong> à d'autre types de services. Stockage, sécurité, base de données... Une évolution récente et notable concerne l'évolution du Paas avec le service <strong>Lambda</strong>. Avec Lambda, vous pousser le code d'une fonction dans le service et celle ci est exécuté, ne consomant que ce qui est nécéssaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés pas tranche de 100ms d'éxécution. On parle de <strong>Serverless Computing</strong></p>
-<p>Usages</p>
-<p>Technologies</p>
-<p>Avantages inconvenients risques?</p>
+<section><section id="xaas" class="titleslide slide level1"><h1>Xaas</h1></section><section id="x-everything-as-a-service" class="slide level2">
+<h1>X (Everything) As A Service</h1>
+<p>On peut étendre la notion de <strong>As A Service</strong> à d'autre types de services. Stockage, sécurité, base de données... Une évolution récente et notable concerne l'évolution du Paas avec le service <strong>Lambda</strong> d'AWS ou encore ** Google Cloud Function <strong>. Avec ces </strong>Function As A Service<strong>, vous pousser le code d'une fonction dans le service et celle ci est exécuté, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés pas tranche de 100ms d’exécution. On parle de </strong>Serverless Computing**</p>
+</section><section id="usages-3" class="slide level2">
+<h1>Usages</h1>
+<p>Avantages inconvénients risques?</p>
 <aside class="notes">
 </aside>
 </section></section>
@@ -242,7 +281,337 @@
 <section><section id="cloud-hybride" class="titleslide slide level1"><h1>Cloud Hybride</h1></section><section id="définition-2" class="slide level2">
 <h1>Définition</h1>
 </section></section>
-<section><section id="les-technologies-du-cloud" class="titleslide slide level1"><h1>Les technologies du Cloud</h1></section><section id="environnement" class="slide level2">
+<section><section id="techno-du-cloud" class="titleslide slide level1"><h1>Techno du Cloud</h1></section><section id="panorama" class="slide level2">
+<h1>Panorama</h1>
+<ul>
+<li class="fragment">Architectures</li>
+<li class="fragment">Virtualisation</li>
+<li class="fragment">Matériel</li>
+<li class="fragment">Méthodologie</li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="architectures" class="slide level2">
+<h1>Architectures</h1>
+<ul>
+<li class="fragment">Architecture Scalable</li>
+<li class="fragment">Convergence / hyperconvergence</li>
+<li class="fragment">Usages de la virtualisation
+<ul>
+<li class="fragment">Système</li>
+<li class="fragment">Stockage</li>
+<li class="fragment">Réseau</li>
+<li class="fragment">...</li>
+</ul></li>
+<li class="fragment">Sécurité</li>
+</ul>
+<aside class="notes">
+</aside>
+</section></section>
+<section><section id="architecture-scalable" class="titleslide slide level1"><h1>Architecture Scalable</h1></section><section id="architectures-évolutives" class="slide level2">
+<h1>Architectures évolutives</h1>
+<ul>
+<li class="fragment">Évolutivité verticale (Scale UP)
+<ul>
+<li class="fragment">Ajouter des ressources au composant (CPU, RAM, Stockage)</li>
+<li class="fragment">Faibles risques d’incompatibilité</li>
+<li class="fragment">Augmente les risques de défaillance (SPOF)</li>
+</ul></li>
+<li class="fragment">Évolutivité Horizontale (Scale OUT)
+<ul>
+<li class="fragment">Répartir les ressources sur plusieurs composants</li>
+<li class="fragment">Requiert des équipements de partage de charge (LB)</li>
+<li class="fragment">Nécessite une application compatible</li>
+<li class="fragment">Réparti les risques</li>
+</ul></li>
+<li class="fragment">Micro service
+<ul>
+<li class="fragment">Répartir les modules applicatifs sur les composants</li>
+<li class="fragment">Nécessite une application dont l’architecture à été prévu dans ce sens</li>
+<li class="fragment">Limite les risques de défaillance complète du système</li>
+<li class="fragment">Doit être souvent être complété par de la scalabilité horizontale</li>
+</ul></li>
+</ul>
+<aside class="notes">
+</aside>
+</section></section>
+<section><section id="convergence" class="titleslide slide level1"><h1>Convergence</h1></section><section id="architecture-non-convergée" class="slide level2 figcenter">
+<h1>Architecture non convergée</h1>
+<figure>
+<img src="img/non-converge.png" />
+</figure>
+</section><section id="architecture-non-convergée-1" class="slide level2">
+<h1>Architecture non convergée</h1>
+<ul>
+<li class="fragment">Architecture traditionnelle</li>
+<li class="fragment">Les composants sont spécialisés avec
+<ul>
+<li class="fragment">Des commutateurs Ethernet</li>
+<li class="fragment">Des serveurs</li>
+<li class="fragment">Un réseau SAN (FC/iscsi) pour le stockage</li>
+</ul></li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="architecture-convergée" class="slide level2 figcenter">
+<h1>Architecture convergée</h1>
+<figure>
+<img src="img/Converge.png" />
+</figure>
+</section><section id="architecture-convergé" class="slide level2">
+<h1>Architecture convergé</h1>
+<ul>
+<li class="fragment">Infrastructure avec un réseau unifiée</li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="et-hyperconvergée" class="slide level2 figcenter">
+<h1>... et hyperconvergée</h1>
+<figure>
+<img src="img/hyperconverge.png" />
+</figure>
+</section><section id="et-hyperconvergée-1" class="slide level2">
+<h1>... et hyperconvergée</h1>
+<ul>
+<li class="fragment">Architecture unifiée</li>
+<li class="fragment">Un composant concentre les fonctions d’infrastructure</li>
+<li class="fragment">Évolutive (scale out)</li>
+<li class="fragment">Automatisée via une solution de pilotage logicielle (Software defined)</li>
+</ul>
+<aside class="notes">
+</aside>
+</section></section>
+<section><section id="usages-de-la-virtualisation" class="titleslide slide level1"><h1>Usages de la virtualisation</h1></section><section id="virtualisation-du-système" class="slide level2">
+<h1>Virtualisation du système</h1>
+<p>Plusieurs niveaux</p>
+<ul>
+<li class="fragment">Isolation applicative (Conteneur)</li>
+<li class="fragment">Para-virtualisation (hyperviseur type1)</li>
+<li class="fragment">Virtualisation complète (hyperviseur type1)</li>
+<li class="fragment">Virtualisation complète (hyperviseur type2)</li>
+<li class="fragment">Émulation (cpu différent)</li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="isolation-applicative" class="slide level2">
+<h1>Isolation applicative</h1>
+<ul>
+<li class="fragment">Spécifique au monde Unix</li>
+<li class="fragment">Isolation de l'espace utilisateur</li>
+<li class="fragment">« Partage » du noyau</li>
+<li class="fragment">EX IGN : DockerForge</li>
+</ul>
+</section><section id="isolation-applicative-1" class="slide level2 figcenter">
+<h1>Isolation applicative</h1>
+<figure>
+<img src="img/Diagramme_ArchiIsolateur.png" title="© Primalmotion-Wikipedia" alt="isolation" /><figcaption>isolation</figcaption>
+</figure>
+<aside class="notes">
+</aside>
+</section><section id="isolation-applicative-2" class="slide level2">
+<h1>Isolation applicative</h1>
+<ul>
+<li class="fragment">Avantages
+<ul>
+<li class="fragment">Rapide à mettre en place</li>
+<li class="fragment">Pas de perte de performances</li>
+<li class="fragment">Adapté au micro-services</li>
+<li class="fragment">En forte progression</li>
+</ul></li>
+<li class="fragment">Inconvénients
+<ul>
+<li class="fragment">Isolation limitée</li>
+<li class="fragment">limité un un noyau commun</li>
+<li class="fragment">mécanismes complexes et moins matures</li>
+</ul></li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="hyperviseur-de-type-1" class="slide level2">
+<h1> Hyperviseur de type 1</h1>
+<ul>
+<li class="fragment">Noyau léger</li>
+<li class="fragment">Exploitation matériel (Intel VT / AMD-V)</li>
+<li class="fragment">Para-virtualisation possible : les OS invités intègrent des mécanismes permettant d’exécuter des instructions directement sur le processeur.</li>
+<li class="fragment">Matériel émulé ET/OU partagé</li>
+<li class="fragment">Ex : VMware vSphère (IGN) / XenServer (ENSG) / KVM (Oshimae)</li>
+</ul>
+</section><section id="hyperviseur-de-type-1-1" class="slide level2 figcenter">
+<h1> Hyperviseur de type 1</h1>
+<figure>
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/faimgchiHyperviseur.png" title="© Primalmotion-Wikipedia" alt="Hyperviseur I" /><figcaption>Hyperviseur I</figcaption>
+</figure>
+<aside class="notes">
+</aside>
+</section><section id="hyperviseur-de-type-1-2" class="slide level2">
+<h1> Hyperviseur de type 1</h1>
+<ul>
+<li class="fragment">Avantages
+<ul>
+<li class="fragment">Rapidité (peu de perte)</li>
+<li class="fragment">bonne isolation</li>
+<li class="fragment">live migration</li>
+<li class="fragment">changement des caractéristiques de la VM (éventuellement à la volée)</li>
+</ul></li>
+<li class="fragment">Inconvénients
+<ul>
+<li class="fragment">complexité de mise en œuvre</li>
+<li class="fragment">OS VM adapté</li>
+</ul></li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="hyperviseur-de-type-2" class="slide level2">
+<h1> Hyperviseur de type 2</h1>
+<ul>
+<li class="fragment">Logiciel sur OS complet</li>
+<li class="fragment">Émulation plus ou moins complète</li>
+<li class="fragment">OS VM hétérogènes possibles</li>
+<li class="fragment">Ex : Virtualbox (Développeur) / Parallel Desktop (MAC) / QEMU</li>
+</ul>
+</section><section id="hyperviseur-de-type-2-1" class="slide level2 figcenter">
+<h1> Hyperviseur de type 2</h1>
+<figure>
+<img src="img/Diagramme_ArchiEmulateur.png" title="© Primalmotion-Wikipedia" alt="Hyperviseur II" /><figcaption>Hyperviseur II</figcaption>
+</figure>
+<aside class="notes">
+</aside>
+</section><section id="hyperviseur-de-type-2-2" class="slide level2">
+<h1>Hyperviseur de type 2</h1>
+<ul>
+<li class="fragment">Avantages
+<ul>
+<li class="fragment">Simplicité de mise en œuvre</li>
+<li class="fragment">OS variés</li>
+</ul></li>
+<li class="fragment">Inconvénients
+<ul>
+<li class="fragment">Lenteur</li>
+<li class="fragment">Ressource limité à celle de l'hôte</li>
+<li class="fragment">Grosses images systèmes (export...)</li>
+</ul></li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="émulateur" class="slide level2">
+<h1>Émulateur</h1>
+<ul>
+<li class="fragment">changement de plateforme (ARM sur X86)</li>
+<li class="fragment">Tout est émulé
+<ul>
+<li class="fragment">=&gt; très lent</li>
+</ul></li>
+<li class="fragment">Ex : Android Virtual device ...</li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="virtualisation-du-réseau" class="slide level2">
+<h1>Virtualisation du réseau</h1>
+<ul>
+<li class="fragment">Network Virtualization
+<ul>
+<li class="fragment">Création de tunnels GRE / VxLAN</li>
+<li class="fragment">OpenVswitch</li>
+</ul></li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="virtualisation-du-réseau-1" class="slide level2 figcenter">
+<h1>Virtualisation du réseau</h1>
+<figure>
+<img src="img/VN-tunnel.png" />
+</figure>
+<aside class="notes">
+</aside>
+</section><section id="virtualisation-du-réseau-2" class="slide level2">
+<h1>Virtualisation du réseau</h1>
+<ul>
+<li class="fragment">Software Defined Network (SDN)
+<ul>
+<li class="fragment">Séparation du contrôle et des données</li>
+<li class="fragment">openflow</li>
+<li class="fragment">Pilotage des switchs</li>
+</ul></li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="virtualisation-du-réseau-3" class="slide level2">
+<h1>Virtualisation du réseau</h1>
+<ul>
+<li class="fragment">SDWAN
+<ul>
+<li class="fragment">Virtualisation des réseaux WAN (MPLS...)</li>
+<li class="fragment">Remplacement par une multitude de réseaux internet</li>
+<li class="fragment">Orchestration Logicielle</li>
+<li class="fragment">Efficace et nettement moins cher!</li>
+</ul></li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="virtualisation-du-stockage" class="slide level2">
+<h1>Virtualisation du stockage</h1>
+<ul>
+<li class="fragment">Software Defined Storage (SDS)</li>
+<li class="fragment">Stockage Virtuel
+<ul>
+<li class="fragment">Une couche contrôle (Gestion, allocation des ressources, Qos, sécurité)</li>
+<li class="fragment">Une couche stockage (Parité, thin provisioning, compression …)</li>
+<li class="fragment">Services : Stockage objet, Bloc, fichier, HDFS</li>
+</ul></li>
+<li class="fragment">Logiciel
+<ul>
+<li class="fragment">Une solution centralisé de gestion du réseau, Qos, Sécurité , ressources, autorisations, quotas...</li>
+</ul></li>
+<li class="fragment">EX: VmWare VirtualSAN / CEPH</li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="software-defined-datacenter" class="slide level2">
+<h1>Software Defined Datacenter</h1>
+<ul>
+<li class="fragment">(SDDC)</li>
+<li class="fragment">Virtualisation complète de l’infrastructure
+<ul>
+<li class="fragment">Serveurs virtuel</li>
+<li class="fragment">Réseau virtuel</li>
+<li class="fragment">Stockage virtuel</li>
+</ul></li>
+<li class="fragment">Un système d’orchestration centralisé</li>
+<li class="fragment">Ex: Openstack, Vcloud</li>
+</ul>
+<aside class="notes">
+<pre><code>Seul les yahoo et google peuvent mettre en place de tels mécanismes</code></pre>
+</aside>
+</section><section id="virtualisation-et-sécurité" class="slide level2">
+<h1>Virtualisation et sécurité</h1>
+<ul>
+<li class="fragment">Risques Additionnels
+<ul>
+<li class="fragment">Concentration des ressources (stockage, réseau, système), des outils et des rôles.</li>
+<li class="fragment">Des composants additionnels à maitriser et à surveiller</li>
+</ul></li>
+<li class="fragment">Vigilance
+<ul>
+<li class="fragment">La couche d’abstraction est un système à part entière, à mettre à jour et sécuriser</li>
+<li class="fragment">Les habilitations d’accès aux couches d’abstractions doivent êtres ajustées avec soins.</li>
+<li class="fragment">Les systèmes critiques doivent être protégés (cloisonnement par ressources dédiés ou réservations de ressources, Qos…)</li>
+</ul></li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="virtualisation-et-sécurité-1" class="slide level2">
+<h1>Virtualisation et sécurité</h1>
+<ul>
+<li class="fragment">Apports
+<ul>
+<li class="fragment">Une disponibilité plus élevée</li>
+<li class="fragment">Des déploiements (potentiellement ) automatisés</li>
+<li class="fragment">Des ressources plus faciles à reconstruire (Sauvegarde, PRA…)</li>
+</ul></li>
+</ul>
+<aside class="notes">
+</aside>
+</section><section id="environnement" class="slide level2">
 <h1>Environnement</h1>
 <p>virtu ha localisation pra/pca cdn</p>
 <p>devops</p>
@@ -260,7 +629,7 @@
 <h1>Virtu/paravirtu</h1>
 </section><section id="conteneurs" class="slide level2">
 <h1>Conteneurs</h1>
-</section><section id="convergence" class="slide level2">
+</section><section id="convergence-1" class="slide level2">
 <h1>Convergence</h1>
 </section></section>
 <section><section id="mots-clés" class="titleslide slide level1"><h1>Mots clés</h1></section><section id="abstraction-api" class="slide level2">
