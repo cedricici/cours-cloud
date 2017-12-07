@@ -276,6 +276,17 @@ Avantages inconvénients risques?
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 # Techno du Cloud #
 
 
@@ -440,7 +451,7 @@ Avantages inconvénients risques?
 
 ## Hyperviseur de type 1 ##{.figcenter}
 
-![Hyperviseur I](https://upload.wikimedia.org/wikipedia/commons/f/faimgchiHyperviseur.png "© Primalmotion-Wikipedia")
+![Hyperviseur I](img/Diagramme_ArchiHyperviseur.png "© Primalmotion-Wikipedia")
 
 <aside class="notes">
 
@@ -549,14 +560,14 @@ Avantages inconvénients risques?
 
 ## Virtualisation du stockage  ##
 
-* Software Defined Storage (SDS)
-* Stockage Virtuel
-    * Une couche contrôle (Gestion, allocation des ressources, Qos, sécurité)
-    * Une couche stockage (Parité, thin provisioning, compression …)
-    * Services : Stockage objet, Bloc, fichier, HDFS 
-* Logiciel
-    * Une solution centralisé de gestion du réseau, Qos, Sécurité , ressources, autorisations, quotas...
-* EX: VmWare VirtualSAN / CEPH
+- Software Defined Storage (SDS)
+- Stockage Virtuel
+    - Une couche contrôle (Gestion, allocation des ressources, Qos, sécurité)
+    - Une couche stockage (Parité, thin provisioning, compression …)
+    - Services : Stockage objet, Bloc, fichier, HDFS 
+- Logiciel
+    - Une solution centralisé de gestion du réseau, Qos, Sécurité , ressources, autorisations, quotas...
+- EX: VmWare VirtualSAN / CEPH
 
 <aside class="notes">
     
@@ -564,28 +575,28 @@ Avantages inconvénients risques?
 
 ## Software Defined Datacenter ##
 
-* (SDDC)
-* Virtualisation complète de l’infrastructure
-    * Serveurs virtuel
-    * Réseau virtuel
-    * Stockage virtuel
-* Un système d’orchestration centralisé
-* Ex: Openstack, Vcloud
+- (SDDC)
+- Virtualisation complète de l’infrastructure
+    - Serveurs virtuel
+    - Réseau virtuel
+    - Stockage virtuel
+- Un système d’orchestration centralisé
+- Ex: Openstack, Vcloud
 
 <aside class="notes">
-    Seul les yahoo et google peuvent mettre en place de tels mécanismes
+    Seul les yahoo amazon et google peuvent mettre en place de tels mécanismes
 </aside>
 
 
 ## Virtualisation et sécurité ##
 
-* Risques Additionnels
-    * Concentration des ressources (stockage, réseau, système), des outils et des rôles.
-    * Des composants additionnels à maitriser et à surveiller
-* Vigilance
-    * La couche d’abstraction est un système à part entière, à mettre à jour et sécuriser
-    * Les habilitations d’accès aux couches d’abstractions doivent êtres ajustées avec soins.
-    * Les systèmes critiques doivent être protégés (cloisonnement par ressources dédiés ou réservations de ressources, Qos…) 
+- Risques Additionnels
+    - Concentration des ressources (stockage, réseau, système), des outils et des rôles.
+    - Des composants additionnels à maitriser et à surveiller
+- Vigilance
+    - La couche d’abstraction est un système à part entière, à mettre à jour et sécuriser
+    - Les habilitations d’accès aux couches d’abstractions doivent êtres ajustées avec soins.
+    - Les systèmes critiques doivent être protégés (cloisonnement par ressources dédiés ou réservations de ressources, Qos…) 
 
 <aside class="notes">
     
@@ -594,10 +605,10 @@ Avantages inconvénients risques?
 
 ## Virtualisation et sécurité ## 
 
-* Apports
-    * Une disponibilité plus élevée
-    * Des déploiements (potentiellement ) automatisés
-    * Des ressources plus faciles à reconstruire (Sauvegarde, PRA…)
+- Apports
+    - Une disponibilité plus élevée
+    - Des déploiements (potentiellement ) automatisés
+    - Des ressources plus faciles à reconstruire (Sauvegarde, PRA…)
 
 <aside class="notes">
     
@@ -609,38 +620,63 @@ Avantages inconvénients risques?
 
 
 
-
-## Environnement ##
-
-virtu
-ha
-localisation
-pra/pca
-cdn
-
-devops
-
-
 # Ressources Physiques #
 
-## Datacenters ##
+
+## Datacenters ##{.figcenter}
+
+![Datacenter modulaire](img/datacenter-google.jpg)
 
 
+## Tiers ##{.figcenter}
 
-## Serveurs ##
-
-## Réseau ##
-
-## Stockage ##
+![Datacenter Tiers](img/data-center-tiers.png)
 
 
-# Virtualisation #
+## Serveurs ##{.figcenter}
 
-## Virtu/paravirtu
+![Cloud Servers](img/hyperServer.jpg)
 
-## Conteneurs ##
 
-## Convergence ##
+## Réseau ##{.figcenter}
+
+![Cloud Network](img/hyperSwitch.jpg)
+
+
+## Stockage ##{.figcenter}
+
+![Cloud Storage](img/hyperStorage.jpg)
+
+
+## Climatisation ##{.figcenter}
+
+![Couloirs Chauds/Froids](img/chaudfroid.png)
+
+
+## Electricité ##
+
+- L'energie représente ~40% du coût d'exploitation
+- le refroidissement 40% à 50%
+- datacenter moderne et optimisé = 1.5 à 3KW/m2
+
+`GREEN IT`{.note .fragment}
+
+
+## Exemple d'infrastructure Cloud ## 
+
+- Cas pratique : Constitution d'un cloud Openstack 
+    - 10 serveurs
+    - reliés sur au moins 3 réseaux différents
+        - Admin
+        - Stockage
+        - Traffic réseau
+    - Répartitions des rôles sur les différents serveurs pour limiter les SPOFs
+        - 3 Contrôleurs (NOVA/HORIZON)
+        - 3 Computes (NOVA/NEUTRON)
+        - 1 Networks (NEUTRON)
+        - 3 Stockages (CINDER/SWIFT/CEPH)
+    - Accès et exploitation via API / Dashboard
+
 
 # Mots clés #
 
@@ -656,69 +692,171 @@ devops
 
 ## Microservices ##
 
-
 ## autonomic computing ##
 
  (IBM autoréparation des programme)
 
 ## Systèmes repartis ##
 
-* scalable
-* hétérogènes
+- scalable
+- hétérogènes
 
 ex: seti@home
+
+## high availability ##
+
+## pra/pca ##
+
+## cdn ##
+
+## devops ## 
+
+
+
 
 
 
 # Enjeux / Avenir #
 
-## sécurité ##
+## Sécurité ##
 
-* Cloud SEcurity Aliance
-
-* Localisation
-
-* Audit
-
-* mise à jour
+- Cloud Security Alliance
+- Localisation
+- Audit
+- mise à jour
 
 
 ## Responsabilitées ##
 
+-
+
 
 ## confidentialité ##
 
-* Chiffrement
-* isolation
+- Chiffrement
+- isolation
 
 ## Interopérabilité ##
 
-* Facilité par les outils d'automatisation et l'utilisation massive de l'opensource
-* Difficile au niveau des données
+- Facilité par les outils d'automatisation et l'utilisation massive de l'opensource
+- Difficile au niveau des données
 
 
 ## Open source ##
 
 
+
+
 ## Trafic réseau ##
+
+
 
 
 ## Écologie ##
 
 
-# Try the Cloud #
 
-## Saas ##
-    SaaS : créer un wordpress
 
-## Paas ##
-    Paas : déployer une appli heroku
 
-## Iaas ##
-    Iaas : Utiliser un devstack : créer une appli Rok4?
 
-## Faas ##
-    FaaS?  
-    
-## Saas ##
-    public cloud :  ex on azure OR aws
+
+
+
+
+
+
+
+
+
+
+
+# Try it Yourself #
+
+## TP comparaison ##
+
+- Objectif : Comparer les différents types de virtualisation
+    - system
+    - stockage
+    - réseau
+
+## Comparaison systeme ##
+
+> - compilation d'un code calculant les **n** nombres premiers
+
+``` 
+wget -O prime.c https://codepaste.net/p2nsne
+```
+``` 
+gcc prime.c -o prime
+```
+``` 
+time ./prime 10000
+```
+```
+Calcul des 10000 premiers nombres premiers
+real    0m1.573s
+user    0m1.572s
+sys     0m0.000s
+```
+
+## Comparaison systeme ##
+
+> - Lancement via Docker (présent sur votre machine)
+
+> - Dans un fichier **Dockerfile** :
+```
+FROM debian
+ADD ./prime /prime
+CMD [ ./prime 0 ]
+```
+```
+docker build -t prime .
+```
+```
+time docker run -ti prime /prime 10000
+```
+```
+Calcul des 10000 premiers nombres premiers
+real    0m2.246s
+user    0m0.012s
+sys     0m0.004s
+```
+
+## Comparaison systeme ##
+
+> - Lancement dans un émulateur arm
+```
+sudo apt-get install qemu-system-arm
+```
+> - récupérer les fichiers nécéssaires sur **https://people.debian.org/~aurel32/qemu/armel/** 
+> lancer l'émulateur
+```
+qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -append "root=/dev/sda1" -hda debian_wheezy_armel_standard.qcow2
+```
+> - Ajouter/compiler le binaire **prime** dans la VM puis tester de la même manière
+```
+Calcul des 10000 premiers nombres premiers
+real    0m36.174s
+user    0m36.130s
+sys     0m0.010s
+```
+
+
+
+## TP Saas ##
+
+Objectif : déployer une application Saas
+
+Wordpress
+
+## TP Paas ##
+
+Objectif : déployer une appli Paas
+
+Heroku
+
+## TP Iaas ##
+
+Objectif : Créer une infra minimale en Iaas
+
+

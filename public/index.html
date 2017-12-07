@@ -439,7 +439,7 @@
 </section><section id="hyperviseur-de-type-1-1" class="slide level2 figcenter">
 <h1> Hyperviseur de type 1</h1>
 <figure>
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/faimgchiHyperviseur.png" title="© Primalmotion-Wikipedia" alt="Hyperviseur I" /><figcaption>Hyperviseur I</figcaption>
+<img src="img/Diagramme_ArchiHyperviseur.png" title="© Primalmotion-Wikipedia" alt="Hyperviseur I" /><figcaption>Hyperviseur I</figcaption>
 </figure>
 <aside class="notes">
 </aside>
@@ -580,7 +580,7 @@
 <li class="fragment">Ex: Openstack, Vcloud</li>
 </ul>
 <aside class="notes">
-<pre><code>Seul les yahoo et google peuvent mettre en place de tels mécanismes</code></pre>
+<pre><code>Seul les yahoo amazon et google peuvent mettre en place de tels mécanismes</code></pre>
 </aside>
 </section><section id="virtualisation-et-sécurité" class="slide level2">
 <h1>Virtualisation et sécurité</h1>
@@ -611,26 +611,67 @@
 </ul>
 <aside class="notes">
 </aside>
-</section><section id="environnement" class="slide level2">
-<h1>Environnement</h1>
-<p>virtu ha localisation pra/pca cdn</p>
-<p>devops</p>
 </section></section>
-<section><section id="ressources-physiques" class="titleslide slide level1"><h1>Ressources Physiques</h1></section><section id="datacenters" class="slide level2">
+<section><section id="ressources-physiques" class="titleslide slide level1"><h1>Ressources Physiques</h1></section><section id="datacenters" class="slide level2 figcenter">
 <h1>Datacenters</h1>
-</section><section id="serveurs" class="slide level2">
+<figure>
+<img src="img/datacenter-google.jpg" alt="Datacenter modulaire" /><figcaption>Datacenter modulaire</figcaption>
+</figure>
+</section><section id="tiers" class="slide level2 figcenter">
+<h1>Tiers</h1>
+<figure>
+<img src="img/data-center-tiers.png" alt="Datacenter Tiers" /><figcaption>Datacenter Tiers</figcaption>
+</figure>
+</section><section id="serveurs" class="slide level2 figcenter">
 <h1>Serveurs</h1>
-</section><section id="réseau" class="slide level2">
+<figure>
+<img src="img/hyperServer.jpg" alt="Cloud Servers" /><figcaption>Cloud Servers</figcaption>
+</figure>
+</section><section id="réseau" class="slide level2 figcenter">
 <h1>Réseau</h1>
-</section><section id="stockage" class="slide level2">
+<figure>
+<img src="img/hyperSwitch.jpg" alt="Cloud Network" /><figcaption>Cloud Network</figcaption>
+</figure>
+</section><section id="stockage" class="slide level2 figcenter">
 <h1>Stockage</h1>
-</section></section>
-<section><section id="virtualisation" class="titleslide slide level1"><h1>Virtualisation</h1></section><section id="virtuparavirtu" class="slide level2">
-<h1>Virtu/paravirtu</h1>
-</section><section id="conteneurs" class="slide level2">
-<h1>Conteneurs</h1>
-</section><section id="convergence-1" class="slide level2">
-<h1>Convergence</h1>
+<figure>
+<img src="img/hyperStorage.jpg" alt="Cloud Storage" /><figcaption>Cloud Storage</figcaption>
+</figure>
+</section><section id="climatisation" class="slide level2 figcenter">
+<h1>Climatisation</h1>
+<figure>
+<img src="img/chaudfroid.png" alt="Couloirs Chauds/Froids" /><figcaption>Couloirs Chauds/Froids</figcaption>
+</figure>
+</section><section id="electricité" class="slide level2">
+<h1>Electricité</h1>
+<ul>
+<li class="fragment">L'energie représente ~40% du coût d'exploitation</li>
+<li class="fragment">le refroidissement 40% à 50%</li>
+<li class="fragment">datacenter moderne et optimisé = 1.5 à 3KW/m2</li>
+</ul>
+<p><code class="note fragment">GREEN IT</code></p>
+</section><section id="exemple-dinfrastructure-cloud" class="slide level2">
+<h1>Exemple d'infrastructure Cloud</h1>
+<ul>
+<li class="fragment">Cas pratique : Constitution d'un cloud Openstack
+<ul>
+<li class="fragment">10 serveurs</li>
+<li class="fragment">reliés sur au moins 3 réseaux différents
+<ul>
+<li class="fragment">Admin</li>
+<li class="fragment">Stockage</li>
+<li class="fragment">Traffic réseau</li>
+</ul></li>
+<li class="fragment">Répartitions des rôles sur les différents serveurs pour limiter les SPOFs
+<ul>
+<li class="fragment">3 Contrôleurs (NOVA/HORIZON)</li>
+<li class="fragment">3 Computes (NOVA/NEUTRON)</li>
+<li class="fragment">1 Networks (NEUTRON)</li>
+<li class="fragment">3 Stockages (CINDER/SWIFT/CEPH)</li>
+</ul></li>
+<li class="fragment">Accès et exploitation via API / Dashboard</li>
+</ul></li>
+</ul>
 </section></section>
 <section><section id="mots-clés" class="titleslide slide level1"><h1>Mots clés</h1></section><section id="abstraction-api" class="slide level2">
 <h1>Abstraction (api)</h1>
@@ -654,17 +695,28 @@
 <li class="fragment">hétérogènes</li>
 </ul>
 <p>ex: seti@home</p>
+</section><section id="high-availability" class="slide level2">
+<h1>high availability</h1>
+</section><section id="prapca" class="slide level2">
+<h1>pra/pca</h1>
+</section><section id="cdn" class="slide level2">
+<h1>cdn</h1>
+</section><section id="devops" class="slide level2">
+<h1>devops</h1>
 </section></section>
 <section><section id="enjeux-avenir" class="titleslide slide level1"><h1>Enjeux / Avenir</h1></section><section id="sécurité" class="slide level2">
-<h1>sécurité</h1>
+<h1>Sécurité</h1>
 <ul>
-<li class="fragment"><p>Cloud SEcurity Aliance</p></li>
-<li class="fragment"><p>Localisation</p></li>
-<li class="fragment"><p>Audit</p></li>
-<li class="fragment"><p>mise à jour</p></li>
+<li class="fragment">Cloud Security Alliance</li>
+<li class="fragment">Localisation</li>
+<li class="fragment">Audit</li>
+<li class="fragment">mise à jour</li>
 </ul>
 </section><section id="responsabilitées" class="slide level2">
 <h1> Responsabilitées</h1>
+<ul>
+<li class="fragment"></li>
+</ul>
 </section><section id="confidentialité" class="slide level2">
 <h1>confidentialité</h1>
 <ul>
@@ -684,21 +736,73 @@
 </section><section id="écologie" class="slide level2">
 <h1> Écologie</h1>
 </section></section>
-<section><section id="try-the-cloud" class="titleslide slide level1"><h1>Try the Cloud</h1></section><section id="saas-1" class="slide level2">
-<h1>Saas</h1>
-<pre><code>SaaS : créer un wordpress</code></pre>
-</section><section id="paas-1" class="slide level2">
-<h1>Paas</h1>
-<pre><code>Paas : déployer une appli heroku</code></pre>
-</section><section id="iaas-1" class="slide level2">
-<h1>Iaas</h1>
-<pre><code>Iaas : Utiliser un devstack : créer une appli Rok4?</code></pre>
-</section><section id="faas" class="slide level2">
-<h1>Faas</h1>
-<pre><code>FaaS?  </code></pre>
-</section><section id="saas-2" class="slide level2">
-<h1>Saas</h1>
-<pre><code>public cloud :  ex on azure OR aws</code></pre>
+<section><section id="try-it-yourself" class="titleslide slide level1"><h1>Try it Yourself</h1></section><section id="tp-comparaison" class="slide level2">
+<h1>TP comparaison</h1>
+<ul>
+<li class="fragment">Objectif : Comparer les différents types de virtualisation
+<ul>
+<li class="fragment">system</li>
+<li class="fragment">stockage</li>
+<li class="fragment">réseau</li>
+</ul></li>
+</ul>
+</section><section id="comparaison-systeme" class="slide level2">
+<h1>Comparaison systeme</h1>
+<ul>
+<li>compilation d'un code calculant les <strong>n</strong> nombres premiers</li>
+</ul>
+<pre><code>wget -O prime.c https://codepaste.net/p2nsne</code></pre>
+<pre><code>gcc prime.c -o prime</code></pre>
+<pre><code>time ./prime 10000</code></pre>
+<pre><code>Calcul des 10000 premiers nombres premiers
+real    0m1.573s
+user    0m1.572s
+sys     0m0.000s</code></pre>
+</section><section id="comparaison-systeme-1" class="slide level2">
+<h1>Comparaison systeme</h1>
+<ul>
+<li>Lancement via Docker (présent sur votre machine)</li>
+</ul>
+<ul>
+<li>Dans un fichier <strong>Dockerfile</strong> :</li>
+</ul>
+<pre><code>FROM debian
+ADD ./prime /prime
+CMD [ ./prime 0 ]</code></pre>
+<pre><code>docker build -t prime .</code></pre>
+<pre><code>time docker run -ti prime /prime 10000</code></pre>
+<pre><code>Calcul des 10000 premiers nombres premiers
+real    0m2.246s
+user    0m0.012s
+sys     0m0.004s</code></pre>
+</section><section id="comparaison-systeme-2" class="slide level2">
+<h1>Comparaison systeme</h1>
+<ul>
+<li>Lancement dans un émulateur arm</li>
+</ul>
+<pre><code>sudo apt-get install qemu-system-arm</code></pre>
+<ul>
+<li>récupérer les fichiers nécéssaires sur <strong>https://people.debian.org/~aurel32/qemu/armel/</strong> lancer l'émulateur</li>
+</ul>
+<pre><code>qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -append &quot;root=/dev/sda1&quot; -hda debian_wheezy_armel_standard.qcow2</code></pre>
+<ul>
+<li>Ajouter/compiler le binaire <strong>prime</strong> dans la VM puis tester de la même manière</li>
+</ul>
+<pre><code>Calcul des 10000 premiers nombres premiers
+real    0m36.174s
+user    0m36.130s
+sys     0m0.010s</code></pre>
+</section><section id="tp-saas" class="slide level2">
+<h1>TP Saas</h1>
+<p>Objectif : déployer une application Saas</p>
+<p>Wordpress</p>
+</section><section id="tp-paas" class="slide level2">
+<h1>TP Paas</h1>
+<p>Objectif : déployer une appli Paas</p>
+<p>Heroku</p>
+</section><section id="tp-iaas" class="slide level2">
+<h1>TP Iaas</h1>
+<p>Objectif : Créer une infra minimale en Iaas</p>
 </section></section>
             </div>
         </div>
