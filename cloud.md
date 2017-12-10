@@ -11,8 +11,8 @@ date : 12/12/2017 - IGN/ENSG
 ## Plan de la présentation ##{.planPrez}
 
 - Concepts / Définitions
-    - a
-    - b
+    -  TODO
+
 - Technologies
     - c
 - Enjeux / Avenir
@@ -112,7 +112,7 @@ storage, applications, and services) that can be rapidly provisioned and release
 minimal management effort or service provider interaction. This cloud model is composed
 of five essential characteristics, three service models, and four deployment models.
 
-## Les caractéristiques ## {.cloudCarac}
+## Caractéristiques ## {.cloudCarac}
 
 - Libre-service et à la demande (paiement à l’usage)
 - Accessible sur l'ensemble d'un réseau
@@ -126,33 +126,8 @@ of five essential characteristics, three service models, and four deployment mod
 </aside>
 
 
-## Cloud ##
 
-- Niveau de service : Engagement sur :
-    - Disponibilité garantie (en %) 
-    - Garantie de temps d’intervention et rétablissement
-    - Qualité de service (performance)
-
-- Confidentialité : Vigilance sur :
-    - Les systèmes de  gestion des accès / mécanismes de cloisonnement entre clients
-    - Localisation des centre de données (hors UE) et nationalité du fournisseur (EU, Patriot Act)
-
-<aside class="notes">
-   
-</aside>
-
-
-## Cloud ## 
-
-- Responsabilités :
-    - Définir les périmètres respectifs
-    - Établir des pénalités et permettre des audits
-
-- Réversibilité  (Entrante et Sortante)
-    - S’assurer de la possibilité d'export des données et de leurs exploitabilités
-
-
-## Modèle de service ## {.cloudServices .figcenter}
+## Modèles de service ## {.cloudServices .figcenter}
 
 ![](img/Colloc.png)
 
@@ -168,15 +143,18 @@ of five essential characteristics, three service models, and four deployment mod
    
 </aside>
 
+
 # SaaS  #
 
 ## Software As A Service ##
 
-C'est une application identifié, fournie à la demande pour un utilisateur, l'application et les données sont hébergées dans les datacenter du fournisseur. En général elle est hautement configurable.
+C'est une application identifié, fournie à la demande pour un utilisateur, l'application et les données sont hébergées dans les Datacenters du fournisseur. En général elle est hautement configurable.
+
 * Wordpress.com
 * Solutions de paiement en ligne
 * Messagerie/Bureautique (office 365)
-On peut intégrer les offres de sauvegarde en ligne dans cette catégorie (icloud / dropbox ...).
+
+`On peut intégrer les offres de sauvegarde en ligne dans cette catégorie (icloud / dropbox ...).`{.fragment .note}
 
 ## Software As A Service ## {.figcenter}
 
@@ -184,7 +162,8 @@ On peut intégrer les offres de sauvegarde en ligne dans cette catégorie (iclou
 
 ## Usages ##
 
-Avantages inconveniant risques?
+Avantages inconvénient risques?
+TODO
 
 <aside class="notes">
    
@@ -194,7 +173,8 @@ Avantages inconveniant risques?
 
 ## Platform As A Service ## 
 
-Cette fois ci, le fournisseur propose un support pour votre propre application. Un Paas est constitué d'outils permettant la compilation et/ou le déploiement de code source dans un langage défini. Ce code est ensuite instancié (ou pas) à la manière du __Saas__ pour mettre à disposition l'application developée.
+Cette fois ci, le fournisseur propose un support pour votre propre application. Un Paas est constitué d'outils permettant la compilation et/ou le déploiement de code source dans un langage défini. Ce code est ensuite instancié (ou pas) à la manière du **Saas** pour mettre à disposition l'application developée.
+
 * Google App Engine
 * Heroku
 * ...
@@ -207,6 +187,8 @@ Cette fois ci, le fournisseur propose un support pour votre propre application. 
 ## Usages ##
 
 Avantages inconvénients risques?
+TODO
+
 
 <aside class="notes">
    
@@ -229,6 +211,8 @@ Le tout est facturé à la consomation.
 ## Usages ##
 
 Avantages inconvénients risques?
+TODO
+
 
 <aside class="notes">
    
@@ -239,51 +223,20 @@ Avantages inconvénients risques?
 
 ## X (Everything) As A Service ##
 
-On peut étendre la notion de **As A Service** à d'autre types de services. Stockage,  sécurité, base de données...  Une  évolution récente et notable concerne l'évolution du Paas avec le service **Lambda** d'AWS ou encore ** Google Cloud Function **.
+On peut étendre la notion de **As A Service** à d'autre types de services. Stockage,  sécurité, base de données...  Une  évolution récente et notable concerne l'évolution du Paas avec le service **Lambda** d'AWS ou encore **Google Cloud Function**.
 Avec ces **Function As A Service**, vous pousser le code d'une fonction dans le service et celle ci est exécuté, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés pas tranche de 100ms d’exécution. On parle de **Serverless Computing**
 
 
 ## Usages ##
 
 Avantages inconvénients risques?
+TODO
 
 
 
 <aside class="notes">
    
 </aside>
-
-
-# Cloud Privé #
-
-## Définition ##
-
-
-
-
-
-# Cloud Public #
-
-## Définition ##
-
-
-
-
-# Cloud Hybride #
-
-## Définition ##
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -295,7 +248,7 @@ Avantages inconvénients risques?
 * Architectures
 * Virtualisation
 * Matériel
-* Méthodologie
+* Mots-clés
 
 <aside class="notes">
    
@@ -310,8 +263,7 @@ Avantages inconvénients risques?
     * Stockage
     * Réseau
     * ...
-* Sécurité    
-
+* ressources
 
 <aside class="notes">
     
@@ -615,11 +567,6 @@ Avantages inconvénients risques?
 </aside>
 
 
-
-
-
-
-
 # Ressources Physiques #
 
 
@@ -659,7 +606,20 @@ Avantages inconvénients risques?
 - le refroidissement 40% à 50%
 - datacenter moderne et optimisé = 1.5 à 3KW/m2
 
+- exemple récent de l'envollé du bitcoin : en 2020 le calcul de la blockchain consommera toute l'énergie de la planète.
+
 `GREEN IT`{.note .fragment}
+
+<aside class="notes">
+
+Au moins 77 KWh pour une transaction
+
+une des dernières estimations de la consommation annuelle du minage de Bitcoin est de 23,07 terawattheure.
+
+
+
+</aside>
+
 
 
 ## Exemple d'infrastructure Cloud ## 
@@ -682,59 +642,113 @@ Avantages inconvénients risques?
 
 ## Abstraction (api) ##
 
+Une **API** (Application Programming Interface) Permet de faire abstraction de l'élément sur lequel elle se pose. 
+Elle décrit comment le consommateur peut utiliser les fonctions du fournisseur. 
+Dans la Cloud il est primordial que le maximum d'échanges se fassent au travers d'API pour garantir l’interopérabilité. 
+
+
 ## Interopérabilité ##
+
+C'est la faculté qu'un système a de s'interfacer avec un autre sans le connaître. Interopérabilité est primordiale dans un environnement hétérogène. Ceci est notamment faisable grâce à la description complète des interfaces de ce système et à l'utilisation de format d'échanges normés ou standardisés.
+
 
 ## InfraAsCode ##
 
+l'**Infrastructure As A Code** désigne les technique permettant de définir une infrastructure pas du code source. cette dernière est alors totalement automatisable et ré-instanciable à la demande. Ceci est possible lorsque tous les éléments de l'infrastructure à été virtualisé.
+
+
 ## WebServices ##
+
+Les **Service Web** désigne plusieurs chose mais principalement un concept d'API exposé sur le WEB utilisant une technologie d'échange, le plus souvent en mode **SOA** (Architecture orienté service) ou des fonctions sont exécutée à distance.
+
+Les API RESTful sont grandement utilisé dans le monde des Webservices. (HTTP + CRUD)
+
 
 ## ServerLess ##
 
+**ServerLess** désigne les services proposé en mode Cloud qui ne comprennent pas la livraison d'une machine pour réaliser l'opération, l'appel au service génère une mise à disposition de ressource en fonction de la charge nécessaire à l’exécution de la demande et la libère instantanément.
+
+
 ## Microservices ##
+
+
+TODO
+
+
+## StateLess ##
+
+TODO
+
 
 ## autonomic computing ##
 
  (IBM autoréparation des programme)
+ TODO
+
+
 
 ## Systèmes repartis ##
 
-- scalable
-- hétérogènes
+Un système réparti est un SI dans le quel l'information et l’exécution est distribuée sur un ensemble de nœuds constituant un Cluster. Cet ensemble peut être hétérogène et doit être scalable.
 
 ex: seti@home
 
-## high availability ##
 
-## pra/pca ##
+## High Availability ##
 
-## cdn ##
+la **HA** désigne la capacité d'un système à *survivre* à la perte d'un élément de son infrastructure. Ceci en permettant l'utilisation d'une autre ressource de façon transparente pour l'utilisateur. On élimine ainsi les SPOF (*Single Point Of Failure*). Un **Load-balancer** permet la HA des service Web par exemple.
 
-## devops ## 
+## PRA/PCA ##
+
+* PRA  : Plan de reprise d'activité. Désigne le fait qu'il existe une solution pour reprendre l'activité d'un SI après un temps prévu (le plus court possible)
+
+* PCA : Plan de continuité d'activité. Une solution existe pour continuer l'activité d'un service en cas de perte d'un élément constituant ce service (peut être un Datacenter tout entier, il faut donc alors basculer sur un autre Datacenter de façon transparente pour l’utilisateur).
 
 
+## CDN ##
+
+**Content Delivery Network** désigne un réseau synchronisé de serveurs permettant la diffusion de données au plus près de l'utilisateur (géographiquement parlant) afin de limiter l'effet de latence.
 
 
+## Devops ## 
+
+**Devops** désigne un courant de pensée informatique visant à éliminer le conflit entre les **Développeurs** qui souhaitent faire évoluer un SI et les **Opérationnels** qui souhaitent avoir un SI le plus Stable possible.
+
+Il est née de l'utilisation de bout en bout des méthodes **Agiles**
 
 
-# Enjeux / Avenir #
+# Enjeux - Avenir #
+
+
+## Responsabilite ##
+
+- Niveau de service : Engagement sur :
+    - Disponibilité garantie (en %) 
+    - Garantie de temps d’intervention et rétablissement
+    - Qualité de service (performance)
+
+- Responsabilités :
+    - Définir les périmètres respectifs
+    - Établir des pénalités et permettre des audits
+
+- Réversibilité  (Entrante et Sortante)
+    - S’assurer de la possibilité d'export des données et de leurs exploitabilités
+
+<aside class="notes">
+   
+</aside>
+
 
 ## Sécurité ##
 
 - Cloud Security Alliance
-- Localisation
-- Audit
-- mise à jour
-
-
-## Responsabilitées ##
-
--
-
-
-## confidentialité ##
-
-- Chiffrement
-- isolation
+- Confidentialité : Vigilance sur :
+    - Les systèmes de  gestion des accès / mécanismes de cloisonnement entre clients
+    - Localisation des centre de données (hors UE) et nationalité du fournisseur (EU, Patriot Act)
+- Audit fréquents à tous les niveaux
+- Mise à jour régulière et systématique
+- Chiffrement des flux
+- Isolation des composants
 
 ## Interopérabilité ##
 
@@ -744,33 +758,17 @@ ex: seti@home
 
 ## Open source ##
 
-
+TODO
 
 
 ## Trafic réseau ##
 
-
-
-
-## Écologie ##
-
+TODO
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-# Try it Yourself #
+# Try It Yourself #
 
 ## TP comparaison ##
 
@@ -784,7 +782,7 @@ ex: seti@home
 > - compilation d'un code calculant les **n** nombres premiers
 
 ``` 
-wget -O prime.c https://codepaste.net/p2nsne
+wget -O prime.c https://codepaste.net/TODO
 ```
 ``` 
 gcc prime.c -o prime
@@ -845,18 +843,37 @@ sys     0m0.010s
 
 ## TP Saas ##
 
-Objectif : déployer une application Saas
+**Objectif** : déployer une application Saas
 
-Wordpress
+Connectez vous sur le site Wordpress.com. c'est un service de SaaS basé sur le CMS(Content Managment System) Open source Wordpress, disponible sur le site wordpress.org 
+
+Laissez vous guider dans la création de votre site.
+Pous pouvez ensuite faire des modifications sommaires sur la page d'accueil.
+
+`Question : D'après vous, quelle différence peut-on noter entre le logiciel Wordpress et le service de Saas Wordpress.com `{.note}
+
+`Question : Quels éléments faudrait-il mettre en place pour proposer notre propre service de Saas basé sur Wordpress?`{.note}
+
+
 
 ## TP Paas ##
 
 Objectif : déployer une appli Paas
 
-Heroku
+L'objectif ici est de déployer une application à partir d'un code source.
+
+- Connectez vous sur la plateforme Paas Heroku.com et créez un compte
+- Suivez le https://devcenter.heroku.com/start pour créer une application node.js
+
+`Question : Une fois le tutoriel de base réalisé. Trouvez une solution pour déployer le code suivant dans une nouvelle application sans utiliser l'outil CLI heroku-toolbelt. Donnez une explication des technologies qui selon vous sont misent en oeuvre ici. `{.note}
+
+> https://github.com/cedricici/findmefast.git
+
 
 ## TP Iaas ##
 
 Objectif : Créer une infra minimale en Iaas
 
-
+Utilisez la VM devstack fournie pour tester le déploiement d'une application n-tiers
+Vous aurez besoin de définir 
+- un réseau 
