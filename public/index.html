@@ -60,18 +60,30 @@
                 <!-- - -toc/- -table-of-contents -->
 
             <!-- ne pas indenter le $body$ sinon les codes (highlight) vont l'être aussi !!! -->
-<section><section id="cloud-computing" class="titleslide slide level1"><h1>Cloud Computing</h1></section><section id="plan-de-la-présentation" class="slide level2 planPrez">
+<section><section id="cloud-computing" class="titleslide slide level1"><h1>Cloud Computing</h1></section><section id="plan-de-la-présentation" class="slide level2">
 <h1>Plan de la présentation</h1>
 <ul>
-<li class="fragment"><p>Concepts</p></li>
-<li class="fragment"><p>Technologies</p></li>
-<li class="fragment"><p>Enjeux</p></li>
+<li class="fragment">Concepts</li>
+<li class="fragment">Définitions
+<ul>
+<li class="fragment">Saas</li>
+<li class="fragment">Paas</li>
+<li class="fragment">Iaas</li>
+<li class="fragment">Xaas</li>
+</ul></li>
+<li class="fragment">Technologies
+<ul>
+<li class="fragment">Architectures</li>
+<li class="fragment">Convergence</li>
+<li class="fragment">Virtualisation</li>
+<li class="fragment">Ressources</li>
+<li class="fragment">Mots-clés</li>
+</ul></li>
+<li class="fragment">Enjeux</li>
+<li class="fragment">DiY</li>
 </ul>
 <aside class="notes">
-   
 </aside>
-
-
 </section></section>
 <section><section id="concepts" class="titleslide slide level1"><h1>Concepts</h1></section><section id="les-origines" class="slide level2">
 <h1>Les Origines</h1>
@@ -82,10 +94,7 @@
 </ul>
 <p><code class="note fragment">Amazon a eu l'idée de mettre à la disposition du public son énorme infrastructure mondiale, dimensionnée pour les pics (Noël...) et sous-utilisée le reste du temps</code></p>
 <aside class="notes">
-   
 </aside>
-
-
 </section><section id="un-besoin-dindustrialisation" class="slide level2">
 <h1>Un besoin d'industrialisation</h1>
 <p>Les entreprises souhaitent en finir avec les pannes informatiques.</p>
@@ -95,10 +104,7 @@
 <li class="fragment">Cela libère des ressources IT pour faire du <em>Business</em> plutôt que réparer le SI</li>
 </ul>
 <aside class="notes">
-   
 </aside>
-
-
 </section><section id="un-besoin-de-rationalisation" class="slide level2">
 <h1>Un besoin de rationalisation</h1>
 <p>Les entreprises ont besoin de baisser les coûts et d'utiliser au maximum l'investissement du très cher matériel informatique.</p>
@@ -120,10 +126,8 @@
 </ul></li>
 </ul>
 <aside class="notes">
-   
 <p>POS : Plan d'occupation du Sol appliqué au SI</p>
 </aside>
-
 </section><section id="transformation-difficile" class="slide level2">
 <h1>Transformation difficile</h1>
 <ul>
@@ -154,10 +158,7 @@
 </ul></li>
 </ul>
 <aside class="notes">
-   
 </aside>
-   
-
 </section></section>
 <section><section id="définitions" class="titleslide slide level1"><h1>Définitions</h1></section><section id="cloud" class="slide level2">
 <h1>Cloud</h1>
@@ -178,28 +179,29 @@
 <li class="fragment">Mesurable (statistiques d’usage, ressources …)</li>
 </ul>
 <aside class="notes">
-   
 </aside>
-
 </section><section id="modèles-de-service" class="slide level2">
 <h1>Modèles de service</h1>
-<p>-Saas : SoftWare As A Service -Paas : Platform As A Service -Iaas : Infrastruture As A Service</p>
+<ul>
+<li class="fragment">Saas : SoftWare As A Service</li>
+<li class="fragment">Paas : Platform As A Service</li>
+<li class="fragment">Iaas : Infrastruture As A Service</li>
+</ul>
 </section><section id="modèles-de-service-1" class="slide level2 cloudServices figcenter">
 <h1>Modèles de service</h1>
 <figure>
 <img src="img/Colloc.png" />
 </figure>
 <aside class="notes">
-   
 </aside>
-
 </section><section id="modèles-de-déploiement" class="slide level2">
 <h1>Modèles de déploiement</h1>
 <ul>
-<li class="fragment">Cloud Public Une organisation vend des services accessibles à tous<br /></li>
-<li class="fragment">Cloud Comunautaire L'infrastructure est partagé par plusieurs organismes, elle peut être géré par les organismes ou par une tierce partie</li>
-<li class="fragment">Cloud Privé L'infrastructure est accessible à une seule organisation. Elle peut cependant être géré et hébergée par une tierce partie</li>
-<li class="fragment">Cloud Hybride C'est une composition d'un cloud privé et d'une cloud public ou communautaire pour absorber les pics de charge (Clud Bursting)</li>
+<li class="fragment">Cloud Public Une organisation vend des services accessibles à tous<br />
+</li>
+<li class="fragment">Cloud Communautaire L'infrastructure est partagé par plusieurs organismes, elle peut être géré par les organismes ou par une tierce partie</li>
+<li class="fragment">Cloud Privé L'infrastructure est accessible à une seule organisation. Elle peut cependant être gérée et hébergée par une tierce partie</li>
+<li class="fragment">Cloud Hybride C'est une composition d'un Cloud privé et d'un Cloud public ou communautaire pour absorber les pics de charge (Clud Bursting)</li>
 </ul>
 </section><section id="modèles-de-déploiement-1" class="slide level2 cloudDeploy figcenter">
 <h1>Modèles de déploiement</h1>
@@ -207,10 +209,7 @@
 <img src="img/Clouds.png" />
 </figure>
 <aside class="notes">
-   
 </aside>
-
-
 </section></section>
 <section><section id="saas" class="titleslide slide level1"><h1>SaaS</h1></section><section id="software-as-a-service" class="slide level2">
 <h1>Software As A Service</h1>
@@ -242,13 +241,11 @@
 </ul></li>
 </ul>
 <aside class="notes">
-   
 </aside>
-
 </section></section>
 <section><section id="paas" class="titleslide slide level1"><h1>Paas</h1></section><section id="platform-as-a-service" class="slide level2">
 <h1>Platform As A Service</h1>
-<p>Cette fois ci, le fournisseur propose un support pour votre propre application. Un Paas est constitué d'outils permettant la compilation et/ou le déploiement de code source dans un langage défini. Ce code est ensuite instancié (ou pas) à la manière du <strong>Saas</strong> pour mettre à disposition l'application developée.</p>
+<p>Cette fois ci, le fournisseur propose un support pour votre propre application. Un <strong>Paas</strong> est constitué d'outils permettant la compilation et/ou le déploiement de code source dans un langage défini. Ce code est ensuite instancié (ou pas) à la manière du <strong>Saas</strong> pour mettre à disposition l'application développée.</p>
 <ul>
 <li class="fragment">Google App Engine</li>
 <li class="fragment">Heroku</li>
@@ -265,8 +262,8 @@
 <li class="fragment">Avantages
 <ul>
 <li class="fragment">plus besoin de maintenir les OS</li>
-<li class="fragment">la sécurité se limitre à celle de l'application</li>
-<li class="fragment">réactivitée maximale (Devops)</li>
+<li class="fragment">la sécurité se limite à celle de l'application</li>
+<li class="fragment">réactivité maximale (Devops)</li>
 </ul></li>
 <li class="fragment">Inconvénients
 <ul>
@@ -276,13 +273,11 @@
 </ul></li>
 </ul>
 <aside class="notes">
-   
 </aside>
-
 </section></section>
 <section><section id="iaas" class="titleslide slide level1"><h1>Iaas</h1></section><section id="infrastructure-as-a-service" class="slide level2">
 <h1>Infrastructure As A Service</h1>
-<p>C'est la base du Cloud Computing, ici le fournisseur offre du CPU, de la RAM, du stockage, du réseau et éventuellements d'autres services d'infrastructures (FireWall, VPN ...). Le client construit son architecture, ajoute des réseaux, des machines virtuelles, des volumes de stockages persistant... Il installe ensuite les systèmes d'exploitations qu'il désire, les application qu'il souhaite et propose (ou non) ces services sur le réseau (internet ou autre). Le tout est facturé à la consomation.</p>
+<p>C'est la base du Cloud Computing, ici le fournisseur offre du CPU, de la RAM, du stockage, du réseau et éventuellement d'autres services d'infrastructures (FireWall, DNS, VPN ...). Le client construit son architecture, ajoute des réseaux, des machines virtuelles, des volumes de stockages persistant... Il installe ensuite les systèmes d'exploitations qu'il désire, les applications qu'il souhaite et propose (ou non) ces services sur le réseau (internet ou autre). Le tout est facturé à la consommation.</p>
 </section><section id="infrastructure-as-a-service-1" class="slide level2 figcenter">
 <h1>Infrastructure As A Service</h1>
 <figure>
@@ -293,7 +288,7 @@
 <ul>
 <li class="fragment">Avantages
 <ul>
-<li class="fragment">contrôle de l'architecture jusqu'à l'OS, nécéssaire pour une gestion accru de la sécuritée. Seule la partie matérielle est déléguée au fournisseur.</li>
+<li class="fragment">contrôle de l'architecture jusqu'à l'OS, nécessaire pour une gestion accru de la sécurité. Seule la partie matérielle est déléguée au fournisseur.</li>
 </ul></li>
 <li class="fragment">Inconvénients
 <ul>
@@ -303,19 +298,13 @@
 </ul></li>
 </ul>
 <aside class="notes">
-   
 </aside>
-
 </section></section>
 <section><section id="xaas" class="titleslide slide level1"><h1>Xaas</h1></section><section id="x-everything-as-a-service" class="slide level2">
 <h1>X (Everything) As A Service</h1>
-<p>On peut étendre la notion de <strong>As A Service</strong> à d'autre types de services. Stockage, sécurité, base de données... Une évolution récente et notable concerne l'évolution du Paas avec le service <strong>Lambda</strong> d'AWS ou encore <strong>Google Cloud Function</strong>. Avec ces <strong>Function As A Service</strong>, vous pousser le code d'une fonction dans le service et celle ci est exécuté, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés pas tranche de 100ms d’exécution. On parle de <strong>Serverless Computing</strong></p>
+<p>On peut étendre la notion de <strong>As A Service</strong> à d'autre types de services. Stockage, sécurité, base de données... Une évolution récente et notable concerne l'évolution du <strong>Paas</strong> avec le service <strong>Lambda</strong> d'AWS ou encore <strong>Google Cloud Function</strong>. Avec ces <strong>Function As A Service</strong>, vous poussez le code d'une fonction dans le service et celle ci est exécutée, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés pas tranche de 100ms d’exécution. On parle de <strong>Serverless Computing</strong></p>
 <aside class="notes">
-   
 </aside>
-
-
-
 </section></section>
 <section><section id="techno-du-cloud" class="titleslide slide level1"><h1>Techno du Cloud</h1></section><section id="panorama" class="slide level2">
 <h1>Panorama</h1>
@@ -326,9 +315,7 @@
 <li class="fragment">Mots-clés</li>
 </ul>
 <aside class="notes">
-   
 </aside>
-
 </section><section id="architectures" class="slide level2">
 <h1>Architectures</h1>
 <ul>
@@ -344,9 +331,7 @@
 <li class="fragment">ressources</li>
 </ul>
 <aside class="notes">
-    
 </aside>
-
 </section></section>
 <section><section id="architecture-scalable" class="titleslide slide level1"><h1>Architecture Scalable</h1></section><section id="architectures-évolutives" class="slide level2">
 <h1>Architectures évolutives</h1>
@@ -373,9 +358,7 @@
 </ul></li>
 </ul>
 <aside class="notes">
-    
 </aside>
-
 </section></section>
 <section><section id="convergence" class="titleslide slide level1"><h1>Convergence</h1></section><section id="architecture-non-convergée" class="slide level2 figcenter">
 <h1>Architecture non convergée</h1>
@@ -394,10 +377,7 @@
 </ul></li>
 </ul>
 <aside class="notes">
-
 </aside>
-
-
 </section><section id="architecture-convergée" class="slide level2 figcenter">
 <h1>Architecture convergée</h1>
 <figure>
@@ -409,9 +389,7 @@
 <li class="fragment">Infrastructure avec un réseau unifiée</li>
 </ul>
 <aside class="notes">
-
 </aside>
-
 </section><section id="et-hyperconvergée" class="slide level2 figcenter">
 <h1>... et hyperconvergée</h1>
 <figure>
@@ -426,10 +404,7 @@
 <li class="fragment">Automatisée via une solution de pilotage logicielle (Software defined)</li>
 </ul>
 <aside class="notes">
-
 </aside>
-
-
 </section></section>
 <section><section id="usages-de-la-virtualisation" class="titleslide slide level1"><h1>Usages de la virtualisation</h1></section><section id="virtualisation-du-système" class="slide level2">
 <h1>Virtualisation du système</h1>
@@ -442,10 +417,7 @@
 <li class="fragment">Émulation (cpu différent)</li>
 </ul>
 <aside class="notes">
-    
 </aside>
-
-
 </section><section id="isolation-applicative" class="slide level2">
 <h1>Isolation applicative</h1>
 <ul>
@@ -460,9 +432,7 @@
 <img src="img/Diagramme_ArchiIsolateur.png" title="© Primalmotion-Wikipedia" alt="isolation" /><figcaption>isolation</figcaption>
 </figure>
 <aside class="notes">
-
 </aside>
-
 </section><section id="isolation-applicative-2" class="slide level2">
 <h1>Isolation applicative</h1>
 <ul>
@@ -481,10 +451,7 @@
 </ul></li>
 </ul>
 <aside class="notes">
-
 </aside>
-
-
 </section><section id="hyperviseur-de-type-1" class="slide level2">
 <h1> Hyperviseur de type 1</h1>
 <ul>
@@ -500,9 +467,7 @@
 <img src="img/Diagramme_ArchiHyperviseur.png" title="© Primalmotion-Wikipedia" alt="Hyperviseur I" /><figcaption>Hyperviseur I</figcaption>
 </figure>
 <aside class="notes">
-
 </aside>
-
 </section><section id="hyperviseur-de-type-1-2" class="slide level2">
 <h1> Hyperviseur de type 1</h1>
 <ul>
@@ -520,9 +485,7 @@
 </ul></li>
 </ul>
 <aside class="notes">
-
 </aside>
-
 </section><section id="hyperviseur-de-type-2" class="slide level2">
 <h1> Hyperviseur de type 2</h1>
 <ul>
@@ -537,10 +500,7 @@
 <img src="img/Diagramme_ArchiEmulateur.png" title="© Primalmotion-Wikipedia" alt="Hyperviseur II" /><figcaption>Hyperviseur II</figcaption>
 </figure>
 <aside class="notes">
-
 </aside>
-
-
 </section><section id="hyperviseur-de-type-2-2" class="slide level2">
 <h1>Hyperviseur de type 2</h1>
 <ul>
@@ -557,9 +517,7 @@
 </ul></li>
 </ul>
 <aside class="notes">
-
 </aside>
-
 </section><section id="émulateur" class="slide level2">
 <h1>Émulateur</h1>
 <ul>
@@ -571,9 +529,7 @@
 <li class="fragment">Ex : Android Virtual device ...</li>
 </ul>
 <aside class="notes">
-
 </aside>
-
 </section><section id="virtualisation-du-réseau" class="slide level2">
 <h1>Virtualisation du réseau</h1>
 <ul>
@@ -584,18 +540,14 @@
 </ul></li>
 </ul>
 <aside class="notes">
-
 </aside>
-
 </section><section id="virtualisation-du-réseau-1" class="slide level2 figcenter">
 <h1>Virtualisation du réseau</h1>
 <figure>
 <img src="img/VN-tunnel.png" />
 </figure>
 <aside class="notes">
-
 </aside>
-
 </section><section id="virtualisation-du-réseau-2" class="slide level2">
 <h1>Virtualisation du réseau</h1>
 <ul>
@@ -607,10 +559,7 @@
 </ul></li>
 </ul>
 <aside class="notes">
-
 </aside>
-
-
 </section><section id="virtualisation-du-réseau-3" class="slide level2">
 <h1>Virtualisation du réseau</h1>
 <ul>
@@ -623,10 +572,7 @@
 </ul></li>
 </ul>
 <aside class="notes">
-
 </aside>
-
-
 </section><section id="virtualisation-du-stockage" class="slide level2">
 <h1>Virtualisation du stockage</h1>
 <ul>
@@ -644,9 +590,7 @@
 <li class="fragment">EX: VmWare VirtualSAN / CEPH</li>
 </ul>
 <aside class="notes">
-    
 </aside>
-
 </section><section id="software-defined-datacenter" class="slide level2">
 <h1>Software Defined Datacenter</h1>
 <ul>
@@ -661,11 +605,8 @@
 <li class="fragment">Ex: Openstack, Vcloud</li>
 </ul>
 <aside class="notes">
-    
-Seul les yahoo amazon et google peuvent mettre en place de tels mécanismes
+<pre><code>Seul les yahoo amazon et google peuvent mettre en place de tels mécanismes</code></pre>
 </aside>
-
-
 </section><section id="virtualisation-et-sécurité" class="slide level2">
 <h1>Virtualisation et sécurité</h1>
 <ul>
@@ -682,10 +623,7 @@ Seul les yahoo amazon et google peuvent mettre en place de tels mécanismes
 </ul></li>
 </ul>
 <aside class="notes">
-    
 </aside>
-
-
 </section><section id="virtualisation-et-sécurité-1" class="slide level2">
 <h1>Virtualisation et sécurité</h1>
 <ul>
@@ -697,10 +635,7 @@ Seul les yahoo amazon et google peuvent mettre en place de tels mécanismes
 </ul></li>
 </ul>
 <aside class="notes">
-    
 </aside>
-
-
 </section></section>
 <section><section id="ressources-physiques" class="titleslide slide level1"><h1>Ressources Physiques</h1></section><section id="datacenters" class="slide level2 figcenter">
 <h1>Datacenters</h1>
@@ -735,20 +670,18 @@ Seul les yahoo amazon et google peuvent mettre en place de tels mécanismes
 </section><section id="electricité" class="slide level2">
 <h1>Electricité</h1>
 <ul>
-<li class="fragment">L'energie représente ~40% du coût d'exploitation</li>
+<li class="fragment">L’énergie représente ~40% du coût d'exploitation</li>
 <li class="fragment">le refroidissement 40% à 50%</li>
-<li class="fragment"><p>datacenter moderne et optimisé = 1.5 à 3KW/m2</p></li>
-<li class="fragment"><p>exemple récent de l'envollé du bitcoin : en 2020 le calcul de la blockchain consommerai toute l'énergie de la planète.</p></li>
+<li class="fragment">datacenter moderne et optimisé = 1.5 à 3KW/m2</li>
 </ul>
+<p>Exemple récent de l’envolée du Bitcoin : en 2020 le calcul de la blockchain consommerait toute l'énergie de la planète.</p>
 <p><code class="note fragment">GREEN IT</code></p>
 <aside class="notes">
-
-<p>Au moins 77 KWh pour une transaction</p>
+<p>Au moins 77 KWh pour une transaction Bitorent</p>
 <p>une des dernières estimations de la consommation annuelle du minage de Bitcoin est de 23,07 terawattheure.</p>
+<p>Requete Google 0.0003kWh 0.2g CO2 , 7g selon chercheur Wissner-Gross</p>
+<p>L'envoi d’un mail avec une pièce jointe de 1 Mo dégage 19 grammes de CO2 et sa consommation électrique est équivalente à celle d’une ampoule pendant une heure.</p>
 </aside>
-
-
-
 </section><section id="exemple-dinfrastructure-cloud" class="slide level2">
 <h1>Exemple d'infrastructure Cloud</h1>
 <ul>
@@ -774,19 +707,19 @@ Seul les yahoo amazon et google peuvent mettre en place de tels mécanismes
 </section></section>
 <section><section id="mots-clés" class="titleslide slide level1"><h1>Mots clés</h1></section><section id="abstraction-api" class="slide level2">
 <h1>Abstraction (api)</h1>
-<p>Une <strong>API</strong> (Application Programming Interface) Permet de faire abstraction de l'élément sur lequel elle se pose. Elle décrit comment le consommateur peut utiliser les fonctions du fournisseur. Dans la Cloud il est primordial que le maximum d'échanges se fassent au travers d'API pour garantir l’interopérabilité.</p>
+<p>Une <strong>API</strong> (Application Programming Interface) Permet de faire abstraction de l'élément sur lequel elle se pose. Elle décrit comment le consommateur peut utiliser les fonctions du fournisseur. Dans le Cloud il est primordial que le maximum d'échanges se fassent au travers d'API pour garantir l’interopérabilité.</p>
 </section><section id="interopérabilité" class="slide level2">
 <h1>Interopérabilité</h1>
 <p>C'est la faculté qu'un système a de s'interfacer avec un autre sans le connaître. Interopérabilité est primordiale dans un environnement hétérogène. Ceci est notamment faisable grâce à la description complète des interfaces de ce système et à l'utilisation de format d'échanges normés ou standardisés.</p>
 </section><section id="multi-tenant" class="slide level2">
 <h1>Multi-tenant</h1>
-<p>Un SI <strong>multi-tenant</strong> désigne une infrastructure qui partage ses resosurces entre plusieurs clients. Chaque client de doit pas avoir conscience que les autres existent.</p>
+<p>Un SI <strong>multi-tenant</strong> désigne une infrastructure qui partage ses ressources entre plusieurs clients. Chaque client ne doit pas avoir conscience que les autres existent.</p>
 </section><section id="infraascode" class="slide level2">
 <h1>InfraAsCode</h1>
-<p>l'<strong>Infrastructure As A Code</strong> désigne les technique permettant de définir une infrastructure pas du code source. cette dernière est alors totalement automatisable et ré-instanciable à la demande. Ceci est possible lorsque tous les éléments de l'infrastructure à été virtualisé.</p>
+<p>l'<strong>Infrastructure As Code</strong> désigne les technique permettant de définir une infrastructure par du code informatique (script, conf...). La mise en place de cette infrastructure est alors totalement automatisable et ré-instanciable à la demande. Ceci est possible lorsque tous les éléments de l'infrastructure ont été virtualisés.</p>
 </section><section id="webservices" class="slide level2">
 <h1>WebServices</h1>
-<p>Les <strong>Service Web</strong> désigne plusieurs chose mais principalement un concept d'API exposé sur le WEB utilisant une technologie d'échange, le plus souvent en mode <strong>SOA</strong> (Architecture orienté service) ou des fonctions sont exécutée à distance.</p>
+<p>Les <strong>Service Web</strong> désigne plusieurs chose mais principalement un concept d'API exposé sur le WEB utilisant une technologie d'échange, le plus souvent en mode <strong>SOA</strong> (Architecture orienté service) où des fonctions sont exécutées à distance.</p>
 <p>Les API RESTful sont grandement utilisé dans le monde des Webservices. (HTTP + CRUD)</p>
 </section><section id="serverless" class="slide level2">
 <h1>ServerLess</h1>
@@ -838,10 +771,7 @@ Seul les yahoo amazon et google peuvent mettre en place de tels mécanismes
 </ul></li>
 </ul>
 <aside class="notes">
-   
 </aside>
-
-
 </section><section id="sécurité" class="slide level2">
 <h1>Sécurité</h1>
 <ul>
@@ -869,7 +799,7 @@ Seul les yahoo amazon et google peuvent mettre en place de tels mécanismes
 <h1> Trafic réseau</h1>
 <p>TODO</p>
 </section></section>
-<section><section id="try-it-yourself" class="titleslide slide level1"><h1>Try It Yourself</h1></section><section id="tp-comparaison" class="slide level2">
+<section><section id="do-it-yourself" class="titleslide slide level1"><h1>Do It Yourself</h1></section><section id="tp-comparaison" class="slide level2">
 <h1>TP comparaison</h1>
 <ul>
 <li class="fragment">Objectif : Comparer les différents types de virtualisation

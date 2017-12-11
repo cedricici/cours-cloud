@@ -8,14 +8,22 @@ date : 12/12/2017 - IGN/ENSG
 
 # Cloud Computing #
 
-## Plan de la présentation ##{.planPrez}
+## Plan de la présentation ##
 
 - Concepts 
-
+- Définitions
+    - Saas
+    - Paas
+    - Iaas
+    - Xaas
 - Technologies
-
+    - Architectures
+    - Convergence
+    - Virtualisation
+    - Ressources
+    - Mots-clés
 - Enjeux 
-
+- DiY
 
 <aside class="notes">
    
@@ -125,9 +133,9 @@ of **five essential characteristics**, **three service models**, and **four depl
 
 ## Modèles de service ## 
 
--Saas : SoftWare As A Service
--Paas : Platform As A Service
--Iaas : Infrastruture As A Service
+- Saas : SoftWare As A Service
+- Paas : Platform As A Service
+- Iaas : Infrastruture As A Service
 
 
 ## Modèles de service ## {.cloudServices .figcenter}
@@ -142,12 +150,12 @@ of **five essential characteristics**, **three service models**, and **four depl
 
 - Cloud Public
     Une organisation vend des services accessibles à tous    
-- Cloud Comunautaire
+- Cloud Communautaire
     L'infrastructure est partagé par plusieurs organismes, elle peut être géré par les organismes ou par une tierce partie
 - Cloud Privé
-    L'infrastructure est accessible à une seule organisation. Elle peut cependant être géré et hébergée par une tierce partie
+    L'infrastructure est accessible à une seule organisation. Elle peut cependant être gérée et hébergée par une tierce partie
 - Cloud Hybride
-    C'est une composition d'un cloud privé et d'une cloud public ou communautaire pour absorber les pics de charge (Clud Bursting)
+    C'est une composition d'un Cloud privé et d'un Cloud public ou communautaire pour absorber les pics de charge (Clud Bursting)
 
 
 ## Modèles de déploiement ## {.cloudDeploy .figcenter}
@@ -194,11 +202,11 @@ C'est une application identifié, fournie à la demande pour un utilisateur, l'a
 
 ## Platform As A Service ## 
 
-Cette fois ci, le fournisseur propose un support pour votre propre application. Un Paas est constitué d'outils permettant la compilation et/ou le déploiement de code source dans un langage défini. Ce code est ensuite instancié (ou pas) à la manière du **Saas** pour mettre à disposition l'application developée.
+Cette fois ci, le fournisseur propose un support pour votre propre application. Un **Paas** est constitué d'outils permettant la compilation et/ou le déploiement de code source dans un langage défini. Ce code est ensuite instancié (ou pas) à la manière du **Saas** pour mettre à disposition l'application développée.
 
-* Google App Engine
-* Heroku
-* ...
+- Google App Engine
+- Heroku
+- ...
 
 ## Platform As A Service ## {.figcenter}
 
@@ -209,8 +217,8 @@ Cette fois ci, le fournisseur propose un support pour votre propre application. 
 
 - Avantages
     - plus besoin de maintenir les OS
-    - la sécurité se limitre à celle de l'application
-    - réactivitée maximale (Devops)
+    - la sécurité se limite à celle de l'application
+    - réactivité maximale (Devops)
 - Inconvénients
     - visibilité réduite sur la sécurité des couches inférieures
     - **Lock-in** si les API utilisées ne sont pas standardisées.
@@ -226,9 +234,9 @@ Cette fois ci, le fournisseur propose un support pour votre propre application. 
 
 ## Infrastructure As A Service ##
 
-C'est la base du Cloud Computing, ici le fournisseur offre du CPU, de la RAM, du stockage, du réseau et éventuellements d'autres services d'infrastructures (FireWall, VPN ...).
-Le client construit son architecture, ajoute des réseaux, des machines virtuelles, des volumes de stockages persistant... Il installe ensuite les systèmes d'exploitations qu'il désire, les application qu'il souhaite et propose (ou non) ces services sur le réseau (internet ou autre).
-Le tout est facturé à la consomation. 
+C'est la base du Cloud Computing, ici le fournisseur offre du CPU, de la RAM, du stockage, du réseau et éventuellement d'autres services d'infrastructures (FireWall, DNS, VPN ...).
+Le client construit son architecture, ajoute des réseaux, des machines virtuelles, des volumes de stockages persistant... Il installe ensuite les systèmes d'exploitations qu'il désire, les applications qu'il souhaite et propose (ou non) ces services sur le réseau (internet ou autre).
+Le tout est facturé à la consommation. 
 
 ## Infrastructure As A Service ## {.figcenter}
 
@@ -238,7 +246,7 @@ Le tout est facturé à la consomation.
 ## Usages ##
 
 - Avantages
-    - contrôle de l'architecture jusqu'à l'OS, nécéssaire pour une gestion accru de la sécuritée. Seule la partie matérielle est déléguée au fournisseur.
+    - contrôle de l'architecture jusqu'à l'OS, nécessaire pour une gestion accru de la sécurité. Seule la partie matérielle est déléguée au fournisseur.
 - Inconvénients
     - environnement multi-tenant pouvant poser des problèmes de confidentialités si la sécurité n'est pas gérée correctement.
     - visibilité limité sur la politique de sécurité du fournisseur au niveau des hyperviseurs.
@@ -253,8 +261,8 @@ Le tout est facturé à la consomation.
 
 ## X (Everything) As A Service ##
 
-On peut étendre la notion de **As A Service** à d'autre types de services. Stockage,  sécurité, base de données...  Une  évolution récente et notable concerne l'évolution du Paas avec le service **Lambda** d'AWS ou encore **Google Cloud Function**.
-Avec ces **Function As A Service**, vous pousser le code d'une fonction dans le service et celle ci est exécuté, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés pas tranche de 100ms d’exécution. On parle de **Serverless Computing**
+On peut étendre la notion de **As A Service** à d'autre types de services. Stockage,  sécurité, base de données...  Une  évolution récente et notable concerne l'évolution du **Paas** avec le service **Lambda** d'AWS ou encore **Google Cloud Function**.
+Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le service et celle ci est exécutée, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés pas tranche de 100ms d’exécution. On parle de **Serverless Computing**
 
 
 <aside class="notes">
@@ -625,21 +633,23 @@ Avec ces **Function As A Service**, vous pousser le code d'une fonction dans le 
 
 ## Electricité ##
 
-- L'energie représente ~40% du coût d'exploitation
+- L’énergie représente ~40% du coût d'exploitation
 - le refroidissement 40% à 50%
 - datacenter moderne et optimisé = 1.5 à 3KW/m2
 
-- exemple récent de l'envollé du bitcoin : en 2020 le calcul de la blockchain consommerai toute l'énergie de la planète.
+Exemple récent de l’envolée du Bitcoin : en 2020 le calcul de la blockchain consommerait toute l'énergie de la planète.
 
 `GREEN IT`{.note .fragment}
 
 <aside class="notes">
 
-Au moins 77 KWh pour une transaction
+Au moins 77 KWh pour une transaction Bitorent
 
 une des dernières estimations de la consommation annuelle du minage de Bitcoin est de 23,07 terawattheure.
 
+Requete Google 0.0003kWh 0.2g CO2 , 7g selon chercheur Wissner-Gross
 
+L'envoi d’un mail avec une pièce jointe de 1 Mo dégage 19 grammes de CO2 et sa consommation électrique est équivalente à celle d’une ampoule pendant une heure.
 
 </aside>
 
@@ -667,7 +677,7 @@ une des dernières estimations de la consommation annuelle du minage de Bitcoin 
 
 Une **API** (Application Programming Interface) Permet de faire abstraction de l'élément sur lequel elle se pose. 
 Elle décrit comment le consommateur peut utiliser les fonctions du fournisseur. 
-Dans la Cloud il est primordial que le maximum d'échanges se fassent au travers d'API pour garantir l’interopérabilité. 
+Dans le Cloud il est primordial que le maximum d'échanges se fassent au travers d'API pour garantir l’interopérabilité. 
 
 
 ## Interopérabilité ##
@@ -677,17 +687,17 @@ C'est la faculté qu'un système a de s'interfacer avec un autre sans le connaî
 
 ## Multi-tenant ##
 
-Un SI **multi-tenant** désigne une infrastructure qui partage ses resosurces entre plusieurs clients. Chaque client de doit pas avoir conscience que les autres existent.
+Un SI **multi-tenant** désigne une infrastructure qui partage ses ressources entre plusieurs clients. Chaque client ne doit pas avoir conscience que les autres existent.
 
 
 ## InfraAsCode ##
 
-l'**Infrastructure As A Code** désigne les technique permettant de définir une infrastructure pas du code source. cette dernière est alors totalement automatisable et ré-instanciable à la demande. Ceci est possible lorsque tous les éléments de l'infrastructure à été virtualisé.
+l'**Infrastructure As Code** désigne les technique permettant de définir une infrastructure par du code informatique (script, conf...). La mise en place de cette infrastructure est alors totalement automatisable et ré-instanciable à la demande. Ceci est possible lorsque tous les éléments de l'infrastructure ont été virtualisés.
 
 
 ## WebServices ##
 
-Les **Service Web** désigne plusieurs chose mais principalement un concept d'API exposé sur le WEB utilisant une technologie d'échange, le plus souvent en mode **SOA** (Architecture orienté service) ou des fonctions sont exécutée à distance.
+Les **Service Web** désigne plusieurs chose mais principalement un concept d'API exposé sur le WEB utilisant une technologie d'échange, le plus souvent en mode **SOA** (Architecture orienté service) où des fonctions sont exécutées à distance.
 
 Les API RESTful sont grandement utilisé dans le monde des Webservices. (HTTP + CRUD)
 
@@ -789,7 +799,7 @@ TODO
 
 
 
-# Try It Yourself #
+# Do It Yourself #
 
 ## TP comparaison ##
 
