@@ -10,14 +10,12 @@ date : 12/12/2017 - IGN/ENSG
 
 ## Plan de la présentation ##{.planPrez}
 
-- Concepts / Définitions
-    -  TODO
+- Concepts 
 
 - Technologies
-    - c
-- Enjeux / Avenir
-    - d
-    - e
+
+- Enjeux 
+
 
 <aside class="notes">
    
@@ -110,7 +108,7 @@ Le terme Cloud est devenu très englobant. Aujourd'hui il regroupe la fourniture
 access to a shared pool of configurable computing resources (e.g., networks, servers,
 storage, applications, and services) that can be rapidly provisioned and released with
 minimal management effort or service provider interaction. This cloud model is composed
-of five essential characteristics, three service models, and four deployment models.
+of **five essential characteristics**, **three service models**, and **four deployment models**.
 
 ## Caractéristiques ## {.cloudCarac}
 
@@ -125,6 +123,11 @@ of five essential characteristics, three service models, and four deployment mod
    
 </aside>
 
+## Modèles de service ## 
+
+-Saas : SoftWare As A Service
+-Paas : Platform As A Service
+-Iaas : Infrastruture As A Service
 
 
 ## Modèles de service ## {.cloudServices .figcenter}
@@ -134,6 +137,18 @@ of five essential characteristics, three service models, and four deployment mod
 <aside class="notes">
    
 </aside>
+
+## Modèles de déploiement ##
+
+- Cloud Public
+    Une organisation vend des services accessibles à tous    
+- Cloud Comunautaire
+    L'infrastructure est partagé par plusieurs organismes, elle peut être géré par les organismes ou par une tierce partie
+- Cloud Privé
+    L'infrastructure est accessible à une seule organisation. Elle peut cependant être géré et hébergée par une tierce partie
+- Cloud Hybride
+    C'est une composition d'un cloud privé et d'une cloud public ou communautaire pour absorber les pics de charge (Clud Bursting)
+
 
 ## Modèles de déploiement ## {.cloudDeploy .figcenter}
 
@@ -162,8 +177,14 @@ C'est une application identifié, fournie à la demande pour un utilisateur, l'a
 
 ## Usages ##
 
-Avantages inconvénient risques?
-TODO
+- Avantages
+    - indépendant de la technologies sous-jacente = portable
+    - (pratiquement) plus de gestion de la sécurité 
+    - réactivité
+- Inconvénients
+    - limité au service proposé, pas d'adaptation possible
+    - risques liés au multi tenant si mauvaise isolation
+
 
 <aside class="notes">
    
@@ -186,8 +207,14 @@ Cette fois ci, le fournisseur propose un support pour votre propre application. 
 
 ## Usages ##
 
-Avantages inconvénients risques?
-TODO
+- Avantages
+    - plus besoin de maintenir les OS
+    - la sécurité se limitre à celle de l'application
+    - réactivitée maximale (Devops)
+- Inconvénients
+    - visibilité réduite sur la sécurité des couches inférieures
+    - **Lock-in** si les API utilisées ne sont pas standardisées.
+    - risques liés au multi tenant si mauvaise isolation
 
 
 <aside class="notes">
@@ -210,9 +237,12 @@ Le tout est facturé à la consomation.
 
 ## Usages ##
 
-Avantages inconvénients risques?
-TODO
-
+- Avantages
+    - contrôle de l'architecture jusqu'à l'OS, nécéssaire pour une gestion accru de la sécuritée. Seule la partie matérielle est déléguée au fournisseur.
+- Inconvénients
+    - environnement multi-tenant pouvant poser des problèmes de confidentialités si la sécurité n'est pas gérée correctement.
+    - visibilité limité sur la politique de sécurité du fournisseur au niveau des hyperviseurs.
+    - dépendant de la réactivité du fournisseur en cas d'incident matériel
 
 <aside class="notes">
    
@@ -225,13 +255,6 @@ TODO
 
 On peut étendre la notion de **As A Service** à d'autre types de services. Stockage,  sécurité, base de données...  Une  évolution récente et notable concerne l'évolution du Paas avec le service **Lambda** d'AWS ou encore **Google Cloud Function**.
 Avec ces **Function As A Service**, vous pousser le code d'une fonction dans le service et celle ci est exécuté, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés pas tranche de 100ms d’exécution. On parle de **Serverless Computing**
-
-
-## Usages ##
-
-Avantages inconvénients risques?
-TODO
-
 
 
 <aside class="notes">
@@ -606,7 +629,7 @@ TODO
 - le refroidissement 40% à 50%
 - datacenter moderne et optimisé = 1.5 à 3KW/m2
 
-- exemple récent de l'envollé du bitcoin : en 2020 le calcul de la blockchain consommera toute l'énergie de la planète.
+- exemple récent de l'envollé du bitcoin : en 2020 le calcul de la blockchain consommerai toute l'énergie de la planète.
 
 `GREEN IT`{.note .fragment}
 
@@ -652,6 +675,11 @@ Dans la Cloud il est primordial que le maximum d'échanges se fassent au travers
 C'est la faculté qu'un système a de s'interfacer avec un autre sans le connaître. Interopérabilité est primordiale dans un environnement hétérogène. Ceci est notamment faisable grâce à la description complète des interfaces de ce système et à l'utilisation de format d'échanges normés ou standardisés.
 
 
+## Multi-tenant ##
+
+Un SI **multi-tenant** désigne une infrastructure qui partage ses resosurces entre plusieurs clients. Chaque client de doit pas avoir conscience que les autres existent.
+
+
 ## InfraAsCode ##
 
 l'**Infrastructure As A Code** désigne les technique permettant de définir une infrastructure pas du code source. cette dernière est alors totalement automatisable et ré-instanciable à la demande. Ceci est possible lorsque tous les éléments de l'infrastructure à été virtualisé.
@@ -669,15 +697,10 @@ Les API RESTful sont grandement utilisé dans le monde des Webservices. (HTTP + 
 **ServerLess** désigne les services proposé en mode Cloud qui ne comprennent pas la livraison d'une machine pour réaliser l'opération, l'appel au service génère une mise à disposition de ressource en fonction de la charge nécessaire à l’exécution de la demande et la libère instantanément.
 
 
-## Microservices ##
-
-
-TODO
-
-
 ## StateLess ##
 
 TODO
+
 
 
 ## autonomic computing ##
