@@ -709,31 +709,34 @@ Les API RESTful sont grandement utilisé dans le monde des Webservices. (HTTP + 
 
 ## StateLess ##
 
-Se dit d'une application ou d'un service qui ne conserve pas en interne d'état d'une connection d'un client entre 2 appels au service. Cel permet de faire traiter la demande par des machines différentes à chaque requète. C'est une des notions primordiale du développement d'application **Cloud-Ready**
+Se dit d'une application ou d'un service qui ne conserve pas en interne d'état d'une connexion d'un client entre 2 appels au service. Cela permet de faire traiter la demande par des machines différentes à chaque requête. C'est une des notions primordiale du développement d'application **Cloud-Ready**
 
 ## autonomic computing ##
 
- (IBM autoréparation des programme)
- TODO
+L'autonomic Computing désigne la capacité de ces systèmes de pouvoir se réparer eux même. Ils intègres de la surveillance et de la détection d'anomalie.
 
+<aside class="notes">
+
+Lancé par IBM, l'autoréparation des programme intègre aujourd'hui de nombreux programmes
+
+</aside>
 
 
 ## Systèmes repartis ##
 
-Un système réparti est un SI dans le quel l'information et l’exécution est distribuée sur un ensemble de nœuds constituant un Cluster. Cet ensemble peut être hétérogène et doit être scalable.
+Un système réparti est un SI dans lequel l'information et l’exécution est distribuée sur un ensemble de nœuds constituant un Cluster. Cet ensemble peut être hétérogène et doit être scalable.
 
 ex: seti@home
 
 
 ## High Availability ##
 
-la **HA** désigne la capacité d'un système à *survivre* à la perte d'un élément de son infrastructure. Ceci en permettant l'utilisation d'une autre ressource de façon transparente pour l'utilisateur. On élimine ainsi les SPOF (*Single Point Of Failure*). Un **Load-balancer** permet la HA des service Web par exemple.
+la **HA** désigne la capacité d'un système à *survivre* à la perte d'un élément de son infrastructure. Ceci en permettant l'utilisation d'une autre ressource de façon transparente pour l'utilisateur. On élimine ainsi les SPOF (*Single Point Of Failure*). Un **Load-balancer** permet la HA des services Web par exemple.
 
 ## PRA/PCA ##
 
-* PRA  : Plan de reprise d'activité. Désigne le fait qu'il existe une solution pour reprendre l'activité d'un SI après un temps prévu (le plus court possible)
-
-* PCA : Plan de continuité d'activité. Une solution existe pour continuer l'activité d'un service en cas de perte d'un élément constituant ce service (peut être un Datacenter tout entier, il faut donc alors basculer sur un autre Datacenter de façon transparente pour l’utilisateur).
+- PRA  : Plan de reprise d'activité. Désigne le fait qu'il existe une solution pour reprendre l'activité d'un SI après un temps prévu (le plus court possible)
+- PCA : Plan de continuité d'activité. Une solution existe pour continuer l'activité d'un service en cas de perte d'un élément constituant ce service (peut être un Datacenter tout entier, il faut donc alors basculer sur un autre Datacenter de façon transparente pour l’utilisateur).
 
 
 ## CDN ##
@@ -751,7 +754,7 @@ Il est née de l'utilisation de bout en bout des méthodes **Agiles**
 # Enjeux - Avenir #
 
 
-## Responsabilite ##
+## Responsabilité ##
 
 - Niveau de service : Engagement sur :
     - Disponibilité garantie (en %) 
@@ -775,7 +778,7 @@ Il est née de l'utilisation de bout en bout des méthodes **Agiles**
 - Cloud Security Alliance
 - Confidentialité : Vigilance sur :
     - Les systèmes de  gestion des accès / mécanismes de cloisonnement entre clients
-    - Localisation des centre de données (hors UE) et nationalité du fournisseur (EU, Patriot Act)
+    - Localisation des centres de données (hors UE) et nationalité du fournisseur (EU, Patriot Act)
 - Audit fréquents à tous les niveaux
 - Mise à jour régulière et systématique
 - Chiffrement des flux
@@ -789,12 +792,31 @@ Il est née de l'utilisation de bout en bout des méthodes **Agiles**
 
 ## Open source ##
 
-TODO
+l'Open source qui consiste à ouvrir le code source d'une application à tous, est omniprésent dans les différents niveaux du Cloud computing. Même les plus grands fournisseurs utilisent des logiciels Open source, ils en sont souvent les principaux contributeurs.
+
+
+<aside class="notes">
+
+https://www.openstack.org/foundation/companies/
+
+</aside>
 
 
 ## Trafic réseau ##
 
-TODO
+Le **Cloud** et l'**IoT** sont très liés et ces deux éléments sont en très forte croissance. Cisco estime qu'en 2020, un habitant consommera à lui seul 200Gb de donnée par jour sur l'internet. 90% de ce trafic passera par le Cloud public. 
+Traffic mondial des Datacenter :
+- 2015 : 4.7Zo 
+- 2020 : 15.3Zo
+    - 14% avec les utilisateurs
+    - 9% entre Datacenters
+    - 77% dans le Datacenter lui même
+
+<aside class="notes">
+15.3Zo = 213Milliard d'heures de music en streaming = 38 mois non-stop pour chaque habitant.
+
+</aside>
+
 
 
 
@@ -813,7 +835,7 @@ TODO
 > - compilation d'un code calculant les **n** nombres premiers
 
 ``` 
-wget -O prime.c https://codepaste.net/TODO
+wget -O prime.c https://pastebin.com/yaRWGpbn
 ```
 ``` 
 gcc prime.c -o prime
@@ -906,5 +928,7 @@ L'objectif ici est de déployer une application à partir d'un code source.
 Objectif : Créer une infra minimale en Iaas
 
 Utilisez la VM devstack fournie pour tester le déploiement d'une application n-tiers
-Vous aurez besoin de définir 
-- un réseau 
+Nous pouvons prendre par exemple la solution Owncloud (un cloud dans un cloud !)
+
+https://doc.owncloud.org
+

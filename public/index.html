@@ -726,22 +726,25 @@
 <p><strong>ServerLess</strong> désigne les services proposé en mode Cloud qui ne comprennent pas la livraison d'une machine pour réaliser l'opération, l'appel au service génère une mise à disposition de ressource en fonction de la charge nécessaire à l’exécution de la demande et la libère instantanément.</p>
 </section><section id="stateless" class="slide level2">
 <h1>StateLess</h1>
-<p>TODO</p>
+<p>Se dit d'une application ou d'un service qui ne conserve pas en interne d'état d'une connexion d'un client entre 2 appels au service. Cela permet de faire traiter la demande par des machines différentes à chaque requête. C'est une des notions primordiale du développement d'application <strong>Cloud-Ready</strong></p>
 </section><section id="autonomic-computing" class="slide level2">
 <h1>autonomic computing</h1>
-<p>(IBM autoréparation des programme) TODO</p>
+<p>L'autonomic Computing désigne la capacité de ces systèmes de pouvoir se réparer eux même. Ils intègres de la surveillance et de la détection d'anomalie.</p>
+<aside class="notes">
+<p>Lancé par IBM, l'autoréparation des programme intègre aujourd'hui de nombreux programmes</p>
+</aside>
 </section><section id="systèmes-repartis" class="slide level2">
 <h1>Systèmes repartis</h1>
-<p>Un système réparti est un SI dans le quel l'information et l’exécution est distribuée sur un ensemble de nœuds constituant un Cluster. Cet ensemble peut être hétérogène et doit être scalable.</p>
+<p>Un système réparti est un SI dans lequel l'information et l’exécution est distribuée sur un ensemble de nœuds constituant un Cluster. Cet ensemble peut être hétérogène et doit être scalable.</p>
 <p>ex: seti@home</p>
 </section><section id="high-availability" class="slide level2">
 <h1>High Availability</h1>
-<p>la <strong>HA</strong> désigne la capacité d'un système à <em>survivre</em> à la perte d'un élément de son infrastructure. Ceci en permettant l'utilisation d'une autre ressource de façon transparente pour l'utilisateur. On élimine ainsi les SPOF (<em>Single Point Of Failure</em>). Un <strong>Load-balancer</strong> permet la HA des service Web par exemple.</p>
+<p>la <strong>HA</strong> désigne la capacité d'un système à <em>survivre</em> à la perte d'un élément de son infrastructure. Ceci en permettant l'utilisation d'une autre ressource de façon transparente pour l'utilisateur. On élimine ainsi les SPOF (<em>Single Point Of Failure</em>). Un <strong>Load-balancer</strong> permet la HA des services Web par exemple.</p>
 </section><section id="prapca" class="slide level2">
 <h1>PRA/PCA</h1>
 <ul>
-<li class="fragment"><p>PRA : Plan de reprise d'activité. Désigne le fait qu'il existe une solution pour reprendre l'activité d'un SI après un temps prévu (le plus court possible)</p></li>
-<li class="fragment"><p>PCA : Plan de continuité d'activité. Une solution existe pour continuer l'activité d'un service en cas de perte d'un élément constituant ce service (peut être un Datacenter tout entier, il faut donc alors basculer sur un autre Datacenter de façon transparente pour l’utilisateur).</p></li>
+<li class="fragment">PRA : Plan de reprise d'activité. Désigne le fait qu'il existe une solution pour reprendre l'activité d'un SI après un temps prévu (le plus court possible)</li>
+<li class="fragment">PCA : Plan de continuité d'activité. Une solution existe pour continuer l'activité d'un service en cas de perte d'un élément constituant ce service (peut être un Datacenter tout entier, il faut donc alors basculer sur un autre Datacenter de façon transparente pour l’utilisateur).</li>
 </ul>
 </section><section id="cdn" class="slide level2">
 <h1>CDN</h1>
@@ -751,8 +754,8 @@
 <p><strong>Devops</strong> désigne un courant de pensée informatique visant à éliminer le conflit entre les <strong>Développeurs</strong> qui souhaitent faire évoluer un SI et les <strong>Opérationnels</strong> qui souhaitent avoir un SI le plus Stable possible.</p>
 <p>Il est née de l'utilisation de bout en bout des méthodes <strong>Agiles</strong></p>
 </section></section>
-<section><section id="enjeux---avenir" class="titleslide slide level1"><h1>Enjeux - Avenir</h1></section><section id="responsabilite" class="slide level2">
-<h1>Responsabilite</h1>
+<section><section id="enjeux---avenir" class="titleslide slide level1"><h1>Enjeux - Avenir</h1></section><section id="responsabilité" class="slide level2">
+<h1>Responsabilité</h1>
 <ul>
 <li class="fragment">Niveau de service : Engagement sur :
 <ul>
@@ -779,7 +782,7 @@
 <li class="fragment">Confidentialité : Vigilance sur :
 <ul>
 <li class="fragment">Les systèmes de gestion des accès / mécanismes de cloisonnement entre clients</li>
-<li class="fragment">Localisation des centre de données (hors UE) et nationalité du fournisseur (EU, Patriot Act)</li>
+<li class="fragment">Localisation des centres de données (hors UE) et nationalité du fournisseur (EU, Patriot Act)</li>
 </ul></li>
 <li class="fragment">Audit fréquents à tous les niveaux</li>
 <li class="fragment">Mise à jour régulière et systématique</li>
@@ -794,10 +797,16 @@
 </ul>
 </section><section id="open-source" class="slide level2">
 <h1>Open source</h1>
-<p>TODO</p>
+<p>l'Open source qui consiste à ouvrir le code source d'une application à tous, est omniprésent dans les différents niveaux du Cloud computing. Même les plus grands fournisseurs utilisent des logiciels Open source, ils en sont souvent les principaux contributeurs.</p>
+<aside class="notes">
+<p>https://www.openstack.org/foundation/companies/</p>
+</aside>
 </section><section id="trafic-réseau" class="slide level2">
 <h1> Trafic réseau</h1>
-<p>TODO</p>
+<p>Le <strong>Cloud</strong> et l'<strong>IoT</strong> sont très liés et ces deux éléments sont en très forte croissance. Cisco estime qu'en 2020, un habitant consommera à lui seul 200Gb de donnée par jour sur l'internet. 90% de ce trafic passera par le Cloud public. Traffic mondial des Datacenter : - 2015 : 4.7Zo - 2020 : 15.3Zo - 14% avec les utilisateurs - 9% entre Datacenters - 77% dans le Datacenter lui même</p>
+<aside class="notes">
+<p>15.3Zo = 213Milliard d'heures de music en streaming = 38 mois non-stop pour chaque habitant.</p>
+</aside>
 </section></section>
 <section><section id="do-it-yourself" class="titleslide slide level1"><h1>Do It Yourself</h1></section><section id="tp-comparaison" class="slide level2">
 <h1>TP comparaison</h1>
@@ -814,7 +823,7 @@
 <ul>
 <li>compilation d'un code calculant les <strong>n</strong> nombres premiers</li>
 </ul>
-<pre><code>wget -O prime.c https://codepaste.net/TODO</code></pre>
+<pre><code>wget -O prime.c https://pastebin.com/yaRWGpbn</code></pre>
 <pre><code>gcc prime.c -o prime</code></pre>
 <pre><code>time ./prime 10000</code></pre>
 <pre><code>Calcul des 10000 premiers nombres premiers
@@ -877,7 +886,8 @@ sys     0m0.010s</code></pre>
 </section><section id="tp-iaas" class="slide level2">
 <h1>TP Iaas</h1>
 <p>Objectif : Créer une infra minimale en Iaas</p>
-<p>Utilisez la VM devstack fournie pour tester le déploiement d'une application n-tiers Vous aurez besoin de définir - un réseau</p>
+<p>Utilisez la VM devstack fournie pour tester le déploiement d'une application n-tiers Nous pouvons prendre par exemple la solution Owncloud (un cloud dans un cloud !)</p>
+<p>https://doc.owncloud.org</p>
 </section></section>
             </div>
         </div>
