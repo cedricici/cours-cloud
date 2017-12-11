@@ -699,9 +699,7 @@ Les API RESTful sont grandement utilisé dans le monde des Webservices. (HTTP + 
 
 ## StateLess ##
 
-TODO
-
-
+Se dit d'une application ou d'un service qui ne conserve pas en interne d'état d'une connection d'un client entre 2 appels au service. Cel permet de faire traiter la demande par des machines différentes à chaque requète. C'est une des notions primordiale du développement d'application **Cloud-Ready**
 
 ## autonomic computing ##
 
