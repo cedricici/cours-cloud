@@ -575,7 +575,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 
 - Risques Additionnels
     - Concentration des ressources (stockage, réseau, système), des outils et des rôles.
-    - Des composants additionnels à maitriser et à surveiller
+    - Des composants additionnels à maîtriser et à surveiller
 - Vigilance
     - La couche d’abstraction est un système à part entière, à mettre à jour et sécuriser
     - Les habilitations d’accès aux couches d’abstractions doivent êtres ajustées avec soins.
@@ -631,11 +631,11 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 ![Couloirs Chauds/Froids](img/chaudfroid.png)
 
 
-## Electricité ##
+## Électricité ##
 
 - L’énergie représente ~40% du coût d'exploitation
 - le refroidissement 40% à 50%
-- datacenter moderne et optimisé = 1.5 à 3KW/m2
+- Datacenter moderne et optimisé = 1.5 à 3KW/m2
 
 Exemple récent de l’envolée du Bitcoin : en 2020 le calcul de la blockchain consommerait toute l'énergie de la planète.
 
@@ -643,7 +643,7 @@ Exemple récent de l’envolée du Bitcoin : en 2020 le calcul de la blockchain 
 
 <aside class="notes">
 
-Au moins 77 KWh pour une transaction Bitorent
+Au moins 77 KWh pour une transaction Bitcoin
 
 une des dernières estimations de la consommation annuelle du minage de Bitcoin est de 23,07 terawattheure.
 
@@ -786,7 +786,7 @@ Il est née de l'utilisation de bout en bout des méthodes **Agiles**
 
 ## Interopérabilité ##
 
-- Facilité par les outils d'automatisation et l'utilisation massive de l'opensource
+- Facilité par les outils d'automatisation et l'utilisation massive de l'Open source
 - Difficile au niveau des données
 
 
@@ -900,8 +900,12 @@ sys     0m0.010s
 
 Connectez vous sur le site Wordpress.com. c'est un service de SaaS basé sur le CMS(Content Managment System) Open source Wordpress, disponible sur le site wordpress.org 
 
-Laissez vous guider dans la création de votre site.
-Pous pouvez ensuite faire des modifications sommaires sur la page d'accueil.
+- Laissez vous guider dans la création de votre site.
+Vous pouvez ensuite faire des modifications sommaires sur la page d'accueil.
+
+- publiez votre site (ajoutez au moins un peu de contenu)
+- repassez par l'édition pour voir le back-office complet.
+
 
 `Question : D'après vous, quelle différence peut-on noter entre le logiciel Wordpress et le service de Saas Wordpress.com `{.note}
 
@@ -918,17 +922,67 @@ L'objectif ici est de déployer une application à partir d'un code source.
 - Connectez vous sur la plateforme Paas Heroku.com et créez un compte
 - Suivez le https://devcenter.heroku.com/start pour créer une application node.js
 
-`Question : Une fois le tutoriel de base réalisé. Trouvez une solution pour déployer le code suivant dans une nouvelle application sans utiliser l'outil CLI heroku-toolbelt. Donnez une explication des technologies qui selon vous sont misent en oeuvre ici. `{.note}
+`Question : Une fois le tutoriel de base réalisé. Trouvez une solution pour déployer le code suivant (ou celui de votre choix) dans une nouvelle application sans utiliser l'outil CLI heroku-toolbelt. Donnez une explication des technologies qui selon vous sont misent en œuvre ici. `{.note}
 
 > https://github.com/cedricici/findmefast.git
+
 
 
 ## TP Iaas ##
 
 Objectif : Créer une infra minimale en Iaas
 
-Utilisez la VM devstack fournie pour tester le déploiement d'une application n-tiers
-Nous pouvons prendre par exemple la solution Owncloud (un cloud dans un cloud !)
+Moyens : Utilisez la VM devstack fournie pour tester le déploiement d'une application n-tiers
 
-https://doc.owncloud.org
+Je vous propose de réaliser un serveur de données cartographiques Raster basé sur **Rok4** 
+Vous aurez besoin de ces ressources : 
+    - un serveur nginx pour publier une interface de visualisation
+    - un serveur rok4 pour diffuser des tuiles au standard WMTS
+    - un serveur NFS pour stocker et mettre à disposition les pyramides de données
+
+## TP Iaas : Objectif ##
+
+Le résultat à atteindre est visualisable à l'aide d'un ensemble de conteneur Docker que nous avons préparés pour cette démo : 
+
+https://github.com/rok4/docker-rok4-with-data
+
+suivez le tutoriel Github pour lancer la stack Docker ci dessus. 
+Vous aurez besoin de Docker et de docker-compose
+
+## TP Iaas : préparation  ##
+
+- Explorez via Horizon la VM Devstack fournie : 
+    - l'URL est http://127.0.0.1:8888/
+- téléchargez une image debian pour le cloud : 
+```http://cdimage.debian.org/cdimage/openstack/current-8/  debian-8-openstack-amd64.qcow2 ```
+- créez en une image glance
+- créez une première VM (utilisez la configuration suivante pour définir un mot de passe à votre instance:
+```
+#cloud-config
+chpasswd:
+  list: |
+    debian:monpassword
+  expire: False
+
+```
+- essayer de mettre en place une FIP (floating ip) pour y accéder en ssh depuis votre machine. Vous devrez sûrement ajouter du mapping de port dans la configuration de Virtualbox.
+
+## TP Iaas : architecture  ##
+
+Une fois la prise en main faite, il faut imaginer notre infrastructure
+
+`Client => http:1234 => FIP => Nginx+leaflet => rok4:9000 => Stockage Persistant `
+
+Dans une deuxième étape, il faudra ajouter des Load-Balancer pour réaliser un Scale-out de notre application et un serveur intermédiaire NFS pour partager le stockage.
+
+## TP Iaas : installation  ##
+
+En analysant les données de construction de la pile Docker-rok4, essayez de composer votre architecture.
+- Commencez par la VM qui va contenir Rok4. L'exploration des Dockerfile vous donne la marche à suivre pour installer le logiciel
+    - pensez à ajouter un volume à votre VM, il faudra ensuite préparer ce volume (créer une partition et un système de fichier puis monté ce volume dans un dossier spécifique qui va contenir les données). je vous aiderai pour cette étape délicate.
+- Créez ensuite la VM Nginx à partir d'observation similaires : https://github.com/rok4/docker-rok4-with-data)
+- associez une FIP à cette VM nginx et ajouter un mapping de port dans Virtualbox pour accéder à cette application (port 80 ou 1234)
+
+
+`Rendez moi  (mail à cedric.esnault@ign.fr) un compte rendu de ces TP avec les différentes étapes de vos recherches. N'hésitez pas à noter les *points durs* .`{.note}
 
