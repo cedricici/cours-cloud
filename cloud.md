@@ -298,7 +298,7 @@ Le tout est facturé à la consommation.
 ## X (Everything) As A Service ##
 
 On peut étendre la notion de **As A Service** à d'autre types de services. Stockage,  sécurité, base de données...  Une  évolution récente et notable concerne l'évolution du **Paas** avec le service **Lambda** d'AWS ou encore **Google Cloud Function**.
-Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le service et celle ci est exécutée, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés pas tranche de 100ms d’exécution. On parle de **Serverless Computing**
+Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le service et celle ci est exécutée, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés par tranche de 100ms d’exécution. On parle de **Serverless Computing**
 
 <aside class="notes">
    ABorder l'IA?
@@ -805,7 +805,7 @@ Se dit d'une application ou d'un service qui ne conserve pas en interne d'état 
 
 ## autonomic computing ##
 
-L'autonomic Computing désigne la capacité de ces systèmes de pouvoir se réparer eux même. Ils intègres de la surveillance et de la détection d'anomalie.
+L'autonomic Computing désigne la capacité de ces systèmes de pouvoir se réparer eux même. Ils intègrent de la surveillance et de la détection d'anomalie.
 
 <aside class="notes">
 
@@ -821,7 +821,7 @@ Un système réparti est un SI dans lequel l'information et l’exécution est d
 ex: seti@home
 
 <aside class="notes">
-   Encore pazrler IA , deep learning
+   Encore parler IA , deep learning
 </aside>
 
 ## High Availability ##
@@ -917,7 +917,7 @@ https://www.openstack.org/foundation/companies/
 
 ## Trafic réseau ##
 
-Le **Cloud** et l'**IoT** sont très liés et ces deux éléments sont en très forte croissance. Cisco estime qu'en 2020, un habitant consommera à lui seul 200Gb de donnée par jour sur l'internet. 90% de ce trafic passera par le Cloud public. 
+Le **Cloud** et l'**IoT** sont très liés et ces deux éléments sont en très forte croissance. Cisco estime qu'en 2021, un habitant consommera à lui seul 200Gb de donnée par jour sur l'internet. 90% de ce trafic passera par le Cloud public et atteindra 3.3Zo (ZetaOctets), principalement pour la diffusion video
 Traffic mondial des Datacenter :
 - 2015 : 4.7Zo 
 - 2020 : 15.3Zo
@@ -990,8 +990,8 @@ sys     0m0.004s
 ```
 sudo apt-get install qemu-system-arm
 ```
-> - récupérer les fichiers nécéssaires sur **https://people.debian.org/~aurel32/qemu/armel/** 
-> lancer l'émulateur
+> - récupérer les fichiers nécéssaires sur [https://people.debian.org/~aurel32/qemu/armel/](https://people.debian.org/~aurel32/qemu/armel/)
+> - lancer l'émulateur
 ```
 qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -append "root=/dev/sda1" -hda debian_wheezy_armel_standard.qcow2
 ```
@@ -1011,11 +1011,13 @@ sys     0m0.010s
 
 Connectez vous sur le site Wordpress.com. c'est un service de SaaS basé sur le CMS(Content Managment System) Open source Wordpress, disponible sur le site wordpress.org 
 
-- Laissez vous guider dans la création de votre site.
+> - Laissez vous guider dans la création de votre site.
 Vous pouvez ensuite faire des modifications sommaires sur la page d'accueil.
+> - publiez votre site (ajoutez au moins un peu de contenu)
+> - repassez par l'édition pour voir le back-office complet.
 
-- publiez votre site (ajoutez au moins un peu de contenu)
-- repassez par l'édition pour voir le back-office complet.
+
+## TP Saas  : Questions ##
 
 
 `Question : D'après vous, quelle différence peut-on noter entre le logiciel Wordpress et le service de Saas Wordpress.com `{.note}
@@ -1026,48 +1028,50 @@ Vous pouvez ensuite faire des modifications sommaires sur la page d'accueil.
 
 ## TP Paas ##
 
-Objectif : déployer une appli Paas
+**Objectif** : déployer une appli Paas
 
 L'objectif ici est de déployer une application à partir d'un code source.
 
-- Connectez vous sur la plateforme Paas Heroku.com et créez un compte
-- Suivez le https://devcenter.heroku.com/start pour créer une application node.js
+> - Connectez vous sur la plateforme Paas Heroku.com et créez un compte
+> - Suivez le [tutoriel Heroku](https://devcenter.heroku.com/start) pour créer une application node.js
+
+## TP Saas  : Questions ##
 
 `Question : Une fois le tutoriel de base réalisé. Trouvez une solution pour déployer le code suivant (ou celui de votre choix) dans une nouvelle application sans utiliser l'outil CLI heroku-toolbelt. Donnez une explication des technologies qui selon vous sont misent en œuvre ici. `{.note}
 
-> https://github.com/cedricici/findmefast.git
+> [https://github.com/cedricici/findmefast.git](https://github.com/cedricici/findmefast.git)
 
 
 
 ## TP Iaas ##
 
-Objectif : Créer une infra minimale en Iaas
+**Objectif** : Créer une infra minimale en Iaas
 
-Moyens : Utilisez la VM devstack fournie pour tester le déploiement d'une application n-tiers
+**Moyens** : Utilisez la VM devstack fournie pour tester le déploiement d'une application n-tiers
 
-Je vous propose de réaliser un serveur de données cartographiques Raster basé sur **Rok4** 
-Vous aurez besoin de ces ressources : 
-    - un serveur nginx pour publier une interface de visualisation
-    - un serveur rok4 pour diffuser des tuiles au standard WMTS
-    - un serveur NFS pour stocker et mettre à disposition les pyramides de données
+Je vous propose de réaliser un serveur de données cartographiques Raster basé sur **Rok4** , Vous aurez besoin de ces ressources : 
+
+> - un serveur nginx pour publier une interface de visualisation
+> - un serveur rok4 pour diffuser des tuiles au standard WMTS
+> - un serveur NFS pour stocker et mettre à disposition les pyramides de données
 
 ## TP Iaas : Objectif ##
 
 Le résultat à atteindre est visualisable à l'aide d'un ensemble de conteneur Docker que nous avons préparés pour cette démo : 
 
-https://github.com/rok4/docker-rok4-with-data
+[https://github.com/rok4/docker-rok4-with-data](https://github.com/rok4/docker-rok4-with-data)
 
-suivez le tutoriel Github pour lancer la stack Docker ci dessus. 
+Suivez le tutoriel Github pour lancer la stack Docker ci dessus. 
 Vous aurez besoin de Docker et de docker-compose
 
 ## TP Iaas : préparation  ##
 
-- Explorez via Horizon la VM Devstack fournie : 
-    - l'URL est http://127.0.0.1:8888/
-- téléchargez une image debian pour le cloud : 
-```http://cdimage.debian.org/cdimage/openstack/current-8/  debian-8-openstack-amd64.qcow2 ```
-- créez en une image glance
-- créez une première VM (utilisez la configuration suivante pour définir un mot de passe à votre instance:
+> - Explorez via Horizon la VM Devstack fournie : 
+>    - l'URL est [http://127.0.0.1:8888/](http://127.0.0.1:8888/)
+> - téléchargez une image debian pour le cloud : [http://cdimage.debian.org/cdimage/openstack/current-8/debian-8-openstack-amd64.qcow2](http://cdimage.debian.org/cdimage/openstack/current-8/debian-8-openstack-amd64.qcow2)
+> - créez en une image glance
+> - créez une première VM (utilisez la configuration suivante pour définir un mot de passe à votre instance ) :
+
 ```
 #cloud-config
 chpasswd:
@@ -1076,24 +1080,29 @@ chpasswd:
   expire: False
 
 ```
-- essayer de mettre en place une FIP (floating ip) pour y accéder en ssh depuis votre machine. Vous devrez sûrement ajouter du mapping de port dans la configuration de Virtualbox.
+
+## TP Iaas : préparation  ##
+
+> - essayer ensuite de mettre en place une FIP (floating ip) pour y accéder en ssh depuis votre machine. Vous devrez sûrement ajouter du mapping de port dans la configuration de Virtualbox. (configuration avancé du réseau NAT)
 
 ## TP Iaas : architecture  ##
 
 Une fois la prise en main faite, il faut imaginer notre infrastructure
 
-`Client => http:1234 => FIP => Nginx+leaflet => rok4:9000 => Stockage Persistant `
+> `Client => http:1234 => FIP => Nginx+leaflet => rok4:9000 => Stockage Persistant `
 
 Dans une deuxième étape, il faudra ajouter des Load-Balancer pour réaliser un Scale-out de notre application et un serveur intermédiaire NFS pour partager le stockage.
 
 ## TP Iaas : installation  ##
 
 En analysant les données de construction de la pile Docker-rok4, essayez de composer votre architecture.
-- Commencez par la VM qui va contenir Rok4. L'exploration des Dockerfile vous donne la marche à suivre pour installer le logiciel
-    - pensez à ajouter un volume à votre VM, il faudra ensuite préparer ce volume (créer une partition et un système de fichier puis monté ce volume dans un dossier spécifique qui va contenir les données). je vous aiderai pour cette étape délicate.
-- Créez ensuite la VM Nginx à partir d'observation similaires : https://github.com/rok4/docker-rok4-with-data)
-- associez une FIP à cette VM nginx et ajouter un mapping de port dans Virtualbox pour accéder à cette application (port 80 ou 1234)
 
+> - Commencez par la VM qui va contenir Rok4. L'exploration des Dockerfile vous donne la marche à suivre pour installer le logiciel
+>     - Pensez à ajouter un volume à votre VM, il faudra ensuite préparer ce volume (créer une partition et un système de fichier puis monté ce volume dans un dossier spécifique qui va contenir les données). je vous aiderai pour cette étape délicate.
+> - Créez ensuite la VM Nginx à partir d'observation similaires : [https://github.com/rok4/docker-rok4-with-data](https://github.com/rok4/docker-rok4-with-data)
+> - associez une FIP à cette VM nginx et ajouter un mapping de port dans Virtualbox pour accéder à cette application (port 80 ou 1234)
+
+## TP : TRAVAIL ATTENDU ##
 
 `Rendez moi  (mail à cedric.esnault@ign.fr) un compte rendu de ces TP avec les différentes étapes de vos recherches. N'hésitez pas à noter les *points durs* .`{.note}
 

@@ -322,7 +322,7 @@
 </section></section>
 <section><section id="xaas" class="titleslide slide level1"><h1>Xaas</h1></section><section id="x-everything-as-a-service" class="slide level2">
 <h2>X (Everything) As A Service</h2>
-<p>On peut étendre la notion de <strong>As A Service</strong> à d'autre types de services. Stockage, sécurité, base de données... Une évolution récente et notable concerne l'évolution du <strong>Paas</strong> avec le service <strong>Lambda</strong> d'AWS ou encore <strong>Google Cloud Function</strong>. Avec ces <strong>Function As A Service</strong>, vous poussez le code d'une fonction dans le service et celle ci est exécutée, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés pas tranche de 100ms d’exécution. On parle de <strong>Serverless Computing</strong></p>
+<p>On peut étendre la notion de <strong>As A Service</strong> à d'autre types de services. Stockage, sécurité, base de données... Une évolution récente et notable concerne l'évolution du <strong>Paas</strong> avec le service <strong>Lambda</strong> d'AWS ou encore <strong>Google Cloud Function</strong>. Avec ces <strong>Function As A Service</strong>, vous poussez le code d'une fonction dans le service et celle ci est exécutée, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés par tranche de 100ms d’exécution. On parle de <strong>Serverless Computing</strong></p>
 <aside class="notes">
 <p>ABorder l'IA?</p>
 </aside>
@@ -788,7 +788,7 @@
 </aside>
 </section><section id="autonomic-computing" class="slide level2">
 <h2>autonomic computing</h2>
-<p>L'autonomic Computing désigne la capacité de ces systèmes de pouvoir se réparer eux même. Ils intègres de la surveillance et de la détection d'anomalie.</p>
+<p>L'autonomic Computing désigne la capacité de ces systèmes de pouvoir se réparer eux même. Ils intègrent de la surveillance et de la détection d'anomalie.</p>
 <aside class="notes">
 <p>Lancé par IBM, l'autoréparation des programme intègre aujourd'hui de nombreux programmes</p>
 </aside>
@@ -797,7 +797,7 @@
 <p>Un système réparti est un SI dans lequel l'information et l’exécution est distribuée sur un ensemble de nœuds constituant un Cluster. Cet ensemble peut être hétérogène et doit être scalable.</p>
 <p>ex: seti@home</p>
 <aside class="notes">
-Encore pazrler IA , deep learning
+Encore parler IA , deep learning
 </aside>
 </section><section id="high-availability" class="slide level2">
 <h2>High Availability</h2>
@@ -877,7 +877,7 @@ Encore pazrler IA , deep learning
 </aside>
 </section><section id="trafic-réseau" class="slide level2">
 <h2> Trafic réseau</h2>
-<p>Le <strong>Cloud</strong> et l'<strong>IoT</strong> sont très liés et ces deux éléments sont en très forte croissance. Cisco estime qu'en 2020, un habitant consommera à lui seul 200Gb de donnée par jour sur l'internet. 90% de ce trafic passera par le Cloud public. Traffic mondial des Datacenter : - 2015 : 4.7Zo - 2020 : 15.3Zo - 14% avec les utilisateurs - 9% entre Datacenters - 77% dans le Datacenter lui même</p>
+<p>Le <strong>Cloud</strong> et l'<strong>IoT</strong> sont très liés et ces deux éléments sont en très forte croissance. Cisco estime qu'en 2021, un habitant consommera à lui seul 200Gb de donnée par jour sur l'internet. 90% de ce trafic passera par le Cloud public et atteindra 3.3Zo (ZetaOctets), principalement pour la diffusion video Traffic mondial des Datacenter : - 2015 : 4.7Zo - 2020 : 15.3Zo - 14% avec les utilisateurs - 9% entre Datacenters - 77% dans le Datacenter lui même</p>
 <aside class="notes">
 <p>15.3Zo = 213Milliard d'heures de music en streaming = 38 mois non-stop pour chaque habitant.</p>
 </aside>
@@ -928,7 +928,8 @@ sys     0m0.004s</code></pre>
 </ul>
 <pre><code>sudo apt-get install qemu-system-arm</code></pre>
 <ul>
-<li>récupérer les fichiers nécéssaires sur <strong>https://people.debian.org/~aurel32/qemu/armel/</strong> lancer l'émulateur</li>
+<li>récupérer les fichiers nécéssaires sur <a href="https://people.debian.org/~aurel32/qemu/armel/" class="uri">https://people.debian.org/~aurel32/qemu/armel/</a></li>
+<li>lancer l'émulateur</li>
 </ul>
 <pre><code>qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -append &quot;root=/dev/sda1&quot; -hda debian_wheezy_armel_standard.qcow2</code></pre>
 <ul>
@@ -943,54 +944,83 @@ sys     0m0.010s</code></pre>
 <p><strong>Objectif</strong> : déployer une application Saas</p>
 <p>Connectez vous sur le site Wordpress.com. c'est un service de SaaS basé sur le CMS(Content Managment System) Open source Wordpress, disponible sur le site wordpress.org</p>
 <ul>
-<li class="fragment"><p>Laissez vous guider dans la création de votre site. Vous pouvez ensuite faire des modifications sommaires sur la page d'accueil.</p></li>
-<li class="fragment">publiez votre site (ajoutez au moins un peu de contenu)</li>
-<li class="fragment"><p>repassez par l'édition pour voir le back-office complet.</p></li>
+<li>Laissez vous guider dans la création de votre site. Vous pouvez ensuite faire des modifications sommaires sur la page d'accueil.</li>
+<li>publiez votre site (ajoutez au moins un peu de contenu)</li>
+<li>repassez par l'édition pour voir le back-office complet.</li>
 </ul>
+</section><section id="tp-saas-questions" class="slide level2">
+<h2>TP Saas : Questions</h2>
 <p><code class="note">Question : D'après vous, quelle différence peut-on noter entre le logiciel Wordpress et le service de Saas Wordpress.com</code></p>
 <p><code class="note">Question : Quels éléments faudrait-il mettre en place pour proposer notre propre service de Saas basé sur Wordpress?</code></p>
 </section><section id="tp-paas" class="slide level2">
 <h2>TP Paas</h2>
-<p>Objectif : déployer une appli Paas</p>
+<p><strong>Objectif</strong> : déployer une appli Paas</p>
 <p>L'objectif ici est de déployer une application à partir d'un code source.</p>
 <ul>
-<li class="fragment">Connectez vous sur la plateforme Paas Heroku.com et créez un compte</li>
-<li class="fragment">Suivez le https://devcenter.heroku.com/start pour créer une application node.js</li>
+<li>Connectez vous sur la plateforme Paas Heroku.com et créez un compte</li>
+<li>Suivez le <a href="https://devcenter.heroku.com/start">tutoriel Heroku</a> pour créer une application node.js</li>
 </ul>
+</section><section id="tp-saas-questions-1" class="slide level2">
+<h2>TP Saas : Questions</h2>
 <p><code class="note">Question : Une fois le tutoriel de base réalisé. Trouvez une solution pour déployer le code suivant (ou celui de votre choix) dans une nouvelle application sans utiliser l'outil CLI heroku-toolbelt. Donnez une explication des technologies qui selon vous sont misent en œuvre ici.</code></p>
 <blockquote>
-<p>https://github.com/cedricici/findmefast.git</p>
+<p><a href="https://github.com/cedricici/findmefast.git" class="uri">https://github.com/cedricici/findmefast.git</a></p>
 </blockquote>
 </section><section id="tp-iaas" class="slide level2">
 <h2>TP Iaas</h2>
-<p>Objectif : Créer une infra minimale en Iaas</p>
-<p>Moyens : Utilisez la VM devstack fournie pour tester le déploiement d'une application n-tiers</p>
-<p>Je vous propose de réaliser un serveur de données cartographiques Raster basé sur <strong>Rok4</strong> Vous aurez besoin de ces ressources : - un serveur nginx pour publier une interface de visualisation - un serveur rok4 pour diffuser des tuiles au standard WMTS - un serveur NFS pour stocker et mettre à disposition les pyramides de données</p>
+<p><strong>Objectif</strong> : Créer une infra minimale en Iaas</p>
+<p><strong>Moyens</strong> : Utilisez la VM devstack fournie pour tester le déploiement d'une application n-tiers</p>
+<p>Je vous propose de réaliser un serveur de données cartographiques Raster basé sur <strong>Rok4</strong> , Vous aurez besoin de ces ressources :</p>
+<ul>
+<li>un serveur nginx pour publier une interface de visualisation</li>
+<li>un serveur rok4 pour diffuser des tuiles au standard WMTS</li>
+<li>un serveur NFS pour stocker et mettre à disposition les pyramides de données</li>
+</ul>
 </section><section id="tp-iaas-objectif" class="slide level2">
 <h2>TP Iaas : Objectif</h2>
 <p>Le résultat à atteindre est visualisable à l'aide d'un ensemble de conteneur Docker que nous avons préparés pour cette démo :</p>
-<p>https://github.com/rok4/docker-rok4-with-data</p>
-<p>suivez le tutoriel Github pour lancer la stack Docker ci dessus. Vous aurez besoin de Docker et de docker-compose</p>
+<p><a href="https://github.com/rok4/docker-rok4-with-data" class="uri">https://github.com/rok4/docker-rok4-with-data</a></p>
+<p>Suivez le tutoriel Github pour lancer la stack Docker ci dessus. Vous aurez besoin de Docker et de docker-compose</p>
 </section><section id="tp-iaas-préparation" class="slide level2">
 <h2>TP Iaas : préparation</h2>
 <ul>
-<li class="fragment">Explorez via Horizon la VM Devstack fournie :
-<ul>
-<li class="fragment">l'URL est http://127.0.0.1:8888/</li>
-</ul></li>
-<li class="fragment">téléchargez une image debian pour le cloud : <code>http://cdimage.debian.org/cdimage/openstack/current-8/  debian-8-openstack-amd64.qcow2</code></li>
-<li class="fragment">créez en une image glance</li>
-<li class="fragment">créez une première VM (utilisez la configuration suivante pour définir un mot de passe à votre instance: ``` #cloud-config chpasswd: list: | debian:monpassword expire: False</li>
+<li>Explorez via Horizon la VM Devstack fournie :</li>
+<li>l'URL est <a href="http://127.0.0.1:8888/" class="uri">http://127.0.0.1:8888/</a></li>
+<li>téléchargez une image debian pour le cloud : <a href="http://cdimage.debian.org/cdimage/openstack/current-8/debian-8-openstack-amd64.qcow2" class="uri">http://cdimage.debian.org/cdimage/openstack/current-8/debian-8-openstack-amd64.qcow2</a></li>
+<li>créez en une image glance</li>
+<li>créez une première VM (utilisez la configuration suivante pour définir un mot de passe à votre instance ) :</li>
 </ul>
-<p>``` - essayer de mettre en place une FIP (floating ip) pour y accéder en ssh depuis votre machine. Vous devrez sûrement ajouter du mapping de port dans la configuration de Virtualbox.</p>
+<pre><code>#cloud-config
+chpasswd:
+  list: |
+    debian:monpassword
+  expire: False
+</code></pre>
+</section><section id="tp-iaas-préparation-1" class="slide level2">
+<h2>TP Iaas : préparation</h2>
+<ul>
+<li>essayer ensuite de mettre en place une FIP (floating ip) pour y accéder en ssh depuis votre machine. Vous devrez sûrement ajouter du mapping de port dans la configuration de Virtualbox. (configuration avancé du réseau NAT)</li>
+</ul>
 </section><section id="tp-iaas-architecture" class="slide level2">
 <h2>TP Iaas : architecture</h2>
 <p>Une fois la prise en main faite, il faut imaginer notre infrastructure</p>
+<blockquote>
 <p><code>Client =&gt; http:1234 =&gt; FIP =&gt; Nginx+leaflet =&gt; rok4:9000 =&gt; Stockage Persistant</code></p>
+</blockquote>
 <p>Dans une deuxième étape, il faudra ajouter des Load-Balancer pour réaliser un Scale-out de notre application et un serveur intermédiaire NFS pour partager le stockage.</p>
 </section><section id="tp-iaas-installation" class="slide level2">
 <h2>TP Iaas : installation</h2>
-<p>En analysant les données de construction de la pile Docker-rok4, essayez de composer votre architecture. - Commencez par la VM qui va contenir Rok4. L'exploration des Dockerfile vous donne la marche à suivre pour installer le logiciel - pensez à ajouter un volume à votre VM, il faudra ensuite préparer ce volume (créer une partition et un système de fichier puis monté ce volume dans un dossier spécifique qui va contenir les données). je vous aiderai pour cette étape délicate. - Créez ensuite la VM Nginx à partir d'observation similaires : https://github.com/rok4/docker-rok4-with-data) - associez une FIP à cette VM nginx et ajouter un mapping de port dans Virtualbox pour accéder à cette application (port 80 ou 1234)</p>
+<p>En analysant les données de construction de la pile Docker-rok4, essayez de composer votre architecture.</p>
+<ul>
+<li>Commencez par la VM qui va contenir Rok4. L'exploration des Dockerfile vous donne la marche à suivre pour installer le logiciel
+<ul>
+<li>Pensez à ajouter un volume à votre VM, il faudra ensuite préparer ce volume (créer une partition et un système de fichier puis monté ce volume dans un dossier spécifique qui va contenir les données). je vous aiderai pour cette étape délicate.</li>
+</ul></li>
+<li>Créez ensuite la VM Nginx à partir d'observation similaires : <a href="https://github.com/rok4/docker-rok4-with-data" class="uri">https://github.com/rok4/docker-rok4-with-data</a></li>
+<li>associez une FIP à cette VM nginx et ajouter un mapping de port dans Virtualbox pour accéder à cette application (port 80 ou 1234)</li>
+</ul>
+</section><section id="tp-travail-attendu" class="slide level2">
+<h2>TP : TRAVAIL ATTENDU</h2>
 <p><code class="note">Rendez moi  (mail à cedric.esnault@ign.fr) un compte rendu de ces TP avec les différentes étapes de vos recherches. N'hésitez pas à noter les *points durs* .</code></p>
 </section></section>
             </div>
