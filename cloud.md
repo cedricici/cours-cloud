@@ -32,7 +32,6 @@ date : 12/12/2017 - IGN/ENSG
 
 # Concepts #
 
-
 ## Les Origines ##
 
 - Hérité de l'informatique client-serveur sur des **MainFrame** (L'accès distant était alors représenté par un nuage)
@@ -110,6 +109,10 @@ Les entreprises ont besoin de baisser les coûts et d'utiliser au maximum l'inve
 
 Le terme Cloud est devenu très englobant. Aujourd'hui il regroupe la fourniture d'un service, son mode d'accès et son infrastructure. Plusieurs organismes ont essayé de normaliser la définition du **Cloud computing**
 
+<aside class="notes">
+   
+</aside>
+
 ## Définition du  NIST ##
 
  **National Institute of Standards and Technology**
@@ -119,6 +122,10 @@ access to a shared pool of configurable computing resources (e.g., networks, ser
 storage, applications, and services) that can be rapidly provisioned and released with
 minimal management effort or service provider interaction. This cloud model is composed
 of **five essential characteristics**, **three service models**, and **four deployment models**.
+
+<aside class="notes">
+   
+</aside>
 
 ## Caractéristiques ## {.cloudCarac}
 
@@ -139,6 +146,9 @@ of **five essential characteristics**, **three service models**, and **four depl
 - Paas : Platform As A Service
 - Iaas : Infrastruture As A Service
 
+<aside class="notes">
+   
+</aside>
 
 ## Modèles de service ## {.cloudServices .figcenter}
 
@@ -147,6 +157,7 @@ of **five essential characteristics**, **three service models**, and **four depl
 <aside class="notes">
    
 </aside>
+
 
 ## Modèles de déploiement ##
 
@@ -159,6 +170,9 @@ of **five essential characteristics**, **three service models**, and **four depl
 - Cloud Hybride
     C'est une composition d'un Cloud privé et d'un Cloud public ou communautaire pour absorber les pics de charge (Cloud Bursting)
 
+<aside class="notes">
+   
+</aside>
 
 ## Modèles de déploiement ## {.cloudDeploy .figcenter}
 
@@ -190,6 +204,10 @@ C'est une application identifié, fournie à la demande pour un utilisateur, l'a
 
 ![](img/saas.png)
 
+<aside class="notes">
+   
+</aside>
+
 ## Usages ##
 
 - Avantages
@@ -199,7 +217,6 @@ C'est une application identifié, fournie à la demande pour un utilisateur, l'a
 - Inconvénients
     - limité au service proposé, pas d'adaptation possible
     - risques liés au multi tenant si mauvaise isolation
-
 
 <aside class="notes">
    
@@ -215,9 +232,17 @@ Cette fois ci, le fournisseur propose un support pour votre propre application. 
 - Heroku
 - ...
 
+<aside class="notes">
+   
+</aside>
+
 ## Platform As A Service ## {.figcenter}
 
 ![](img/paas.png)
+
+<aside class="notes">
+   
+</aside>
 
 
 ## Usages ##
@@ -231,13 +256,11 @@ Cette fois ci, le fournisseur propose un support pour votre propre application. 
     - **Lock-in** si les API utilisées ne sont pas standardisées.
     - risques liés au multi tenant si mauvaise isolation
 
-
 <aside class="notes">
    
 </aside>
 
 # Iaas  #
-
 
 ## Infrastructure As A Service ##
 
@@ -245,10 +268,17 @@ C'est la base du Cloud Computing, ici le fournisseur offre du CPU, de la RAM, du
 Le client construit son architecture, ajoute des réseaux, des machines virtuelles, des volumes de stockages persistant... Il installe ensuite les systèmes d'exploitations qu'il désire, les applications qu'il souhaite et propose (ou non) ces services sur le réseau (internet ou autre).
 Le tout est facturé à la consommation. 
 
+<aside class="notes">
+   
+</aside>
+
 ## Infrastructure As A Service ## {.figcenter}
 
 ![](img/iaas.png)
 
+<aside class="notes">
+   
+</aside>
 
 ## Usages ##
 
@@ -265,12 +295,10 @@ Le tout est facturé à la consommation.
 
 # Xaas #
 
-
 ## X (Everything) As A Service ##
 
 On peut étendre la notion de **As A Service** à d'autre types de services. Stockage,  sécurité, base de données...  Une  évolution récente et notable concerne l'évolution du **Paas** avec le service **Lambda** d'AWS ou encore **Google Cloud Function**.
 Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le service et celle ci est exécutée, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés pas tranche de 100ms d’exécution. On parle de **Serverless Computing**
-
 
 <aside class="notes">
    ABorder l'IA?
@@ -278,9 +306,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 </aside>
 
 
-
 # Techno du Cloud #
-
 
 ## Panorama ##
 
@@ -307,6 +333,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 <aside class="notes">
     
 </aside>
+
 
 # Architecture Scalable #
 
@@ -339,6 +366,9 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 
 ![](img/non-converge.png)
 
+<aside class="notes">
+   
+</aside>
 
 ## Architecture non convergée ##
 
@@ -357,6 +387,10 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 
 ![](img/Converge.png)
 
+<aside class="notes">
+   
+</aside>
+
 ## Architecture convergé ##
 
 - Infrastructure avec un réseau unifiée 
@@ -368,6 +402,10 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 ## ... et hyperconvergée ##{.figcenter}
 
 ![](img/hyperconverge.png)
+
+<aside class="notes">
+   
+</aside>
 
 ## ... et hyperconvergée ##
 
@@ -383,7 +421,6 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 
 # Usages de la virtualisation #
 
-
 ## Virtualisation du système ##
 
  Plusieurs niveaux
@@ -398,7 +435,6 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
     
 </aside>
 
-
 ## Isolation applicative ##
 
  - Spécifique au monde Unix
@@ -409,7 +445,6 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 ## Isolation applicative ##{.figcenter}
 
 ![isolation](img/Diagramme_ArchiIsolateur.png "© Primalmotion-Wikipedia")
-
 
 <aside class="notes">
 
@@ -439,6 +474,10 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
  - Para-virtualisation possible : les OS invités intègrent des mécanismes permettant d’exécuter des instructions directement sur le processeur.
  - Matériel émulé ET/OU partagé
  - Ex : VMware vSphère (IGN) / XenServer (ENSG) / KVM (Oshimae)
+
+<aside class="notes">
+   
+</aside>
 
 ## Hyperviseur de type 1 ##{.figcenter}
 
@@ -470,6 +509,10 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
   - OS VM hétérogènes possibles
   - Ex : Virtualbox (Développeur) / Parallel Desktop (MAC) / QEMU
 
+<aside class="notes">
+   
+</aside>
+
 ## Hyperviseur de type 2 ##{.figcenter}
 
 ![Hyperviseur II ](img/Diagramme_ArchiEmulateur.png "© Primalmotion-Wikipedia")
@@ -477,7 +520,6 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 <aside class="notes">
 
 </aside>
-
 
 ## Hyperviseur de type 2 ##
 
@@ -608,36 +650,54 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 
 # Ressources Physiques #
 
-
 ## Datacenters ##{.figcenter}
 
 ![Datacenter modulaire](img/datacenter-google.jpg)
 
+<aside class="notes">
+   
+</aside>
 
 ## Tiers ##{.figcenter}
 
 ![Datacenter Tiers](img/data-center-tiers.png)
 
+<aside class="notes">
+   
+</aside>
 
 ## Serveurs ##{.figcenter}
 
 ![Cloud Servers](img/hyperServer.jpg)
 
+<aside class="notes">
+   
+</aside>
 
 ## Réseau ##{.figcenter}
 
 ![Cloud Network](img/hyperSwitch.jpg)
+
+<aside class="notes">
+   
+</aside>
 
 
 ## Stockage ##{.figcenter}
 
 ![Cloud Storage](img/hyperStorage.jpg)
 
+<aside class="notes">
+   
+</aside>
 
 ## Climatisation ##{.figcenter}
 
 ![Couloirs Chauds/Froids](img/chaudfroid.png)
 
+<aside class="notes">
+   
+</aside>
 
 ## Électricité ##
 
@@ -662,7 +722,6 @@ L'envoi d’un mail avec une pièce jointe de 1 Mo dégage 19 grammes de CO2 et 
 </aside>
 
 
-
 ## Exemple d'infrastructure Cloud ## 
 
 - Cas pratique : Constitution d'un cloud Openstack 
@@ -678,6 +737,9 @@ L'envoi d’un mail avec une pièce jointe de 1 Mo dégage 19 grammes de CO2 et 
         - 3 Stockages (CINDER/SWIFT/CEPH)
     - Accès et exploitation via API / Dashboard
 
+<aside class="notes">
+   
+</aside>
 
 # Mots clés #
 
@@ -687,21 +749,33 @@ Une **API** (Application Programming Interface) Permet de faire abstraction de l
 Elle décrit comment le consommateur peut utiliser les fonctions du fournisseur. 
 Dans le Cloud il est primordial que le maximum d'échanges se fassent au travers d'API pour garantir l’interopérabilité. 
 
+<aside class="notes">
+   
+</aside>
 
 ## Interopérabilité ##
 
 C'est la faculté qu'un système a de s'interfacer avec un autre sans le connaître. Interopérabilité est primordiale dans un environnement hétérogène. Ceci est notamment faisable grâce à la description complète des interfaces de ce système et à l'utilisation de format d'échanges normés ou standardisés.
 
+<aside class="notes">
+   
+</aside>
 
 ## Multi-tenant ##
 
 Un SI **multi-tenant** désigne une infrastructure qui partage ses ressources entre plusieurs clients. Chaque client ne doit pas avoir conscience que les autres existent.
 
+<aside class="notes">
+   
+</aside>
 
 ## InfraAsCode ##
 
 l'**Infrastructure As Code** désigne les technique permettant de définir une infrastructure par du code informatique (script, conf...). La mise en place de cette infrastructure est alors totalement automatisable et ré-instanciable à la demande. Ceci est possible lorsque tous les éléments de l'infrastructure ont été virtualisés.
 
+<aside class="notes">
+   
+</aside>
 
 ## WebServices ##
 
@@ -709,15 +783,25 @@ Les **Service Web** désigne plusieurs chose mais principalement un concept d'AP
 
 Les API RESTful sont grandement utilisé dans le monde des Webservices. (HTTP + CRUD)
 
+<aside class="notes">
+   
+</aside>
 
 ## ServerLess ##
 
 **ServerLess** désigne les services proposé en mode Cloud qui ne comprennent pas la livraison d'une machine pour réaliser l'opération, l'appel au service génère une mise à disposition de ressource en fonction de la charge nécessaire à l’exécution de la demande et la libère instantanément.
 
+<aside class="notes">
+   
+</aside>
 
 ## StateLess ##
 
 Se dit d'une application ou d'un service qui ne conserve pas en interne d'état d'une connexion d'un client entre 2 appels au service. Cela permet de faire traiter la demande par des machines différentes à chaque requête. C'est une des notions primordiale du développement d'application **Cloud-Ready**
+
+<aside class="notes">
+   
+</aside>
 
 ## autonomic computing ##
 
@@ -736,21 +820,34 @@ Un système réparti est un SI dans lequel l'information et l’exécution est d
 
 ex: seti@home
 
+<aside class="notes">
+   Encore pazrler IA , deep learning
+</aside>
 
 ## High Availability ##
 
 la **HA** désigne la capacité d'un système à *survivre* à la perte d'un élément de son infrastructure. Ceci en permettant l'utilisation d'une autre ressource de façon transparente pour l'utilisateur. On élimine ainsi les SPOF (*Single Point Of Failure*). Un **Load-balancer** permet la HA des services Web par exemple.
+
+<aside class="notes">
+   
+</aside>
 
 ## PRA/PCA ##
 
 - PRA  : Plan de reprise d'activité. Désigne le fait qu'il existe une solution pour reprendre l'activité d'un SI après un temps prévu (le plus court possible)
 - PCA : Plan de continuité d'activité. Une solution existe pour continuer l'activité d'un service en cas de perte d'un élément constituant ce service (peut être un Datacenter tout entier, il faut donc alors basculer sur un autre Datacenter de façon transparente pour l’utilisateur).
 
+<aside class="notes">
+   
+</aside>
 
 ## CDN ##
 
 **Content Delivery Network** désigne un réseau synchronisé de serveurs permettant la diffusion de données au plus près de l'utilisateur (géographiquement parlant) afin de limiter l'effet de latence.
 
+<aside class="notes">
+   
+</aside>
 
 ## Devops ## 
 
@@ -758,9 +855,11 @@ la **HA** désigne la capacité d'un système à *survivre* à la perte d'un él
 
 Il est née de l'utilisation de bout en bout des méthodes **Agiles**
 
+<aside class="notes">
+   
+</aside>
 
 # Enjeux - Avenir #
-
 
 ## Responsabilité ##
 
@@ -792,16 +891,22 @@ Il est née de l'utilisation de bout en bout des méthodes **Agiles**
 - Chiffrement des flux
 - Isolation des composants
 
+<aside class="notes">
+   
+</aside>
+
 ## Interopérabilité ##
 
 - Facilité par les outils d'automatisation et l'utilisation massive de l'Open source
 - Difficile au niveau des données
 
+<aside class="notes">
+   
+</aside>
 
 ## Open source ##
 
 l'Open source qui consiste à ouvrir le code source d'une application à tous, est omniprésent dans les différents niveaux du Cloud computing. Même les plus grands fournisseurs utilisent des logiciels Open source, ils en sont souvent les principaux contributeurs.
-
 
 <aside class="notes">
 
@@ -824,8 +929,6 @@ Traffic mondial des Datacenter :
 15.3Zo = 213Milliard d'heures de music en streaming = 38 mois non-stop pour chaque habitant.
 
 </aside>
-
-
 
 
 

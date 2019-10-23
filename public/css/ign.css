@@ -82,7 +82,7 @@
 .reveal .slide-number {
 right: 49px;
 bottom: 50px;
-font-size: 14px;
+font-size: 0.2em;
 padding: 9px 2px 2px 2px;
 width: 29px;
 height: 22px;
@@ -240,19 +240,10 @@ padding:2px;
     text-align: left;
     padding: 0px 0;/* was 20px 0 */
 }
-.reveal .slides > section > section.level2 h1{
+.reveal .slides > section > section.level2 h1,
+.reveal .slides > section > section.level2 h2 {
     margin: 20px 0 -10px 0;/* was 20px 0 */
 }
-
-/** Slide  diplome**/
-.reveal .slides #diplome {
-    /*height: inherit;*/
-    background-image: , url("../img/logo-cnam.png" );
-    background-repeat: no-repeat;
-    background-position:top left;
-    background-size:auto;
-}
-
 
 
 /** Slide Merci **/
