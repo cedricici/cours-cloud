@@ -66,7 +66,7 @@ Les entreprises ont besoin de baisser les coûts et d'utiliser au maximum l'inve
 
 - Les solutions sont multiples
     - Urbanisation du SI
-        - POS
+        - POS (plan d'occupation)
         - modularité
         - subsidiarité
         - limiter les adhérences
@@ -76,6 +76,8 @@ Les entreprises ont besoin de baisser les coûts et d'utiliser au maximum l'inve
 
 <aside class="notes">
    POS : Plan d'occupation du Sol appliqué au SI
+   modularité : découpage en modules réutilisables
+   subsidiarité :  equilibre entre la gestion centralisé et décentralisé
 
 </aside>
 
@@ -90,7 +92,7 @@ Les entreprises ont besoin de baisser les coûts et d'utiliser au maximum l'inve
     - Il faut reconstruire les applications *Legacy*
     - Il faut construire des applications *Cloud-ready*
 - Formation
-    - Il faut développer les méthodes Agiles
+    - Il faut développer les méthodes Agiles*
     - Il faut former les agents aux technologies du Cloud
     - Il faut pousser le modèle **Devops**
 - sécurité/confidentialité
@@ -123,7 +125,7 @@ of **five essential characteristics**, **three service models**, and **four depl
 - Libre-service et à la demande (paiement à l’usage)
 - Accessible sur l'ensemble d'un réseau
 - Mutualisation des ressources (Multi tenant)
-- S’adapter rapidement à une variation du besoin
+- S’adapter rapidement à une variation du besoin (scalabilité)
 - Mesurable (statistiques d’usage, ressources …)
 
 
@@ -155,7 +157,7 @@ of **five essential characteristics**, **three service models**, and **four depl
 - Cloud Privé
     L'infrastructure est accessible à une seule organisation. Elle peut cependant être gérée et hébergée par une tierce partie
 - Cloud Hybride
-    C'est une composition d'un Cloud privé et d'un Cloud public ou communautaire pour absorber les pics de charge (Clud Bursting)
+    C'est une composition d'un Cloud privé et d'un Cloud public ou communautaire pour absorber les pics de charge (Cloud Bursting)
 
 
 ## Modèles de déploiement ## {.cloudDeploy .figcenter}
@@ -178,6 +180,11 @@ C'est une application identifié, fournie à la demande pour un utilisateur, l'a
 * Messagerie/Bureautique (office 365)
 
 `On peut intégrer les offres de sauvegarde en ligne dans cette catégorie (icloud / dropbox ...).`{.fragment .note}
+
+<aside class="notes">
+   
+</aside>
+
 
 ## Software As A Service ## {.figcenter}
 
@@ -246,7 +253,7 @@ Le tout est facturé à la consommation.
 ## Usages ##
 
 - Avantages
-    - contrôle de l'architecture jusqu'à l'OS, nécessaire pour une gestion accru de la sécurité. Seule la partie matérielle est déléguée au fournisseur.
+    - contrôle de l'architecture jusqu'à l'OS, nécessaire pour une gestion accru de la sécurité. Seule la partie matérielle, ainsi que la gestion des hyperviseurs et des services proposés est déléguée au fournisseur.
 - Inconvénients
     - environnement multi-tenant pouvant poser des problèmes de confidentialités si la sécurité n'est pas gérée correctement.
     - visibilité limité sur la politique de sécurité du fournisseur au niveau des hyperviseurs.
@@ -266,7 +273,8 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 
 
 <aside class="notes">
-   
+   ABorder l'IA?
+
 </aside>
 
 
