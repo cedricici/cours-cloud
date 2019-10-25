@@ -1068,7 +1068,7 @@ Vous aurez besoin de Docker et de docker-compose
 
 > - Explorez via Horizon la VM Devstack fournie : 
 >    - l'URL est [http://127.0.0.1:8888/](http://127.0.0.1:8888/)
-> - téléchargez une image debian pour le cloud : [http://cdimage.debian.org/cdimage/openstack/current-8/debian-8-openstack-amd64.qcow2](http://cdimage.debian.org/cdimage/openstack/current-8/debian-8-openstack-amd64.qcow2)
+> - téléchargez une image debian pour le cloud : [http://cdimage.debian.org/cdimage/openstack/current-10/debian-10-openstack-amd64.qcow2](http://cdimage.debian.org/cdimage/openstack/current-10/debian-10-openstack-amd64.qcow2)
 > - créez en une image glance
 > - créez une première VM (utilisez la configuration suivante pour définir un mot de passe à votre instance ) :
 
