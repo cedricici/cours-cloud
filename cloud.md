@@ -10,7 +10,7 @@ date : 24/10/2019 - IGN/ENSG
 
 ## Plan de la présentation ##
 
-- Concepts 
+- Concepts
 - Définitions
     - Saas
     - Paas
@@ -22,11 +22,11 @@ date : 24/10/2019 - IGN/ENSG
     - Virtualisation
     - Ressources
     - Mots-clés
-- Enjeux 
+- Enjeux
 - DiY
 
 <aside class="notes">
-   
+
 </aside>
 
 
@@ -41,7 +41,7 @@ date : 24/10/2019 - IGN/ENSG
 `Amazon a eu l'idée de mettre à la disposition du public son énorme infrastructure mondiale, dimensionnée pour les pics (Noël...) et sous-utilisée le reste du temps`{.note .fragment}
 
 <aside class="notes">
-   
+
 </aside>
 
 
@@ -55,7 +55,7 @@ Les entreprises souhaitent en finir avec les pannes informatiques.
 
 
 <aside class="notes">
-   
+
 </aside>
 
 
@@ -74,6 +74,7 @@ Les entreprises ont besoin de baisser les coûts et d'utiliser au maximum l'inve
         - repartir les ressources physiques
 
 <aside class="notes">
+
    POS : Plan d'occupation du Sol appliqué au SI
    modularité : découpage en modules réutilisables
    subsidiarité :  equilibre entre la gestion centralisé et décentralisé
@@ -82,7 +83,7 @@ Les entreprises ont besoin de baisser les coûts et d'utiliser au maximum l'inve
 
 ## Transformation difficile ##
 
-- Infrastructure 
+- Infrastructure
     - Il faut repenser le SI
     - Considérer l'externalisation dans le Cloud public
 - Architecture
@@ -95,13 +96,13 @@ Les entreprises ont besoin de baisser les coûts et d'utiliser au maximum l'inve
     - Il faut former les agents aux technologies du Cloud
     - Il faut pousser le modèle **Devops**
 - sécurité/confidentialité
-    - Il faut intégrer la sécurité à tous les niveaux 
+    - Il faut intégrer la sécurité à tous les niveaux
     - Il faut faire confiance
 
 <aside class="notes">
-   
+
 </aside>
-   
+
 
 # Définitions #
 
@@ -110,7 +111,7 @@ Les entreprises ont besoin de baisser les coûts et d'utiliser au maximum l'inve
 Le terme Cloud est devenu très englobant. Aujourd'hui il regroupe la fourniture d'un service, son mode d'accès et son infrastructure. Plusieurs organismes ont essayé de normaliser la définition du **Cloud computing**
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Définition du  NIST ##
@@ -124,7 +125,7 @@ minimal management effort or service provider interaction. This cloud model is c
 of **five essential characteristics**, **three service models**, and **four deployment models**.
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Caractéristiques ## {.cloudCarac}
@@ -137,17 +138,17 @@ of **five essential characteristics**, **three service models**, and **four depl
 
 
 <aside class="notes">
-   
+
 </aside>
 
-## Modèles de service ## 
+## Modèles de service ##
 
 - Saas : SoftWare As A Service
 - Paas : Platform As A Service
 - Iaas : Infrastruture As A Service
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Modèles de service ## {.cloudServices .figcenter}
@@ -155,14 +156,14 @@ of **five essential characteristics**, **three service models**, and **four depl
 ![](img/Colloc.png)
 
 <aside class="notes">
-   
+
 </aside>
 
 
 ## Modèles de déploiement ##
 
 - Cloud Public
-    Une organisation vend des services accessibles à tous    
+    Une organisation vend des services accessibles à tous
 - Cloud Communautaire
     L'infrastructure est partagé par plusieurs organismes, elle peut être géré par les organismes ou par une tierce partie
 - Cloud Privé
@@ -171,7 +172,7 @@ of **five essential characteristics**, **three service models**, and **four depl
     C'est une composition d'un Cloud privé et d'un Cloud public ou communautaire pour absorber les pics de charge (Cloud Bursting)
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Modèles de déploiement ## {.cloudDeploy .figcenter}
@@ -179,7 +180,7 @@ of **five essential characteristics**, **three service models**, and **four depl
 ![](img/Clouds.png)
 
 <aside class="notes">
-   
+
 </aside>
 
 
@@ -196,7 +197,7 @@ C'est une application identifié, fournie à la demande pour un utilisateur, l'a
 `On peut intégrer les offres de sauvegarde en ligne dans cette catégorie (icloud / dropbox ...).`{.fragment .note}
 
 <aside class="notes">
-   
+
 </aside>
 
 
@@ -205,26 +206,26 @@ C'est une application identifié, fournie à la demande pour un utilisateur, l'a
 ![](img/saas.png)
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Usages ##
 
 - Avantages
     - indépendant de la technologies sous-jacente = portable
-    - (pratiquement) plus de gestion de la sécurité 
+    - (pratiquement) plus de gestion de la sécurité
     - réactivité
 - Inconvénients
     - limité au service proposé, pas d'adaptation possible
     - risques liés au multi tenant si mauvaise isolation
 
 <aside class="notes">
-   
+
 </aside>
 
 # Paas  #
 
-## Platform As A Service ## 
+## Platform As A Service ##
 
 Cette fois ci, le fournisseur propose un support pour votre propre application. Un **Paas** est constitué d'outils permettant la compilation et/ou le déploiement de code source dans un langage défini. Ce code est ensuite instancié (ou pas) à la manière du **Saas** pour mettre à disposition l'application développée.
 
@@ -233,7 +234,7 @@ Cette fois ci, le fournisseur propose un support pour votre propre application. 
 - ...
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Platform As A Service ## {.figcenter}
@@ -241,7 +242,7 @@ Cette fois ci, le fournisseur propose un support pour votre propre application. 
 ![](img/paas.png)
 
 <aside class="notes">
-   
+
 </aside>
 
 
@@ -257,7 +258,7 @@ Cette fois ci, le fournisseur propose un support pour votre propre application. 
     - risques liés au multi tenant si mauvaise isolation
 
 <aside class="notes">
-   
+
 </aside>
 
 # Iaas  #
@@ -266,10 +267,14 @@ Cette fois ci, le fournisseur propose un support pour votre propre application. 
 
 C'est la base du Cloud Computing, ici le fournisseur offre du CPU, de la RAM, du stockage, du réseau et éventuellement d'autres services d'infrastructures (FireWall, DNS, VPN ...).
 Le client construit son architecture, ajoute des réseaux, des machines virtuelles, des volumes de stockages persistant... Il installe ensuite les systèmes d'exploitations qu'il désire, les applications qu'il souhaite et propose (ou non) ces services sur le réseau (internet ou autre).
-Le tout est facturé à la consommation. 
+Le tout est facturé à la consommation.
 
 <aside class="notes">
-   
+
+   Infrastructure As A Code :
+    définir l'infrastructure dans un code réutilisable
+
+
 </aside>
 
 ## Infrastructure As A Service ## {.figcenter}
@@ -277,7 +282,7 @@ Le tout est facturé à la consommation.
 ![](img/iaas.png)
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Usages ##
@@ -290,8 +295,39 @@ Le tout est facturé à la consommation.
     - dépendant de la réactivité du fournisseur en cas d'incident matériel
 
 <aside class="notes">
-   
+
 </aside>
+
+
+
+
+# Caas/Kaas #
+
+## Container As A Service ## {.figcenter}
+
+![](img/kaas.jpg)
+
+<aside class="notes">
+
+</aside>
+
+## Container As A Service ##
+
+Un nouveau modèle devient disponible, le **Container As A Service**
+
+ - un peu différent du Iaas, pas vraiement du Paas
+ - On consomme (et paye) des noeuds dans lesquels on déploie des applications en mode **Devops**
+ - L'application doit être résiliente et s'auto-réparer (self-healing)
+ - Le **Cluster** est élastique
+ - C'est le CSP qui gère l'exploitation du Cluster
+ - Le leader est Kubernetes
+
+
+
+<aside class="notes">
+
+</aside>
+
 
 # Xaas #
 
@@ -301,7 +337,8 @@ On peut étendre la notion de **As A Service** à d'autre types de services. Sto
 Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le service et celle ci est exécutée, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés par tranche de 100ms d’exécution. On parle de **Serverless Computing**
 
 <aside class="notes">
-   ABorder l'IA?
+  les serverless utilise du Kaas
+   Aborder l'IA?
 
 </aside>
 
@@ -316,7 +353,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 * Mots-clés
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Architectures ##
@@ -331,7 +368,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 * ressources
 
 <aside class="notes">
-    
+
 </aside>
 
 
@@ -340,7 +377,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 ## Architectures évolutives ##
 
 * Évolutivité verticale (Scale UP)
-    * Ajouter des ressources au composant (CPU, RAM, Stockage) 
+    * Ajouter des ressources au composant (CPU, RAM, Stockage)
     * Faibles risques d’incompatibilité
     * Augmente les risques de défaillance (SPOF)
 
@@ -357,7 +394,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
     * Doit être souvent être complété par de la scalabilité horizontale
 
 <aside class="notes">
-    
+
 </aside>
 
 # Convergence #
@@ -367,16 +404,16 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 ![](img/non-converge.png)
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Architecture non convergée ##
 
 - Architecture traditionnelle
-- Les composants sont spécialisés avec 
+- Les composants sont spécialisés avec
     - Des commutateurs Ethernet
     - Des serveurs
-    - Un réseau SAN (FC/iscsi) pour le stockage  
+    - Un réseau SAN (FC/iscsi) pour le stockage
 
 <aside class="notes">
 
@@ -388,12 +425,12 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 ![](img/Converge.png)
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Architecture convergé ##
 
-- Infrastructure avec un réseau unifiée 
+- Infrastructure avec un réseau unifiée
 
 <aside class="notes">
 
@@ -404,7 +441,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 ![](img/hyperconverge.png)
 
 <aside class="notes">
-   
+
 </aside>
 
 ## ... et hyperconvergée ##
@@ -416,6 +453,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 
 <aside class="notes">
 
+
 </aside>
 
 
@@ -425,49 +463,36 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 
  Plusieurs niveaux
 
- * Isolation applicative (Conteneur)
- * Para-virtualisation (hyperviseur type1) 
+ * Isolation applicative (Conteneur)
+ * Para-virtualisation (hyperviseur type1)
  * Virtualisation complète (hyperviseur type1)
  * Virtualisation complète (hyperviseur type2)
  * Émulation (cpu différent)
 
 <aside class="notes">
-    
+
 </aside>
 
 ## Isolation applicative ##
 
  - Spécifique au monde Unix
  - Isolation de l'espace utilisateur
- - « Partage » du noyau
+ - « Partage » du noyau
  - EX IGN : DockerForge
+
+<aside class="notes">
+
+</aside>
 
 ## Isolation applicative ##{.figcenter}
 
-![isolation](img/Diagramme_ArchiIsolateur.png "© Primalmotion-Wikipedia")
+![](img/Diagramme_ArchiIsolateur.png)
 
 <aside class="notes">
 
 </aside>
 
-## Isolation applicative ##
-
- - Avantages
-    - Rapide à mettre en place
-    - Pas de perte de performances
-    - Adapté au micro-services
-    - En forte progression
- - Inconvénients
-    - Isolation limitée
-    - limité un un noyau commun
-    - mécanismes complexes et moins matures
-
-<aside class="notes">
-
-</aside>
-
-
-## Hyperviseur de type 1 ##
+## Hyperviseur de type 1 ##
 
  - Noyau léger
  - Exploitation matériel (Intel VT / AMD-V)
@@ -476,18 +501,19 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
  - Ex : VMware vSphère (IGN) / XenServer (ENSG) / KVM (Oshimae)
 
 <aside class="notes">
-   
+
 </aside>
 
-## Hyperviseur de type 1 ##{.figcenter}
+## Hyperviseur de type 1 ##{.figcenter}
 
-![Hyperviseur I](img/Diagramme_ArchiHyperviseur.png "© Primalmotion-Wikipedia")
+![](img/Diagramme_ArchiHyperviseur.png "© Primalmotion-Wikipedia")
+
 
 <aside class="notes">
 
 </aside>
 
-## Hyperviseur de type 1 ##
+## Hyperviseur de type 1 ##
 
  - Avantages
     - Rapidité (peu de perte)
@@ -496,30 +522,12 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
     - changement des caractéristiques de la VM (éventuellement à la volée)
  - Inconvénients
     - complexité de mise en œuvre
-    - OS VM adapté 
+    - OS VM adapté
 
 <aside class="notes">
 
 </aside>
 
-## Hyperviseur de type 2 ##
-
-  - Logiciel sur OS complet
-  - Émulation plus ou moins complète
-  - OS VM hétérogènes possibles
-  - Ex : Virtualbox (Développeur) / Parallel Desktop (MAC) / QEMU
-
-<aside class="notes">
-   
-</aside>
-
-## Hyperviseur de type 2 ##{.figcenter}
-
-![Hyperviseur II ](img/Diagramme_ArchiEmulateur.png "© Primalmotion-Wikipedia")
-
-<aside class="notes">
-
-</aside>
 
 ## Hyperviseur de type 2 ##
 
@@ -538,9 +546,9 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 ## Émulateur ##
 
 - changement de plateforme (ARM sur X86)
-- Tout est émulé 
+- Tout est émulé
     - => très lent
-- Ex : Android Virtual device ... 
+- Ex : Android Virtual device ...
 
 <aside class="notes">
 
@@ -597,13 +605,13 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 - Stockage Virtuel
     - Une couche contrôle (Gestion, allocation des ressources, Qos, sécurité)
     - Une couche stockage (Parité, thin provisioning, compression …)
-    - Services : Stockage objet, Bloc, fichier, HDFS 
+    - Services : Stockage objet, Bloc, fichier, HDFS
 - Logiciel
     - Une solution centralisé de gestion du réseau, Qos, Sécurité , ressources, autorisations, quotas...
 - EX: VmWare VirtualSAN / CEPH
 
 <aside class="notes">
-    
+
 </aside>
 
 ## Software Defined Datacenter ##
@@ -617,7 +625,8 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 - Ex: Openstack, Vcloud
 
 <aside class="notes">
-    Seul les yahoo amazon et google peuvent mettre en place de tels mécanismes
+    Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes
+    AWS, GCP, Azure, ce sont les hyperscalers
 </aside>
 
 
@@ -629,14 +638,14 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 - Vigilance
     - La couche d’abstraction est un système à part entière, à mettre à jour et sécuriser
     - Les habilitations d’accès aux couches d’abstractions doivent êtres ajustées avec soins.
-    - Les systèmes critiques doivent être protégés (cloisonnement par ressources dédiés ou réservations de ressources, Qos…) 
+    - Les systèmes critiques doivent être protégés (cloisonnement par ressources dédiés ou réservations de ressources, Qos…)
 
 <aside class="notes">
-    
+
 </aside>
 
 
-## Virtualisation et sécurité ## 
+## Virtualisation et sécurité ##
 
 - Apports
     - Une disponibilité plus élevée
@@ -644,7 +653,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
     - Des ressources plus faciles à reconstruire (Sauvegarde, PRA…)
 
 <aside class="notes">
-    
+
 </aside>
 
 
@@ -655,7 +664,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 ![Datacenter modulaire](img/datacenter-google.jpg)
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Tiers ##{.figcenter}
@@ -663,7 +672,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 ![Datacenter Tiers](img/data-center-tiers.png)
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Serveurs ##{.figcenter}
@@ -671,7 +680,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 ![Cloud Servers](img/hyperServer.jpg)
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Réseau ##{.figcenter}
@@ -679,7 +688,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 ![Cloud Network](img/hyperSwitch.jpg)
 
 <aside class="notes">
-   
+
 </aside>
 
 
@@ -688,7 +697,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 ![Cloud Storage](img/hyperStorage.jpg)
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Climatisation ##{.figcenter}
@@ -696,7 +705,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 ![Couloirs Chauds/Froids](img/chaudfroid.png)
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Électricité ##
@@ -705,7 +714,8 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 - le refroidissement 40% à 50%
 - Datacenter moderne et optimisé = 1.5 à 3KW/m2
 
-Exemple récent de l’envolée du Bitcoin : en 2020 le calcul de la blockchain consommerait toute l'énergie de la planète.
+Exemple de l’envolée du Bitcoin : si la flambée du bitcoin démarrée en 2017 avait continuée , en 2020 le calcul de la blockchain aurait consommé toute l'énergie de la planète.
+Cette consomation s'est stabilisée et équivaut aujourd'hui à peu près à la consomation de la suisse.
 
 `GREEN IT`{.note .fragment}
 
@@ -713,18 +723,21 @@ Exemple récent de l’envolée du Bitcoin : en 2020 le calcul de la blockchain 
 
 Au moins 77 KWh pour une transaction Bitcoin
 
-une des dernières estimations de la consommation annuelle du minage de Bitcoin est de 23,07 terawattheure.
+une des dernières estimations de la consommation annuelle du minage de Bitcoin est de 58,07 terawattheure.
 
 Requete Google 0.0003kWh 0.2g CO2 , 7g selon chercheur Wissner-Gross
 
 L'envoi d’un mail avec une pièce jointe de 1 Mo dégage 19 grammes de CO2 et sa consommation électrique est équivalente à celle d’une ampoule pendant une heure.
 
+les estimations sont très complexe et différent selon les sources
+un film de 60mn sur Netflix = entre 0.03kWh (en SD sur un smartphone en Wifi) et 6.6 kWh selon the Shift Project
+
 </aside>
 
 
-## Exemple d'infrastructure Cloud ## 
+## Exemple d'infrastructure Cloud ##
 
-- Cas pratique : Constitution d'un cloud Openstack 
+- Cas pratique : Constitution d'un cloud Openstack
     - 10 serveurs
     - reliés sur au moins 3 réseaux différents
         - Admin
@@ -738,19 +751,19 @@ L'envoi d’un mail avec une pièce jointe de 1 Mo dégage 19 grammes de CO2 et 
     - Accès et exploitation via API / Dashboard
 
 <aside class="notes">
-   
+
 </aside>
 
 # Mots clés #
 
 ## Abstraction (api) ##
 
-Une **API** (Application Programming Interface) Permet de faire abstraction de l'élément sur lequel elle se pose. 
-Elle décrit comment le consommateur peut utiliser les fonctions du fournisseur. 
-Dans le Cloud il est primordial que le maximum d'échanges se fassent au travers d'API pour garantir l’interopérabilité. 
+Une **API** (Application Programming Interface) Permet de faire abstraction de l'élément sur lequel elle se pose.
+Elle décrit comment le consommateur peut utiliser les fonctions du fournisseur.
+Dans le Cloud il est primordial que le maximum d'échanges se fassent au travers d'API pour garantir l’interopérabilité.
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Interopérabilité ##
@@ -758,7 +771,7 @@ Dans le Cloud il est primordial que le maximum d'échanges se fassent au travers
 C'est la faculté qu'un système a de s'interfacer avec un autre sans le connaître. Interopérabilité est primordiale dans un environnement hétérogène. Ceci est notamment faisable grâce à la description complète des interfaces de ce système et à l'utilisation de format d'échanges normés ou standardisés.
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Multi-tenant ##
@@ -766,7 +779,7 @@ C'est la faculté qu'un système a de s'interfacer avec un autre sans le connaî
 Un SI **multi-tenant** désigne une infrastructure qui partage ses ressources entre plusieurs clients. Chaque client ne doit pas avoir conscience que les autres existent.
 
 <aside class="notes">
-   
+
 </aside>
 
 ## InfraAsCode ##
@@ -774,7 +787,7 @@ Un SI **multi-tenant** désigne une infrastructure qui partage ses ressources en
 l'**Infrastructure As Code** désigne les technique permettant de définir une infrastructure par du code informatique (script, conf...). La mise en place de cette infrastructure est alors totalement automatisable et ré-instanciable à la demande. Ceci est possible lorsque tous les éléments de l'infrastructure ont été virtualisés.
 
 <aside class="notes">
-   
+
 </aside>
 
 ## WebServices ##
@@ -784,7 +797,7 @@ Les **Service Web** désigne plusieurs chose mais principalement un concept d'AP
 Les API RESTful sont grandement utilisé dans le monde des Webservices. (HTTP + CRUD)
 
 <aside class="notes">
-   
+
 </aside>
 
 ## ServerLess ##
@@ -792,7 +805,7 @@ Les API RESTful sont grandement utilisé dans le monde des Webservices. (HTTP + 
 **ServerLess** désigne les services proposé en mode Cloud qui ne comprennent pas la livraison d'une machine pour réaliser l'opération, l'appel au service génère une mise à disposition de ressource en fonction de la charge nécessaire à l’exécution de la demande et la libère instantanément.
 
 <aside class="notes">
-   
+
 </aside>
 
 ## StateLess ##
@@ -800,7 +813,7 @@ Les API RESTful sont grandement utilisé dans le monde des Webservices. (HTTP + 
 Se dit d'une application ou d'un service qui ne conserve pas en interne d'état d'une connexion d'un client entre 2 appels au service. Cela permet de faire traiter la demande par des machines différentes à chaque requête. C'est une des notions primordiale du développement d'application **Cloud-Ready**
 
 <aside class="notes">
-   
+
 </aside>
 
 ## autonomic computing ##
@@ -818,10 +831,12 @@ Lancé par IBM, l'autoréparation des programme intègre aujourd'hui de nombreux
 
 Un système réparti est un SI dans lequel l'information et l’exécution est distribuée sur un ensemble de nœuds constituant un Cluster. Cet ensemble peut être hétérogène et doit être scalable.
 
-ex: seti@home
+ - ex: seti@home
+ - ex: cluster kubernetes
 
 <aside class="notes">
-   Encore parler IA , deep learning
+   Encore parler IA , deep learning, grilles de caclul
+
 </aside>
 
 ## High Availability ##
@@ -829,7 +844,7 @@ ex: seti@home
 la **HA** désigne la capacité d'un système à *survivre* à la perte d'un élément de son infrastructure. Ceci en permettant l'utilisation d'une autre ressource de façon transparente pour l'utilisateur. On élimine ainsi les SPOF (*Single Point Of Failure*). Un **Load-balancer** permet la HA des services Web par exemple.
 
 <aside class="notes">
-   
+
 </aside>
 
 ## PRA/PCA ##
@@ -838,7 +853,7 @@ la **HA** désigne la capacité d'un système à *survivre* à la perte d'un él
 - PCA : Plan de continuité d'activité. Une solution existe pour continuer l'activité d'un service en cas de perte d'un élément constituant ce service (peut être un Datacenter tout entier, il faut donc alors basculer sur un autre Datacenter de façon transparente pour l’utilisateur).
 
 <aside class="notes">
-   
+
 </aside>
 
 ## CDN ##
@@ -846,17 +861,40 @@ la **HA** désigne la capacité d'un système à *survivre* à la perte d'un él
 **Content Delivery Network** désigne un réseau synchronisé de serveurs permettant la diffusion de données au plus près de l'utilisateur (géographiquement parlant) afin de limiter l'effet de latence.
 
 <aside class="notes">
-   
+
 </aside>
 
-## Devops ## 
+## Devops ##
 
 **Devops** désigne un courant de pensée informatique visant à éliminer le conflit entre les **Développeurs** qui souhaitent faire évoluer un SI et les **Opérationnels** qui souhaitent avoir un SI le plus Stable possible.
 
 Il est née de l'utilisation de bout en bout des méthodes **Agiles**
 
 <aside class="notes">
-   
+
+</aside>
+
+## Devops ##{.figcenter}
+
+![DEVOPS](img/devops-process.png)
+
+<aside class="notes">
+
+</aside>
+
+## Devops ##
+
+**Devops** est très à la mode, c'est une méthodologie très adaptée aux startups, l'évolution des outils mis à disposition permet de faire des **pipeline** de bout en bout sans connaissance de la complexité sous-jacente.
+
+Mais on commence à voir les travers:
+
+- complexité
+- risques en sécurité
+- Augmentation des coûts cachés
+
+
+<aside class="notes">
+  finops
 </aside>
 
 # Enjeux - Avenir #
@@ -864,7 +902,7 @@ Il est née de l'utilisation de bout en bout des méthodes **Agiles**
 ## Responsabilité ##
 
 - Niveau de service : Engagement sur :
-    - Disponibilité garantie (en %) 
+    - Disponibilité garantie (en %)
     - Garantie de temps d’intervention et rétablissement
     - Qualité de service (performance)
 
@@ -876,7 +914,7 @@ Il est née de l'utilisation de bout en bout des méthodes **Agiles**
     - S’assurer de la possibilité d'export des données et de leurs exploitabilités
 
 <aside class="notes">
-   
+
 </aside>
 
 
@@ -892,16 +930,16 @@ Il est née de l'utilisation de bout en bout des méthodes **Agiles**
 - Isolation des composants
 
 <aside class="notes">
-   
+
 </aside>
 
-## Interopérabilité ##
+## Interopérabilité ##
 
 - Facilité par les outils d'automatisation et l'utilisation massive de l'Open source
 - Difficile au niveau des données
 
 <aside class="notes">
-   
+
 </aside>
 
 ## Open source ##
@@ -915,18 +953,22 @@ https://www.openstack.org/foundation/companies/
 </aside>
 
 
-## Trafic réseau ##
+## Trafic réseau ##
 
 Le **Cloud** et l'**IoT** sont très liés et ces deux éléments sont en très forte croissance. Cisco estime qu'en 2021, un habitant consommera à lui seul 200Gb de donnée par jour sur l'internet. 90% de ce trafic passera par le Cloud public et atteindra 3.3Zo (ZetaOctets), principalement pour la diffusion video
 Traffic mondial des Datacenter :
-- 2015 : 4.7Zo 
+
+- 2015 : 4.7Zo
 - 2020 : 15.3Zo
-    - 14% avec les utilisateurs
-    - 9% entre Datacenters
-    - 77% dans le Datacenter lui même
+  - 14% avec les utilisateurs
+  - 9% entre Datacenters
+  - 77% dans le Datacenter lui même
 
 <aside class="notes">
 15.3Zo = 213Milliard d'heures de music en streaming = 38 mois non-stop pour chaque habitant.
+
+The Shift project
+
 
 </aside>
 
@@ -945,13 +987,13 @@ Traffic mondial des Datacenter :
 
 > - compilation d'un code calculant les **n** nombres premiers
 
-``` 
-wget -O prime.c https://pastebin.com/yaRWGpbn
 ```
-``` 
+wget -O prime.c https://pastebin.com/raw/yaRWGpbn
+```
+```
 gcc prime.c -o prime
 ```
-``` 
+```
 time ./prime 10000
 ```
 ```
@@ -1003,17 +1045,23 @@ user    0m36.130s
 sys     0m0.010s
 ```
 
+## Comparaison systeme : Questions ##
+
+`Question :  Donnez vos premières conclusions sur ces résultats`
+`Question : expliquez les différences entre les durées **real**, **user** et **sys**`
+`Question : pourquoi le temps **user** dans Docker est-il si petit`
+`Question : Donnez une solution pour obtenir le temps **user** effectif dans le conteneur`
 
 
 ## TP Saas ##
 
 **Objectif** : déployer une application Saas
 
-Connectez vous sur le site Wordpress.com. c'est un service de SaaS basé sur le CMS(Content Managment System) Open source Wordpress, disponible sur le site wordpress.org 
+Connectez vous sur le site Wordpress.com. c'est un service de SaaS basé sur le CMS(Content Managment System) Open source Wordpress, disponible sur le site wordpress.org
 
 > - Laissez vous guider dans la création de votre site.
 Vous pouvez ensuite faire des modifications sommaires sur la page d'accueil.
-> - publiez votre site (ajoutez au moins un peu de contenu)
+> - publiez votre site (ajoutez du contenu, des média et au minimum un widget)
 > - repassez par l'édition pour voir le back-office complet.
 
 
@@ -1022,7 +1070,9 @@ Vous pouvez ensuite faire des modifications sommaires sur la page d'accueil.
 
 `Question : D'après vous, quelle différence peut-on noter entre le logiciel Wordpress et le service de Saas Wordpress.com `{.note}
 
-`Question : Quels éléments faudrait-il mettre en place pour proposer notre propre service de Saas basé sur Wordpress?`{.note}
+`Question : Quels éléments (vu dans le cours) faudrait-il mettre en place pour proposer notre propre service de Saas basé sur Wordpress?`{.note}
+
+`Question : Proposez une architecture pour rendre ce service`{.note}
 
 
 
@@ -1037,36 +1087,40 @@ L'objectif ici est de déployer une application à partir d'un code source.
 
 ## TP Saas  : Questions ##
 
-`Question : Une fois le tutoriel de base réalisé. Trouvez une solution pour déployer le code suivant (ou celui de votre choix) dans une nouvelle application sans utiliser l'outil CLI heroku-toolbelt. Donnez une explication des technologies qui selon vous sont misent en œuvre ici. `{.note}
+`Question : Une fois le tutoriel de base réalisé. Trouvez une solution pour déployer le code suivant (ou celui de votre choix) dans une nouvelle application **sans utiliser l'outil CLI heroku-toolbelt** . `{.note}
+
+`Question : Donnez une explication des technologies qui selon vous sont misent en œuvre ici. `{.note}
 
 > [https://github.com/cedricici/findmefast.git](https://github.com/cedricici/findmefast.git)
 
 
 
-## TP Iaas ##
+## TP Iaas / Caas ##
 
-**Objectif** : Créer une infra minimale en Iaas
+**Objectif** : Créer une infra minimale en Iaas ou en Kaas
 
-**Moyens** : Utilisez la VM devstack fournie pour tester le déploiement d'une application n-tiers
+**Moyens** : Utilisez la VM devstack ou la VM Minikube fournie pour tester le déploiement d'une application n-tiers
 
-Je vous propose de réaliser un serveur de données cartographiques Raster basé sur **Rok4** , Vous aurez besoin de ces ressources : 
+Je vous propose de réaliser un serveur de données cartographiques Raster basé sur **Rok4** , Vous aurez besoin de ces ressources :
 
 > - un serveur nginx pour publier une interface de visualisation
 > - un serveur rok4 pour diffuser des tuiles au standard WMTS
-> - un serveur NFS pour stocker et mettre à disposition les pyramides de données
+> - des images de données
+
 
 ## TP Iaas : Objectif ##
 
-Le résultat à atteindre est visualisable à l'aide d'un ensemble de conteneur Docker que nous avons préparés pour cette démo : 
+Le résultat à atteindre est visualisable à l'aide d'un ensemble de conteneur Docker que nous avons préparés pour cette démo :
 
-[https://github.com/rok4/docker-rok4-with-data](https://github.com/rok4/docker-rok4-with-data)
+[https://github.com/rok4/rok4/tree/master/docker](https://github.com/rok4/rok4/tree/master/docker)
 
-Suivez le tutoriel Github pour lancer la stack Docker ci dessus. 
+Suivez le tutoriel Github pour lancer la stack Docker ci dessus.
 Vous aurez besoin de Docker et de docker-compose
 
-## TP Iaas : préparation  ##
 
-> - Explorez via Horizon la VM Devstack fournie : 
+## TP version Iaas ##
+
+> - Explorez via Horizon la VM Devstack fournie :
 >    - l'URL est [http://127.0.0.1:8888/](http://127.0.0.1:8888/)
 > - téléchargez une image debian pour le cloud : [http://cdimage.debian.org/cdimage/openstack/current-8/debian-8-openstack-amd64.qcow2](http://cdimage.debian.org/cdimage/openstack/current-8/debian-8-openstack-amd64.qcow2)
 > - créez en une image glance
@@ -1102,7 +1156,17 @@ En analysant les données de construction de la pile Docker-rok4, essayez de com
 > - Créez ensuite la VM Nginx à partir d'observation similaires : [https://github.com/rok4/docker-rok4-with-data](https://github.com/rok4/docker-rok4-with-data)
 > - associez une FIP à cette VM nginx et ajouter un mapping de port dans Virtualbox pour accéder à cette application (port 80 ou 1234)
 
+
 ## TP : TRAVAIL ATTENDU ##
 
 `Rendez moi  (mail à cedric.esnault@ign.fr) un compte rendu de ces TP avec les différentes étapes de vos recherches. N'hésitez pas à noter les *points durs* .`{.note}
+
+
+## TP  version Kaas ##
+
+Installation de Minikube
+
+https://minikube.sigs.k8s.io/docs/start/
+
+
 
