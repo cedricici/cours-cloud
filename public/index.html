@@ -937,7 +937,10 @@ user    0m36.130s
 sys     0m0.010s</code></pre>
 </section><section id="comparaison-systeme-questions" class="slide level2">
 <h2>Comparaison systeme : Questions</h2>
-<p><code>Question :  Donnez vos premières conclusions sur ces résultats</code> <code>Question : expliquez les différences entre les durées **real**, **user** et **sys**</code> <code>Question : pourquoi le temps **user** dans Docker est-il si petit</code> <code>Question : Donnez une solution pour obtenir le temps **user** effectif dans le conteneur</code></p>
+<p><code class="note">Question :  Donnez vos premières conclusions sur ces résultats</code></p>
+<p><code class="note">Question : expliquez les différences entre les durées real, user et sys</code></p>
+<p><code class="note">Question : pourquoi le temps user dans Docker est-il si petit</code></p>
+<p><code class="note">Question : Donnez une solution pour obtenir le temps user effectif dans le conteneur</code></p>
 </section><section id="tp-saas" class="slide level2">
 <h2>TP Saas</h2>
 <p><strong>Objectif</strong> : déployer une application Saas</p>
@@ -1015,10 +1018,8 @@ chpasswd:
 <h2>TP Iaas : installation</h2>
 <p>En analysant les données de construction de la pile Docker-rok4, essayez de composer votre architecture.</p>
 <ul>
-<li>Commencez par la VM qui va contenir Rok4. L’exploration des Dockerfile vous donne la marche à suivre pour installer le logiciel
-<ul>
+<li>Commencez par la VM qui va contenir Rok4. L’exploration des Dockerfile vous donne la marche à suivre pour installer le logiciel</li>
 <li>Pensez à ajouter un volume à votre VM, il faudra ensuite préparer ce volume (créer une partition et un système de fichier puis monté ce volume dans un dossier spécifique qui va contenir les données). je vous aiderai pour cette étape délicate.</li>
-</ul></li>
 <li>Créez ensuite la VM Nginx à partir d’observation similaires : <a href="https://github.com/rok4/docker-rok4-with-data">https://github.com/rok4/docker-rok4-with-data</a></li>
 <li>associez une FIP à cette VM nginx et ajouter un mapping de port dans Virtualbox pour accéder à cette application (port 80 ou 1234)</li>
 </ul>

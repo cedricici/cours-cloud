@@ -299,8 +299,6 @@ Le tout est facturé à la consommation.
 </aside>
 
 
-
-
 # Caas/Kaas #
 
 ## Container As A Service ## {.figcenter}
@@ -321,7 +319,6 @@ Un nouveau modèle devient disponible, le **Container As A Service**
  - Le **Cluster** est élastique
  - C'est le CSP qui gère l'exploitation du Cluster
  - Le leader est Kubernetes
-
 
 
 <aside class="notes">
@@ -1047,10 +1044,14 @@ sys     0m0.010s
 
 ## Comparaison systeme : Questions ##
 
-`Question :  Donnez vos premières conclusions sur ces résultats`
-`Question : expliquez les différences entre les durées **real**, **user** et **sys**`
-`Question : pourquoi le temps **user** dans Docker est-il si petit`
-`Question : Donnez une solution pour obtenir le temps **user** effectif dans le conteneur`
+
+`Question :  Donnez vos premières conclusions sur ces résultats`{.note}
+
+`Question : expliquez les différences entre les durées real, user et sys`{.note}
+
+`Question : pourquoi le temps user dans Docker est-il si petit`{.note}
+
+`Question : Donnez une solution pour obtenir le temps user effectif dans le conteneur`{.note}
 
 
 ## TP Saas ##
@@ -1152,7 +1153,7 @@ Dans une deuxième étape, il faudra ajouter des Load-Balancer pour réaliser un
 En analysant les données de construction de la pile Docker-rok4, essayez de composer votre architecture.
 
 > - Commencez par la VM qui va contenir Rok4. L'exploration des Dockerfile vous donne la marche à suivre pour installer le logiciel
->     - Pensez à ajouter un volume à votre VM, il faudra ensuite préparer ce volume (créer une partition et un système de fichier puis monté ce volume dans un dossier spécifique qui va contenir les données). je vous aiderai pour cette étape délicate.
+> - Pensez à ajouter un volume à votre VM, il faudra ensuite préparer ce volume (créer une partition et un système de fichier puis monté ce volume dans un dossier spécifique qui va contenir les données). je vous aiderai pour cette étape délicate.
 > - Créez ensuite la VM Nginx à partir d'observation similaires : [https://github.com/rok4/docker-rok4-with-data](https://github.com/rok4/docker-rok4-with-data)
 > - associez une FIP à cette VM nginx et ajouter un mapping de port dans Virtualbox pour accéder à cette application (port 80 ou 1234)
 
