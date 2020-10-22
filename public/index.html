@@ -50,7 +50,7 @@
                     <h1>Technologies de Cloud Computing</h1>
                     <h2>M-TSI</h2>
                     <h3>Cédric Esnault</h3>
-                    <h4>22/10/2020 - IGN/ENSG</h4>
+                    <h4>24/10/2019 - IGN/ENSG</h4>
                     <aside class="notes">
 
                     </aside>
@@ -929,7 +929,7 @@ sys     0m0.004s</code></pre>
 </ul>
 <pre><code>qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -append &quot;root=/dev/sda1&quot; -hda debian_wheezy_armel_standard.qcow2</code></pre>
 <ul>
-<li>Ajouter/compiler le binaire <strong>prime</strong> dans la VM puis tester de la même manière</li>
+<li>Ajouter/compiler le binaire <strong>prime</strong> dans la VM puis tester de la même manière, vous aurez probablement besoin de modifier les dépots <strong>apt</strong> de la VM (archive.debian.org)</li>
 </ul>
 <pre><code>Calcul des 10000 premiers nombres premiers
 real    0m36.174s
@@ -950,6 +950,14 @@ sys     0m0.010s</code></pre>
 <li>publiez votre site (ajoutez du contenu, des média et au minimum un widget)</li>
 <li>repassez par l’édition pour voir le back-office complet.</li>
 </ul>
+</section><section id="tp-saas-1" class="slide level2">
+<h2>TP Saas</h2>
+<p>Instanciez vous même le CMS Wordpress</p>
+<ul>
+<li>télécharger le logiciel sur le site wordpress.org ou l’image docker sur le dockerhub (https://hub.docker.com/_/wordpress)</li>
+<li>configurez votre serveur Web Local ou le docker-compose proposé dans la doc</li>
+<li>démarrez votre instance local de Wordpress</li>
+</ul>
 </section><section id="tp-saas-questions" class="slide level2">
 <h2>TP Saas : Questions</h2>
 <p><code class="note">Question : D'après vous, quelle différence peut-on noter entre le logiciel Wordpress et le service de Saas Wordpress.com</code></p>
@@ -963,28 +971,29 @@ sys     0m0.010s</code></pre>
 <li>Connectez vous sur la plateforme Paas Heroku.com et créez un compte</li>
 <li>Suivez le <a href="https://devcenter.heroku.com/start">tutoriel Heroku</a> pour créer une application node.js</li>
 </ul>
-</section><section id="tp-saas-questions-1" class="slide level2">
-<h2>TP Saas : Questions</h2>
+</section><section id="tp-paas-questions" class="slide level2">
+<h2>TP Paas : Questions</h2>
 <p><code class="note">Question : Une fois le tutoriel de base réalisé. Trouvez une solution pour déployer le code suivant (ou celui de votre choix) dans une nouvelle application **sans utiliser l'outil CLI heroku-toolbelt** .</code></p>
 <p><code class="note">Question : Donnez une explication des technologies qui selon vous sont misent en œuvre ici.</code></p>
 <blockquote>
 <p><a href="https://github.com/cedricici/findmefast.git">https://github.com/cedricici/findmefast.git</a></p>
 </blockquote>
-</section><section id="tp-iaas-caas" class="slide level2">
-<h2>TP Iaas / Caas</h2>
-<p><strong>Objectif</strong> : Créer une infra minimale en Iaas ou en Kaas</p>
-<p><strong>Moyens</strong> : Utilisez la VM devstack ou la VM Minikube fournie pour tester le déploiement d’une application n-tiers</p>
+</section><section id="tp-iaas" class="slide level2">
+<h2>TP Iaas</h2>
+<p><strong>Objectif</strong> : Créer une infra minimale en Iaas</p>
+<p><strong>Moyens</strong> : Utilisez la VM devstack fournie pour tester le déploiement d’une application n-tiers</p>
 <p>Je vous propose de réaliser un serveur de données cartographiques Raster basé sur <strong>Rok4</strong> , Vous aurez besoin de ces ressources :</p>
 <ul>
 <li>un serveur nginx pour publier une interface de visualisation</li>
 <li>un serveur rok4 pour diffuser des tuiles au standard WMTS</li>
-<li>des images de données</li>
+<li>des données</li>
 </ul>
 </section><section id="tp-iaas-objectif" class="slide level2">
 <h2>TP Iaas : Objectif</h2>
 <p>Le résultat à atteindre est visualisable à l’aide d’un ensemble de conteneur Docker que nous avons préparés pour cette démo :</p>
 <p><a href="https://github.com/rok4/rok4/tree/master/docker">https://github.com/rok4/rok4/tree/master/docker</a></p>
 <p>Suivez le tutoriel Github pour lancer la stack Docker ci dessus. Vous aurez besoin de Docker et de docker-compose</p>
+<p>Votre objectif est de recréer cette stack dans un cloud Iaas à l’aide d’Openstack</p>
 </section><section id="tp-version-iaas" class="slide level2">
 <h2>TP version Iaas</h2>
 <ul>
@@ -1020,7 +1029,7 @@ chpasswd:
 <ul>
 <li>Commencez par la VM qui va contenir Rok4. L’exploration des Dockerfile vous donne la marche à suivre pour installer le logiciel</li>
 <li>Pensez à ajouter un volume à votre VM, il faudra ensuite préparer ce volume (créer une partition et un système de fichier puis monté ce volume dans un dossier spécifique qui va contenir les données). je vous aiderai pour cette étape délicate.</li>
-<li>Créez ensuite la VM Nginx à partir d’observation similaires : <a href="https://github.com/rok4/docker-rok4-with-data">https://github.com/rok4/docker-rok4-with-data</a></li>
+<li>Créez ensuite la VM Nginx à partir d’observation similaires</li>
 <li>associez une FIP à cette VM nginx et ajouter un mapping de port dans Virtualbox pour accéder à cette application (port 80 ou 1234)</li>
 </ul>
 </section><section id="tp-travail-attendu" class="slide level2">
@@ -1028,7 +1037,7 @@ chpasswd:
 <p><code class="note">Rendez moi  (mail à cedric.esnault@ign.fr) un compte rendu de ces TP avec les différentes étapes de vos recherches. N'hésitez pas à noter les *points durs* .</code></p>
 </section><section id="tp-version-kaas" class="slide level2">
 <h2>TP version Kaas</h2>
-<p>Installation de Minikube</p>
+<p>Dasn une installation de Kubernetes avec Minikube, déployez la stack ROK4</p>
 <p>https://minikube.sigs.k8s.io/docs/start/</p>
 </section></section>
             </div>

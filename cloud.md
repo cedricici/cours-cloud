@@ -1034,7 +1034,8 @@ sudo apt-get install qemu-system-arm
 ```
 qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -append "root=/dev/sda1" -hda debian_wheezy_armel_standard.qcow2
 ```
-> - Ajouter/compiler le binaire **prime** dans la VM puis tester de la même manière
+> - Ajouter/compiler le binaire **prime** dans la VM puis tester de la même manière, vous aurez probablement besoin de modifier les dépots **apt** de la VM (archive.debian.org)
+
 ```
 Calcul des 10000 premiers nombres premiers
 real    0m36.174s
@@ -1065,6 +1066,14 @@ Vous pouvez ensuite faire des modifications sommaires sur la page d'accueil.
 > - publiez votre site (ajoutez du contenu, des média et au minimum un widget)
 > - repassez par l'édition pour voir le back-office complet.
 
+## TP Saas ##
+
+Instanciez vous même le CMS Wordpress
+
+> - télécharger le logiciel sur le site wordpress.org ou l'image docker sur le dockerhub (https://hub.docker.com/_/wordpress)
+> - configurez votre serveur Web Local ou  le docker-compose proposé dans la doc
+> - démarrez votre instance local de Wordpress
+
 
 ## TP Saas  : Questions ##
 
@@ -1086,7 +1095,7 @@ L'objectif ici est de déployer une application à partir d'un code source.
 > - Connectez vous sur la plateforme Paas Heroku.com et créez un compte
 > - Suivez le [tutoriel Heroku](https://devcenter.heroku.com/start) pour créer une application node.js
 
-## TP Saas  : Questions ##
+## TP Paas  : Questions ##
 
 `Question : Une fois le tutoriel de base réalisé. Trouvez une solution pour déployer le code suivant (ou celui de votre choix) dans une nouvelle application **sans utiliser l'outil CLI heroku-toolbelt** . `{.note}
 
@@ -1096,17 +1105,17 @@ L'objectif ici est de déployer une application à partir d'un code source.
 
 
 
-## TP Iaas / Caas ##
+## TP Iaas ##
 
-**Objectif** : Créer une infra minimale en Iaas ou en Kaas
+**Objectif** : Créer une infra minimale en Iaas
 
-**Moyens** : Utilisez la VM devstack ou la VM Minikube fournie pour tester le déploiement d'une application n-tiers
+**Moyens** : Utilisez la VM devstack fournie pour tester le déploiement d'une application n-tiers
 
 Je vous propose de réaliser un serveur de données cartographiques Raster basé sur **Rok4** , Vous aurez besoin de ces ressources :
 
 > - un serveur nginx pour publier une interface de visualisation
 > - un serveur rok4 pour diffuser des tuiles au standard WMTS
-> - des images de données
+> - des données
 
 
 ## TP Iaas : Objectif ##
@@ -1117,6 +1126,8 @@ Le résultat à atteindre est visualisable à l'aide d'un ensemble de conteneur 
 
 Suivez le tutoriel Github pour lancer la stack Docker ci dessus.
 Vous aurez besoin de Docker et de docker-compose
+
+Votre objectif est de recréer cette stack dans un cloud Iaas à l'aide d'Openstack
 
 
 ## TP version Iaas ##
@@ -1154,7 +1165,7 @@ En analysant les données de construction de la pile Docker-rok4, essayez de com
 
 > - Commencez par la VM qui va contenir Rok4. L'exploration des Dockerfile vous donne la marche à suivre pour installer le logiciel
 > - Pensez à ajouter un volume à votre VM, il faudra ensuite préparer ce volume (créer une partition et un système de fichier puis monté ce volume dans un dossier spécifique qui va contenir les données). je vous aiderai pour cette étape délicate.
-> - Créez ensuite la VM Nginx à partir d'observation similaires : [https://github.com/rok4/docker-rok4-with-data](https://github.com/rok4/docker-rok4-with-data)
+> - Créez ensuite la VM Nginx à partir d'observation similaires
 > - associez une FIP à cette VM nginx et ajouter un mapping de port dans Virtualbox pour accéder à cette application (port 80 ou 1234)
 
 
@@ -1165,9 +1176,11 @@ En analysant les données de construction de la pile Docker-rok4, essayez de com
 
 ## TP  version Kaas ##
 
-Installation de Minikube
+Dasn une installation de Kubernetes avec Minikube, déployez la stack ROK4
 
 https://minikube.sigs.k8s.io/docs/start/
+
+
 
 
 
