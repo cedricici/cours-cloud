@@ -2,7 +2,7 @@
 title : Technologies de Cloud Computing
 sub-title : M-TSI
 author : Cédric Esnault
-date : 24/10/2019 - IGN/ENSG
+date : 19/10/2021 - IGN/ENSG
 ---
 
 
@@ -94,10 +94,11 @@ Les entreprises ont besoin de baisser les coûts et d'utiliser au maximum l'inve
 - Formation
     - Il faut développer les méthodes Agiles*
     - Il faut former les agents aux technologies du Cloud
-    - Il faut pousser le modèle **Devops**
+    - Il faut pousser les modèles **Devops**
 - sécurité/confidentialité
-    - Il faut intégrer la sécurité à tous les niveaux
+    - Il faut intégrer la sécurité à tous les niveaux : **DevSecOps**
     - Il faut faire confiance
+    - Il faut contôler : **FinOps**
 
 <aside class="notes">
 
@@ -316,8 +317,9 @@ Un nouveau modèle devient disponible, le **Container As A Service**
  - un peu différent du Iaas, pas vraiement du Paas
  - On consomme (et paye) des noeuds dans lesquels on déploie des applications en mode **Devops**
  - L'application doit être résiliente et s'auto-réparer (self-healing)
- - Le **Cluster** est élastique
+ - Le **Cluster** est nativement élastique
  - C'est le CSP qui gère l'exploitation du Cluster
+ - La facturation se fait au nombre de noeuds du cluster indépendemment du nombre de conteneurs *actifs*
  - Le leader est Kubernetes
 
 
@@ -330,7 +332,7 @@ Un nouveau modèle devient disponible, le **Container As A Service**
 
 ## X (Everything) As A Service ##
 
-On peut étendre la notion de **As A Service** à d'autre types de services. Stockage,  sécurité, base de données...  Une  évolution récente et notable concerne l'évolution du **Paas** avec le service **Lambda** d'AWS ou encore **Google Cloud Function**.
+On peut étendre la notion de **As A Service** à d'autre types de services. Stockage,  sécurité, base de données, Machine Learning/IA ...  Une  évolution notable concerne l'évolution du **Paas** avec le service **Lambda** d'AWS ou encore **Google Cloud Function**.
 Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le service et celle ci est exécutée, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés par tranche de 100ms d’exécution. On parle de **Serverless Computing**
 
 <aside class="notes">
@@ -782,8 +784,12 @@ Un SI **multi-tenant** désigne une infrastructure qui partage ses ressources en
 ## InfraAsCode ##
 
 l'**Infrastructure As Code** désigne les technique permettant de définir une infrastructure par du code informatique (script, conf...). La mise en place de cette infrastructure est alors totalement automatisable et ré-instanciable à la demande. Ceci est possible lorsque tous les éléments de l'infrastructure ont été virtualisés.
+ - On entend souvent aussi parler de **gitOps**
 
 <aside class="notes">
+
+  GitOPs
+
 
 </aside>
 
@@ -824,6 +830,18 @@ Lancé par IBM, l'autoréparation des programme intègre aujourd'hui de nombreux
 </aside>
 
 
+## 12 factors ##
+
+12 Factors désigne les règles pour concevoir des application Cloud Natives. Cas application ainsi développée s'intègrerons parfaitement dasn les univers Cloud en profitant u maximum des avantages de ce tupe d'hébergement.
+
+ - https://12factor.net/fr/
+
+<aside class="notes">
+
+
+</aside>
+
+
 ## Systèmes repartis ##
 
 Un système réparti est un SI dans lequel l'information et l’exécution est distribuée sur un ensemble de nœuds constituant un Cluster. Cet ensemble peut être hétérogène et doit être scalable.
@@ -859,6 +877,7 @@ la **HA** désigne la capacité d'un système à *survivre* à la perte d'un él
 
 <aside class="notes">
 
+
 </aside>
 
 ## Devops ##
@@ -885,13 +904,13 @@ Il est née de l'utilisation de bout en bout des méthodes **Agiles**
 
 Mais on commence à voir les travers:
 
-- complexité
-- risques en sécurité
-- Augmentation des coûts cachés
+- complexité : **CloudArchitect**
+- risques en sécurité : **DevSecOps**
+- Augmentation des coûts cachés : **FinOps**
 
 
 <aside class="notes">
-  finops
+  Devsecops finops
 </aside>
 
 # Enjeux - Avenir #
@@ -920,13 +939,16 @@ Mais on commence à voir les travers:
 - Cloud Security Alliance
 - Confidentialité : Vigilance sur :
     - Les systèmes de  gestion des accès / mécanismes de cloisonnement entre clients
-    - Localisation des centres de données (hors UE) et nationalité du fournisseur (EU, Patriot Act)
+    - Localisation des centres de données (hors UE) et nationalité du fournisseur (EU, Patriot Act, Cloud Act)
 - Audit fréquents à tous les niveaux
 - Mise à jour régulière et systématique
 - Chiffrement des flux
 - Isolation des composants
 
 <aside class="notes">
+
+ Cloud Act : Clarifying Lawful Overseas Use of Data Act
+
 
 </aside>
 
@@ -973,12 +995,43 @@ The Shift project
 
 # Do It Yourself #
 
+
+## Introduction à Docker
+
+Docker est en fait un ensemble d'outils de conteneurisation applicative.
+Notions :
+ - docker Engine
+    - docker CLI
+    - docker Daemon 
+ - image
+ - conteneur
+ - registry
+ - volume
+ - stack
+
+ 
+
+## Introduction à Docker
+
+Scénario type :
+
+ - Je construis une image basé sur une image existante (OS ou app)
+    - ` docker build`
+ - Je sauve mon image dasn un registry (facultatif)
+    - ` docker push`
+ - j'instancie un conteneur basé sur cette image
+    - ` docker run`
+
+
 ## TP comparaison ##
 
 - Objectif : Comparer les différents types de virtualisation
     - system
     - stockage
     - réseau
+- Prérequis : 
+    - compilateur c (gcc)
+    - docker
 
 ## Comparaison systeme ##
 
@@ -1004,7 +1057,7 @@ sys     0m0.000s
 
 > - Lancement via Docker (présent sur votre machine)
 
-> - Dans un fichier **Dockerfile** :
+> - Dans un fichier **Dockerfile** on va construire notre image :
 ```
 FROM debian
 ADD ./prime /prime
@@ -1023,18 +1076,29 @@ user    0m0.012s
 sys     0m0.004s
 ```
 
+
+
 ## Comparaison systeme ##
 
 > - Lancement dans un émulateur arm
 ```
 sudo apt-get install qemu-system-arm
 ```
-> - récupérer les fichiers nécéssaires sur [https://people.debian.org/~aurel32/qemu/armel/](https://people.debian.org/~aurel32/qemu/armel/)
+> - récupérez les fichiers nécéssaires sur [https://people.debian.org/~aurel32/qemu/armel/](https://people.debian.org/~aurel32/qemu/armel/)
 > - lancer l'émulateur
 ```
 qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -append "root=/dev/sda1" -hda debian_wheezy_armel_standard.qcow2
 ```
-> - Ajouter/compiler le binaire **prime** dans la VM puis tester de la même manière, vous aurez probablement besoin de modifier les dépots **apt** de la VM (archive.debian.org)
+> - Ajoutez/compilez le binaire **prime** dans la VM puis testez de la même manière. Pour pouvoir installer GCC, vous aurez besoin de modifier les dépots **apt** de la VM (archive.debian.org) car l'image est ancienne. Vous pouvez passer votre clavier en azerty avec ces commandes en root : 
+```
+# dpkg-reconfigure keyboard-configuration
+# service keyboard-setup restart 
+```
+
+## Comparaison systeme ##
+
+
+> - Les résultats en **arm32**
 
 ```
 Calcul des 10000 premiers nombres premiers
@@ -1050,7 +1114,7 @@ sys     0m0.010s
 
 `Question : expliquez les différences entre les durées real, user et sys`{.note}
 
-`Question : pourquoi le temps user dans Docker est-il si petit`{.note}
+`Question : pourquoi le temps user dans Docker est-il si petit? est-ce normal?`{.note}
 
 `Question : Donnez une solution pour obtenir le temps user effectif dans le conteneur`{.note}
 
@@ -1071,7 +1135,7 @@ Vous pouvez ensuite faire des modifications sommaires sur la page d'accueil.
 Instanciez vous même le CMS Wordpress
 
 > - télécharger le logiciel sur le site wordpress.org ou l'image docker sur le dockerhub (https://hub.docker.com/_/wordpress)
-> - configurez votre serveur Web Local ou  le docker-compose proposé dans la doc
+> - configurez votre serveur Web Local ou le docker-compose proposé dans la doc
 > - démarrez votre instance local de Wordpress
 
 
@@ -1105,20 +1169,18 @@ L'objectif ici est de déployer une application à partir d'un code source.
 
 
 
-## TP Iaas ##
+## TP Architecture ##
 
-**Objectif** : Créer une infra minimale en Iaas
 
-**Moyens** : Utilisez la VM devstack fournie pour tester le déploiement d'une application n-tiers
+**Objectif** : Comprendre une architecture cloud
 
-Je vous propose de réaliser un serveur de données cartographiques Raster basé sur **Rok4** , Vous aurez besoin de ces ressources :
+
+Je vous propose de réaliser un serveur de données cartographiques Raster basé sur **Rok4** et son site de visualisation de donnée, vous aurez besoin de ces ressources :
 
 > - un serveur nginx pour publier une interface de visualisation
 > - un serveur rok4 pour diffuser des tuiles au standard WMTS
 > - des données
 
-
-## TP Iaas : Objectif ##
 
 Le résultat à atteindre est visualisable à l'aide d'un ensemble de conteneur Docker que nous avons préparés pour cette démo :
 
@@ -1127,60 +1189,45 @@ Le résultat à atteindre est visualisable à l'aide d'un ensemble de conteneur 
 Suivez le tutoriel Github pour lancer la stack Docker ci dessus.
 Vous aurez besoin de Docker et de docker-compose
 
-Votre objectif est de recréer cette stack dans un cloud Iaas à l'aide d'Openstack
+
+## TP Architecture : Questions ####
 
 
-## TP version Iaas ##
+Après avoir réussi à instancier cette structure avec succès, j'attends de vous que vous me fassiez le schéma d'architecture de cette pile applicative.
 
-> - Explorez via Horizon la VM Devstack fournie :
->    - l'URL est [http://127.0.0.1:8888/](http://127.0.0.1:8888/)
-> - téléchargez une image debian pour le cloud : [http://cdimage.debian.org/cdimage/openstack/current-10/debian-10-openstack-amd64.qcow2](http://cdimage.debian.org/cdimage/openstack/current-10/debian-10-openstack-amd64.qcow2)
-> - créez en une image glance
-> - créez une première VM (utilisez la configuration suivante pour définir un mot de passe à votre instance ) :
+Vous procéderez par instrospection en analisant le contenu des images *Docker* utilisée.
 
-```
-#cloud-config
-chpasswd:
-  list: |
-    debian:monpassword
-  expire: False
+Votre schéma devra contenir 
 
-```
+  - les noeuds, leur rôle et leur scalabilité potentielle
+  - les liens entre les noeuds
+  - les flux et les ports réseaux utilisés
+  - les stockages (types et montages)
+  - les logiciels utilisés
 
-## TP Iaas : préparation  ##
+Vous pouvez utiliser https://app.diagrams.net/ pour votre schéma par exemple.
 
-> - essayer ensuite de mettre en place une FIP (floating ip) pour y accéder en ssh depuis votre machine. Vous devrez sûrement ajouter du mapping de port dans la configuration de Virtualbox. (configuration avancé du réseau NAT)
 
-## TP Iaas : architecture  ##
+`Question : Fournissez un schéma d'architecture complet représentant cette pile applicative `{.note}
 
-Une fois la prise en main faite, il faut imaginer notre infrastructure
 
-> `Client => http:1234 => FIP => Nginx+leaflet => rok4:9000 => Stockage Persistant `
 
-Dans une deuxième étape, il faudra ajouter des Load-Balancer pour réaliser un Scale-out de notre application et un serveur intermédiaire NFS pour partager le stockage.
 
-## TP Iaas : installation  ##
+## TP Iaas/Kaas ##
 
-En analysant les données de construction de la pile Docker-rok4, essayez de composer votre architecture.
+Ceux qui sont aventuriers peuvent se lancer dans la construction de cette Stack au sein d'un cluster Kubernetes (via minikube) : 
 
-> - Commencez par la VM qui va contenir Rok4. L'exploration des Dockerfile vous donne la marche à suivre pour installer le logiciel
-> - Pensez à ajouter un volume à votre VM, il faudra ensuite préparer ce volume (créer une partition et un système de fichier puis monté ce volume dans un dossier spécifique qui va contenir les données). je vous aiderai pour cette étape délicate.
-> - Créez ensuite la VM Nginx à partir d'observation similaires
-> - associez une FIP à cette VM nginx et ajouter un mapping de port dans Virtualbox pour accéder à cette application (port 80 ou 1234)
+Installation minikube en utilisant Docker comme driver : 
+
+https://minikube.sigs.k8s.io/docs/start/
+
+On se trouve donc à simuler un cluster d'orchestration de conteneur Dont les noeuds sont des... conteneurs ! 
+
 
 
 ## TP : TRAVAIL ATTENDU ##
 
-`Rendez moi  (mail à cedric.esnault@ign.fr) un compte rendu de ces TP avec les différentes étapes de vos recherches. N'hésitez pas à noter les *points durs* .`{.note}
-
-
-## TP  version Kaas ##
-
-Dasn une installation de Kubernetes avec Minikube, déployez la stack ROK4
-
-https://minikube.sigs.k8s.io/docs/start/
-
-
+`Rendez moi au format Markdown + schema (.drawio) par mail à **cedric.esnault@ign.fr**,  un compte rendu de ces TP avec les différentes étapes de vos recherches. N'hésitez pas à noter les *points durs* .`{.note}
 
 
 
