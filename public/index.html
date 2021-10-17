@@ -50,7 +50,7 @@
                     <h1>Technologies de Cloud Computing</h1>
                     <h2>M-TSI</h2>
                     <h3>Cédric Esnault</h3>
-                    <h4>24/10/2019 - IGN/ENSG</h4>
+                    <h4>19/10/2021 - IGN/ENSG</h4>
                     <aside class="notes">
 
                     </aside>
@@ -149,12 +149,13 @@
 <ul>
 <li class="fragment">Il faut développer les méthodes Agiles*</li>
 <li class="fragment">Il faut former les agents aux technologies du Cloud</li>
-<li class="fragment">Il faut pousser le modèle <strong>Devops</strong></li>
+<li class="fragment">Il faut pousser les modèles <strong>Devops</strong></li>
 </ul></li>
 <li class="fragment">sécurité/confidentialité
 <ul>
-<li class="fragment">Il faut intégrer la sécurité à tous les niveaux</li>
+<li class="fragment">Il faut intégrer la sécurité à tous les niveaux : <strong>DevSecOps</strong></li>
 <li class="fragment">Il faut faire confiance</li>
+<li class="fragment">Il faut contôler : <strong>FinOps</strong></li>
 </ul></li>
 </ul>
 <aside class="notes">
@@ -322,8 +323,9 @@
 <li class="fragment">un peu différent du Iaas, pas vraiement du Paas</li>
 <li class="fragment">On consomme (et paye) des noeuds dans lesquels on déploie des applications en mode <strong>Devops</strong></li>
 <li class="fragment">L’application doit être résiliente et s’auto-réparer (self-healing)</li>
-<li class="fragment">Le <strong>Cluster</strong> est élastique</li>
+<li class="fragment">Le <strong>Cluster</strong> est nativement élastique</li>
 <li class="fragment">C’est le CSP qui gère l’exploitation du Cluster</li>
+<li class="fragment">La facturation se fait au nombre de noeuds du cluster indépendemment du nombre de conteneurs <em>actifs</em></li>
 <li class="fragment">Le leader est Kubernetes</li>
 </ul>
 <aside class="notes">
@@ -331,7 +333,7 @@
 </section></section>
 <section><section id="xaas" class="title-slide slide level1"><h1>Xaas</h1></section><section id="x-everything-as-a-service" class="slide level2">
 <h2>X (Everything) As A Service</h2>
-<p>On peut étendre la notion de <strong>As A Service</strong> à d’autre types de services. Stockage, sécurité, base de données… Une évolution récente et notable concerne l’évolution du <strong>Paas</strong> avec le service <strong>Lambda</strong> d’AWS ou encore <strong>Google Cloud Function</strong>. Avec ces <strong>Function As A Service</strong>, vous poussez le code d’une fonction dans le service et celle ci est exécutée, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés par tranche de 100ms d’exécution. On parle de <strong>Serverless Computing</strong></p>
+<p>On peut étendre la notion de <strong>As A Service</strong> à d’autre types de services. Stockage, sécurité, base de données, Machine Learning/IA … Une évolution notable concerne l’évolution du <strong>Paas</strong> avec le service <strong>Lambda</strong> d’AWS ou encore <strong>Google Cloud Function</strong>. Avec ces <strong>Function As A Service</strong>, vous poussez le code d’une fonction dans le service et celle ci est exécutée, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés par tranche de 100ms d’exécution. On parle de <strong>Serverless Computing</strong></p>
 <aside class="notes">
 <p>les serverless utilise du Kaas Aborder l’IA?</p>
 </aside>
@@ -731,8 +733,9 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 </aside>
 </section><section id="infraascode" class="slide level2">
 <h2>InfraAsCode</h2>
-<p>l’<strong>Infrastructure As Code</strong> désigne les technique permettant de définir une infrastructure par du code informatique (script, conf…). La mise en place de cette infrastructure est alors totalement automatisable et ré-instanciable à la demande. Ceci est possible lorsque tous les éléments de l’infrastructure ont été virtualisés.</p>
+<p>l’<strong>Infrastructure As Code</strong> désigne les technique permettant de définir une infrastructure par du code informatique (script, conf…). La mise en place de cette infrastructure est alors totalement automatisable et ré-instanciable à la demande. Ceci est possible lorsque tous les éléments de l’infrastructure ont été virtualisés. - On entend souvent aussi parler de <strong>gitOps</strong></p>
 <aside class="notes">
+<p>GitOPs</p>
 </aside>
 </section><section id="webservices" class="slide level2">
 <h2>WebServices</h2>
@@ -755,6 +758,14 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <p>L’autonomic Computing désigne la capacité de ces systèmes de pouvoir se réparer eux même. Ils intègrent de la surveillance et de la détection d’anomalie.</p>
 <aside class="notes">
 <p>Lancé par IBM, l’autoréparation des programme intègre aujourd’hui de nombreux programmes</p>
+</aside>
+</section><section id="factors" class="slide level2">
+<h2>12 factors</h2>
+<p>12 Factors désigne les règles pour concevoir des application Cloud Natives. Cas application ainsi développée s’intègrerons parfaitement dasn les univers Cloud en profitant u maximum des avantages de ce tupe d’hébergement.</p>
+<ul>
+<li class="fragment">https://12factor.net/fr/</li>
+</ul>
+<aside class="notes">
 </aside>
 </section><section id="systèmes-repartis" class="slide level2">
 <h2>Systèmes repartis</h2>
@@ -802,12 +813,12 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <p><strong>Devops</strong> est très à la mode, c’est une méthodologie très adaptée aux startups, l’évolution des outils mis à disposition permet de faire des <strong>pipeline</strong> de bout en bout sans connaissance de la complexité sous-jacente.</p>
 <p>Mais on commence à voir les travers:</p>
 <ul>
-<li class="fragment">complexité</li>
-<li class="fragment">risques en sécurité</li>
-<li class="fragment">Augmentation des coûts cachés</li>
+<li class="fragment">complexité : <strong>CloudArchitect</strong></li>
+<li class="fragment">risques en sécurité : <strong>DevSecOps</strong></li>
+<li class="fragment">Augmentation des coûts cachés : <strong>FinOps</strong></li>
 </ul>
 <aside class="notes">
-finops
+Devsecops finops
 </aside>
 </section></section>
 <section><section id="enjeux---avenir" class="title-slide slide level1"><h1>Enjeux - Avenir</h1></section><section id="responsabilité" class="slide level2">
@@ -838,7 +849,7 @@ finops
 <li class="fragment">Confidentialité : Vigilance sur :
 <ul>
 <li class="fragment">Les systèmes de gestion des accès / mécanismes de cloisonnement entre clients</li>
-<li class="fragment">Localisation des centres de données (hors UE) et nationalité du fournisseur (EU, Patriot Act)</li>
+<li class="fragment">Localisation des centres de données (hors UE) et nationalité du fournisseur (EU, Patriot Act, Cloud Act)</li>
 </ul></li>
 <li class="fragment">Audit fréquents à tous les niveaux</li>
 <li class="fragment">Mise à jour régulière et systématique</li>
@@ -846,6 +857,7 @@ finops
 <li class="fragment">Isolation des composants</li>
 </ul>
 <aside class="notes">
+<p>Cloud Act : Clarifying Lawful Overseas Use of Data Act</p>
 </aside>
 </section><section id="interopérabilité-1" class="slide level2">
 <h2>Interopérabilité</h2>
@@ -878,7 +890,39 @@ finops
 <p>The Shift project</p>
 </aside>
 </section></section>
-<section><section id="do-it-yourself" class="title-slide slide level1"><h1>Do It Yourself</h1></section><section id="tp-comparaison" class="slide level2">
+<section><section id="do-it-yourself" class="title-slide slide level1"><h1>Do It Yourself</h1></section><section id="introduction-à-docker" class="slide level2">
+<h2>Introduction à Docker</h2>
+<p>Docker est en fait un ensemble d’outils de conteneurisation applicative. Notions :</p>
+<ul>
+<li class="fragment">docker Engine
+<ul>
+<li class="fragment">docker CLI</li>
+<li class="fragment">docker Daemon</li>
+</ul></li>
+<li class="fragment">image</li>
+<li class="fragment">conteneur</li>
+<li class="fragment">registry</li>
+<li class="fragment">volume</li>
+<li class="fragment">stack</li>
+</ul>
+</section><section id="introduction-à-docker-1" class="slide level2">
+<h2>Introduction à Docker</h2>
+<p>Scénario type :</p>
+<ul>
+<li class="fragment">Je construis une image basé sur une image existante (OS ou app)
+<ul>
+<li class="fragment"><code>docker build</code></li>
+</ul></li>
+<li class="fragment">Je sauve mon image dasn un registry (facultatif)
+<ul>
+<li class="fragment"><code>docker push</code></li>
+</ul></li>
+<li class="fragment">j’instancie un conteneur basé sur cette image
+<ul>
+<li class="fragment"><code>docker run</code></li>
+</ul></li>
+</ul>
+</section><section id="tp-comparaison" class="slide level2">
 <h2>TP comparaison</h2>
 <ul>
 <li class="fragment">Objectif : Comparer les différents types de virtualisation
@@ -886,6 +930,11 @@ finops
 <li class="fragment">system</li>
 <li class="fragment">stockage</li>
 <li class="fragment">réseau</li>
+</ul></li>
+<li class="fragment">Prérequis :
+<ul>
+<li class="fragment">compilateur c (gcc)</li>
+<li class="fragment">docker</li>
 </ul></li>
 </ul>
 </section><section id="comparaison-systeme" class="slide level2">
@@ -906,7 +955,7 @@ sys     0m0.000s</code></pre>
 <li>Lancement via Docker (présent sur votre machine)</li>
 </ul>
 <ul>
-<li>Dans un fichier <strong>Dockerfile</strong> :</li>
+<li>Dans un fichier <strong>Dockerfile</strong> on va construire notre image :</li>
 </ul>
 <pre><code>FROM debian
 ADD ./prime /prime
@@ -924,12 +973,19 @@ sys     0m0.004s</code></pre>
 </ul>
 <pre><code>sudo apt-get install qemu-system-arm</code></pre>
 <ul>
-<li>récupérer les fichiers nécéssaires sur <a href="https://people.debian.org/~aurel32/qemu/armel/">https://people.debian.org/~aurel32/qemu/armel/</a></li>
+<li>récupérez les fichiers nécéssaires sur <a href="https://people.debian.org/~aurel32/qemu/armel/">https://people.debian.org/~aurel32/qemu/armel/</a></li>
 <li>lancer l’émulateur</li>
 </ul>
 <pre><code>qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -append &quot;root=/dev/sda1&quot; -hda debian_wheezy_armel_standard.qcow2</code></pre>
 <ul>
-<li>Ajouter/compiler le binaire <strong>prime</strong> dans la VM puis tester de la même manière, vous aurez probablement besoin de modifier les dépots <strong>apt</strong> de la VM (archive.debian.org)</li>
+<li>Ajoutez/compilez le binaire <strong>prime</strong> dans la VM puis testez de la même manière. Pour pouvoir installer GCC, modifiez les dépots <strong>apt</strong> de la VM (archive.debian.org) Passer votre clavier en azerty avec ces commandes en root :</li>
+</ul>
+<pre><code># dpkg-reconfigure keyboard-configuration
+# service keyboard-setup restart </code></pre>
+</section><section id="comparaison-systeme-3" class="slide level2">
+<h2>Comparaison systeme</h2>
+<ul>
+<li>Les résultats en <strong>arm32</strong></li>
 </ul>
 <pre><code>Calcul des 10000 premiers nombres premiers
 real    0m36.174s
@@ -939,7 +995,7 @@ sys     0m0.010s</code></pre>
 <h2>Comparaison systeme : Questions</h2>
 <p><code class="note">Question :  Donnez vos premières conclusions sur ces résultats</code></p>
 <p><code class="note">Question : expliquez les différences entre les durées real, user et sys</code></p>
-<p><code class="note">Question : pourquoi le temps user dans Docker est-il si petit</code></p>
+<p><code class="note">Question : pourquoi le temps user dans Docker est-il si petit? est-ce normal?</code></p>
 <p><code class="note">Question : Donnez une solution pour obtenir le temps user effectif dans le conteneur</code></p>
 </section><section id="tp-saas" class="slide level2">
 <h2>TP Saas</h2>
@@ -978,67 +1034,44 @@ sys     0m0.010s</code></pre>
 <blockquote>
 <p><a href="https://github.com/cedricici/findmefast.git">https://github.com/cedricici/findmefast.git</a></p>
 </blockquote>
-</section><section id="tp-iaas" class="slide level2">
-<h2>TP Iaas</h2>
-<p><strong>Objectif</strong> : Créer une infra minimale en Iaas</p>
-<p><strong>Moyens</strong> : Utilisez la VM devstack fournie pour tester le déploiement d’une application n-tiers</p>
-<p>Je vous propose de réaliser un serveur de données cartographiques Raster basé sur <strong>Rok4</strong> , Vous aurez besoin de ces ressources :</p>
+</section><section id="tp-architecture" class="slide level2">
+<h2>TP Architecture</h2>
+<p><strong>Objectif</strong> : Comprendre une architecture cloud</p>
+<p>Je vous propose de réaliser un serveur de données cartographiques Raster basé sur <strong>Rok4</strong> et son site de visualisation de donnée, vous aurez besoin de ces ressources :</p>
 <ul>
 <li>un serveur nginx pour publier une interface de visualisation</li>
 <li>un serveur rok4 pour diffuser des tuiles au standard WMTS</li>
 <li>des données</li>
 </ul>
-</section><section id="tp-iaas-objectif" class="slide level2">
-<h2>TP Iaas : Objectif</h2>
+</section><section id="tp-architecture-1" class="slide level2">
+<h2>TP Architecture</h2>
 <p>Le résultat à atteindre est visualisable à l’aide d’un ensemble de conteneur Docker que nous avons préparés pour cette démo :</p>
 <p><a href="https://github.com/rok4/rok4/tree/master/docker">https://github.com/rok4/rok4/tree/master/docker</a></p>
 <p>Suivez le tutoriel Github pour lancer la stack Docker ci dessus. Vous aurez besoin de Docker et de docker-compose</p>
-<p>Votre objectif est de recréer cette stack dans un cloud Iaas à l’aide d’Openstack</p>
-</section><section id="tp-version-iaas" class="slide level2">
-<h2>TP version Iaas</h2>
+</section><section id="tp-architecture-2" class="slide level2">
+<h2>TP Architecture</h2>
+<p>Après avoir réussi à instancier cette structure avec succès, j’attends de vous que vous me fassiez le schéma d’architecture niveau IAAS de cette pile applicative.Vous procéderez par instrospection en analysant le contenu des images <em>Docker</em> utilisées.</p>
+<p>Votre schéma devra contenir</p>
 <ul>
-<li>Explorez via Horizon la VM Devstack fournie :
-<ul>
-<li>l’URL est <a href="http://127.0.0.1:8888/">http://127.0.0.1:8888/</a></li>
-</ul></li>
-<li>téléchargez une image debian pour le cloud : <a href="http://cdimage.debian.org/cdimage/openstack/current-10/debian-10-openstack-amd64.qcow2">http://cdimage.debian.org/cdimage/openstack/current-10/debian-10-openstack-amd64.qcow2</a></li>
-<li>créez en une image glance</li>
-<li>créez une première VM (utilisez la configuration suivante pour définir un mot de passe à votre instance ) :</li>
+<li>les noeuds, leur rôle et leur scalabilité potentielle</li>
+<li>les liens entre les noeuds</li>
+<li>les flux et les ports réseaux utilisés</li>
+<li>les stockages (types et montages)</li>
+<li>les logiciels utilisés</li>
 </ul>
-<pre><code>#cloud-config
-chpasswd:
-  list: |
-    debian:monpassword
-  expire: False
-</code></pre>
-</section><section id="tp-iaas-préparation" class="slide level2">
-<h2>TP Iaas : préparation</h2>
-<ul>
-<li>essayer ensuite de mettre en place une FIP (floating ip) pour y accéder en ssh depuis votre machine. Vous devrez sûrement ajouter du mapping de port dans la configuration de Virtualbox. (configuration avancé du réseau NAT)</li>
-</ul>
-</section><section id="tp-iaas-architecture" class="slide level2">
-<h2>TP Iaas : architecture</h2>
-<p>Une fois la prise en main faite, il faut imaginer notre infrastructure</p>
-<blockquote>
-<p><code>Client =&gt; http:1234 =&gt; FIP =&gt; Nginx+leaflet =&gt; rok4:9000 =&gt; Stockage Persistant</code></p>
-</blockquote>
-<p>Dans une deuxième étape, il faudra ajouter des Load-Balancer pour réaliser un Scale-out de notre application et un serveur intermédiaire NFS pour partager le stockage.</p>
-</section><section id="tp-iaas-installation" class="slide level2">
-<h2>TP Iaas : installation</h2>
-<p>En analysant les données de construction de la pile Docker-rok4, essayez de composer votre architecture.</p>
-<ul>
-<li>Commencez par la VM qui va contenir Rok4. L’exploration des Dockerfile vous donne la marche à suivre pour installer le logiciel</li>
-<li>Pensez à ajouter un volume à votre VM, il faudra ensuite préparer ce volume (créer une partition et un système de fichier puis monté ce volume dans un dossier spécifique qui va contenir les données). je vous aiderai pour cette étape délicate.</li>
-<li>Créez ensuite la VM Nginx à partir d’observation similaires</li>
-<li>associez une FIP à cette VM nginx et ajouter un mapping de port dans Virtualbox pour accéder à cette application (port 80 ou 1234)</li>
-</ul>
+</section><section id="tp-architecture-questions" class="slide level2">
+<h2>TP Architecture : Questions</h2>
+<p>Vous pouvez utiliser <a href="https://app.diagrams.net/">https://app.diagrams.net/</a> pour votre schéma par exemple.</p>
+<p><code class="note">Question : Fournissez un schéma d'architecture complet représentant cette pile applicative</code></p>
+</section><section id="tp-iaaskaas" class="slide level2">
+<h2>TP Iaas/Kaas</h2>
+<p>Ceux qui sont aventuriers peuvent se lancer dans la construction de cette Stack au sein d’un cluster Kubernetes (via minikube) :</p>
+<p>Installation minikube en utilisant Docker comme driver :</p>
+<p><a href="https://minikube.sigs.k8s.io/docs/start/">https://minikube.sigs.k8s.io/docs/start/</a></p>
+<p>On se trouve donc à simuler un cluster d’orchestration de conteneur Dont les noeuds sont des… conteneurs !</p>
 </section><section id="tp-travail-attendu" class="slide level2">
 <h2>TP : TRAVAIL ATTENDU</h2>
-<p><code class="note">Rendez moi  (mail à cedric.esnault@ign.fr) un compte rendu de ces TP avec les différentes étapes de vos recherches. N'hésitez pas à noter les *points durs* .</code></p>
-</section><section id="tp-version-kaas" class="slide level2">
-<h2>TP version Kaas</h2>
-<p>Dasn une installation de Kubernetes avec Minikube, déployez la stack ROK4</p>
-<p>https://minikube.sigs.k8s.io/docs/start/</p>
+<p><code class="note">Rendez moi au format Markdown + schema (.drawio) par mail à cedric.esnault@ign.fr,  un compte rendu de ces TP avec les différentes étapes de vos recherches. N'hésitez pas à noter les points durs .</code></p>
 </section></section>
             </div>
         </div>

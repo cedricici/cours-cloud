@@ -1000,6 +1000,7 @@ The Shift project
 
 Docker est en fait un ensemble d'outils de conteneurisation applicative.
 Notions :
+
  - docker Engine
     - docker CLI
     - docker Daemon 
@@ -1089,7 +1090,7 @@ sudo apt-get install qemu-system-arm
 ```
 qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -append "root=/dev/sda1" -hda debian_wheezy_armel_standard.qcow2
 ```
-> - Ajoutez/compilez le binaire **prime** dans la VM puis testez de la même manière. Pour pouvoir installer GCC, vous aurez besoin de modifier les dépots **apt** de la VM (archive.debian.org) car l'image est ancienne. Vous pouvez passer votre clavier en azerty avec ces commandes en root : 
+> - Ajoutez/compilez le binaire **prime** dans la VM puis testez de la même manière. Pour pouvoir installer GCC, modifiez les dépots **apt** de la VM (archive.debian.org) Passer votre clavier en azerty avec ces commandes en root : 
 ```
 # dpkg-reconfigure keyboard-configuration
 # service keyboard-setup restart 
@@ -1182,6 +1183,10 @@ Je vous propose de réaliser un serveur de données cartographiques Raster basé
 > - des données
 
 
+
+## TP Architecture ##
+
+
 Le résultat à atteindre est visualisable à l'aide d'un ensemble de conteneur Docker que nous avons préparés pour cette démo :
 
 [https://github.com/rok4/rok4/tree/master/docker](https://github.com/rok4/rok4/tree/master/docker)
@@ -1190,22 +1195,26 @@ Suivez le tutoriel Github pour lancer la stack Docker ci dessus.
 Vous aurez besoin de Docker et de docker-compose
 
 
-## TP Architecture : Questions ####
+## TP Architecture ####
 
 
-Après avoir réussi à instancier cette structure avec succès, j'attends de vous que vous me fassiez le schéma d'architecture de cette pile applicative.
-
-Vous procéderez par instrospection en analisant le contenu des images *Docker* utilisée.
+Après avoir réussi à instancier cette structure avec succès, j'attends de vous que vous me fassiez le schéma d'architecture niveau IAAS de cette pile applicative.Vous procéderez par instrospection en analysant le contenu des images *Docker* utilisées.
 
 Votre schéma devra contenir 
 
-  - les noeuds, leur rôle et leur scalabilité potentielle
-  - les liens entre les noeuds
-  - les flux et les ports réseaux utilisés
-  - les stockages (types et montages)
-  - les logiciels utilisés
+> - les noeuds, leur rôle et leur scalabilité potentielle
+> - les liens entre les noeuds
+> - les flux et les ports réseaux utilisés
+> - les stockages (types et montages)
+> - les logiciels utilisés
 
-Vous pouvez utiliser https://app.diagrams.net/ pour votre schéma par exemple.
+
+
+## TP Architecture : Questions ####
+
+
+
+Vous pouvez utiliser [https://app.diagrams.net/](https://app.diagrams.net/) pour votre schéma par exemple.
 
 
 `Question : Fournissez un schéma d'architecture complet représentant cette pile applicative `{.note}
@@ -1219,7 +1228,7 @@ Ceux qui sont aventuriers peuvent se lancer dans la construction de cette Stack 
 
 Installation minikube en utilisant Docker comme driver : 
 
-https://minikube.sigs.k8s.io/docs/start/
+[https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/)
 
 On se trouve donc à simuler un cluster d'orchestration de conteneur Dont les noeuds sont des... conteneurs ! 
 
@@ -1227,7 +1236,7 @@ On se trouve donc à simuler un cluster d'orchestration de conteneur Dont les no
 
 ## TP : TRAVAIL ATTENDU ##
 
-`Rendez moi au format Markdown + schema (.drawio) par mail à **cedric.esnault@ign.fr**,  un compte rendu de ces TP avec les différentes étapes de vos recherches. N'hésitez pas à noter les *points durs* .`{.note}
+`Rendez moi au format Markdown + schema (.drawio) par mail à cedric.esnault@ign.fr,  un compte rendu de ces TP avec les différentes étapes de vos recherches. N'hésitez pas à noter les points durs .`{.note}
 
 
 
