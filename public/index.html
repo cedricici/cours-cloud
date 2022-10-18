@@ -1005,7 +1005,7 @@ Devsecops finops
 <ul>
 <li class="fragment"><code>docker build</code></li>
 </ul></li>
-<li class="fragment">Je sauve mon image dasn un registry (facultatif)
+<li class="fragment">Je sauve mon image dans un registry (facultatif)
 <ul>
 <li class="fragment"><code>docker push</code></li>
 </ul></li>
@@ -1034,7 +1034,9 @@ Devsecops finops
 <ul>
 <li>compilation d’un code calculant les <strong>n</strong> nombres premiers</li>
 </ul>
-<pre><code>wget -O prime.c https://www.klgrth.io/paste/xhso2/raw</code></pre>
+<pre><code>wget -O prime.c https://www.klgrth.io/paste/xhso2/raw
+ou 
+wget -O prime.c https://cedricici.github.io/cours-cloud/public/prime.c </code></pre>
 <pre><code>gcc prime.c -o prime</code></pre>
 <pre><code>time ./prime 10000</code></pre>
 <pre><code>Calcul des 10000 premiers nombres premiers
@@ -1084,6 +1086,7 @@ sys     0m0.004s</code></pre>
 # service keyboard-setup restart 
 # sed -i -e s/ftp.debian/archive.debian/g /etc/apt/sources.list
 # apt-get update</code></pre>
+<p><code class="note">https://cedricici.github.io/cours-cloud/public/prime.c</code></p>
 </section><section id="comparaison-systeme-5" class="slide level2">
 <h2>Comparaison systeme</h2>
 <ul>

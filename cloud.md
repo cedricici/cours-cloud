@@ -1089,7 +1089,7 @@ Scénario type :
 
 - Je construis une image basé sur une image existante (OS ou app)
   - `docker build`
-- Je sauve mon image dasn un registry (facultatif)
+- Je sauve mon image dans un registry (facultatif)
   - `docker push`
 - j'instancie un conteneur basé sur cette image
   - `docker run`
@@ -1110,6 +1110,8 @@ Scénario type :
 
 ```
 wget -O prime.c https://www.klgrth.io/paste/xhso2/raw
+ou 
+wget -O prime.c https://cedricici.github.io/cours-cloud/public/prime.c 
 ```
 
 ```
@@ -1184,6 +1186,9 @@ qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.
 # sed -i -e s/ftp.debian/archive.debian/g /etc/apt/sources.list
 # apt-get update
 ```
+
+`https://cedricici.github.io/cours-cloud/public/prime.c`{.note}
+
 ## Comparaison systeme ##
 
 > - Les résultats en **arm32**
