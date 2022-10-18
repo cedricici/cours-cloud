@@ -1061,6 +1061,12 @@ sys     0m0.004s</code></pre>
 </section><section id="comparaison-systeme-2" class="slide level2">
 <h2>Comparaison systeme</h2>
 <ul>
+<li>Lancement via Un hyperviseur</li>
+<li>Instanciez une image Ubuntu dans Virtualbox et répétez l’opération du premier exercice</li>
+</ul>
+</section><section id="comparaison-systeme-3" class="slide level2">
+<h2>Comparaison systeme</h2>
+<ul>
 <li>Lancement dans un émulateur arm</li>
 </ul>
 <pre><code>sudo apt-get install qemu-system-arm</code></pre>
@@ -1069,19 +1075,16 @@ sys     0m0.004s</code></pre>
 <li>lancer l’émulateur</li>
 </ul>
 <pre><code>qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -append &quot;root=/dev/sda1&quot; -hda debian_wheezy_armel_standard.qcow2</code></pre>
-<blockquote>
-<p>Les années passent… vous allez devoir exécuter ces commandes pour réussir à compiler correctement. Passer votre clavier en azerty avec ces commandes en root :</p>
-</blockquote>
-<pre><code># dpkg-reconfigure keyboard-configuration
-# service keyboard-setup restart </code></pre>
-</section><section id="comparaison-systeme-3" class="slide level2">
+</section><section id="comparaison-systeme-4" class="slide level2">
 <h2>Comparaison systeme</h2>
 <ul>
-<li>Ajoutez/compilez le binaire <strong>prime</strong> dans la VM puis testez de la même manière. Pour pouvoir installer GCC, modifiez les dépots <strong>apt</strong> de la VM (archive.debian.org)</li>
+<li>Vous allez devoir exécuter ces commandes pour réussir à compiler correctement. Passer votre clavier en azerty avec ces commandes, et mettez à jour les dépots <strong>Debian</strong></li>
 </ul>
 <pre><code># dpkg-reconfigure keyboard-configuration
-# service keyboard-setup restart </code></pre>
-</section><section id="comparaison-systeme-4" class="slide level2">
+# service keyboard-setup restart 
+# sed -i -e s/ftp.debian/archive.debian/s /etc/apt/sources.list
+# apt-get update</code></pre>
+</section><section id="comparaison-systeme-5" class="slide level2">
 <h2>Comparaison systeme</h2>
 <ul>
 <li>Les résultats en <strong>arm32</strong></li>

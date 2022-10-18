@@ -1156,6 +1156,11 @@ sys     0m0.004s
 
 ## Comparaison systeme ##
 
+> - Lancement via Un hyperviseur
+> - Instanciez une image Ubuntu dans Virtualbox et répétez l'opération du premier exercice
+
+## Comparaison systeme ##
+
 > - Lancement dans un émulateur arm
 >
 ```
@@ -1168,23 +1173,17 @@ sudo apt-get install qemu-system-arm
 ```
 qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -append "root=/dev/sda1" -hda debian_wheezy_armel_standard.qcow2
 ```
-> Les années passent... vous allez devoir exécuter ces commandes pour réussir à compiler correctement. Passer votre clavier en azerty avec ces commandes en root : 
+
+## Comparaison systeme ##
+
+> - Vous allez devoir exécuter ces commandes pour réussir à compiler correctement. Passer votre clavier en azerty avec ces commandes, et mettez à jour les dépots **Debian**
 > 
 ```
 # dpkg-reconfigure keyboard-configuration
 # service keyboard-setup restart 
+# sed -i -e s/ftp.debian/archive.debian/s /etc/apt/sources.list
+# apt-get update
 ```
-
-
-## Comparaison systeme ##
-
-> - Ajoutez/compilez le binaire **prime** dans la VM puis testez de la même manière. Pour pouvoir installer GCC, modifiez les dépots **apt** de la VM (archive.debian.org) 
->
-```
-# dpkg-reconfigure keyboard-configuration
-# service keyboard-setup restart 
-```
-
 ## Comparaison systeme ##
 
 > - Les résultats en **arm32**
