@@ -13,10 +13,7 @@ date : 18/10/2022 - IGN/ENSG
 
 - Concepts
 - Définitions
-  - Saas
-  - Paas
-  - Iaas
-  - Xaas
+  - Saas / Paas / Iaas / Xaas
 - Technologies
   - Architectures
   - Convergence
@@ -81,7 +78,7 @@ Les entreprises ont besoin de baisser les coûts et d'utiliser au maximum l'inve
 
 </aside>
 
-## Transformation difficile ##
+## Transformation difficile  1/2 ##
 
 - Infrastructure
   - Il faut repenser le SI
@@ -89,8 +86,11 @@ Les entreprises ont besoin de baisser les coûts et d'utiliser au maximum l'inve
 - Architecture
   - Il faut adapter les modèles d’architectures *Legacy*
 - Applicatif
-  - Il faut reconstruire les applications *Legacy*
-  - Il faut construire des applications *Cloud-ready*
+  - Il faut transformer les applications *Legacy*
+  - Si possible, il faut les réécrire en *Cloud-ready*
+
+## Transformation difficile 2/2 ##
+
 - Formation
   - Il faut développer les méthodes *Agiles*
   - Il faut former les agents aux technologies du Cloud
@@ -116,7 +116,7 @@ Le terme Cloud est devenu très englobant. Aujourd'hui il regroupe la fourniture
 
 ## Définition du  NIST ##
 
- **National Institute of Standards and Technology**
+*National Institute of Standards and Technology*
 
 > Cloud computing is a model for enabling ubiquitous, convenient, on-demand network
 access to a shared pool of configurable computing resources (e.g., networks, servers,
@@ -306,13 +306,13 @@ Infrastructure As A Code :
 
 Un nouveau modèle devient disponible, le **Container As A Service**
 
-- un peu différent du Iaas, pas vraiment du Paas
+- un peu différent du *Iaas*, pas vraiment du *Paas*
 - On consomme (et paye) des nœuds dans lesquels on déploie des applications en mode **Devops**
-- L'application doit être résiliente et s'auto-réparer (self-healing)
+- L'application doit être résiliente et s'auto-réparer
 - Le **Cluster** est nativement élastique
 - C'est le CSP qui gère l'exploitation du Cluster
 - La facturation se fait au nombre de nœuds du cluster indépendamment du nombre de conteneurs *actifs*
-- Le leader est [Kubernetes](#/kubernetes)
+- Le leader des orchestrateur de conteneur est [Kubernetes](#/kubernetes)
 
 <aside class="notes">
 
@@ -330,18 +330,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 
 </aside>
 
-# Techno du Cloud #
-
-## Panorama ##
-
-* Architectures
-* Virtualisation
-* Matériel
-* Mots-clés
-
-<aside class="notes">
-
-</aside>
+# Technos du Cloud #
 
 ## Architectures ##
 
@@ -373,12 +362,15 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
   * Nécessite une application compatible
   * Réparti les risques
 
+## Microservices ## 
+
 * Micro service
   * Répartir les modules applicatifs sur les composants
   * Nécessite une application dont l’architecture à été prévu dans ce sens
   * Limite les risques de défaillance complète du système
   * S'accompagne d'une utilisation massive de services managés
   * Doit être souvent être complété par de la scalabilité horizontale
+  * Attention à ne pas tomber dans l’excès inverse au risque d'avoir un système inmaintenable
 
 <aside class="notes">
 
@@ -733,7 +725,13 @@ un film de 60mn sur Netflix = entre 0.03kWh (en SD sur un smartphone en Wifi) et
 
 # Migration dans le Cloud #
 
-Move to Cloud
+## Move to cloud ##{.figcenter}
+
+<aside class="notes">
+
+TODO: trouver une image move2Cloud
+
+</aside>
 
 ## Stratégies de Migration ##
 
@@ -770,15 +768,15 @@ On adapte l'application pour que cela fonctionne mieux, par exemple en utilisant
 
 On réécrit l'application et son architecture en tirant profit des avantages du Cloud (Cloud Native).
 
-- Avantages : l'Application est plus performante plus sûre, et coûte moins cher
-- Inconvénients : Complexité de transformation
+- Avantages : l'application est plus performante, plus sûre et revient à moins cher en phase de *Run*.
+- Inconvénients : Complexité et coût de transformation
 
 ## Repuchasing ##
 
 On remplace par des solutions SaaS, cette méthode ne concerne bien entendu que des produits disponibles sur étagère (CRM, CMS simples, etc...)
 
 - Avantages : Simple et rapide si l'application  est peu customisé
-- Inconvénients : peu d'options, risques au niveau de la sécurité
+- Inconvénients : peu d'options, risques potentiels au niveau de la sécurité/confidentialité
 
 ## Retain, Retire ##
 
@@ -788,7 +786,7 @@ Ces deux modèles sont un peu particulier, il s'agit soit de ne pas migrer l'app
 
 ## Cloud Native application ##
 
-Pour tirer parti des avantages du Cloud computing, il faut repenser la manière de développer des applications en las adaptant à l'environnement dans lequel elles vont s’exécuter.
+Pour tirer parti des avantages du Cloud computing, il faut repenser la manière de développer des applications en les adaptant à l'environnement dans lequel elles vont s’exécuter.
 On parle d'application Cloud native.
 Les piliers d'une application Cloud native sont :
 
@@ -813,11 +811,29 @@ Beaucoup de notions sont mises en oeuvre lors de la création d'un application C
 
 # Mots clés #
 
+## WebServices ##
+
+Les **Service Web** désigne plusieurs chose mais principalement un concept d'API exposé sur le WEB utilisant une technologie d'échange, le plus souvent en mode **SOA** (Architecture orienté service) où des fonctions sont exécutées à distance.
+
+Les API RESTful sont grandement utilisé dans le monde des Webservices. (HTTP + CRUD)
+
+<aside class="notes">
+
+</aside>
+
 ## Abstraction (api) ##
 
 Une **API** (Application Programming Interface) Permet de faire abstraction de l'élément sur lequel elle se pose.
 Elle décrit comment le consommateur peut utiliser les fonctions du fournisseur.
 Dans le Cloud il est primordial que le maximum d'échanges se fassent au travers d'API pour garantir l’interopérabilité.
+
+<aside class="notes">
+
+</aside>
+
+## StateLess ##
+
+Se dit d'une application ou d'un service qui ne conserve pas en interne d'état d'une connexion d'un client entre 2 appels au service. Cela permet de faire traiter la demande par des machines différentes à chaque requête. C'est une des notions primordiale du développement d'application **Cloud-Ready**
 
 <aside class="notes">
 
@@ -851,15 +867,6 @@ l'**Infrastructure As Code** désigne les technique permettant de définir une i
 
 </aside>
 
-## WebServices ##
-
-Les **Service Web** désigne plusieurs chose mais principalement un concept d'API exposé sur le WEB utilisant une technologie d'échange, le plus souvent en mode **SOA** (Architecture orienté service) où des fonctions sont exécutées à distance.
-
-Les API RESTful sont grandement utilisé dans le monde des Webservices. (HTTP + CRUD)
-
-<aside class="notes">
-
-</aside>
 
 ## Object Storage ##
 
@@ -893,14 +900,6 @@ Ex: ActiveMQ, RabbitMQ, Kafka
 ## ServerLess ##
 
 **ServerLess** désigne les services proposé en mode Cloud qui ne comprennent pas la livraison d'une machine pour réaliser l'opération, l'appel au service génère une mise à disposition de ressource en fonction de la charge nécessaire à l’exécution de la demande et la libère instantanément.
-
-<aside class="notes">
-
-</aside>
-
-## StateLess ##
-
-Se dit d'une application ou d'un service qui ne conserve pas en interne d'état d'une connexion d'un client entre 2 appels au service. Cela permet de faire traiter la demande par des machines différentes à chaque requête. C'est une des notions primordiale du développement d'application **Cloud-Ready**
 
 <aside class="notes">
 
@@ -1074,7 +1073,6 @@ The Shift project
 ## Introduction à Docker
 
 Docker est en fait un ensemble d'outils de conteneurisation applicative.
-Notions :
 
 - docker Engine
   - docker CLI
@@ -1170,8 +1168,17 @@ sudo apt-get install qemu-system-arm
 ```
 qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -append "root=/dev/sda1" -hda debian_wheezy_armel_standard.qcow2
 ```
->
-> - Ajoutez/compilez le binaire **prime** dans la VM puis testez de la même manière. Pour pouvoir installer GCC, modifiez les dépots **apt** de la VM (archive.debian.org) Passer votre clavier en azerty avec ces commandes en root :
+> Les années passent... vous allez devoir exécuter ces commandes pour réussir à compiler correctement. Passer votre clavier en azerty avec ces commandes en root : 
+> 
+```
+# dpkg-reconfigure keyboard-configuration
+# service keyboard-setup restart 
+```
+
+
+## Comparaison systeme ##
+
+> - Ajoutez/compilez le binaire **prime** dans la VM puis testez de la même manière. Pour pouvoir installer GCC, modifiez les dépots **apt** de la VM (archive.debian.org) 
 >
 ```
 # dpkg-reconfigure keyboard-configuration

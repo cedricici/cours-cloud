@@ -14,11 +14,11 @@
     color: #72797f;
 }
 .reveal h2 {
-    font-size: 1.50em;
+    font-size: 1.20em;
     color: #72797f;
 }
 .reveal h3 {
-    font-size: 1.25em;
+    font-size: 1.15em;
     color: #72797f;
 }
 .reveal h4, .reveal h5, .reveal h6 {
@@ -41,8 +41,9 @@
     text-align: justify;
 }
 
-
-
+.reveal p {
+    line-height: 1.1;
+}
 
 .reveal ul>li{
    list-style-type: none;
