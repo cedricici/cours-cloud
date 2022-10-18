@@ -1051,7 +1051,7 @@ sys     0m0.000s</code></pre>
 </ul>
 <pre><code>FROM debian
 ADD ./prime /prime
-CMD [ ./prime 0 ]</code></pre>
+CMD [ /prime 0 ]</code></pre>
 <pre><code>docker build -t prime .</code></pre>
 <pre><code>time docker run -ti prime /prime 10000</code></pre>
 <pre><code>Calcul des 10000 premiers nombres premiers
@@ -1082,7 +1082,7 @@ sys     0m0.004s</code></pre>
 </ul>
 <pre><code># dpkg-reconfigure keyboard-configuration
 # service keyboard-setup restart 
-# sed -i -e s/ftp.debian/archive.debian/s /etc/apt/sources.list
+# sed -i -e s/ftp.debian/archive.debian/g /etc/apt/sources.list
 # apt-get update</code></pre>
 </section><section id="comparaison-systeme-5" class="slide level2">
 <h2>Comparaison systeme</h2>

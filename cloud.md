@@ -1136,7 +1136,7 @@ sys     0m0.000s
 ```
 FROM debian
 ADD ./prime /prime
-CMD [ ./prime 0 ]
+CMD [ /prime 0 ]
 ```
 
 ```
@@ -1181,7 +1181,7 @@ qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.
 ```
 # dpkg-reconfigure keyboard-configuration
 # service keyboard-setup restart 
-# sed -i -e s/ftp.debian/archive.debian/s /etc/apt/sources.list
+# sed -i -e s/ftp.debian/archive.debian/g /etc/apt/sources.list
 # apt-get update
 ```
 ## Comparaison systeme ##
