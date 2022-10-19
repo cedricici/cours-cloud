@@ -962,6 +962,17 @@ la **HA** désigne la capacité d'un système à *survivre* à la perte d'un él
 
 </aside>
 
+## Open source ##
+
+l'Open source qui consiste à ouvrir le code source d'une application à tous, est omniprésent dans les différents niveaux du Cloud computing. Même les plus grands fournisseurs utilisent des logiciels Open source, ils en sont souvent les principaux contributeurs.
+
+<aside class="notes">
+
+<https://www.openstack.org/foundation/companies/>
+
+</aside>
+
+
 ## Devops ##
 
 **Devops** désigne un courant de pensée informatique visant à éliminer le conflit entre les **Développeurs** qui souhaitent faire évoluer un SI et les **Opérationnels** qui souhaitent avoir un SI le plus Stable possible.
@@ -1037,16 +1048,6 @@ Mais on commence à voir les travers:
 - Difficile au niveau des données
 
 <aside class="notes">
-
-</aside>
-
-## Open source ##
-
-l'Open source qui consiste à ouvrir le code source d'une application à tous, est omniprésent dans les différents niveaux du Cloud computing. Même les plus grands fournisseurs utilisent des logiciels Open source, ils en sont souvent les principaux contributeurs.
-
-<aside class="notes">
-
-<https://www.openstack.org/foundation/companies/>
 
 </aside>
 
