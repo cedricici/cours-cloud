@@ -815,7 +815,7 @@ Beaucoup de notions sont mises en oeuvre lors de la création d'un application C
 
 Les **Service Web** désigne plusieurs chose mais principalement un concept d'API exposé sur le WEB utilisant une technologie d'échange, le plus souvent en mode **SOA** (Architecture orienté service) où des fonctions sont exécutées à distance.
 
-Les API RESTful sont grandement utilisé dans le monde des Webservices. (HTTP + CRUD)
+Les API RESTful sont grandement utilisé dans le monde des WebServices. (HTTP + CRUD)
 
 <aside class="notes">
 
@@ -833,7 +833,7 @@ Dans le Cloud il est primordial que le maximum d'échanges se fassent au travers
 
 ## StateLess ##
 
-Se dit d'une application ou d'un service qui ne conserve pas en interne d'état d'une connexion d'un client entre 2 appels au service. Cela permet de faire traiter la demande par des machines différentes à chaque requête. C'est une des notions primordiale du développement d'application **Cloud-Ready**
+Se dit d'une application ou d'un service qui ne conserve pas en interne d'état d'une connexion d'un client entre 2 appels au service. Cela permet de faire traiter la demande par des machines différentes à chaque requête. C'est une des notions primordiale du développement d'application **Cloud-Native**
 
 <aside class="notes">
 
@@ -879,7 +879,7 @@ Le cluster est composé d'éléments simples, peu coûteux, facilement extensibl
 
 ## NOSQL ##
 
-NoSQL regroupe un ensemble de type de SGBD, souvent adapté à des gros volumes ou a des traitements rapide, et par nature facilement scalable et résilient.
+NoSQL regroupe un ensemble de type de SGBD, souvent adapté à des gros volumes ou à des traitements rapides, et par nature facilement scalables et résilients.
 
 ex : MongoDB, Redis, Cassandra
 
@@ -911,13 +911,13 @@ L'autonomic Computing désigne la capacité de ces systèmes de pouvoir se répa
 
 <aside class="notes">
 
-Lancé par IBM, l'autoréparation des programme intègre aujourd'hui de nombreux programmes
+Lancé par IBM, l’autoréparation des programme intègre aujourd’hui de nombreux programmes
 
 </aside>
 
 ## 12 factors ##
 
-12 Factors désigne les règles pour concevoir des application Cloud Natives. Cas application ainsi développée s'intègrerons parfaitement dasn les univers Cloud en profitant u maximum des avantages de ce tupe d'hébergement.
+**12 Factors** désigne les règles pour concevoir des applications Cloud Natives. Ces applications ainsi développées s’intégreront parfaitement dans les univers Cloud en profitant au maximum des avantages de ce type d'hébergement.
 
 - <https://12factor.net/fr/>
 
