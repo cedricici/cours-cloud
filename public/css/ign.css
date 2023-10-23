@@ -250,11 +250,25 @@ padding:2px;
     font-size: 3.5em;
 }
 
-
-
 .reveal .slides .factors p {
     font-size:0.65em;
 }
+
+.reveal .figgauche p {
+    text-align: justify;
+}
+.reveal .figgauche figure {
+    float: left;
+    max-width: 30%;
+    margin: .5em .5em 0 0;
+    text-align: center;
+}
+
+.reveal .figgauche figure figcaption {
+    color:#000;
+    font-size: 0.8em;
+}
+
 
 
 /** Slide Merci **/

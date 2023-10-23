@@ -1032,7 +1032,6 @@ l'Open source qui consiste à ouvrir le code source d'une application à tous, e
 
 </aside>
 
-
 ## Devops ##
 
 **Devops** désigne un courant de pensée informatique visant à éliminer le conflit entre les **Développeurs** qui souhaitent faire évoluer un SI et les **Opérationnels** qui souhaitent avoir un SI le plus Stable possible.
@@ -1064,6 +1063,17 @@ Mais on commence à voir les travers:
 <aside class="notes">
   Devsecops finops
 </aside>
+
+## Kubernetes ##{.figgauche}
+
+![Kubernetes](img/Kubernetes.png)
+
+Kubernetes est une solution open-source de gestion de conteneur développé par Google.
+Kubernetes à permis le passage en production des applications basées sur des conteneurs en apportant la fiabilité et la sécurité nécessaire à ce passage. Les outils (API) fournis par Kubernetes permettent un fonctionnement optimal des applications **cloud natives**.
+
+Par sa conception Kubernetes est facilement modifiable pour s'adapter aux besoins les plus divers.
+
+
 
 # Enjeux - Avenir #
 
@@ -1366,7 +1376,7 @@ Installation minikube en utilisant Docker comme driver :
 
 [https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/)
 
-On se trouve donc à simuler un cluster d'orchestration de conteneur Dont les noeuds sont des... conteneurs !
+On se trouve donc à simuler un cluster d'orchestration de conteneur dont les noeuds sont des... conteneurs !
 
 ## TP : TRAVAIL ATTENDU ##
 
