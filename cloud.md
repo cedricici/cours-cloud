@@ -2,10 +2,8 @@
 title : Technologies de Cloud Computing
 sub-title : M-TSI
 author : Cédric Esnault
-date : 18/10/2022 - IGN/ENSG
+date : 24/10/2023 - IGN/ENSG
 ---
-
-
 
 # Cloud Computing #
 
@@ -97,7 +95,7 @@ Les entreprises ont besoin de baisser les coûts et d'utiliser au maximum l'inve
   - Il faut pousser les modèles [Devops](#/devops)
 - sécurité/confidentialité
   - Il faut intégrer la sécurité à tous les niveaux : **DevSecOps**
-  - Il faut faire confiance
+  - Il faut faire confiance aux fournisseurs, pas aux utilisateurs **Zero-trust**
   - Il faut contrôler : **FinOps**
 
 <aside class="notes">
@@ -227,6 +225,7 @@ Cette fois ci, le fournisseur propose un support pour votre propre application. 
 
 - Google App Engine
 - Heroku
+- Render
 - ...
 
 <aside class="notes">
@@ -362,7 +361,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
   * Nécessite une application compatible
   * Réparti les risques
 
-## Microservices ## 
+## Microservices ##
 
 * Micro service
   * Répartir les modules applicatifs sur les composants
@@ -565,9 +564,13 @@ Maintenant disponible sous Windows
   - Virtualisation des réseaux WAN (MPLS...)
   - Remplacement par une multitude de réseaux internet
   - Orchestration Logicielle
-  - Efficace et nettement moins cher!
+  - SASE pour la sécurité
 
 <aside class="notes">
+
+Security Access Service Edge
+https://www.cisco.com/c/dam/global/fr_fr/solutions/enterprise-networks/xa-09-2023-networking-report.pdf
+
 
 </aside>
 
@@ -685,7 +688,7 @@ Le stockage Objet, S3 en tête,  est le nouveau standard de fait de stockage vir
 - Datacenter moderne et optimisé = 1.5 à 3KW/m2
 
 Exemple de l’envolée du Bitcoin : si la flambée du bitcoin démarrée en 2017 avait continuée , en 2020 le calcul de la blockchain aurait consommé toute l'énergie de la planète.
-Cette consomation s'est stabilisée et équivaut aujourd'hui à peu près à la consomation de la suisse.
+Cette consommation s'est stabilisée et équivaut aujourd'hui à peu près à la consommation de la suisse.
 
 `GREEN IT`{.note .fragment}
 
@@ -693,7 +696,8 @@ Cette consomation s'est stabilisée et équivaut aujourd'hui à peu près à la 
 
 Au moins 77 KWh pour une transaction Bitcoin
 
-une des dernières estimations de la consommation annuelle du minage de Bitcoin est de 58,07 terawattheure.
+2020 : consommation annuelle du minage de Bitcoin est de 58,07 terawattheure.(suisse)
+2023 : 112 terawattheure.(pays bas == 75% france) == 25.986 éoliennes 
 
 Requete Google 0.0003kWh 0.2g CO2 , 7g selon chercheur Wissner-Gross
 
@@ -727,9 +731,9 @@ un film de 60mn sur Netflix = entre 0.03kWh (en SD sur un smartphone en Wifi) et
 
 ## Move to cloud ##{.figcenter}
 
-<aside class="notes">
+![Move 2 Cloud](img/cloud-migration.png)
 
-TODO: trouver une image move2Cloud
+<aside class="notes">
 
 </aside>
 
@@ -808,6 +812,61 @@ Beaucoup de notions sont mises en oeuvre lors de la création d'un application C
 
 [Infra As Code](#/infraascode), [12 factors](#/factors) , [Stateless](#/stateless), [API](#/abstraction-api), [webservices](#/webservices), [Devops](#/devops),
 [Object Storage](#/object-storage), [NoSQL](#/nosql), [Message Queue](#/messagequeue), [CDN](#/cdn)
+
+
+## 12 Factors ##{.factors}
+
+**1 : Base de code**
+
+Une base de code suivie avec un système de contrôle de version, plusieurs déploiements
+
+**2 : Dépendances**
+
+Déclarez explicitement et isolez les dépendances
+
+**3 : Configuration**
+
+Stockez la configuration dans l’environnement
+
+**4 : Services externes**
+
+Traitez les services externes comme des ressources attachées
+
+**5 : Assemblez, publiez, exécutez**
+
+Séparez strictement les étapes d’assemblage et d’exécution
+
+**6 : Processus**
+
+Exécutez l’application comme un ou plusieurs processus sans état
+
+## 12 Factors ##{.factors}
+
+**7 Associations de ports**
+
+Exportez les services via des associations de ports
+
+**8 Concurrence**
+
+Grossissez à l’aide du modèle de processus
+
+**9 Jetable**
+
+Maximisez la robustesse avec des démarrages rapides et des arrêts gracieux
+
+**10 Parité dev/prod**
+
+Gardez le développement, la validation et la production aussi proches que possible
+
+**11 Logs**
+
+Traitez les logs comme des flux d’évènements
+
+**12 Processus d’administration**
+
+Lancez les processus d’administration et de maintenance comme des one-off-processes
+
+
 
 # Mots clés #
 
@@ -911,7 +970,7 @@ L'autonomic Computing désigne la capacité de ces systèmes de pouvoir se répa
 
 <aside class="notes">
 
-Lancé par IBM, l’autoréparation des programme intègre aujourd’hui de nombreux programmes
+Lancé par IBM, l’autoréparation des programmes intègre aujourd’hui de nombreux programmes
 
 </aside>
 
@@ -923,6 +982,8 @@ Lancé par IBM, l’autoréparation des programme intègre aujourd’hui de nomb
 
 <aside class="notes">
 
+détailler les 12 factors
+
 </aside>
 
 ## Systèmes repartis ##
@@ -933,8 +994,7 @@ Un système réparti est un SI dans lequel l'information et l’exécution est d
 - ex: cluster kubernetes
 
 <aside class="notes">
-   Encore parler IA , deep learning, grilles de caclul
-
+   Encore parler IA , deep learning, grilles de calcul
 </aside>
 
 ## High Availability ##
@@ -1035,10 +1095,13 @@ Mais on commence à voir les travers:
 - Mise à jour régulière et systématique
 - Chiffrement des flux
 - Isolation des composants
+- Zéro Trust
 
 <aside class="notes">
 
  Cloud Act : Clarifying Lawful Overseas Use of Data Act
+ SecNumCloud
+
 
 </aside>
 
@@ -1054,6 +1117,7 @@ Mais on commence à voir les travers:
 ## Trafic réseau ##
 
 Le **Cloud** et l'**IoT** sont très liés et ces deux éléments sont en très forte croissance. Cisco estime qu'en 2021, un habitant consommera à lui seul 200Gb de donnée par jour sur l'internet. 90% de ce trafic passera par le Cloud public et atteindra 3.3Zo (ZetaOctets), principalement pour la diffusion video
+
 Traffic mondial des Datacenter :
 
 - 2015 : 4.7Zo
@@ -1063,6 +1127,7 @@ Traffic mondial des Datacenter :
   - 77% dans le Datacenter lui même
 
 <aside class="notes">
+
 15.3Zo = 213Milliard d'heures de music en streaming = 38 mois non-stop pour chaque habitant.
 
 The Shift project
@@ -1110,12 +1175,11 @@ Scénario type :
 > - compilation d'un code calculant les **n** nombres premiers
 
 ```
-wget -O prime.c https://www.klgrth.io/paste/xhso2/raw
-ou 
 wget -O prime.c https://cedricici.github.io/cours-cloud/public/prime.c 
 ```
 
 ```
+sudo apt update && sudo apt install build-essential
 gcc prime.c -o prime
 ```
 
@@ -1137,7 +1201,7 @@ sys     0m0.000s
 > - Dans un fichier **Dockerfile** on va construire notre image :
 >
 ```
-FROM debian
+FROM debian:latest
 ADD ./prime /prime
 CMD [ /prime 0 ]
 ```
@@ -1165,34 +1229,25 @@ sys     0m0.004s
 ## Comparaison systeme ##
 
 > - Lancement dans un émulateur arm
->
 ```
-sudo apt-get install qemu-system-arm
+sudo apt install qemu-system-arm
 ```
->
-> - récupérez les fichiers nécéssaires sur [https://people.debian.org/~aurel32/qemu/armel/](https://people.debian.org/~aurel32/qemu/armel/)
-> - lancer l'émulateur
->
-```
-qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -append "root=/dev/sda1" -hda debian_wheezy_armel_standard.qcow2
-```
+> - Visitez la page [https://people.debian.org/~gio/dqib/](https://people.debian.org/~gio/dqib/)
+> - Dézipez l'archive pointée par le lien **Images for armhf-virt**
+> - Lancer l'émulateur à partir des instructions
+> - Installez les paquets nécessaires à la compilation et à la récupération du code
+> - Lancez le calcul des 10000 nombres premiers
+
+<aside class="notes">
+
+https://people.debian.org/~gio/dqib/
+https://gitlab.com/api/v4/projects/giomasce%2Fdqib/jobs/artifacts/master/download?job=convert_armhf-virt
+
+</aside>
 
 ## Comparaison systeme ##
 
-> - Vous allez devoir exécuter ces commandes pour réussir à compiler correctement. Passer votre clavier en azerty avec ces commandes, et mettez à jour les dépots **Debian**
-> 
-```
-# dpkg-reconfigure keyboard-configuration
-# service keyboard-setup restart 
-# sed -i -e s/ftp.debian/archive.debian/g /etc/apt/sources.list
-# apt-get update
-```
-
-`https://cedricici.github.io/cours-cloud/public/prime.c`{.note}
-
-## Comparaison systeme ##
-
-> - Les résultats en **arm32**
+> - Les résultats en **armhf**
 
 ```
 Calcul des 10000 premiers nombres premiers
@@ -1219,16 +1274,19 @@ Connectez vous sur le site Wordpress.com. c'est un service de SaaS basé sur le 
 
 > - Laissez vous guider dans la création de votre site.
 Vous pouvez ensuite faire des modifications sommaires sur la page d'accueil.
-> - publiez votre site (ajoutez du contenu, des média et au minimum un widget)
-> - repassez par l'édition pour voir le back-office complet.
+> - Publiez votre site (ajoutez du contenu, des média et au minimum un widget)
+> - Repassez par l'édition pour voir le back-office complet.
+> - Notez la version de Wordpress utilisée
 
 ## TP Saas ##
 
 Instanciez vous même le CMS Wordpress
 
-> - télécharger le logiciel sur le site wordpress.org ou l'image docker sur le dockerhub (<https://hub.docker.com/_/wordpress>)
-> - configurez votre serveur Web Local ou le docker-compose proposé dans la doc
-> - démarrez votre instance local de Wordpress
+> - Télécharger le logiciel sur le site wordpress.org ou l'image docker sur le dockerhub (<https://hub.docker.com/_/wordpress>)
+> - Configurez votre serveur Web Local ou le docker-compose proposé dans la doc
+> - Démarrez votre instance local de Wordpress
+> - Réalisez la même page que lors du précédent exercice
+> - Notez la version de wordpress utilisée
 
 ## TP Saas  : Questions ##
 
@@ -1236,16 +1294,19 @@ Instanciez vous même le CMS Wordpress
 
 `Question : Quels éléments (vu dans le cours) faudrait-il mettre en place pour proposer notre propre service de Saas basé sur Wordpress?`{.note}
 
-`Question : Proposez une architecture pour rendre ce service`{.note}
+`Question : Proposez une architecture pour rendre ce service (fichier draw.io)`{.note}
 
 ## TP Paas ##
 
 **Objectif** : déployer une appli Paas
 
 L'objectif ici est de déployer une application à partir d'un code source.
+Ce TP initialement fait sur Heroku.com est maintenant réalisé sur Render.com
 
-> - Connectez vous sur la plateforme Paas Heroku.com et créez un compte
-> - Suivez le [tutoriel Heroku](https://devcenter.heroku.com/start) pour créer une application node.js
+> - Forkez le dépot [https://github.com/cedricici/findmefast.git](https://github.com/cedricici/findmefast.git)
+> - Connectez vous sur la plateforme Paas Render.com, créez un compte puis rendez vous sur le [Dashboard](https://dashboard.render.com)
+> - Créez un nouveau webservice depuis un dépot git à partir de votre *Fork*.
+> - Lancez un service **Free** basé sur Docker et suivez son déploiement.
 
 <aside class="notes">
 
@@ -1255,11 +1316,12 @@ L'objectif ici est de déployer une application à partir d'un code source.
 
 ## TP Paas  : Questions ##
 
-`Question : Une fois le tutoriel de base réalisé. Trouvez une solution pour déployer le code suivant (ou celui de votre choix) dans une nouvelle application **sans utiliser l'outil CLI heroku-toolbelt** .`{.note}
+`Question : Une fois que l'application est lancée et que vous pouvez y jouer, expliquer en détail ce qu'il s'est passé.`{.note}
 
 `Question : Donnez une explication des technologies qui selon vous sont misent en œuvre ici.`{.note}
 
-> [https://github.com/cedricici/findmefast.git](https://github.com/cedricici/findmefast.git)
+J'attend pour ces réponses des schémas et des références au cours.
+
 
 ## TP Architecture ##
 
@@ -1293,8 +1355,6 @@ Votre schéma devra contenir :
 > - les logiciels utilisés
 
 ## TP Architecture : Questions ####
-
-Vous pouvez utiliser [https://app.diagrams.net/](https://app.diagrams.net/) pour votre schéma par exemple.
 
 `Question : Fournissez un schéma d'architecture complet représentant cette pile applicative`{.note}
 

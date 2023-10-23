@@ -246,6 +246,16 @@ padding:2px;
     margin: 20px 0 -10px 0;/* was 20px 0 */
 }
 
+.reveal .slides #développement h1 {
+    font-size: 3.5em;
+}
+
+
+
+.reveal .slides .factors p {
+    font-size:0.65em;
+}
+
 
 /** Slide Merci **/
 

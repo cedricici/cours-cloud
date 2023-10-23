@@ -50,7 +50,7 @@
                     <h1>Technologies de Cloud Computing</h1>
                     <h2>M-TSI</h2>
                     <h3>Cédric Esnault</h3>
-                    <h4>18/10/2022 - IGN/ENSG</h4>
+                    <h4>24/10/2023 - IGN/ENSG</h4>
                     <aside class="notes">
 
                     </aside>
@@ -160,7 +160,7 @@
 <li class="fragment">sécurité/confidentialité
 <ul>
 <li class="fragment">Il faut intégrer la sécurité à tous les niveaux : <strong>DevSecOps</strong></li>
-<li class="fragment">Il faut faire confiance</li>
+<li class="fragment">Il faut faire confiance aux fournisseurs, pas aux utilisateurs <strong>Zero-trust</strong></li>
 <li class="fragment">Il faut contrôler : <strong>FinOps</strong></li>
 </ul></li>
 </ul>
@@ -261,6 +261,7 @@
 <ul>
 <li class="fragment">Google App Engine</li>
 <li class="fragment">Heroku</li>
+<li class="fragment">Render</li>
 <li class="fragment">…</li>
 </ul>
 <aside class="notes">
@@ -567,10 +568,11 @@
 <li class="fragment">Virtualisation des réseaux WAN (MPLS…)</li>
 <li class="fragment">Remplacement par une multitude de réseaux internet</li>
 <li class="fragment">Orchestration Logicielle</li>
-<li class="fragment">Efficace et nettement moins cher!</li>
+<li class="fragment">SASE pour la sécurité</li>
 </ul></li>
 </ul>
 <aside class="notes">
+<p>Security Access Service Edge https://www.cisco.com/c/dam/global/fr_fr/solutions/enterprise-networks/xa-09-2023-networking-report.pdf</p>
 </aside>
 </section><section id="virtualisation-du-stockage" class="slide level2">
 <h2>Virtualisation du stockage</h2>
@@ -686,11 +688,11 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <li class="fragment">le refroidissement 40% à 50%</li>
 <li class="fragment">Datacenter moderne et optimisé = 1.5 à 3KW/m2</li>
 </ul>
-<p>Exemple de l’envolée du Bitcoin : si la flambée du bitcoin démarrée en 2017 avait continuée , en 2020 le calcul de la blockchain aurait consommé toute l’énergie de la planète. Cette consomation s’est stabilisée et équivaut aujourd’hui à peu près à la consomation de la suisse.</p>
+<p>Exemple de l’envolée du Bitcoin : si la flambée du bitcoin démarrée en 2017 avait continuée , en 2020 le calcul de la blockchain aurait consommé toute l’énergie de la planète. Cette consommation s’est stabilisée et équivaut aujourd’hui à peu près à la consommation de la suisse.</p>
 <p><code class="note fragment">GREEN IT</code></p>
 <aside class="notes">
 <p>Au moins 77 KWh pour une transaction Bitcoin</p>
-<p>une des dernières estimations de la consommation annuelle du minage de Bitcoin est de 58,07 terawattheure.</p>
+<p>2020 : consommation annuelle du minage de Bitcoin est de 58,07 terawattheure.(suisse) 2023 : 112 terawattheure.(pays bas == 75% france) == 25.986 éoliennes</p>
 <p>Requete Google 0.0003kWh 0.2g CO2 , 7g selon chercheur Wissner-Gross</p>
 <p>L’envoi d’un mail avec une pièce jointe de 1 Mo dégage 19 grammes de CO2 et sa consommation électrique est équivalente à celle d’une ampoule pendant une heure.</p>
 <p>les estimations sont très complexe et différent selon les sources un film de 60mn sur Netflix = entre 0.03kWh (en SD sur un smartphone en Wifi) et 6.6 kWh selon the Shift Project</p>
@@ -722,8 +724,10 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 </section></section>
 <section><section id="migration-dans-le-cloud" class="title-slide slide level1"><h1>Migration dans le Cloud</h1></section><section id="move-to-cloud" class="slide level2 figcenter">
 <h2>Move to cloud</h2>
+<figure>
+<img data-src="img/cloud-migration.png" alt="Move 2 Cloud" /><figcaption>Move 2 Cloud</figcaption>
+</figure>
 <aside class="notes">
-<p>TODO: trouver une image move2Cloud</p>
 </aside>
 </section><section id="stratégies-de-migration" class="slide level2">
 <h2>Stratégies de Migration</h2>
@@ -787,6 +791,34 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <h2>Cloud Native application</h2>
 <p>Beaucoup de notions sont mises en oeuvre lors de la création d’un application Cloud Native, voici quelques définitions :</p>
 <p><a href="#//infraascode">Infra As Code</a>, <a href="#//factors">12 factors</a> , <a href="#//stateless">Stateless</a>, <a href="#//abstraction-api">API</a>, <a href="#//webservices">webservices</a>, <a href="#//devops">Devops</a>, <a href="#//object-storage">Object Storage</a>, <a href="#//nosql">NoSQL</a>, <a href="#//messagequeue">Message Queue</a>, <a href="#//cdn">CDN</a></p>
+</section><section id="factors" class="slide level2 factors">
+<h2>12 Factors</h2>
+<p><strong>1 : Base de code</strong></p>
+<p>Une base de code suivie avec un système de contrôle de version, plusieurs déploiements</p>
+<p><strong>2 : Dépendances</strong></p>
+<p>Déclarez explicitement et isolez les dépendances</p>
+<p><strong>3 : Configuration</strong></p>
+<p>Stockez la configuration dans l’environnement</p>
+<p><strong>4 : Services externes</strong></p>
+<p>Traitez les services externes comme des ressources attachées</p>
+<p><strong>5 : Assemblez, publiez, exécutez</strong></p>
+<p>Séparez strictement les étapes d’assemblage et d’exécution</p>
+<p><strong>6 : Processus</strong></p>
+<p>Exécutez l’application comme un ou plusieurs processus sans état</p>
+</section><section id="factors-1" class="slide level2 factors">
+<h2>12 Factors</h2>
+<p><strong>7 Associations de ports</strong></p>
+<p>Exportez les services via des associations de ports</p>
+<p><strong>8 Concurrence</strong></p>
+<p>Grossissez à l’aide du modèle de processus</p>
+<p><strong>9 Jetable</strong></p>
+<p>Maximisez la robustesse avec des démarrages rapides et des arrêts gracieux</p>
+<p><strong>10 Parité dev/prod</strong></p>
+<p>Gardez le développement, la validation et la production aussi proches que possible</p>
+<p><strong>11 Logs</strong></p>
+<p>Traitez les logs comme des flux d’évènements</p>
+<p><strong>12 Processus d’administration</strong></p>
+<p>Lancez les processus d’administration et de maintenance comme des one-off-processes</p>
 </section></section>
 <section><section id="mots-clés" class="title-slide slide level1"><h1>Mots clés</h1></section><section id="webservices" class="slide level2">
 <h2>WebServices</h2>
@@ -849,15 +881,16 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <h2>autonomic computing</h2>
 <p>L’autonomic Computing désigne la capacité de ces systèmes de pouvoir se réparer eux même. Ils intègrent de la surveillance et de la détection d’anomalie.</p>
 <aside class="notes">
-<p>Lancé par IBM, l’autoréparation des programme intègre aujourd’hui de nombreux programmes</p>
+<p>Lancé par IBM, l’autoréparation des programmes intègre aujourd’hui de nombreux programmes</p>
 </aside>
-</section><section id="factors" class="slide level2">
+</section><section id="factors-2" class="slide level2">
 <h2>12 factors</h2>
 <p><strong>12 Factors</strong> désigne les règles pour concevoir des applications Cloud Natives. Ces applications ainsi développées s’intégreront parfaitement dans les univers Cloud en profitant au maximum des avantages de ce type d’hébergement.</p>
 <ul>
 <li class="fragment"><a href="https://12factor.net/fr/" class="uri">https://12factor.net/fr/</a></li>
 </ul>
 <aside class="notes">
+<p>détailler les 12 factors</p>
 </aside>
 </section><section id="systèmes-repartis" class="slide level2">
 <h2>Systèmes repartis</h2>
@@ -867,7 +900,7 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <li class="fragment">ex: cluster kubernetes</li>
 </ul>
 <aside class="notes">
-<p>Encore parler IA , deep learning, grilles de caclul</p>
+Encore parler IA , deep learning, grilles de calcul
 </aside>
 </section><section id="high-availability" class="slide level2">
 <h2>High Availability</h2>
@@ -953,9 +986,10 @@ Devsecops finops
 <li class="fragment">Mise à jour régulière et systématique</li>
 <li class="fragment">Chiffrement des flux</li>
 <li class="fragment">Isolation des composants</li>
+<li class="fragment">Zéro Trust</li>
 </ul>
 <aside class="notes">
-<p>Cloud Act : Clarifying Lawful Overseas Use of Data Act</p>
+<p>Cloud Act : Clarifying Lawful Overseas Use of Data Act SecNumCloud</p>
 </aside>
 </section><section id="interopérabilité-1" class="slide level2">
 <h2>Interopérabilité</h2>
@@ -967,7 +1001,8 @@ Devsecops finops
 </aside>
 </section><section id="trafic-réseau" class="slide level2">
 <h2>Trafic réseau</h2>
-<p>Le <strong>Cloud</strong> et l’<strong>IoT</strong> sont très liés et ces deux éléments sont en très forte croissance. Cisco estime qu’en 2021, un habitant consommera à lui seul 200Gb de donnée par jour sur l’internet. 90% de ce trafic passera par le Cloud public et atteindra 3.3Zo (ZetaOctets), principalement pour la diffusion video Traffic mondial des Datacenter :</p>
+<p>Le <strong>Cloud</strong> et l’<strong>IoT</strong> sont très liés et ces deux éléments sont en très forte croissance. Cisco estime qu’en 2021, un habitant consommera à lui seul 200Gb de donnée par jour sur l’internet. 90% de ce trafic passera par le Cloud public et atteindra 3.3Zo (ZetaOctets), principalement pour la diffusion video</p>
+<p>Traffic mondial des Datacenter :</p>
 <ul>
 <li class="fragment">2015 : 4.7Zo</li>
 <li class="fragment">2020 : 15.3Zo
@@ -1034,10 +1069,9 @@ Devsecops finops
 <ul>
 <li>compilation d’un code calculant les <strong>n</strong> nombres premiers</li>
 </ul>
-<pre><code>wget -O prime.c https://www.klgrth.io/paste/xhso2/raw
-ou 
-wget -O prime.c https://cedricici.github.io/cours-cloud/public/prime.c </code></pre>
-<pre><code>gcc prime.c -o prime</code></pre>
+<pre><code>wget -O prime.c https://cedricici.github.io/cours-cloud/public/prime.c </code></pre>
+<pre><code>sudo apt update &amp;&amp; sudo apt install build-essential
+gcc prime.c -o prime</code></pre>
 <pre><code>time ./prime 10000</code></pre>
 <pre><code>Calcul des 10000 premiers nombres premiers
 real    0m1.573s
@@ -1051,7 +1085,7 @@ sys     0m0.000s</code></pre>
 <ul>
 <li>Dans un fichier <strong>Dockerfile</strong> on va construire notre image :</li>
 </ul>
-<pre><code>FROM debian
+<pre><code>FROM debian:latest
 ADD ./prime /prime
 CMD [ /prime 0 ]</code></pre>
 <pre><code>docker build -t prime .</code></pre>
@@ -1071,26 +1105,21 @@ sys     0m0.004s</code></pre>
 <ul>
 <li>Lancement dans un émulateur arm</li>
 </ul>
-<pre><code>sudo apt-get install qemu-system-arm</code></pre>
+<pre><code>sudo apt install qemu-system-arm</code></pre>
 <ul>
-<li>récupérez les fichiers nécéssaires sur <a href="https://people.debian.org/~aurel32/qemu/armel/">https://people.debian.org/~aurel32/qemu/armel/</a></li>
-<li>lancer l’émulateur</li>
+<li>Visitez la page <a href="https://people.debian.org/~gio/dqib/">https://people.debian.org/~gio/dqib/</a></li>
+<li>Dézipez l’archive pointée par le lien <strong>Images for armhf-virt</strong></li>
+<li>Lancer l’émulateur à partir des instructions</li>
+<li>Installez les paquets nécessaires à la compilation et à la récupération du code</li>
+<li>Lancez le calcul des 10000 nombres premiers</li>
 </ul>
-<pre><code>qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -append &quot;root=/dev/sda1&quot; -hda debian_wheezy_armel_standard.qcow2</code></pre>
+<aside class="notes">
+<p>https://people.debian.org/~gio/dqib/ https://gitlab.com/api/v4/projects/giomasce%2Fdqib/jobs/artifacts/master/download?job=convert_armhf-virt</p>
+</aside>
 </section><section id="comparaison-systeme-4" class="slide level2">
 <h2>Comparaison systeme</h2>
 <ul>
-<li>Vous allez devoir exécuter ces commandes pour réussir à compiler correctement. Passer votre clavier en azerty avec ces commandes, et mettez à jour les dépots <strong>Debian</strong></li>
-</ul>
-<pre><code># dpkg-reconfigure keyboard-configuration
-# service keyboard-setup restart 
-# sed -i -e s/ftp.debian/archive.debian/g /etc/apt/sources.list
-# apt-get update</code></pre>
-<p><code class="note">https://cedricici.github.io/cours-cloud/public/prime.c</code></p>
-</section><section id="comparaison-systeme-5" class="slide level2">
-<h2>Comparaison systeme</h2>
-<ul>
-<li>Les résultats en <strong>arm32</strong></li>
+<li>Les résultats en <strong>armhf</strong></li>
 </ul>
 <pre><code>Calcul des 10000 premiers nombres premiers
 real    0m36.174s
@@ -1108,40 +1137,43 @@ sys     0m0.010s</code></pre>
 <p>Connectez vous sur le site Wordpress.com. c’est un service de SaaS basé sur le CMS(Content Managment System) Open source Wordpress, disponible sur le site wordpress.org</p>
 <ul>
 <li>Laissez vous guider dans la création de votre site. Vous pouvez ensuite faire des modifications sommaires sur la page d’accueil.</li>
-<li>publiez votre site (ajoutez du contenu, des média et au minimum un widget)</li>
-<li>repassez par l’édition pour voir le back-office complet.</li>
+<li>Publiez votre site (ajoutez du contenu, des média et au minimum un widget)</li>
+<li>Repassez par l’édition pour voir le back-office complet.</li>
+<li>Notez la version de Wordpress utilisée</li>
 </ul>
 </section><section id="tp-saas-1" class="slide level2">
 <h2>TP Saas</h2>
 <p>Instanciez vous même le CMS Wordpress</p>
 <ul>
-<li>télécharger le logiciel sur le site wordpress.org ou l’image docker sur le dockerhub (<a href="https://hub.docker.com/_/wordpress" class="uri">https://hub.docker.com/_/wordpress</a>)</li>
-<li>configurez votre serveur Web Local ou le docker-compose proposé dans la doc</li>
-<li>démarrez votre instance local de Wordpress</li>
+<li>Télécharger le logiciel sur le site wordpress.org ou l’image docker sur le dockerhub (<a href="https://hub.docker.com/_/wordpress" class="uri">https://hub.docker.com/_/wordpress</a>)</li>
+<li>Configurez votre serveur Web Local ou le docker-compose proposé dans la doc</li>
+<li>Démarrez votre instance local de Wordpress</li>
+<li>Réalisez la même page que lors du précédent exercice</li>
+<li>Notez la version de wordpress utilisée</li>
 </ul>
 </section><section id="tp-saas-questions" class="slide level2">
 <h2>TP Saas : Questions</h2>
 <p><code class="note">Question : D'après vous, quelle différence peut-on noter entre le logiciel Wordpress et le service de Saas Wordpress.com</code></p>
 <p><code class="note">Question : Quels éléments (vu dans le cours) faudrait-il mettre en place pour proposer notre propre service de Saas basé sur Wordpress?</code></p>
-<p><code class="note">Question : Proposez une architecture pour rendre ce service</code></p>
+<p><code class="note">Question : Proposez une architecture pour rendre ce service (fichier draw.io)</code></p>
 </section><section id="tp-paas" class="slide level2">
 <h2>TP Paas</h2>
 <p><strong>Objectif</strong> : déployer une appli Paas</p>
-<p>L’objectif ici est de déployer une application à partir d’un code source.</p>
+<p>L’objectif ici est de déployer une application à partir d’un code source. Ce TP initialement fait sur Heroku.com est maintenant réalisé sur Render.com</p>
 <ul>
-<li>Connectez vous sur la plateforme Paas Heroku.com et créez un compte</li>
-<li>Suivez le <a href="https://devcenter.heroku.com/start">tutoriel Heroku</a> pour créer une application node.js</li>
+<li>Forkez le dépot <a href="https://github.com/cedricici/findmefast.git">https://github.com/cedricici/findmefast.git</a></li>
+<li>Connectez vous sur la plateforme Paas Render.com, créez un compte puis rendez vous sur le <a href="https://dashboard.render.com">Dashboard</a></li>
+<li>Créez un nouveau webservice depuis un dépot git à partir de votre <em>Fork</em>.</li>
+<li>Lancez un service <strong>Free</strong> basé sur Docker et suivez son déploiement.</li>
 </ul>
 <aside class="notes">
 <p>alternative = render.com car Heroku devient payant</p>
 </aside>
 </section><section id="tp-paas-questions" class="slide level2">
 <h2>TP Paas : Questions</h2>
-<p><code class="note">Question : Une fois le tutoriel de base réalisé. Trouvez une solution pour déployer le code suivant (ou celui de votre choix) dans une nouvelle application **sans utiliser l'outil CLI heroku-toolbelt** .</code></p>
+<p><code class="note">Question : Une fois que l'application est lancée et que vous pouvez y jouer, expliquer en détail ce qu'il s'est passé.</code></p>
 <p><code class="note">Question : Donnez une explication des technologies qui selon vous sont misent en œuvre ici.</code></p>
-<blockquote>
-<p><a href="https://github.com/cedricici/findmefast.git">https://github.com/cedricici/findmefast.git</a></p>
-</blockquote>
+<p>J’attend pour ces réponses des schémas et des références au cours.</p>
 </section><section id="tp-architecture" class="slide level2">
 <h2>TP Architecture</h2>
 <p><strong>Objectif</strong> : Comprendre une architecture cloud</p>
@@ -1169,7 +1201,6 @@ sys     0m0.010s</code></pre>
 </ul>
 </section><section id="tp-architecture-questions" class="slide level2">
 <h2>TP Architecture : Questions</h2>
-<p>Vous pouvez utiliser <a href="https://app.diagrams.net/">https://app.diagrams.net/</a> pour votre schéma par exemple.</p>
 <p><code class="note">Question : Fournissez un schéma d'architecture complet représentant cette pile applicative</code></p>
 </section><section id="tp-iaaskaas" class="slide level2">
 <h2>TP Iaas/Kaas</h2>
