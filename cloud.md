@@ -1368,6 +1368,12 @@ Votre schéma devra contenir :
 
 `Question : Fournissez un schéma d'architecture complet représentant cette pile applicative`{.note}
 
+La version optimisée pour le Cloud est disponible ici : 
+
+[https://github.com/rok4/docker/blob/develop/run/server/docker-compose-s3.yaml](https://github.com/rok4/docker/blob/develop/run/server/docker-compose-s3.yaml)
+
+`Question : Identifiez les différences avec cette version`{.note}
+
 ## TP Iaas/Kaas ##
 
 Ceux qui sont aventuriers peuvent se lancer dans la construction de cette Stack au sein d'un cluster Kubernetes (via minikube) :
