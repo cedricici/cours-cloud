@@ -2,7 +2,7 @@
 title : Technologies de Cloud Computing
 sub-title : M-TSI
 author : Cédric Esnault
-date : 24/10/2023 - IGN/ENSG
+date : 15/10/2024 - IGN/ENSG
 ---
 
 # Cloud Computing #
