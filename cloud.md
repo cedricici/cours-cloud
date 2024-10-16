@@ -1376,13 +1376,22 @@ La version optimisée pour le Cloud est disponible ici :
 
 ## TP Iaas/Kaas ##
 
-Ceux qui sont aventuriers peuvent se lancer dans la construction de cette Stack au sein d'un cluster Kubernetes (via minikube) :
+Ceux qui sont aventuriers peuvent se lancer dans la construction de cette Stack au sein d'un cluster Kubernetes (via minikube ou K3S ) :
 
 Installation minikube en utilisant Docker comme driver :
 
 [https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/)
 
+Installation k3s (préférable) :
+
+[k3s](https://k3s.io/)
+
 On se trouve donc à simuler un cluster d'orchestration de conteneur dont les noeuds sont des... conteneurs !
+
+Vous pouvez essayer de convertir le docker-compose ROK4 en manifest Kubernetes avec cet outil :
+
+[Kompose](https://kompose.io/)
+
 
 ## TP : TRAVAIL ATTENDU ##
 
