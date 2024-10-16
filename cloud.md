@@ -1349,7 +1349,7 @@ Le résultat à atteindre est visualisable à l'aide d'un ensemble de conteneur 
 
 La version optimisée pour le Cloud est disponible ici :
 
-[https://github.com/rok4/docker/blob/develop/run/server/docker-compose-s3.yaml](https://github.com/rok4/docker/blob/develop/run/server/docker-compose-s3.yaml)
+[https://github.com/rok4/docker/blob/master/run/server/docker-compose-s3.yaml](https://github.com/rok4/docker/blob/master/run/server/docker-compose-s3.yaml)
 
 Lancer la stack Docker ci dessus.
 Vous aurez besoin de Docker et de docker-compose
