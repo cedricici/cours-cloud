@@ -1347,9 +1347,11 @@ Je vous propose de réaliser un serveur de données cartographiques Raster basé
 
 Le résultat à atteindre est visualisable à l'aide d'un ensemble de conteneur Docker que nous avons préparés pour cette démo :
 
-[https://github.com/rok4/rok4/tree/master/docker](https://github.com/rok4/rok4/tree/master/docker)
+La version optimisée pour le Cloud est disponible ici :
 
-Suivez le tutoriel Github pour lancer la stack Docker ci dessus.
+[https://github.com/rok4/docker/blob/develop/run/server/docker-compose-s3.yaml](https://github.com/rok4/docker/blob/develop/run/server/docker-compose-s3.yaml)
+
+Lancer la stack Docker ci dessus.
 Vous aurez besoin de Docker et de docker-compose
 
 ## TP Architecture ####
@@ -1367,12 +1369,6 @@ Votre schéma devra contenir :
 ## TP Architecture : Questions ####
 
 `Question : Fournissez un schéma d'architecture complet représentant cette pile applicative`{.note}
-
-La version optimisée pour le Cloud est disponible ici : 
-
-[https://github.com/rok4/docker/blob/develop/run/server/docker-compose-s3.yaml](https://github.com/rok4/docker/blob/develop/run/server/docker-compose-s3.yaml)
-
-`Question : Identifiez les différences avec cette version`{.note}
 
 ## TP Iaas/Kaas ##
 
