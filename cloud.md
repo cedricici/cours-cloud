@@ -1333,11 +1333,11 @@ J'attend pour ces réponses des schémas et des références au cours.
 
 **Objectif** : Comprendre une architecture cloud
 
-Je vous propose de réaliser un serveur de données cartographiques Raster basé sur **Rok4** et son site de visualisation de donnée, vous aurez besoin de ces ressources :
+Je vous propose de réaliser un serveur de données cartographiques Raster basé sur **Rok4** et son site de visualisation de donnée, qui fonctionne avec ces technologies :
 
 > - un serveur nginx pour publier une interface de visualisation
 > - un serveur rok4 pour diffuser des tuiles au standard WMTS
-> - des données
+> - des données au format Objet diffusé par un serveur S3 Minio
 
 ## TP Architecture ##
 
@@ -1354,7 +1354,8 @@ Vous aurez besoin de Docker et de docker-compose.
 
 ## TP Architecture ####
 
-Après avoir réussi à instancier cette structure avec succès, j'attends de vous que vous me fassiez le schéma d'architecture niveau IAAS de cette pile applicative.Vous procéderez par instrospection en analysant le contenu des images *Docker* utilisées.
+Après avoir réussi à instancier cette structure et visualiser les données avec succès, faites un schéma d'architecture de cette pile applicative.
+Vous procéderez par instrospection en analysant le contenu des images *Docker* utilisées.
 
 Votre schéma devra contenir :
 
@@ -1368,23 +1369,60 @@ Votre schéma devra contenir :
 
 `Question : Fournissez un schéma d'architecture complet représentant cette pile applicative`{.note}
 
-## TP Iaas/Kaas ##
+## TP Architecture - partie 2  ##
 
-Ceux qui sont aventuriers peuvent se lancer dans la construction de cette Stack au sein d'un cluster Kubernetes (via minikube ou K3S ) :
+Nous allons convertir cette architecture basée sur kompose en architecture kubernetes.
 
-Installation minikube en utilisant Docker comme driver :
-
-[https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/)
-
-Installation k3s (préférable) :
+Installation k3s (ou minikube) pour avoir un cluster kubernetes disponible en local (ou utiliser minikube) :
 
 [k3s](https://k3s.io/)
 
 On se trouve donc à simuler un cluster d'orchestration de conteneur dont les noeuds sont des... conteneurs !
 
-Vous pouvez essayer de convertir le docker-compose ROK4 en manifest Kubernetes avec cet outil :
+On va ensuite convertir le docker-compose ROK4 en manifest Kubernetes avec cet l'outil [kompose](https://kompose.io/). 
+Avant de réaliser cette opération, il faut ajouter un élément dans le docker-compose pour que la conversion soit plus complête.
 
-[Kompose](https://kompose.io/)
+## TP Architecture - partie 2  ##
+
+Au niveau de ROK4, nous allons exposer son port : 
+
+```yaml
+  middle:
+    image: rok4/server:6.1.1
+    ports:
+      - "9000:9000"
+```
+
+note: Cette modif provoquera un conflit pour docker-compose mais est nécéssaire pour le bon fonctionnement de **kompose convert**
+
+Ensuite pour forcer composer à gérer tous les fichiers web, on ajoute : 
+
+```yaml
+  volumes:
+    - ./nginx/nginx.conf.template:/etc/nginx/templates/default.conf.template
+    - ./viewer/index.html:/usr/share/nginx/html/viewer/index.html
+    - ./viewer/leaflet/Leaflet.TileLayer.BetterWMS.js:/usr/share/nginx/html/viewer/leaflet/Leaflet.TileLayer.BetterWMS.js
+    - ./viewer/leaflet/Leaflet.VectorGrid.bundled.js:/usr/share/nginx/html/viewer/leaflet/Leaflet.VectorGrid.bundled.js
+```
+
+## TP Architecture - partie 2  ##
+
+Pour travailler proprement, il faut définir un nouveau namespace dans notre cluster k3s afin d'y insérer les nouvelles ressources. 
+Utilisez ce yaml pour faire cela.
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: rok4
+```
+
+Injectez ensuite toutes les ressources générées par kompose dans ce namespace.
+Les DNS dans kubernetes sont de la forme service.namespace, pensez à modifier les fichiers de conf en conséquence. 
+
+On peut visualiser le résultat en exposant le service "front" : 
+
+`sudo k3s kubectl -n rok4 port-forward svc/front 8082:8082`
 
 
 ## TP : TRAVAIL ATTENDU ##
