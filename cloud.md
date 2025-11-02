@@ -1127,6 +1127,10 @@ The Shift project
 
 </aside>
 
+## Trafic réseau 2 ##{.figcenter}
+
+![Internet Traffic](img/Global-Internet-Traffic-in-GB-per-Day-from-1997-to-2022-data-from-Cisco.png)
+
 # Do It Yourself #
 
 ## Introduction à Docker
