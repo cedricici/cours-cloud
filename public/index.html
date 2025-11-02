@@ -50,7 +50,7 @@
                     <h1>Technologies de Cloud Computing</h1>
                     <h2>M-TSI</h2>
                     <h3>Cédric Esnault</h3>
-                    <h4>15/10/2024 - IGN/ENSG</h4>
+                    <h4>04/11/2025 - IGN/ENSG</h4>
                     <aside class="notes">
 
                     </aside>
@@ -796,9 +796,9 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <li class="fragment">L’énergie représente ~40% du coût d’exploitation</li>
 <li class="fragment">le refroidissement 40% à 50%</li>
 <li class="fragment">Datacenter moderne et optimisé = 1.5 à 3KW/m2</li>
+<li class="fragment">Exemple de l’envolée du Bitcoin : si la flambée du bitcoin démarrée en 2017 avait continuée , en 2020 le calcul de la blockchain aurait consommé toute l’énergie de la planète. Cette consommation s’est stabilisée et équivaut aujourd’hui à peu près à la consommation de la suisse.</li>
+<li class="fragment">Le paramètre « <strong>PUE</strong> » (Power Usage Effectiveness) est souvent utilisé pour mesurer l’efficience d’un centre de données (électricité totale / électricité utilisée par IT). Une amélioration du PUE est un levier <strong>Green IT.</strong></li>
 </ul>
-<p>Exemple de l’envolée du Bitcoin : si la flambée du bitcoin démarrée en 2017 avait continuée , en 2020 le calcul de la blockchain aurait consommé toute l’énergie de la planète. Cette consommation s’est stabilisée et équivaut aujourd’hui à peu près à la consommation de la suisse.</p>
-<p><code class="note fragment">GREEN IT</code></p>
 <aside class="notes">
 <p>Au moins 77 KWh pour une transaction Bitcoin</p>
 <p>2020 : consommation annuelle du minage de Bitcoin est de 58,07 terawattheure.(suisse) 2023 : 112 terawattheure.(pays bas == 75% france) == 25.986 éoliennes</p>
@@ -807,30 +807,10 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <p>les estimations sont très complexe et différent selon les sources un film de 60mn sur Netflix = entre 0.03kWh (en SD sur un smartphone en Wifi) et 6.6 kWh selon the Shift Project</p>
 </aside>
 </section>
-<section id="exemple-dinfrastructure-cloud" class="slide level2">
-<h2>Exemple d’infrastructure Cloud</h2>
-<ul>
-<li class="fragment">Cas pratique : Constitution d’un cloud Openstack
-<ul>
-<li class="fragment">10 serveurs</li>
-<li class="fragment">reliés sur au moins 3 réseaux différents
-<ul>
-<li class="fragment">Admin</li>
-<li class="fragment">Stockage</li>
-<li class="fragment">Traffic réseau</li>
-</ul></li>
-<li class="fragment">Répartitions des rôles sur les différents serveurs pour limiter les SPOFs
-<ul>
-<li class="fragment">3 Contrôleurs (NOVA/HORIZON)</li>
-<li class="fragment">3 Computes (NOVA/NEUTRON)</li>
-<li class="fragment">1 Networks (NEUTRON)</li>
-<li class="fragment">3 Stockages (CINDER/SWIFT/CEPH)</li>
-</ul></li>
-<li class="fragment">Accès et exploitation via API / Dashboard</li>
-</ul></li>
-</ul>
-<aside class="notes">
-</aside>
+<section id="électricité-1" class="slide level2">
+<h2>Électricité</h2>
+<p>Selon International Energy Agency (IEA), la consommation électrique globale des centres de données est estimée à ~ <strong>415 TWh</strong> en 2024 (≈ 1,5 % de la consommation mondiale d’électricité) et pourrait atteindre ~ 945 TWh en 2030.</p>
+<p>La part des sources renouvelables dans l’électricité des centres de données aux États-Unis est encore relativement modérée <strong>~20%</strong> avec principalement du : « natural-gas » à plus de 40% selon un rapport de 2024.</p>
 </section></section>
 <section>
 <section id="migration-dans-le-cloud" class="title-slide slide level1">
@@ -1170,17 +1150,8 @@ Devsecops finops
 </section>
 <section id="trafic-réseau" class="slide level2">
 <h2>Trafic réseau</h2>
-<p>Le <strong>Cloud</strong> et l’<strong>IoT</strong> sont très liés et ces deux éléments sont en très forte croissance. Cisco estime qu’en 2021, un habitant consommera à lui seul 200Gb de donnée par jour sur l’internet. 90% de ce trafic passera par le Cloud public et atteindra 3.3Zo (ZetaOctets), principalement pour la diffusion video</p>
-<p>Traffic mondial des Datacenter :</p>
-<ul>
-<li class="fragment">2015 : 4.7Zo</li>
-<li class="fragment">2020 : 15.3Zo
-<ul>
-<li class="fragment">14% avec les utilisateurs</li>
-<li class="fragment">9% entre Datacenters</li>
-<li class="fragment">77% dans le Datacenter lui même</li>
-</ul></li>
-</ul>
+<p>Le <strong>Cloud</strong> et l’<strong>IoT</strong> sont très liés et ces deux éléments sont en très forte croissance. Cisco estimait qu’en 2021, un habitant consommerait à lui seul 200Gb de donnée par jour sur l’internet, majoritairement via les plateforme de Cloud publiques. Cela représente en 2025 ~<strong>6Zo</strong>/ans de traffic sur Internet.</p>
+<p>Traffic mondial des Datacenters (Estimations CISCO): - 2015 : 4.7Zo - 2020 : 15.3Zo - 2025 : ~24Zo</p>
 <aside class="notes">
 <p>15.3Zo = 213Milliard d’heures de music en streaming = 38 mois non-stop pour chaque habitant.</p>
 <p>The Shift project</p>
@@ -1339,8 +1310,10 @@ sys     0m0.010s</code></pre>
 <section id="tp-saas-questions" class="slide level2">
 <h2>TP Saas : Questions</h2>
 <p><code class="note">Question : D'après vous, quelle différence peut-on noter entre le logiciel Wordpress et le service de Saas Wordpress.com</code></p>
-<p><code class="note">Question : Quels éléments (vu dans le cours) faudrait-il mettre en place pour proposer notre propre service de Saas basé sur Wordpress?</code></p>
-<p><code class="note">Question : Proposez une architecture pour rendre ce service (fichier draw.io)</code></p>
+<p><code class="note">Question : Quels sont les critères clés à évaluer avant de migrer une application interne vers un SaaS ?</code></p>
+<p><code class="note">Question : Le passage à des applications SaaS contribue t-il à la sobriété numérique?</code></p>
+<p><code class="note">Question : Dans le modèle SaaS, qui gère les mises à jour de sécurité?</code></p>
+<p><code class="note">Question : Quel éléments serait bloquants pour migrer vers Saas</code></p>
 </section>
 <section id="tp-paas" class="slide level2">
 <h2>TP Paas</h2>
@@ -1360,6 +1333,7 @@ sys     0m0.010s</code></pre>
 <h2>TP Paas : Questions</h2>
 <p><code class="note">Question : Une fois que l'application est lancée et que vous pouvez y jouer, expliquer en détail ce qu'il s'est passé.</code></p>
 <p><code class="note">Question : Donnez une explication des technologies qui selon vous sont misent en œuvre ici.</code></p>
+<p><code class="note">Question : expliquez dans ce contexte la notion de "Lock-in"</code></p>
 <p>J’attend pour ces réponses des schémas et des références au cours.</p>
 </section>
 <section id="tp-architecture" class="slide level2">
@@ -1471,8 +1445,6 @@ sys     0m0.010s</code></pre>
             for (var i=0; i<planItem.length; i++){
                 planItem[i].classList.add("grow");
             }
-
-
 
         </script>
         <!-- -A/- -include-after-body -->

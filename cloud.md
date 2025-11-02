@@ -2,7 +2,7 @@
 title : Technologies de Cloud Computing
 sub-title : M-TSI
 author : Cédric Esnault
-date : 15/10/2024 - IGN/ENSG
+date : 04/11/2025 - IGN/ENSG
 ---
 
 # Cloud Computing #
@@ -686,11 +686,8 @@ Le stockage Objet, S3 en tête,  est le nouveau standard de fait de stockage vir
 - L’énergie représente ~40% du coût d'exploitation
 - le refroidissement 40% à 50%
 - Datacenter moderne et optimisé = 1.5 à 3KW/m2
-
-Exemple de l’envolée du Bitcoin : si la flambée du bitcoin démarrée en 2017 avait continuée , en 2020 le calcul de la blockchain aurait consommé toute l'énergie de la planète.
-Cette consommation s'est stabilisée et équivaut aujourd'hui à peu près à la consommation de la suisse.
-
-`GREEN IT`{.note .fragment}
+- Exemple de l’envolée du Bitcoin : si la flambée du bitcoin démarrée en 2017 avait continuée , en 2020 le calcul de la blockchain aurait consommé toute l'énergie de la planète. Cette consommation s'est stabilisée et équivaut aujourd'hui à peu près à la consommation de la suisse.
+- Le paramètre « **PUE** » (Power Usage Effectiveness) est souvent utilisé pour mesurer l’efficience d’un centre de données (électricité totale / électricité utilisée par IT). Une amélioration du PUE est un levier **Green IT.**
 
 <aside class="notes">
 
@@ -708,24 +705,13 @@ un film de 60mn sur Netflix = entre 0.03kWh (en SD sur un smartphone en Wifi) et
 
 </aside>
 
-## Exemple d'infrastructure Cloud ##
+## Électricité ##
 
-- Cas pratique : Constitution d'un cloud Openstack
-  - 10 serveurs
-  - reliés sur au moins 3 réseaux différents
-    - Admin
-    - Stockage
-    - Traffic réseau
-  - Répartitions des rôles sur les différents serveurs pour limiter les SPOFs
-    - 3 Contrôleurs (NOVA/HORIZON)
-    - 3 Computes (NOVA/NEUTRON)
-    - 1 Networks (NEUTRON)
-    - 3 Stockages (CINDER/SWIFT/CEPH)
-  - Accès et exploitation via API / Dashboard
+Selon International Energy Agency (IEA), la consommation électrique globale des centres de données est estimée à ~ **415 TWh** en 2024 (≈ 1,5 % de la consommation mondiale d’électricité) et pourrait atteindre ~ 945 TWh en 2030.
 
-<aside class="notes">
+La part des sources renouvelables dans l’électricité des centres de données aux États-Unis est encore relativement modérée **~20%** avec principalement du : « natural-gas » à plus de 40% selon un rapport de 2024. 
 
-</aside>
+
 
 # Migration dans le Cloud #
 
@@ -1112,7 +1098,6 @@ Par sa conception Kubernetes est facilement modifiable pour s'adapter aux besoin
  Cloud Act : Clarifying Lawful Overseas Use of Data Act
  SecNumCloud
 
-
 </aside>
 
 ## Interopérabilité ##
@@ -1126,15 +1111,13 @@ Par sa conception Kubernetes est facilement modifiable pour s'adapter aux besoin
 
 ## Trafic réseau ##
 
-Le **Cloud** et l'**IoT** sont très liés et ces deux éléments sont en très forte croissance. Cisco estime qu'en 2021, un habitant consommera à lui seul 200Gb de donnée par jour sur l'internet. 90% de ce trafic passera par le Cloud public et atteindra 3.3Zo (ZetaOctets), principalement pour la diffusion video
+Le **Cloud** et l'**IoT** sont très liés et ces deux éléments sont en très forte croissance. Cisco estimait qu'en 2021, un habitant consommerait à lui seul 200Gb de donnée par jour sur l'internet, majoritairement via les plateforme de Cloud publiques. Cela représente en 2025 ~**6Zo**/ans de traffic sur Internet.
 
-Traffic mondial des Datacenter :
-
+Traffic mondial des Datacenters (Estimations CISCO):
 - 2015 : 4.7Zo
 - 2020 : 15.3Zo
-  - 14% avec les utilisateurs
-  - 9% entre Datacenters
-  - 77% dans le Datacenter lui même
+- 2025 : ~24Zo
+
 
 <aside class="notes">
 
@@ -1276,6 +1259,7 @@ sys     0m0.010s
 
 `Question : Donnez une solution pour obtenir le temps user effectif dans le conteneur`{.note}
 
+
 ## TP Saas ##
 
 **Objectif** : déployer une application Saas
@@ -1302,9 +1286,14 @@ Instanciez vous même le CMS Wordpress
 
 `Question : D'après vous, quelle différence peut-on noter entre le logiciel Wordpress et le service de Saas Wordpress.com`{.note}
 
-`Question : Quels éléments (vu dans le cours) faudrait-il mettre en place pour proposer notre propre service de Saas basé sur Wordpress?`{.note}
+`Question : Quels sont les critères clés à évaluer avant de migrer une application interne vers un SaaS ?`{.note}
 
-`Question : Proposez une architecture pour rendre ce service (fichier draw.io)`{.note}
+`Question : Le passage à des applications SaaS contribue t-il à la sobriété numérique?`{.note}
+
+`Question : Dans le modèle SaaS, qui gère les mises à jour de sécurité?`{.note}
+
+`Question : Quel éléments serait bloquants pour migrer vers Saas`{.note}
+
 
 ## TP Paas ##
 
@@ -1329,6 +1318,9 @@ Ce TP initialement fait sur Heroku.com est maintenant réalisé sur Render.com
 `Question : Une fois que l'application est lancée et que vous pouvez y jouer, expliquer en détail ce qu'il s'est passé.`{.note}
 
 `Question : Donnez une explication des technologies qui selon vous sont misent en œuvre ici.`{.note}
+
+`Question : expliquez dans ce contexte la notion de "Lock-in"`{.note}
+
 
 J'attend pour ces réponses des schémas et des références au cours.
 
