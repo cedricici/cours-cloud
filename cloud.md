@@ -1325,7 +1325,6 @@ Ce TP initialement fait sur Heroku.com est maintenant réalisé sur Render.com
 
 `Question : expliquez dans ce contexte la notion de "Lock-in"`{.note}
 
-
 J'attend pour ces réponses des schémas et des références au cours.
 
 
@@ -1347,12 +1346,11 @@ La version optimisée pour le Cloud est disponible ici :
 
 [https://github.com/rok4/docker/blob/develop/run/server/](https://github.com/rok4/docker/blob/develop/run/server/)
 
-
 Clonez le dépot et lancez la stack Docker à partir du fichier compose .
 Cherchez le viewer.
 Vous aurez besoin de Docker et de docker-compose.
 
-## TP Architecture ####
+## TP Architecture ##
 
 Après avoir réussi à instancier cette structure et visualiser les données avec succès, faites un schéma d'architecture de cette pile applicative.
 Vous procéderez par instrospection en analysant le contenu des images *Docker* utilisées.
@@ -1369,22 +1367,20 @@ Votre schéma devra contenir :
 
 `Question : Fournissez un schéma d'architecture complet représentant cette pile applicative`{.note}
 
-## TP Architecture - partie 2  ##
+## TP Architecture - partie 2 ##
 
 Nous allons convertir cette architecture basée sur kompose en architecture kubernetes.
 
-Installation k3s (ou minikube) pour avoir un cluster kubernetes disponible en local (ou utiliser minikube) :
+Installation k3s (ou minikube) pour avoir un cluster kubernetes disponible en local : [k3s](https://k3s.io/)
 
-[k3s](https://k3s.io/)
+Cela revient à simuler un cluster d'orchestration de conteneur dont les noeuds sont...  des conteneurs !
 
-On se trouve donc à simuler un cluster d'orchestration de conteneur dont les noeuds sont des... conteneurs !
-
-On va ensuite convertir le docker-compose ROK4 en manifest Kubernetes avec cet l'outil [kompose](https://kompose.io/). 
+On va ensuite convertir le docker-compose ROK4 en manifest Kubernetes avec cet l'outil [kompose](https://kompose.io/).
 Avant de réaliser cette opération, il faut ajouter un élément dans le docker-compose pour que la conversion soit plus complête.
 
-## TP Architecture - partie 2  ##
+## TP Architecture - partie 2 ##
 
-Au niveau de ROK4, nous allons exposer son port : 
+Au niveau de ROK4, nous allons exposer son port :
 
 ```yaml
   middle:
@@ -1393,9 +1389,9 @@ Au niveau de ROK4, nous allons exposer son port :
       - "9000:9000"
 ```
 
-note: Cette modif provoquera un conflit pour docker-compose mais est nécéssaire pour le bon fonctionnement de **kompose convert**
+`Cette modif provoquera un conflit pour docker-compose mais est nécéssaire pour le bon fonctionnement de **kompose convert**`{.note}
 
-Ensuite pour forcer composer à gérer tous les fichiers web, on ajoute : 
+Ensuite pour forcer `kompose` à gérer tous les fichiers web, on ajoute :
 
 ```yaml
   volumes:
@@ -1405,9 +1401,9 @@ Ensuite pour forcer composer à gérer tous les fichiers web, on ajoute :
     - ./viewer/leaflet/Leaflet.VectorGrid.bundled.js:/usr/share/nginx/html/viewer/leaflet/Leaflet.VectorGrid.bundled.js
 ```
 
-## TP Architecture - partie 2  ##
+## TP Architecture - partie 2 ##
 
-Pour travailler proprement, il faut définir un nouveau namespace dans notre cluster k3s afin d'y insérer les nouvelles ressources. 
+Pour travailler proprement, il faut définir un nouveau namespace dans notre cluster k3s afin d'y insérer les nouvelles ressources.
 Utilisez ce yaml pour faire cela.
 
 ```yaml
@@ -1417,14 +1413,13 @@ metadata:
   name: rok4
 ```
 
-Injectez ensuite toutes les ressources générées par kompose dans ce namespace.
-Les DNS dans kubernetes sont de la forme service.namespace, pensez à modifier les fichiers de conf en conséquence. 
+Injectez ensuite toutes les ressources générées par kompose dans ce namespace en adaptant les DNS au format **service.namespace**. On peut visualiser le résultat en exposant le service "front" :
 
-On peut visualiser le résultat en exposant le service "front" : 
-
-`sudo k3s kubectl -n rok4 port-forward svc/front 8082:8082`
-
+```bash
+sudo k3s kubectl -n rok4 port-forward svc/front 8082:8082
+```
 
 ## TP : TRAVAIL ATTENDU ##
 
 `Rendez moi au format Markdown + schema (.drawio) par mail à cedric.esnault@ign.fr,  un compte rendu de ces TP avec les différentes étapes de vos recherches. N'hésitez pas à noter les points durs .`{.note}
+

@@ -16,8 +16,9 @@
         <style type="text/css">code{white-space: pre;}</style>
         <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -52,7 +53,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -65,7 +66,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -165,28 +166,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="les-origines" class="slide level2">
 <h2>Les Origines</h2>
 <ul>
-<li class="fragment">Hérité de l’informatique client-serveur sur des <strong>MainFrame</strong> (L’accès distant était alors représenté par un nuage)</li>
-<li class="fragment">Vers 2000, les hébergeurs proposent des applications pré-installées dans leur datacenters (Email, CRM …)</li>
-<li class="fragment">Apparition du terme “Cloud” vers 2006 via les services Amazon</li>
+<li class="fragment">Hérité de l’informatique client-serveur sur des
+<strong>MainFrame</strong> (L’accès distant était alors représenté par
+un nuage)</li>
+<li class="fragment">Vers 2000, les hébergeurs proposent des
+applications pré-installées dans leur datacenters (Email, CRM …)</li>
+<li class="fragment">Apparition du terme “Cloud” vers 2006 via les
+services Amazon</li>
 </ul>
-<p><code class="note fragment">Amazon a eu l'idée de mettre à la disposition du public son énorme infrastructure mondiale, dimensionnée pour les pics (Noël...) et sous-utilisée le reste du temps</code></p>
+<p><code
+class="note fragment">Amazon a eu l'idée de mettre à la disposition du public son énorme infrastructure mondiale, dimensionnée pour les pics (Noël...) et sous-utilisée le reste du temps</code></p>
 <aside class="notes">
 </aside>
 </section>
 <section id="un-besoin-dindustrialisation" class="slide level2">
 <h2>Un besoin d’industrialisation</h2>
-<p>Les entreprises souhaitent en finir avec les pannes informatiques.</p>
+<p>Les entreprises souhaitent en finir avec les pannes
+informatiques.</p>
 <ul>
-<li class="fragment">Industrialiser les processus du SI, limiter l’intervention humaine, automatiser</li>
-<li class="fragment">Ceci nécessite des infrastructures importantes pour que l’investissement en vaille la peine</li>
-<li class="fragment">Cela libère des ressources IT pour faire du <em>Business</em> plutôt que réparer le SI</li>
+<li class="fragment">Industrialiser les processus du SI, limiter
+l’intervention humaine, automatiser</li>
+<li class="fragment">Ceci nécessite des infrastructures importantes pour
+que l’investissement en vaille la peine</li>
+<li class="fragment">Cela libère des ressources IT pour faire du
+<em>Business</em> plutôt que réparer le SI</li>
 </ul>
 <aside class="notes">
 </aside>
 </section>
 <section id="un-besoin-de-rationalisation" class="slide level2">
 <h2>Un besoin de rationalisation</h2>
-<p>Les entreprises ont besoin de baisser les coûts et d’utiliser au maximum l’investissement du très cher matériel informatique.</p>
+<p>Les entreprises ont besoin de baisser les coûts et d’utiliser au
+maximum l’investissement du très cher matériel informatique.</p>
 <ul>
 <li class="fragment">Les solutions sont multiples
 <ul>
@@ -205,7 +216,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <aside class="notes">
-<p>POS : Plan d’occupation du Sol appliqué au SI<br> modularité : découpage en modules réutilisables<br> subsidiarité : équilibre entre la gestion centralisé et décentralisé = gérer au plus proche<br></p>
+<p>POS : Plan d’occupation du Sol appliqué au SI<br> modularité :
+découpage en modules réutilisables<br> subsidiarité : équilibre entre la
+gestion centralisé et décentralisé = gérer au plus proche<br></p>
 </aside>
 </section>
 <section id="transformation-difficile-12" class="slide level2">
@@ -214,16 +227,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="fragment">Infrastructure
 <ul>
 <li class="fragment">Il faut repenser le SI</li>
-<li class="fragment">Considérer l’externalisation dans le Cloud public</li>
+<li class="fragment">Considérer l’externalisation dans le Cloud
+public</li>
 </ul></li>
 <li class="fragment">Architecture
 <ul>
-<li class="fragment">Il faut adapter les modèles d’architectures <em>Legacy</em></li>
+<li class="fragment">Il faut adapter les modèles d’architectures
+<em>Legacy</em></li>
 </ul></li>
 <li class="fragment">Applicatif
 <ul>
-<li class="fragment">Il faut transformer les applications <em>Legacy</em></li>
-<li class="fragment">Si possible, il faut les réécrire en <em>Cloud-ready</em></li>
+<li class="fragment">Il faut transformer les applications
+<em>Legacy</em></li>
+<li class="fragment">Si possible, il faut les réécrire en
+<em>Cloud-ready</em></li>
 </ul></li>
 </ul>
 </section>
@@ -232,14 +249,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="fragment">Formation
 <ul>
-<li class="fragment">Il faut développer les méthodes <em>Agiles</em></li>
-<li class="fragment">Il faut former les agents aux technologies du Cloud</li>
-<li class="fragment">Il faut pousser les modèles <a href="#//devops">Devops</a></li>
+<li class="fragment">Il faut développer les méthodes
+<em>Agiles</em></li>
+<li class="fragment">Il faut former les agents aux technologies du
+Cloud</li>
+<li class="fragment">Il faut pousser les modèles <a
+href="#//devops">Devops</a></li>
 </ul></li>
 <li class="fragment">sécurité/confidentialité
 <ul>
-<li class="fragment">Il faut intégrer la sécurité à tous les niveaux : <strong>DevSecOps</strong></li>
-<li class="fragment">Il faut faire confiance aux fournisseurs, pas aux utilisateurs <strong>Zero-trust</strong></li>
+<li class="fragment">Il faut intégrer la sécurité à tous les niveaux :
+<strong>DevSecOps</strong></li>
+<li class="fragment">Il faut faire confiance aux fournisseurs, pas aux
+utilisateurs <strong>Zero-trust</strong></li>
 <li class="fragment">Il faut contrôler : <strong>FinOps</strong></li>
 </ul></li>
 </ul>
@@ -253,7 +275,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="cloud" class="slide level2">
 <h2>Cloud</h2>
-<p>Le terme Cloud est devenu très englobant. Aujourd’hui il regroupe la fourniture d’un service, son mode d’accès et son infrastructure. Plusieurs organismes ont essayé de normaliser la définition du <strong>Cloud computing</strong></p>
+<p>Le terme Cloud est devenu très englobant. Aujourd’hui il regroupe la
+fourniture d’un service, son mode d’accès et son infrastructure.
+Plusieurs organismes ont essayé de normaliser la définition du
+<strong>Cloud computing</strong></p>
 <aside class="notes">
 </aside>
 </section>
@@ -261,7 +286,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Définition du NIST</h2>
 <p><em>National Institute of Standards and Technology</em></p>
 <blockquote>
-<p>Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction. This cloud model is composed of <strong>five essential characteristics</strong>, <strong>three service models</strong>, and <strong>four deployment models</strong>.</p>
+<p>Cloud computing is a model for enabling ubiquitous, convenient,
+on-demand network access to a shared pool of configurable computing
+resources (e.g., networks, servers, storage, applications, and services)
+that can be rapidly provisioned and released with minimal management
+effort or service provider interaction. This cloud model is composed of
+<strong>five essential characteristics</strong>, <strong>three service
+models</strong>, and <strong>four deployment models</strong>.</p>
 </blockquote>
 <aside class="notes">
 </aside>
@@ -269,10 +300,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="caractéristiques" class="slide level2 cloudCarac">
 <h2 class="cloudCarac">Caractéristiques</h2>
 <ul>
-<li class="fragment">Libre-service et à la demande (paiement à l’usage)</li>
+<li class="fragment">Libre-service et à la demande (paiement à
+l’usage)</li>
 <li class="fragment">Accessible sur l’ensemble d’un réseau</li>
 <li class="fragment">Mutualisation des ressources (Multi tenant)</li>
-<li class="fragment">S’adapter rapidement à une variation du besoin (scalabilité)</li>
+<li class="fragment">S’adapter rapidement à une variation du besoin
+(scalabilité)</li>
 <li class="fragment">Mesurable (statistiques d’usage, ressources …)</li>
 </ul>
 <aside class="notes">
@@ -288,7 +321,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <aside class="notes">
 </aside>
 </section>
-<section id="modèles-de-service-1" class="slide level2 cloudServices figcenter">
+<section id="modèles-de-service-1"
+class="slide level2 cloudServices figcenter">
 <h2 class="cloudServices figcenter">Modèles de service</h2>
 <p><img data-src="img/Colloc.png" /></p>
 <aside class="notes">
@@ -297,15 +331,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="modèles-de-déploiement" class="slide level2">
 <h2>Modèles de déploiement</h2>
 <ul>
-<li class="fragment">Cloud Public Une organisation vend des services accessibles à tous</li>
-<li class="fragment">Cloud Communautaire L’infrastructure est partagé par plusieurs organismes, elle peut être géré par les organismes ou par une tierce partie</li>
-<li class="fragment">Cloud Privé L’infrastructure est accessible à une seule organisation. Elle peut cependant être gérée et hébergée par une tierce partie</li>
-<li class="fragment">Cloud Hybride C’est une composition d’un Cloud privé et d’un Cloud public ou communautaire pour absorber les pics de charge (Cloud Bursting)</li>
+<li class="fragment">Cloud Public Une organisation vend des services
+accessibles à tous</li>
+<li class="fragment">Cloud Communautaire L’infrastructure est partagé
+par plusieurs organismes, elle peut être géré par les organismes ou par
+une tierce partie</li>
+<li class="fragment">Cloud Privé L’infrastructure est accessible à une
+seule organisation. Elle peut cependant être gérée et hébergée par une
+tierce partie</li>
+<li class="fragment">Cloud Hybride C’est une composition d’un Cloud
+privé et d’un Cloud public ou communautaire pour absorber les pics de
+charge (Cloud Bursting)</li>
 </ul>
 <aside class="notes">
 </aside>
 </section>
-<section id="modèles-de-déploiement-1" class="slide level2 cloudDeploy figcenter">
+<section id="modèles-de-déploiement-1"
+class="slide level2 cloudDeploy figcenter">
 <h2 class="cloudDeploy figcenter">Modèles de déploiement</h2>
 <p><img data-src="img/Clouds.png" /></p>
 <aside class="notes">
@@ -318,13 +360,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="software-as-a-service" class="slide level2">
 <h2>Software As A Service</h2>
-<p>C’est une application identifié, fournie à la demande pour un utilisateur, l’application et les données sont hébergées dans les Datacenters du fournisseur. En général elle est hautement configurable.</p>
+<p>C’est une application identifié, fournie à la demande pour un
+utilisateur, l’application et les données sont hébergées dans les
+Datacenters du fournisseur. En général elle est hautement
+configurable.</p>
 <ul>
 <li class="fragment">Wordpress.com</li>
 <li class="fragment">Solutions de paiement en ligne</li>
 <li class="fragment">Messagerie/Bureautique (office 365)</li>
 </ul>
-<p><code class="fragment note">On peut intégrer les offres de sauvegarde en ligne dans cette catégorie (icloud / dropbox ...).</code></p>
+<p><code
+class="fragment note">On peut intégrer les offres de sauvegarde en ligne dans cette catégorie (icloud / dropbox ...).</code></p>
 <aside class="notes">
 </aside>
 </section>
@@ -339,14 +385,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="fragment">Avantages
 <ul>
-<li class="fragment">indépendant de la technologies sous-jacente = portable</li>
+<li class="fragment">indépendant de la technologies sous-jacente =
+portable</li>
 <li class="fragment">(pratiquement) plus de gestion de la sécurité</li>
 <li class="fragment">réactivité</li>
 </ul></li>
 <li class="fragment">Inconvénients
 <ul>
-<li class="fragment">limité au service proposé, pas d’adaptation possible</li>
-<li class="fragment">risques liés au multi tenant si mauvaise isolation</li>
+<li class="fragment">limité au service proposé, pas d’adaptation
+possible</li>
+<li class="fragment">risques liés au multi tenant si mauvaise
+isolation</li>
 </ul></li>
 </ul>
 <aside class="notes">
@@ -359,7 +408,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="platform-as-a-service" class="slide level2">
 <h2>Platform As A Service</h2>
-<p>Cette fois ci, le fournisseur propose un support pour votre propre application. Un <strong>Paas</strong> est constitué d’outils permettant la compilation et/ou le déploiement de code source dans un langage défini. Ce code est ensuite instancié (ou pas) à la manière du <strong>Saas</strong> pour mettre à disposition l’application développée.</p>
+<p>Cette fois ci, le fournisseur propose un support pour votre propre
+application. Un <strong>Paas</strong> est constitué d’outils permettant
+la compilation et/ou le déploiement de code source dans un langage
+défini. Ce code est ensuite instancié (ou pas) à la manière du
+<strong>Saas</strong> pour mettre à disposition l’application
+développée.</p>
 <ul>
 <li class="fragment">Google App Engine</li>
 <li class="fragment">Heroku</li>
@@ -386,9 +440,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="fragment">Inconvénients
 <ul>
-<li class="fragment">visibilité réduite sur la sécurité des couches inférieures</li>
-<li class="fragment"><strong>Lock-in</strong> si les API utilisées ne sont pas standardisées.</li>
-<li class="fragment">risques liés au multi tenant si mauvaise isolation</li>
+<li class="fragment">visibilité réduite sur la sécurité des couches
+inférieures</li>
+<li class="fragment"><strong>Lock-in</strong> si les API utilisées ne
+sont pas standardisées.</li>
+<li class="fragment">risques liés au multi tenant si mauvaise
+isolation</li>
 </ul></li>
 </ul>
 <aside class="notes">
@@ -401,12 +458,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="infrastructure-as-a-service" class="slide level2">
 <h2>Infrastructure As A Service</h2>
-<p>C’est la base du Cloud Computing, ici le fournisseur offre du CPU, de la RAM, du stockage, du réseau et éventuellement d’autres services d’infrastructures (FireWall, DNS, VPN …). Le client construit son architecture, ajoute des réseaux, des machines virtuelles, des volumes de stockages persistant… Il installe ensuite les systèmes d’exploitations qu’il désire, les applications qu’il souhaite et propose (ou non) ces services sur le réseau (internet ou autre). Le tout est facturé à la consommation.</p>
+<p>C’est la base du Cloud Computing, ici le fournisseur offre du CPU, de
+la RAM, du stockage, du réseau et éventuellement d’autres services
+d’infrastructures (FireWall, DNS, VPN …). Le client construit son
+architecture, ajoute des réseaux, des machines virtuelles, des volumes
+de stockages persistant… Il installe ensuite les systèmes
+d’exploitations qu’il désire, les applications qu’il souhaite et propose
+(ou non) ces services sur le réseau (internet ou autre). Le tout est
+facturé à la consommation.</p>
 <aside class="notes">
-<p>Infrastructure As A Code : définir l’infrastructure dans un code réutilisable</p>
+<p>Infrastructure As A Code : définir l’infrastructure dans un code
+réutilisable</p>
 </aside>
 </section>
-<section id="infrastructure-as-a-service-1" class="slide level2 figcenter">
+<section id="infrastructure-as-a-service-1"
+class="slide level2 figcenter">
 <h2 class="figcenter">Infrastructure As A Service</h2>
 <p><img data-src="img/iaas.png" /></p>
 <aside class="notes">
@@ -417,13 +483,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="fragment">Avantages
 <ul>
-<li class="fragment">contrôle de l’architecture jusqu’à l’OS, nécessaire pour une gestion accru de la sécurité. Seule la partie matérielle, ainsi que la gestion des hyperviseurs et des services proposés est déléguée au fournisseur.</li>
+<li class="fragment">contrôle de l’architecture jusqu’à l’OS, nécessaire
+pour une gestion accru de la sécurité. Seule la partie matérielle, ainsi
+que la gestion des hyperviseurs et des services proposés est déléguée au
+fournisseur.</li>
 </ul></li>
 <li class="fragment">Inconvénients
 <ul>
-<li class="fragment">environnement multi-tenant pouvant poser des problèmes de confidentialités si la sécurité n’est pas gérée correctement.</li>
-<li class="fragment">visibilité limité sur la politique de sécurité du fournisseur au niveau des hyperviseurs.</li>
-<li class="fragment">dépendant de la réactivité du fournisseur en cas d’incident matériel</li>
+<li class="fragment">environnement multi-tenant pouvant poser des
+problèmes de confidentialités si la sécurité n’est pas gérée
+correctement.</li>
+<li class="fragment">visibilité limité sur la politique de sécurité du
+fournisseur au niveau des hyperviseurs.</li>
+<li class="fragment">dépendant de la réactivité du fournisseur en cas
+d’incident matériel</li>
 </ul></li>
 </ul>
 <aside class="notes">
@@ -442,15 +515,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="container-as-a-service-1" class="slide level2">
 <h2>Container As A Service</h2>
-<p>Un nouveau modèle devient disponible, le <strong>Container As A Service</strong></p>
+<p>Un nouveau modèle devient disponible, le <strong>Container As A
+Service</strong></p>
 <ul>
-<li class="fragment">un peu différent du <em>Iaas</em>, pas vraiment du <em>Paas</em></li>
-<li class="fragment">On consomme (et paye) des nœuds dans lesquels on déploie des applications en mode <strong>Devops</strong></li>
-<li class="fragment">L’application doit être résiliente et s’auto-réparer</li>
-<li class="fragment">Le <strong>Cluster</strong> est nativement élastique</li>
-<li class="fragment">C’est le CSP qui gère l’exploitation du Cluster</li>
-<li class="fragment">La facturation se fait au nombre de nœuds du cluster indépendamment du nombre de conteneurs <em>actifs</em></li>
-<li class="fragment">Le leader des orchestrateur de conteneur est <a href="#//kubernetes">Kubernetes</a></li>
+<li class="fragment">un peu différent du <em>Iaas</em>, pas vraiment du
+<em>Paas</em></li>
+<li class="fragment">On consomme (et paye) des nœuds dans lesquels on
+déploie des applications en mode <strong>Devops</strong></li>
+<li class="fragment">L’application doit être résiliente et
+s’auto-réparer</li>
+<li class="fragment">Le <strong>Cluster</strong> est nativement
+élastique</li>
+<li class="fragment">C’est le CSP qui gère l’exploitation du
+Cluster</li>
+<li class="fragment">La facturation se fait au nombre de nœuds du
+cluster indépendamment du nombre de conteneurs <em>actifs</em></li>
+<li class="fragment">Le leader des orchestrateur de conteneur est <a
+href="#//kubernetes">Kubernetes</a></li>
 </ul>
 <aside class="notes">
 </aside>
@@ -462,7 +543,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="x-everything-as-a-service" class="slide level2">
 <h2>X (Everything) As A Service</h2>
-<p>On peut étendre la notion de <strong>As A Service</strong> à d’autre types de services. Stockage, sécurité, base de données, Machine Learning/IA … Une évolution notable concerne l’évolution du <strong>Paas</strong> avec le service <strong>Lambda</strong> d’AWS ou encore <strong>Google Cloud Function</strong>. Avec ces <strong>Function As A Service</strong>, vous poussez le code d’une fonction dans le service et celle ci est exécutée, ne consommant que ce qui est nécessaire, puis elle est détruite.Pas de réservation de ressources, vous êtes facturés par tranche de 100ms d’exécution. On parle de <strong>Serverless Computing</strong></p>
+<p>On peut étendre la notion de <strong>As A Service</strong> à d’autre
+types de services. Stockage, sécurité, base de données, Machine
+Learning/IA … Une évolution notable concerne l’évolution du
+<strong>Paas</strong> avec le service <strong>Lambda</strong> d’AWS ou
+encore <strong>Google Cloud Function</strong>. Avec ces <strong>Function
+As A Service</strong>, vous poussez le code d’une fonction dans le
+service et celle ci est exécutée, ne consommant que ce qui est
+nécessaire, puis elle est détruite.Pas de réservation de ressources,
+vous êtes facturés par tranche de 100ms d’exécution. On parle de
+<strong>Serverless Computing</strong></p>
 <aside class="notes">
 <p>les serverless utilise du Kaas</p>
 </aside>
@@ -499,14 +589,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="fragment">Évolutivité verticale (Scale UP)
 <ul>
-<li class="fragment">Ajouter des ressources au composant (CPU, RAM, Stockage)</li>
+<li class="fragment">Ajouter des ressources au composant (CPU, RAM,
+Stockage)</li>
 <li class="fragment">Faibles risques d’incompatibilité</li>
 <li class="fragment">Augmente les risques de défaillance (SPOF)</li>
 </ul></li>
 <li class="fragment">Évolutivité Horizontale (Scale OUT)
 <ul>
-<li class="fragment">Répartir les ressources sur plusieurs composants</li>
-<li class="fragment">Requiert des équipements de partage de charge (LB)</li>
+<li class="fragment">Répartir les ressources sur plusieurs
+composants</li>
+<li class="fragment">Requiert des équipements de partage de charge
+(LB)</li>
 <li class="fragment">Nécessite une application compatible</li>
 <li class="fragment">Réparti les risques</li>
 </ul></li>
@@ -517,12 +610,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="fragment">Micro service
 <ul>
-<li class="fragment">Répartir les modules applicatifs sur les composants</li>
-<li class="fragment">Nécessite une application dont l’architecture à été prévu dans ce sens</li>
-<li class="fragment">Limite les risques de défaillance complète du système</li>
-<li class="fragment">S’accompagne d’une utilisation massive de services managés</li>
-<li class="fragment">Doit être souvent être complété par de la scalabilité horizontale</li>
-<li class="fragment">Attention à ne pas tomber dans l’excès inverse au risque d’avoir un système inmaintenable</li>
+<li class="fragment">Répartir les modules applicatifs sur les
+composants</li>
+<li class="fragment">Nécessite une application dont l’architecture à été
+prévu dans ce sens</li>
+<li class="fragment">Limite les risques de défaillance complète du
+système</li>
+<li class="fragment">S’accompagne d’une utilisation massive de services
+managés</li>
+<li class="fragment">Doit être souvent être complété par de la
+scalabilité horizontale</li>
+<li class="fragment">Attention à ne pas tomber dans l’excès inverse au
+risque d’avoir un système inmaintenable</li>
 </ul></li>
 </ul>
 <aside class="notes">
@@ -577,15 +676,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>… et hyperconvergée</h2>
 <ul>
 <li class="fragment">Architecture unifiée</li>
-<li class="fragment">Un composant concentre les fonctions d’infrastructure</li>
+<li class="fragment">Un composant concentre les fonctions
+d’infrastructure</li>
 <li class="fragment">Évolutive (scale out)</li>
-<li class="fragment">Automatisée via une solution de pilotage logicielle (Software defined)</li>
+<li class="fragment">Automatisée via une solution de pilotage logicielle
+(Software defined)</li>
 </ul>
 <aside class="notes">
 </aside>
 </section></section>
 <section>
-<section id="usages-de-la-virtualisation" class="title-slide slide level1">
+<section id="usages-de-la-virtualisation"
+class="title-slide slide level1">
 <h1>Usages de la virtualisation</h1>
 
 </section>
@@ -625,16 +727,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="fragment">Noyau léger</li>
 <li class="fragment">Exploitation matériel (Intel VT / AMD-V)</li>
-<li class="fragment">Para-virtualisation possible : les OS invités intègrent des mécanismes permettant d’exécuter des instructions directement sur le processeur.</li>
+<li class="fragment">Para-virtualisation possible : les OS invités
+intègrent des mécanismes permettant d’exécuter des instructions
+directement sur le processeur.</li>
 <li class="fragment">Matériel émulé ET/OU partagé</li>
-<li class="fragment">Ex : VMware vSphère (IGN) / XenServer (ENSG) / KVM (Oshimae)</li>
+<li class="fragment">Ex : VMware vSphère (IGN) / XenServer (ENSG) / KVM
+(Oshimae)</li>
 </ul>
 <aside class="notes">
 </aside>
 </section>
 <section id="hyperviseur-de-type-1-1" class="slide level2 figcenter">
 <h2 class="figcenter">Hyperviseur de type 1</h2>
-<p><img data-src="img/Diagramme_ArchiHyperviseur.png" title="© Primalmotion-Wikipedia" /></p>
+<p><img data-src="img/Diagramme_ArchiHyperviseur.png"
+title="© Primalmotion-Wikipedia" /></p>
 <aside class="notes">
 </aside>
 </section>
@@ -646,7 +752,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="fragment">Rapidité (peu de perte)</li>
 <li class="fragment">bonne isolation</li>
 <li class="fragment">live migration</li>
-<li class="fragment">changement des caractéristiques de la VM (éventuellement à la volée)</li>
+<li class="fragment">changement des caractéristiques de la VM
+(éventuellement à la volée)</li>
 </ul></li>
 <li class="fragment">Inconvénients
 <ul>
@@ -725,13 +832,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="fragment">SDWAN
 <ul>
 <li class="fragment">Virtualisation des réseaux WAN (MPLS…)</li>
-<li class="fragment">Remplacement par une multitude de réseaux internet</li>
+<li class="fragment">Remplacement par une multitude de réseaux
+internet</li>
 <li class="fragment">Orchestration Logicielle</li>
 <li class="fragment">SASE pour la sécurité</li>
 </ul></li>
 </ul>
 <aside class="notes">
-<p>Security Access Service Edge https://www.cisco.com/c/dam/global/fr_fr/solutions/enterprise-networks/xa-09-2023-networking-report.pdf</p>
+<p>Security Access Service Edge
+https://www.cisco.com/c/dam/global/fr_fr/solutions/enterprise-networks/xa-09-2023-networking-report.pdf</p>
 </aside>
 </section>
 <section id="virtualisation-du-stockage" class="slide level2">
@@ -740,18 +849,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="fragment">Software Defined Storage (SDS)</li>
 <li class="fragment">Stockage Virtuel
 <ul>
-<li class="fragment">Une couche contrôle (Gestion, allocation des ressources, Qos, sécurité)</li>
-<li class="fragment">Une couche stockage (Parité, thin provisioning, compression …)</li>
+<li class="fragment">Une couche contrôle (Gestion, allocation des
+ressources, Qos, sécurité)</li>
+<li class="fragment">Une couche stockage (Parité, thin provisioning,
+compression …)</li>
 <li class="fragment">Services : Stockage objet, Bloc, fichier, HDFS</li>
 </ul></li>
 <li class="fragment">Logiciel
 <ul>
-<li class="fragment">Une solution centralisé de gestion du réseau, Qos, Sécurité , ressources, autorisations, quotas…</li>
+<li class="fragment">Une solution centralisé de gestion du réseau, Qos,
+Sécurité , ressources, autorisations, quotas…</li>
 </ul></li>
 <li class="fragment">EX: VmWare VirtualSAN / CEPH / S3</li>
 </ul>
 <aside class="notes">
-<p>Le stockage Objet, S3 en tête, est le nouveau standard de fait de stockage virtualisé</p>
+<p>Le stockage Objet, S3 en tête, est le nouveau standard de fait de
+stockage virtualisé</p>
 </aside>
 </section>
 <section id="software-defined-datacenter" class="slide level2">
@@ -768,7 +881,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="fragment">Ex: Openstack, Vcloud</li>
 </ul>
 <aside class="notes">
-Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, GCP, Azure, ce sont les hyperscalers
+Seul les grand acteur du Cloud peuvent mettre en place de tels
+mécanismes AWS, GCP, Azure, ce sont les hyperscalers
 </aside>
 </section>
 <section id="virtualisation-et-sécurité" class="slide level2">
@@ -776,14 +890,20 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <ul>
 <li class="fragment">Risques Additionnels
 <ul>
-<li class="fragment">Concentration des ressources (stockage, réseau, système), des outils et des rôles.</li>
-<li class="fragment">Des composants additionnels à maîtriser et à surveiller</li>
+<li class="fragment">Concentration des ressources (stockage, réseau,
+système), des outils et des rôles.</li>
+<li class="fragment">Des composants additionnels à maîtriser et à
+surveiller</li>
 </ul></li>
 <li class="fragment">Vigilance
 <ul>
-<li class="fragment">La couche d’abstraction est un système à part entière, à mettre à jour et sécuriser</li>
-<li class="fragment">Les habilitations d’accès aux couches d’abstractions doivent êtres ajustées avec soins.</li>
-<li class="fragment">Les systèmes critiques doivent être protégés (cloisonnement par ressources dédiés ou réservations de ressources, Qos…)</li>
+<li class="fragment">La couche d’abstraction est un système à part
+entière, à mettre à jour et sécuriser</li>
+<li class="fragment">Les habilitations d’accès aux couches
+d’abstractions doivent êtres ajustées avec soins.</li>
+<li class="fragment">Les systèmes critiques doivent être protégés
+(cloisonnement par ressources dédiés ou réservations de ressources,
+Qos…)</li>
 </ul></li>
 </ul>
 <aside class="notes">
@@ -796,7 +916,8 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <ul>
 <li class="fragment">Une disponibilité plus élevée</li>
 <li class="fragment">Des déploiements (potentiellement) automatisés</li>
-<li class="fragment">Des ressources plus faciles à reconstruire (Sauvegarde, PRA…)</li>
+<li class="fragment">Des ressources plus faciles à reconstruire
+(Sauvegarde, PRA…)</li>
 </ul></li>
 </ul>
 <aside class="notes">
@@ -810,7 +931,8 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <section id="datacenters" class="slide level2 figcenter">
 <h2 class="figcenter">Datacenters</h2>
 <figure>
-<img data-src="img/datacenter-google.jpg" alt="" /><figcaption>Datacenter modulaire</figcaption>
+<img data-src="img/datacenter-google.jpg" alt="Datacenter modulaire" />
+<figcaption aria-hidden="true">Datacenter modulaire</figcaption>
 </figure>
 <aside class="notes">
 </aside>
@@ -818,7 +940,8 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <section id="tiers" class="slide level2 figcenter">
 <h2 class="figcenter">Tiers</h2>
 <figure>
-<img data-src="img/data-center-tiers.png" alt="" /><figcaption>Datacenter Tiers</figcaption>
+<img data-src="img/data-center-tiers.png" alt="Datacenter Tiers" />
+<figcaption aria-hidden="true">Datacenter Tiers</figcaption>
 </figure>
 <aside class="notes">
 </aside>
@@ -826,7 +949,8 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <section id="serveurs" class="slide level2 figcenter">
 <h2 class="figcenter">Serveurs</h2>
 <figure>
-<img data-src="img/hyperServer.jpg" alt="" /><figcaption>Cloud Servers</figcaption>
+<img data-src="img/hyperServer.jpg" alt="Cloud Servers" />
+<figcaption aria-hidden="true">Cloud Servers</figcaption>
 </figure>
 <aside class="notes">
 </aside>
@@ -834,7 +958,8 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <section id="réseau" class="slide level2 figcenter">
 <h2 class="figcenter">Réseau</h2>
 <figure>
-<img data-src="img/hyperSwitch.jpg" alt="" /><figcaption>Cloud Network</figcaption>
+<img data-src="img/hyperSwitch.jpg" alt="Cloud Network" />
+<figcaption aria-hidden="true">Cloud Network</figcaption>
 </figure>
 <aside class="notes">
 </aside>
@@ -842,7 +967,8 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <section id="stockage" class="slide level2 figcenter">
 <h2 class="figcenter">Stockage</h2>
 <figure>
-<img data-src="img/hyperStorage.jpg" alt="" /><figcaption>Cloud Storage</figcaption>
+<img data-src="img/hyperStorage.jpg" alt="Cloud Storage" />
+<figcaption aria-hidden="true">Cloud Storage</figcaption>
 </figure>
 <aside class="notes">
 </aside>
@@ -850,7 +976,8 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <section id="climatisation" class="slide level2 figcenter">
 <h2 class="figcenter">Climatisation</h2>
 <figure>
-<img data-src="img/chaudfroid.png" alt="" /><figcaption>Couloirs Chauds/Froids</figcaption>
+<img data-src="img/chaudfroid.png" alt="Couloirs Chauds/Froids" />
+<figcaption aria-hidden="true">Couloirs Chauds/Froids</figcaption>
 </figure>
 <aside class="notes">
 </aside>
@@ -858,24 +985,45 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <section id="électricité" class="slide level2">
 <h2>Électricité</h2>
 <ul>
-<li class="fragment">L’énergie représente ~40% du coût d’exploitation</li>
+<li class="fragment">L’énergie représente ~40% du coût
+d’exploitation</li>
 <li class="fragment">le refroidissement 40% à 50%</li>
 <li class="fragment">Datacenter moderne et optimisé = 1.5 à 3KW/m2</li>
-<li class="fragment">Exemple de l’envolée du Bitcoin : si la flambée du bitcoin démarrée en 2017 avait continuée , en 2020 le calcul de la blockchain aurait consommé toute l’énergie de la planète. Cette consommation s’est stabilisée et équivaut aujourd’hui à peu près à la consommation de la suisse.</li>
-<li class="fragment">Le paramètre « <strong>PUE</strong> » (Power Usage Effectiveness) est souvent utilisé pour mesurer l’efficience d’un centre de données (électricité totale / électricité utilisée par IT). Une amélioration du PUE est un levier <strong>Green IT.</strong></li>
+<li class="fragment">Exemple de l’envolée du Bitcoin : si la flambée du
+bitcoin démarrée en 2017 avait continuée , en 2020 le calcul de la
+blockchain aurait consommé toute l’énergie de la planète. Cette
+consommation s’est stabilisée et équivaut aujourd’hui à peu près à la
+consommation de la suisse.</li>
+<li class="fragment">Le paramètre « <strong>PUE</strong> » (Power Usage
+Effectiveness) est souvent utilisé pour mesurer l’efficience d’un centre
+de données (électricité totale / électricité utilisée par IT). Une
+amélioration du PUE est un levier <strong>Green IT.</strong></li>
 </ul>
 <aside class="notes">
 <p>Au moins 77 KWh pour une transaction Bitcoin</p>
-<p>2020 : consommation annuelle du minage de Bitcoin est de 58,07 terawattheure.(suisse) 2023 : 112 terawattheure.(pays bas == 75% france) == 25.986 éoliennes</p>
-<p>Requete Google 0.0003kWh 0.2g CO2 , 7g selon chercheur Wissner-Gross</p>
-<p>L’envoi d’un mail avec une pièce jointe de 1 Mo dégage 19 grammes de CO2 et sa consommation électrique est équivalente à celle d’une ampoule pendant une heure.</p>
-<p>les estimations sont très complexe et différent selon les sources un film de 60mn sur Netflix = entre 0.03kWh (en SD sur un smartphone en Wifi) et 6.6 kWh selon the Shift Project</p>
+<p>2020 : consommation annuelle du minage de Bitcoin est de 58,07
+terawattheure.(suisse) 2023 : 112 terawattheure.(pays bas == 75% france)
+== 25.986 éoliennes</p>
+<p>Requete Google 0.0003kWh 0.2g CO2 , 7g selon chercheur
+Wissner-Gross</p>
+<p>L’envoi d’un mail avec une pièce jointe de 1 Mo dégage 19 grammes de
+CO2 et sa consommation électrique est équivalente à celle d’une ampoule
+pendant une heure.</p>
+<p>les estimations sont très complexe et différent selon les sources un
+film de 60mn sur Netflix = entre 0.03kWh (en SD sur un smartphone en
+Wifi) et 6.6 kWh selon the Shift Project</p>
 </aside>
 </section>
 <section id="électricité-1" class="slide level2">
 <h2>Électricité</h2>
-<p>Selon International Energy Agency (IEA), la consommation électrique globale des centres de données est estimée à ~ <strong>415 TWh</strong> en 2024 (≈ 1,5 % de la consommation mondiale d’électricité) et pourrait atteindre ~ 945 TWh en 2030.</p>
-<p>La part des sources renouvelables dans l’électricité des centres de données aux États-Unis est encore relativement modérée <strong>~20%</strong> avec principalement du : « natural-gas » à plus de 40% selon un rapport de 2024.</p>
+<p>Selon International Energy Agency (IEA), la consommation électrique
+globale des centres de données est estimée à ~ <strong>415 TWh</strong>
+en 2024 (≈ 1,5 % de la consommation mondiale d’électricité) et pourrait
+atteindre ~ 945 TWh en 2030.</p>
+<p>La part des sources renouvelables dans l’électricité des centres de
+données aux États-Unis est encore relativement modérée
+<strong>~20%</strong> avec principalement du : « natural-gas » à plus de
+40% selon un rapport de 2024.</p>
 </section></section>
 <section>
 <section id="migration-dans-le-cloud" class="title-slide slide level1">
@@ -885,14 +1033,17 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <section id="move-to-cloud" class="slide level2 figcenter">
 <h2 class="figcenter">Move to cloud</h2>
 <figure>
-<img data-src="img/cloud-migration.png" alt="" /><figcaption>Move 2 Cloud</figcaption>
+<img data-src="img/cloud-migration.png" alt="Move 2 Cloud" />
+<figcaption aria-hidden="true">Move 2 Cloud</figcaption>
 </figure>
 <aside class="notes">
 </aside>
 </section>
 <section id="stratégies-de-migration" class="slide level2">
 <h2>Stratégies de Migration</h2>
-<p>On identifie <strong>6</strong> différentes stratégies pour migrer une application <strong>legacy</strong> dans un environnement de Cloud.</p>
+<p>On identifie <strong>6</strong> différentes stratégies pour migrer
+une application <strong>legacy</strong> dans un environnement de
+Cloud.</p>
 <ul>
 <li class="fragment">Rehosting</li>
 <li class="fragment">Replatforming</li>
@@ -902,44 +1053,62 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <li class="fragment">Retire</li>
 </ul>
 <aside class="notes">
-<p><a href="https://pisquare.fr/les-6-strategies-de-migration-vers-le-cloud/" class="uri">https://pisquare.fr/les-6-strategies-de-migration-vers-le-cloud/</a></p>
+<p><a
+href="https://pisquare.fr/les-6-strategies-de-migration-vers-le-cloud/"
+class="uri">https://pisquare.fr/les-6-strategies-de-migration-vers-le-cloud/</a></p>
 </aside>
 </section>
 <section id="rehosting" class="slide level2">
 <h2>Rehosting</h2>
-<p>Cette stratégie aussi appelée <strong>Lift and shift</strong> Consiste à déplacer l’application sans en changer le code</p>
+<p>Cette stratégie aussi appelée <strong>Lift and shift</strong>
+Consiste à déplacer l’application sans en changer le code</p>
 <ul>
-<li class="fragment">Avantages : Assez simple et rapide, si des mécanismes spécifiques ne sont pas mis en place dans l’architecture initiale</li>
-<li class="fragment">Inconvénients : peu d’intérêt car le coût augmente, on ne profite pas des intérêts du Cloud</li>
+<li class="fragment">Avantages : Assez simple et rapide, si des
+mécanismes spécifiques ne sont pas mis en place dans l’architecture
+initiale</li>
+<li class="fragment">Inconvénients : peu d’intérêt car le coût augmente,
+on ne profite pas des intérêts du Cloud</li>
 </ul>
 </section>
 <section id="replatforming" class="slide level2">
 <h2>Replatforming</h2>
-<p>On adapte l’application pour que cela fonctionne mieux, par exemple en utilisant des bases de données managées. (Cloud Ready)</p>
+<p>On adapte l’application pour que cela fonctionne mieux, par exemple
+en utilisant des bases de données managées. (Cloud Ready)</p>
 <ul>
-<li class="fragment">Avantages : Assez simple, on améliore la maintenabilité du système</li>
-<li class="fragment">Inconvénients : on profite assez peu des intérêts du Cloud (conso à la demande, auto-scaling…)</li>
+<li class="fragment">Avantages : Assez simple, on améliore la
+maintenabilité du système</li>
+<li class="fragment">Inconvénients : on profite assez peu des intérêts
+du Cloud (conso à la demande, auto-scaling…)</li>
 </ul>
 </section>
 <section id="refactoring" class="slide level2">
 <h2>Refactoring</h2>
-<p>On réécrit l’application et son architecture en tirant profit des avantages du Cloud (Cloud Native).</p>
+<p>On réécrit l’application et son architecture en tirant profit des
+avantages du Cloud (Cloud Native).</p>
 <ul>
-<li class="fragment">Avantages : l’application est plus performante, plus sûre et revient à moins cher en phase de <em>Run</em>.</li>
-<li class="fragment">Inconvénients : Complexité et coût de transformation</li>
+<li class="fragment">Avantages : l’application est plus performante,
+plus sûre et revient à moins cher en phase de <em>Run</em>.</li>
+<li class="fragment">Inconvénients : Complexité et coût de
+transformation</li>
 </ul>
 </section>
 <section id="repuchasing" class="slide level2">
 <h2>Repuchasing</h2>
-<p>On remplace par des solutions SaaS, cette méthode ne concerne bien entendu que des produits disponibles sur étagère (CRM, CMS simples, etc…)</p>
+<p>On remplace par des solutions SaaS, cette méthode ne concerne bien
+entendu que des produits disponibles sur étagère (CRM, CMS simples,
+etc…)</p>
 <ul>
-<li class="fragment">Avantages : Simple et rapide si l’application est peu customisé</li>
-<li class="fragment">Inconvénients : peu d’options, risques potentiels au niveau de la sécurité/confidentialité</li>
+<li class="fragment">Avantages : Simple et rapide si l’application est
+peu customisé</li>
+<li class="fragment">Inconvénients : peu d’options, risques potentiels
+au niveau de la sécurité/confidentialité</li>
 </ul>
 </section>
 <section id="retain-retire" class="slide level2">
 <h2>Retain, Retire</h2>
-<p>Ces deux modèles sont un peu particulier, il s’agit soit de ne pas migrer l’application ou carrément de décommissionner celle ci, car la migration n’offre pas de plus-value.</p>
+<p>Ces deux modèles sont un peu particulier, il s’agit soit de ne pas
+migrer l’application ou carrément de décommissionner celle ci, car la
+migration n’offre pas de plus-value.</p>
 </section></section>
 <section>
 <section id="développement" class="title-slide slide level1">
@@ -948,7 +1117,11 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 </section>
 <section id="cloud-native-application" class="slide level2">
 <h2>Cloud Native application</h2>
-<p>Pour tirer parti des avantages du Cloud computing, il faut repenser la manière de développer des applications en les adaptant à l’environnement dans lequel elles vont s’exécuter. On parle d’application Cloud native. Les piliers d’une application Cloud native sont :</p>
+<p>Pour tirer parti des avantages du Cloud computing, il faut repenser
+la manière de développer des applications en les adaptant à
+l’environnement dans lequel elles vont s’exécuter. On parle
+d’application Cloud native. Les piliers d’une application Cloud native
+sont :</p>
 <ul>
 <li class="fragment">Automatisation (Infra-As-Code)</li>
 <li class="fragment">Conteneurisation (Micro-services)</li>
@@ -961,13 +1134,21 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 </section>
 <section id="cloud-native-application-1" class="slide level2">
 <h2>Cloud Native application</h2>
-<p>Beaucoup de notions sont mises en oeuvre lors de la création d’un application Cloud Native, voici quelques définitions :</p>
-<p><a href="#//infraascode">Infra As Code</a>, <a href="#//factors">12 factors</a> , <a href="#//stateless">Stateless</a>, <a href="#//abstraction-api">API</a>, <a href="#//webservices">webservices</a>, <a href="#//devops">Devops</a>, <a href="#//object-storage">Object Storage</a>, <a href="#//nosql">NoSQL</a>, <a href="#//messagequeue">Message Queue</a>, <a href="#//cdn">CDN</a></p>
+<p>Beaucoup de notions sont mises en oeuvre lors de la création d’un
+application Cloud Native, voici quelques définitions :</p>
+<p><a href="#//infraascode">Infra As Code</a>, <a href="#//factors">12
+factors</a> , <a href="#//stateless">Stateless</a>, <a
+href="#//abstraction-api">API</a>, <a
+href="#//webservices">webservices</a>, <a href="#//devops">Devops</a>,
+<a href="#//object-storage">Object Storage</a>, <a
+href="#//nosql">NoSQL</a>, <a href="#//messagequeue">Message Queue</a>,
+<a href="#//cdn">CDN</a></p>
 </section>
 <section id="factors" class="slide level2 factors">
 <h2 class="factors">12 Factors</h2>
 <p><strong>1 : Base de code</strong></p>
-<p>Une base de code suivie avec un système de contrôle de version, plusieurs déploiements</p>
+<p>Une base de code suivie avec un système de contrôle de version,
+plusieurs déploiements</p>
 <p><strong>2 : Dépendances</strong></p>
 <p>Déclarez explicitement et isolez les dépendances</p>
 <p><strong>3 : Configuration</strong></p>
@@ -986,13 +1167,16 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 <p><strong>8 Concurrence</strong></p>
 <p>Grossissez à l’aide du modèle de processus</p>
 <p><strong>9 Jetable</strong></p>
-<p>Maximisez la robustesse avec des démarrages rapides et des arrêts gracieux</p>
+<p>Maximisez la robustesse avec des démarrages rapides et des arrêts
+gracieux</p>
 <p><strong>10 Parité dev/prod</strong></p>
-<p>Gardez le développement, la validation et la production aussi proches que possible</p>
+<p>Gardez le développement, la validation et la production aussi proches
+que possible</p>
 <p><strong>11 Logs</strong></p>
 <p>Traitez les logs comme des flux d’évènements</p>
 <p><strong>12 Processus d’administration</strong></p>
-<p>Lancez les processus d’administration et de maintenance comme des one-off-processes</p>
+<p>Lancez les processus d’administration et de maintenance comme des
+one-off-processes</p>
 </section></section>
 <section>
 <section id="mots-clés" class="title-slide slide level1">
@@ -1001,40 +1185,65 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 </section>
 <section id="webservices" class="slide level2">
 <h2>WebServices</h2>
-<p>Les <strong>Service Web</strong> désigne plusieurs chose mais principalement un concept d’API exposé sur le WEB utilisant une technologie d’échange, le plus souvent en mode <strong>SOA</strong> (Architecture orienté service) où des fonctions sont exécutées à distance.</p>
-<p>Les API RESTful sont grandement utilisé dans le monde des WebServices. (HTTP + CRUD)</p>
+<p>Les <strong>Service Web</strong> désigne plusieurs chose mais
+principalement un concept d’API exposé sur le WEB utilisant une
+technologie d’échange, le plus souvent en mode <strong>SOA</strong>
+(Architecture orienté service) où des fonctions sont exécutées à
+distance.</p>
+<p>Les API RESTful sont grandement utilisé dans le monde des
+WebServices. (HTTP + CRUD)</p>
 <aside class="notes">
 </aside>
 </section>
 <section id="abstraction-api" class="slide level2">
 <h2>Abstraction (api)</h2>
-<p>Une <strong>API</strong> (Application Programming Interface) Permet de faire abstraction de l’élément sur lequel elle se pose. Elle décrit comment le consommateur peut utiliser les fonctions du fournisseur. Dans le Cloud il est primordial que le maximum d’échanges se fassent au travers d’API pour garantir l’interopérabilité.</p>
+<p>Une <strong>API</strong> (Application Programming Interface) Permet
+de faire abstraction de l’élément sur lequel elle se pose. Elle décrit
+comment le consommateur peut utiliser les fonctions du fournisseur. Dans
+le Cloud il est primordial que le maximum d’échanges se fassent au
+travers d’API pour garantir l’interopérabilité.</p>
 <aside class="notes">
 </aside>
 </section>
 <section id="stateless" class="slide level2">
 <h2>StateLess</h2>
-<p>Se dit d’une application ou d’un service qui ne conserve pas en interne d’état d’une connexion d’un client entre 2 appels au service. Cela permet de faire traiter la demande par des machines différentes à chaque requête. C’est une des notions primordiale du développement d’application <strong>Cloud-Native</strong></p>
+<p>Se dit d’une application ou d’un service qui ne conserve pas en
+interne d’état d’une connexion d’un client entre 2 appels au service.
+Cela permet de faire traiter la demande par des machines différentes à
+chaque requête. C’est une des notions primordiale du développement
+d’application <strong>Cloud-Native</strong></p>
 <aside class="notes">
 </aside>
 </section>
 <section id="interopérabilité" class="slide level2">
 <h2>Interopérabilité</h2>
-<p>C’est la faculté qu’un système a de s’interfacer avec un autre sans le connaître. Interopérabilité est primordiale dans un environnement hétérogène. Ceci est notamment faisable grâce à la description complète des interfaces de ce système et à l’utilisation de format d’échanges normés ou standardisés.</p>
+<p>C’est la faculté qu’un système a de s’interfacer avec un autre sans
+le connaître. Interopérabilité est primordiale dans un environnement
+hétérogène. Ceci est notamment faisable grâce à la description complète
+des interfaces de ce système et à l’utilisation de format d’échanges
+normés ou standardisés.</p>
 <aside class="notes">
 </aside>
 </section>
 <section id="multi-tenant" class="slide level2">
 <h2>Multi-tenant</h2>
-<p>Un SI <strong>multi-tenant</strong> désigne une infrastructure qui partage ses ressources entre plusieurs clients. Chaque client ne doit pas avoir conscience que les autres existent.</p>
+<p>Un SI <strong>multi-tenant</strong> désigne une infrastructure qui
+partage ses ressources entre plusieurs clients. Chaque client ne doit
+pas avoir conscience que les autres existent.</p>
 <aside class="notes">
 </aside>
 </section>
 <section id="infraascode" class="slide level2">
 <h2>InfraAsCode</h2>
-<p>l’<strong>Infrastructure As Code</strong> désigne les technique permettant de définir une infrastructure par du code informatique (script, conf…). La mise en place de cette infrastructure est alors totalement automatisable et ré-instanciable à la demande. Ceci est possible lorsque tous les éléments de l’infrastructure ont été virtualisés.</p>
+<p>l’<strong>Infrastructure As Code</strong> désigne les technique
+permettant de définir une infrastructure par du code informatique
+(script, conf…). La mise en place de cette infrastructure est alors
+totalement automatisable et ré-instanciable à la demande. Ceci est
+possible lorsque tous les éléments de l’infrastructure ont été
+virtualisés.</p>
 <ul>
-<li class="fragment">On entend souvent aussi parler de <strong>gitOps</strong></li>
+<li class="fragment">On entend souvent aussi parler de
+<strong>gitOps</strong></li>
 </ul>
 <aside class="notes">
 <p>GitOPs</p>
@@ -1042,42 +1251,63 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 </section>
 <section id="object-storage" class="slide level2">
 <h2>Object Storage</h2>
-<p>Le stockage Objet permet une abstraction du stockage physique, les informations sont stockée sous forme d’Objet pouvant contenir n’importe quelle donnée, des métadonnées et accessible sans index (c’est un algorithme qui calcul à quel endroit se situe la donnée dans le cluster) via une API (S3 d’AWS par exemple). Le cluster est composé d’éléments simples, peu coûteux, facilement extensible, avec une gestion logicielle.</p>
+<p>Le stockage Objet permet une abstraction du stockage physique, les
+informations sont stockée sous forme d’Objet pouvant contenir n’importe
+quelle donnée, des métadonnées et accessible sans index (c’est un
+algorithme qui calcul à quel endroit se situe la donnée dans le cluster)
+via une API (S3 d’AWS par exemple). Le cluster est composé d’éléments
+simples, peu coûteux, facilement extensible, avec une gestion
+logicielle.</p>
 <aside class="notes">
 </aside>
 </section>
 <section id="nosql" class="slide level2">
 <h2>NOSQL</h2>
-<p>NoSQL regroupe un ensemble de type de SGBD, souvent adapté à des gros volumes ou à des traitements rapides, et par nature facilement scalables et résilients.</p>
+<p>NoSQL regroupe un ensemble de type de SGBD, souvent adapté à des gros
+volumes ou à des traitements rapides, et par nature facilement scalables
+et résilients.</p>
 <p>ex : MongoDB, Redis, Cassandra</p>
 <aside class="notes">
 </aside>
 </section>
 <section id="messagequeue" class="slide level2">
 <h2>MessageQueue</h2>
-<p>Les architectures Cloud utilisent beaucoup la programmation par évènement et donc des agents de message (Message Broker) pour orchestrer ces messages, c’est le rôle d’une <strong>Message Queue</strong></p>
+<p>Les architectures Cloud utilisent beaucoup la programmation par
+évènement et donc des agents de message (Message Broker) pour orchestrer
+ces messages, c’est le rôle d’une <strong>Message Queue</strong></p>
 <p>Ex: ActiveMQ, RabbitMQ, Kafka</p>
 <aside class="notes">
 </aside>
 </section>
 <section id="serverless" class="slide level2">
 <h2>ServerLess</h2>
-<p><strong>ServerLess</strong> désigne les services proposé en mode Cloud qui ne comprennent pas la livraison d’une machine pour réaliser l’opération, l’appel au service génère une mise à disposition de ressource en fonction de la charge nécessaire à l’exécution de la demande et la libère instantanément.</p>
+<p><strong>ServerLess</strong> désigne les services proposé en mode
+Cloud qui ne comprennent pas la livraison d’une machine pour réaliser
+l’opération, l’appel au service génère une mise à disposition de
+ressource en fonction de la charge nécessaire à l’exécution de la
+demande et la libère instantanément.</p>
 <aside class="notes">
 </aside>
 </section>
 <section id="autonomic-computing" class="slide level2">
 <h2>autonomic computing</h2>
-<p>L’autonomic Computing désigne la capacité de ces systèmes de pouvoir se réparer eux même. Ils intègrent de la surveillance et de la détection d’anomalie.</p>
+<p>L’autonomic Computing désigne la capacité de ces systèmes de pouvoir
+se réparer eux même. Ils intègrent de la surveillance et de la détection
+d’anomalie.</p>
 <aside class="notes">
-<p>Lancé par IBM, l’autoréparation des programmes intègre aujourd’hui de nombreux programmes</p>
+<p>Lancé par IBM, l’autoréparation des programmes intègre aujourd’hui de
+nombreux programmes</p>
 </aside>
 </section>
 <section id="factors-2" class="slide level2">
 <h2>12 factors</h2>
-<p><strong>12 Factors</strong> désigne les règles pour concevoir des applications Cloud Natives. Ces applications ainsi développées s’intégreront parfaitement dans les univers Cloud en profitant au maximum des avantages de ce type d’hébergement.</p>
+<p><strong>12 Factors</strong> désigne les règles pour concevoir des
+applications Cloud Natives. Ces applications ainsi développées
+s’intégreront parfaitement dans les univers Cloud en profitant au
+maximum des avantages de ce type d’hébergement.</p>
 <ul>
-<li class="fragment"><a href="https://12factor.net/fr/" class="uri">https://12factor.net/fr/</a></li>
+<li class="fragment"><a href="https://12factor.net/fr/"
+class="uri">https://12factor.net/fr/</a></li>
 </ul>
 <aside class="notes">
 <p>détailler les 12 factors</p>
@@ -1085,7 +1315,9 @@ Seul les grand acteur du Cloud peuvent mettre en place de tels mécanismes AWS, 
 </section>
 <section id="systèmes-repartis" class="slide level2">
 <h2>Systèmes repartis</h2>
-<p>Un système réparti est un SI dans lequel l’information et l’exécution est distribuée sur un ensemble de nœuds constituant un Cluster. Cet ensemble peut être hétérogène et doit être scalable.</p>
+<p>Un système réparti est un SI dans lequel l’information et l’exécution
+est distribuée sur un ensemble de nœuds constituant un Cluster. Cet
+ensemble peut être hétérogène et doit être scalable.</p>
 <ul>
 <li class="fragment">ex: seti@home</li>
 <li class="fragment">ex: cluster kubernetes</li>
@@ -1096,55 +1328,84 @@ Encore parler IA , deep learning, grilles de calcul
 </section>
 <section id="high-availability" class="slide level2">
 <h2>High Availability</h2>
-<p>la <strong>HA</strong> désigne la capacité d’un système à <em>survivre</em> à la perte d’un élément de son infrastructure. Ceci en permettant l’utilisation d’une autre ressource de façon transparente pour l’utilisateur. On élimine ainsi les SPOF (<em>Single Point Of Failure</em>). Un <strong>Load-balancer</strong> permet la HA des services Web par exemple.</p>
+<p>la <strong>HA</strong> désigne la capacité d’un système à
+<em>survivre</em> à la perte d’un élément de son infrastructure. Ceci en
+permettant l’utilisation d’une autre ressource de façon transparente
+pour l’utilisateur. On élimine ainsi les SPOF (<em>Single Point Of
+Failure</em>). Un <strong>Load-balancer</strong> permet la HA des
+services Web par exemple.</p>
 <aside class="notes">
 </aside>
 </section>
 <section id="prapca" class="slide level2">
 <h2>PRA/PCA</h2>
 <ul>
-<li class="fragment">PRA : Plan de reprise d’activité. Désigne le fait qu’il existe une solution pour reprendre l’activité d’un SI après un temps prévu (le plus court possible)</li>
-<li class="fragment">PCA : Plan de continuité d’activité. Une solution existe pour continuer l’activité d’un service en cas de perte d’un élément constituant ce service (peut être un Datacenter tout entier, il faut donc alors basculer sur un autre Datacenter de façon transparente pour l’utilisateur).</li>
+<li class="fragment">PRA : Plan de reprise d’activité. Désigne le fait
+qu’il existe une solution pour reprendre l’activité d’un SI après un
+temps prévu (le plus court possible)</li>
+<li class="fragment">PCA : Plan de continuité d’activité. Une solution
+existe pour continuer l’activité d’un service en cas de perte d’un
+élément constituant ce service (peut être un Datacenter tout entier, il
+faut donc alors basculer sur un autre Datacenter de façon transparente
+pour l’utilisateur).</li>
 </ul>
 <aside class="notes">
 </aside>
 </section>
 <section id="cdn" class="slide level2">
 <h2>CDN</h2>
-<p><strong>Content Delivery Network</strong> désigne un réseau synchronisé de serveurs permettant la diffusion de données au plus près de l’utilisateur (géographiquement parlant) afin de limiter l’effet de latence. Le CDN permet aussi de fournir un système de cache très efficace et proche de l’utilisateur.</p>
+<p><strong>Content Delivery Network</strong> désigne un réseau
+synchronisé de serveurs permettant la diffusion de données au plus près
+de l’utilisateur (géographiquement parlant) afin de limiter l’effet de
+latence. Le CDN permet aussi de fournir un système de cache très
+efficace et proche de l’utilisateur.</p>
 <aside class="notes">
 </aside>
 </section>
 <section id="open-source" class="slide level2">
 <h2>Open source</h2>
-<p>l’Open source qui consiste à ouvrir le code source d’une application à tous, est omniprésent dans les différents niveaux du Cloud computing. Même les plus grands fournisseurs utilisent des logiciels Open source, ils en sont souvent les principaux contributeurs.</p>
+<p>l’Open source qui consiste à ouvrir le code source d’une application
+à tous, est omniprésent dans les différents niveaux du Cloud computing.
+Même les plus grands fournisseurs utilisent des logiciels Open source,
+ils en sont souvent les principaux contributeurs.</p>
 <aside class="notes">
-<p><a href="https://www.openstack.org/foundation/companies/" class="uri">https://www.openstack.org/foundation/companies/</a></p>
+<p><a href="https://www.openstack.org/foundation/companies/"
+class="uri">https://www.openstack.org/foundation/companies/</a></p>
 </aside>
 </section>
 <section id="devops" class="slide level2">
 <h2>Devops</h2>
-<p><strong>Devops</strong> désigne un courant de pensée informatique visant à éliminer le conflit entre les <strong>Développeurs</strong> qui souhaitent faire évoluer un SI et les <strong>Opérationnels</strong> qui souhaitent avoir un SI le plus Stable possible.</p>
-<p>Il est née de l’utilisation de bout en bout des méthodes <strong>Agiles</strong></p>
+<p><strong>Devops</strong> désigne un courant de pensée informatique
+visant à éliminer le conflit entre les <strong>Développeurs</strong> qui
+souhaitent faire évoluer un SI et les <strong>Opérationnels</strong> qui
+souhaitent avoir un SI le plus Stable possible.</p>
+<p>Il est née de l’utilisation de bout en bout des méthodes
+<strong>Agiles</strong></p>
 <aside class="notes">
 </aside>
 </section>
 <section id="devops-1" class="slide level2 figcenter">
 <h2 class="figcenter">Devops</h2>
 <figure>
-<img data-src="img/devops-process.png" alt="" /><figcaption>DEVOPS</figcaption>
+<img data-src="img/devops-process.png" alt="DEVOPS" />
+<figcaption aria-hidden="true">DEVOPS</figcaption>
 </figure>
 <aside class="notes">
 </aside>
 </section>
 <section id="devops-2" class="slide level2">
 <h2>Devops</h2>
-<p><strong>Devops</strong> est très à la mode, c’est une méthodologie très adaptée aux startups, l’évolution des outils mis à disposition permet de faire des <strong>pipeline</strong> de bout en bout sans connaissance de la complexité sous-jacente.</p>
+<p><strong>Devops</strong> est très à la mode, c’est une méthodologie
+très adaptée aux startups, l’évolution des outils mis à disposition
+permet de faire des <strong>pipeline</strong> de bout en bout sans
+connaissance de la complexité sous-jacente.</p>
 <p>Mais on commence à voir les travers:</p>
 <ul>
 <li class="fragment">complexité : <strong>CloudArchitect</strong></li>
-<li class="fragment">risques en sécurité : <strong>DevSecOps</strong></li>
-<li class="fragment">Augmentation des coûts cachés : <strong>FinOps</strong></li>
+<li class="fragment">risques en sécurité :
+<strong>DevSecOps</strong></li>
+<li class="fragment">Augmentation des coûts cachés :
+<strong>FinOps</strong></li>
 </ul>
 <aside class="notes">
 Devsecops finops
@@ -1153,10 +1414,17 @@ Devsecops finops
 <section id="kubernetes" class="slide level2 figgauche">
 <h2 class="figgauche">Kubernetes</h2>
 <figure>
-<img data-src="img/Kubernetes.png" alt="" /><figcaption>Kubernetes</figcaption>
+<img data-src="img/Kubernetes.png" alt="Kubernetes" />
+<figcaption aria-hidden="true">Kubernetes</figcaption>
 </figure>
-<p>Kubernetes est une solution open-source de gestion de conteneur développé par Google. Kubernetes à permis le passage en production des applications basées sur des conteneurs en apportant la fiabilité et la sécurité nécessaire à ce passage. Les outils (API) fournis par Kubernetes permettent un fonctionnement optimal des applications <strong>cloud natives</strong>.</p>
-<p>Par sa conception Kubernetes est facilement modifiable pour s’adapter aux besoins les plus divers.</p>
+<p>Kubernetes est une solution open-source de gestion de conteneur
+développé par Google. Kubernetes à permis le passage en production des
+applications basées sur des conteneurs en apportant la fiabilité et la
+sécurité nécessaire à ce passage. Les outils (API) fournis par
+Kubernetes permettent un fonctionnement optimal des applications
+<strong>cloud natives</strong>.</p>
+<p>Par sa conception Kubernetes est facilement modifiable pour s’adapter
+aux besoins les plus divers.</p>
 </section></section>
 <section>
 <section id="enjeux---avenir" class="title-slide slide level1">
@@ -1169,7 +1437,8 @@ Devsecops finops
 <li class="fragment">Niveau de service : Engagement sur :
 <ul>
 <li class="fragment">Disponibilité garantie (en %)</li>
-<li class="fragment">Garantie de temps d’intervention et rétablissement</li>
+<li class="fragment">Garantie de temps d’intervention et
+rétablissement</li>
 <li class="fragment">Qualité de service (performance)</li>
 </ul></li>
 <li class="fragment">Responsabilités :
@@ -1179,7 +1448,8 @@ Devsecops finops
 </ul></li>
 <li class="fragment">Réversibilité (Entrante et Sortante)
 <ul>
-<li class="fragment">S’assurer de la possibilité d’export des données et de leurs exploitabilités</li>
+<li class="fragment">S’assurer de la possibilité d’export des données et
+de leurs exploitabilités</li>
 </ul></li>
 </ul>
 <aside class="notes">
@@ -1191,8 +1461,10 @@ Devsecops finops
 <li class="fragment">Cloud Security Alliance</li>
 <li class="fragment">Confidentialité : Vigilance sur :
 <ul>
-<li class="fragment">Les systèmes de gestion des accès / mécanismes de cloisonnement entre clients</li>
-<li class="fragment">Localisation des centres de données (hors UE) et nationalité du fournisseur (EU, Patriot Act, Cloud Act)</li>
+<li class="fragment">Les systèmes de gestion des accès / mécanismes de
+cloisonnement entre clients</li>
+<li class="fragment">Localisation des centres de données (hors UE) et
+nationalité du fournisseur (EU, Patriot Act, Cloud Act)</li>
 </ul></li>
 <li class="fragment">Audit fréquents à tous les niveaux</li>
 <li class="fragment">Mise à jour régulière et systématique</li>
@@ -1201,13 +1473,15 @@ Devsecops finops
 <li class="fragment">Zéro Trust</li>
 </ul>
 <aside class="notes">
-<p>Cloud Act : Clarifying Lawful Overseas Use of Data Act SecNumCloud</p>
+<p>Cloud Act : Clarifying Lawful Overseas Use of Data Act
+SecNumCloud</p>
 </aside>
 </section>
 <section id="interopérabilité-1" class="slide level2">
 <h2>Interopérabilité</h2>
 <ul>
-<li class="fragment">Facilité par les outils d’automatisation et l’utilisation massive de l’Open source</li>
+<li class="fragment">Facilité par les outils d’automatisation et
+l’utilisation massive de l’Open source</li>
 <li class="fragment">Difficile au niveau des données</li>
 </ul>
 <aside class="notes">
@@ -1215,17 +1489,27 @@ Devsecops finops
 </section>
 <section id="trafic-réseau" class="slide level2">
 <h2>Trafic réseau</h2>
-<p>Le <strong>Cloud</strong> et l’<strong>IoT</strong> sont très liés et ces deux éléments sont en très forte croissance. Cisco estimait qu’en 2021, un habitant consommerait à lui seul 200Gb de donnée par jour sur l’internet, majoritairement via les plateforme de Cloud publiques. Cela représente en 2025 ~<strong>6Zo</strong>/ans de traffic sur Internet.</p>
-<p>Traffic mondial des Datacenters (Estimations CISCO): - 2015 : 4.7Zo - 2020 : 15.3Zo - 2025 : ~24Zo</p>
+<p>Le <strong>Cloud</strong> et l’<strong>IoT</strong> sont très liés et
+ces deux éléments sont en très forte croissance. Cisco estimait qu’en
+2021, un habitant consommerait à lui seul 200Gb de donnée par jour sur
+l’internet, majoritairement via les plateforme de Cloud publiques. Cela
+représente en 2025 ~<strong>6Zo</strong>/ans de traffic sur
+Internet.</p>
+<p>Traffic mondial des Datacenters (Estimations CISCO): - 2015 : 4.7Zo -
+2020 : 15.3Zo - 2025 : ~24Zo</p>
 <aside class="notes">
-<p>15.3Zo = 213Milliard d’heures de music en streaming = 38 mois non-stop pour chaque habitant.</p>
+<p>15.3Zo = 213Milliard d’heures de music en streaming = 38 mois
+non-stop pour chaque habitant.</p>
 <p>The Shift project</p>
 </aside>
 </section>
 <section id="trafic-réseau-2" class="slide level2 figcenter">
 <h2 class="figcenter">Trafic réseau 2</h2>
 <figure>
-<img data-src="img/Global-Internet-Traffic-in-GB-per-Day-from-1997-to-2022-data-from-Cisco.png" alt="" /><figcaption>Internet Traffic</figcaption>
+<img
+data-src="img/Global-Internet-Traffic-in-GB-per-Day-from-1997-to-2022-data-from-Cisco.png"
+alt="Internet Traffic" />
+<figcaption aria-hidden="true">Internet Traffic</figcaption>
 </figure>
 </section></section>
 <section>
@@ -1235,7 +1519,8 @@ Devsecops finops
 </section>
 <section id="introduction-à-docker" class="slide level2">
 <h2>Introduction à Docker</h2>
-<p>Docker est en fait un ensemble d’outils de conteneurisation applicative.</p>
+<p>Docker est en fait un ensemble d’outils de conteneurisation
+applicative.</p>
 <ul>
 <li class="fragment">docker Engine
 <ul>
@@ -1253,7 +1538,8 @@ Devsecops finops
 <h2>Introduction à Docker</h2>
 <p>Scénario type :</p>
 <ul>
-<li class="fragment">Je construis une image basé sur une image existante (OS ou app)
+<li class="fragment">Je construis une image basé sur une image existante
+(OS ou app)
 <ul>
 <li class="fragment"><code>docker build</code></li>
 </ul></li>
@@ -1270,7 +1556,8 @@ Devsecops finops
 <section id="tp-comparaison" class="slide level2">
 <h2>TP comparaison</h2>
 <ul>
-<li class="fragment">Objectif : Comparer les différents types de virtualisation
+<li class="fragment">Objectif : Comparer les différents types de
+virtualisation
 <ul>
 <li class="fragment">system</li>
 <li class="fragment">stockage</li>
@@ -1286,7 +1573,8 @@ Devsecops finops
 <section id="comparaison-systeme" class="slide level2">
 <h2>Comparaison systeme</h2>
 <ul>
-<li>compilation d’un code calculant les <strong>n</strong> nombres premiers</li>
+<li>compilation d’un code calculant les <strong>n</strong> nombres
+premiers</li>
 </ul>
 <pre><code>wget -O prime.c https://cedricici.github.io/cours-cloud/public/prime.c </code></pre>
 <pre><code>sudo apt update &amp;&amp; sudo apt install build-essential
@@ -1303,7 +1591,8 @@ sys     0m0.000s</code></pre>
 <li>Lancement via Docker (présent sur votre machine)</li>
 </ul>
 <ul>
-<li>Dans un fichier <strong>Dockerfile</strong> on va construire notre image :</li>
+<li>Dans un fichier <strong>Dockerfile</strong> on va construire notre
+image :</li>
 </ul>
 <pre><code>FROM debian:latest
 ADD ./prime /prime
@@ -1319,7 +1608,8 @@ sys     0m0.004s</code></pre>
 <h2>Comparaison systeme</h2>
 <ul>
 <li>Lancement via Un hyperviseur</li>
-<li>Instanciez une image Ubuntu dans Virtualbox et répétez l’opération du premier exercice</li>
+<li>Instanciez une image Ubuntu dans Virtualbox et répétez l’opération
+du premier exercice</li>
 </ul>
 </section>
 <section id="comparaison-systeme-3" class="slide level2">
@@ -1329,14 +1619,18 @@ sys     0m0.004s</code></pre>
 </ul>
 <pre><code>sudo apt install qemu-system-arm</code></pre>
 <ul>
-<li>Visitez la page <a href="https://people.debian.org/~gio/dqib/">https://people.debian.org/~gio/dqib/</a></li>
-<li>Dézipez l’archive pointée par le lien <strong>Images for armhf-virt</strong></li>
+<li>Visitez la page <a
+href="https://people.debian.org/~gio/dqib/">https://people.debian.org/~gio/dqib/</a></li>
+<li>Dézipez l’archive pointée par le lien <strong>Images for
+armhf-virt</strong></li>
 <li>Lancer l’émulateur à partir des instructions</li>
-<li>Installez les paquets nécessaires à la compilation et à la récupération du code</li>
+<li>Installez les paquets nécessaires à la compilation et à la
+récupération du code</li>
 <li>Lancez le calcul des 10000 nombres premiers</li>
 </ul>
 <aside class="notes">
-<p>https://people.debian.org/~gio/dqib/ https://gitlab.com/api/v4/projects/giomasce%2Fdqib/jobs/artifacts/master/download?job=convert_armhf-virt</p>
+<p>https://people.debian.org/~gio/dqib/
+https://gitlab.com/api/v4/projects/giomasce%2Fdqib/jobs/artifacts/master/download?job=convert_armhf-virt</p>
 </aside>
 </section>
 <section id="comparaison-systeme-4" class="slide level2">
@@ -1351,18 +1645,26 @@ sys     0m0.010s</code></pre>
 </section>
 <section id="comparaison-systeme-questions" class="slide level2">
 <h2>Comparaison systeme : Questions</h2>
-<p><code class="note">Question : Donnez vos premières conclusions sur ces résultats</code></p>
-<p><code class="note">Question : expliquez les différences entre les durées real, user et sys</code></p>
-<p><code class="note">Question : pourquoi le temps user dans Docker est-il si petit? est-ce normal?</code></p>
-<p><code class="note">Question : Donnez une solution pour obtenir le temps user effectif dans le conteneur</code></p>
+<p><code
+class="note">Question : Donnez vos premières conclusions sur ces résultats</code></p>
+<p><code
+class="note">Question : expliquez les différences entre les durées real, user et sys</code></p>
+<p><code
+class="note">Question : pourquoi le temps user dans Docker est-il si petit? est-ce normal?</code></p>
+<p><code
+class="note">Question : Donnez une solution pour obtenir le temps user effectif dans le conteneur</code></p>
 </section>
 <section id="tp-saas" class="slide level2">
 <h2>TP Saas</h2>
 <p><strong>Objectif</strong> : déployer une application Saas</p>
-<p>Connectez vous sur le site Wordpress.com. c’est un service de SaaS basé sur le CMS(Content Managment System) Open source Wordpress, disponible sur le site wordpress.org</p>
+<p>Connectez vous sur le site Wordpress.com. c’est un service de SaaS
+basé sur le CMS(Content Managment System) Open source Wordpress,
+disponible sur le site wordpress.org</p>
 <ul>
-<li>Laissez vous guider dans la création de votre site. Vous pouvez ensuite faire des modifications sommaires sur la page d’accueil.</li>
-<li>Publiez votre site (ajoutez du contenu, des média et au minimum un widget)</li>
+<li>Laissez vous guider dans la création de votre site. Vous pouvez
+ensuite faire des modifications sommaires sur la page d’accueil.</li>
+<li>Publiez votre site (ajoutez du contenu, des média et au minimum un
+widget)</li>
 <li>Repassez par l’édition pour voir le back-office complet.</li>
 <li>Notez la version de Wordpress utilisée</li>
 </ul>
@@ -1371,8 +1673,11 @@ sys     0m0.010s</code></pre>
 <h2>TP Saas</h2>
 <p>Instanciez vous même le CMS Wordpress</p>
 <ul>
-<li>Télécharger le logiciel sur le site wordpress.org ou l’image docker sur le dockerhub (<a href="https://hub.docker.com/_/wordpress" class="uri">https://hub.docker.com/_/wordpress</a>)</li>
-<li>Configurez votre serveur Web Local ou le docker-compose proposé dans la doc</li>
+<li>Télécharger le logiciel sur le site wordpress.org ou l’image docker
+sur le dockerhub (<a href="https://hub.docker.com/_/wordpress"
+class="uri">https://hub.docker.com/_/wordpress</a>)</li>
+<li>Configurez votre serveur Web Local ou le docker-compose proposé dans
+la doc</li>
 <li>Démarrez votre instance local de Wordpress</li>
 <li>Réalisez la même page que lors du précédent exercice</li>
 <li>Notez la version de wordpress utilisée</li>
@@ -1380,21 +1685,33 @@ sys     0m0.010s</code></pre>
 </section>
 <section id="tp-saas-questions" class="slide level2">
 <h2>TP Saas : Questions</h2>
-<p><code class="note">Question : D'après vous, quelle différence peut-on noter entre le logiciel Wordpress et le service de Saas Wordpress.com</code></p>
-<p><code class="note">Question : Quels sont les critères clés à évaluer avant de migrer une application interne vers un SaaS ?</code></p>
-<p><code class="note">Question : Le passage à des applications SaaS contribue t-il à la sobriété numérique?</code></p>
-<p><code class="note">Question : Dans le modèle SaaS, qui gère les mises à jour de sécurité?</code></p>
-<p><code class="note">Question : Quel éléments serait bloquants pour migrer vers Saas</code></p>
+<p><code
+class="note">Question : D'après vous, quelle différence peut-on noter entre le logiciel Wordpress et le service de Saas Wordpress.com</code></p>
+<p><code
+class="note">Question : Quels sont les critères clés à évaluer avant de migrer une application interne vers un SaaS ?</code></p>
+<p><code
+class="note">Question : Le passage à des applications SaaS contribue t-il à la sobriété numérique?</code></p>
+<p><code
+class="note">Question : Dans le modèle SaaS, qui gère les mises à jour de sécurité?</code></p>
+<p><code
+class="note">Question : Quel éléments serait bloquants pour migrer vers Saas</code></p>
 </section>
 <section id="tp-paas" class="slide level2">
 <h2>TP Paas</h2>
 <p><strong>Objectif</strong> : déployer une appli Paas</p>
-<p>L’objectif ici est de déployer une application à partir d’un code source. Ce TP initialement fait sur Heroku.com est maintenant réalisé sur Render.com</p>
+<p>L’objectif ici est de déployer une application à partir d’un code
+source. Ce TP initialement fait sur Heroku.com est maintenant réalisé
+sur Render.com</p>
 <ul>
-<li>Forkez le dépot <a href="https://github.com/cedricici/findmefast.git">https://github.com/cedricici/findmefast.git</a></li>
-<li>Connectez vous sur la plateforme Paas Render.com, créez un compte puis rendez vous sur le <a href="https://dashboard.render.com">Dashboard</a></li>
-<li>Créez un nouveau webservice depuis un dépot git à partir de votre <em>Fork</em>.</li>
-<li>Lancez un service <strong>Free</strong> basé sur Docker et suivez son déploiement.</li>
+<li>Forkez le dépot <a
+href="https://github.com/cedricici/findmefast.git">https://github.com/cedricici/findmefast.git</a></li>
+<li>Connectez vous sur la plateforme Paas Render.com, créez un compte
+puis rendez vous sur le <a
+href="https://dashboard.render.com">Dashboard</a></li>
+<li>Créez un nouveau webservice depuis un dépot git à partir de votre
+<em>Fork</em>.</li>
+<li>Lancez un service <strong>Free</strong> basé sur Docker et suivez
+son déploiement.</li>
 </ul>
 <aside class="notes">
 <p>alternative = render.com car Heroku devient payant</p>
@@ -1402,15 +1719,21 @@ sys     0m0.010s</code></pre>
 </section>
 <section id="tp-paas-questions" class="slide level2">
 <h2>TP Paas : Questions</h2>
-<p><code class="note">Question : Une fois que l'application est lancée et que vous pouvez y jouer, expliquer en détail ce qu'il s'est passé.</code></p>
-<p><code class="note">Question : Donnez une explication des technologies qui selon vous sont misent en œuvre ici.</code></p>
-<p><code class="note">Question : expliquez dans ce contexte la notion de "Lock-in"</code></p>
-<p>J’attend pour ces réponses des schémas et des références au cours.</p>
+<p><code
+class="note">Question : Une fois que l'application est lancée et que vous pouvez y jouer, expliquer en détail ce qu'il s'est passé.</code></p>
+<p><code
+class="note">Question : Donnez une explication des technologies qui selon vous sont misent en œuvre ici.</code></p>
+<p><code
+class="note">Question : expliquez dans ce contexte la notion de "Lock-in"</code></p>
+<p>J’attend pour ces réponses des schémas et des références au
+cours.</p>
 </section>
 <section id="tp-architecture" class="slide level2">
 <h2>TP Architecture</h2>
 <p><strong>Objectif</strong> : Comprendre une architecture cloud</p>
-<p>Je vous propose de réaliser un serveur de données cartographiques Raster basé sur <strong>Rok4</strong> et son site de visualisation de donnée, qui fonctionne avec ces technologies :</p>
+<p>Je vous propose de réaliser un serveur de données cartographiques
+Raster basé sur <strong>Rok4</strong> et son site de visualisation de
+donnée, qui fonctionne avec ces technologies :</p>
 <ul>
 <li>un serveur nginx pour publier une interface de visualisation</li>
 <li>un serveur rok4 pour diffuser des tuiles au standard WMTS</li>
@@ -1419,14 +1742,21 @@ sys     0m0.010s</code></pre>
 </section>
 <section id="tp-architecture-1" class="slide level2">
 <h2>TP Architecture</h2>
-<p>Le résultat à atteindre est visualisable à l’aide d’un ensemble de conteneur Docker que nous avons préparés pour cette démo :</p>
+<p>Le résultat à atteindre est visualisable à l’aide d’un ensemble de
+conteneur Docker que nous avons préparés pour cette démo :</p>
 <p>La version optimisée pour le Cloud est disponible ici :</p>
-<p><a href="https://github.com/rok4/docker/blob/develop/run/server/">https://github.com/rok4/docker/blob/develop/run/server/</a></p>
-<p>Clonez le dépot et lancez la stack Docker à partir du fichier compose . Cherchez le viewer. Vous aurez besoin de Docker et de docker-compose.</p>
+<p><a
+href="https://github.com/rok4/docker/blob/develop/run/server/">https://github.com/rok4/docker/blob/develop/run/server/</a></p>
+<p>Clonez le dépot et lancez la stack Docker à partir du fichier compose
+. Cherchez le viewer. Vous aurez besoin de Docker et de
+docker-compose.</p>
 </section>
 <section id="tp-architecture-2" class="slide level2">
 <h2>TP Architecture</h2>
-<p>Après avoir réussi à instancier cette structure et visualiser les données avec succès, faites un schéma d’architecture de cette pile applicative. Vous procéderez par instrospection en analysant le contenu des images <em>Docker</em> utilisées.</p>
+<p>Après avoir réussi à instancier cette structure et visualiser les
+données avec succès, faites un schéma d’architecture de cette pile
+applicative. Vous procéderez par instrospection en analysant le contenu
+des images <em>Docker</em> utilisées.</p>
 <p>Votre schéma devra contenir :</p>
 <ul>
 <li>les noeuds, leur rôle et leur scalabilité potentielle</li>
@@ -1438,45 +1768,62 @@ sys     0m0.010s</code></pre>
 </section>
 <section id="tp-architecture-questions" class="slide level2">
 <h2>TP Architecture : Questions</h2>
-<p><code class="note">Question : Fournissez un schéma d'architecture complet représentant cette pile applicative</code></p>
+<p><code
+class="note">Question : Fournissez un schéma d'architecture complet représentant cette pile applicative</code></p>
 </section>
 <section id="tp-architecture---partie-2" class="slide level2">
 <h2>TP Architecture - partie 2</h2>
-<p>Nous allons convertir cette architecture basée sur kompose en architecture kubernetes.</p>
-<p>Installation k3s (ou minikube) pour avoir un cluster kubernetes disponible en local (ou utiliser minikube) :</p>
-<p><a href="https://k3s.io/">k3s</a></p>
-<p>On se trouve donc à simuler un cluster d’orchestration de conteneur dont les noeuds sont des… conteneurs !</p>
-<p>On va ensuite convertir le docker-compose ROK4 en manifest Kubernetes avec cet l’outil <a href="https://kompose.io/">kompose</a>. Avant de réaliser cette opération, il faut ajouter un élément dans le docker-compose pour que la conversion soit plus complête.</p>
+<p>Nous allons convertir cette architecture basée sur kompose en
+architecture kubernetes.</p>
+<p>Installation k3s (ou minikube) pour avoir un cluster kubernetes
+disponible en local : <a href="https://k3s.io/">k3s</a></p>
+<p>Cela revient à simuler un cluster d’orchestration de conteneur dont
+les noeuds sont… des conteneurs !</p>
+<p>On va ensuite convertir le docker-compose ROK4 en manifest Kubernetes
+avec cet l’outil <a href="https://kompose.io/">kompose</a>. Avant de
+réaliser cette opération, il faut ajouter un élément dans le
+docker-compose pour que la conversion soit plus complête.</p>
 </section>
 <section id="tp-architecture---partie-2-1" class="slide level2">
 <h2>TP Architecture - partie 2</h2>
 <p>Au niveau de ROK4, nous allons exposer son port :</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="at">  </span><span class="fu">middle</span><span class="kw">:</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> rok4/server:6.1.1</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">&quot;9000:9000&quot;</span></span></code></pre></div>
-<p>note: Cette modif provoquera un conflit pour docker-compose mais est nécéssaire pour le bon fonctionnement de <strong>kompose convert</strong></p>
-<p>Ensuite pour forcer composer à gérer tous les fichiers web, on ajoute :</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="at">  </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./nginx/nginx.conf.template:/etc/nginx/templates/default.conf.template</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./viewer/index.html:/usr/share/nginx/html/viewer/index.html</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./viewer/leaflet/Leaflet.TileLayer.BetterWMS.js:/usr/share/nginx/html/viewer/leaflet/Leaflet.TileLayer.BetterWMS.js</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./viewer/leaflet/Leaflet.VectorGrid.bundled.js:/usr/share/nginx/html/viewer/leaflet/Leaflet.VectorGrid.bundled.js</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">middle</span><span class="kw">:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> rok4/server:6.1.1</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">&quot;9000:9000&quot;</span></span></code></pre></div>
+<p><code
+class="note">Cette modif provoquera un conflit pour docker-compose mais est nécéssaire pour le bon fonctionnement de **kompose convert**</code></p>
+<p>Ensuite pour forcer <code>kompose</code> à gérer tous les fichiers
+web, on ajoute :</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./nginx/nginx.conf.template:/etc/nginx/templates/default.conf.template</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./viewer/index.html:/usr/share/nginx/html/viewer/index.html</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./viewer/leaflet/Leaflet.TileLayer.BetterWMS.js:/usr/share/nginx/html/viewer/leaflet/Leaflet.TileLayer.BetterWMS.js</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./viewer/leaflet/Leaflet.VectorGrid.bundled.js:/usr/share/nginx/html/viewer/leaflet/Leaflet.VectorGrid.bundled.js</span></span></code></pre></div>
 </section>
 <section id="tp-architecture---partie-2-2" class="slide level2">
 <h2>TP Architecture - partie 2</h2>
-<p>Pour travailler proprement, il faut définir un nouveau namespace dans notre cluster k3s afin d’y insérer les nouvelles ressources. Utilisez ce yaml pour faire cela.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="fu">apiVersion</span><span class="kw">:</span><span class="at"> v1</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a><span class="fu">kind</span><span class="kw">:</span><span class="at"> Namespace</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a><span class="fu">metadata</span><span class="kw">:</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> rok4</span></span></code></pre></div>
-<p>Injectez ensuite toutes les ressources générées par kompose dans ce namespace. Les DNS dans kubernetes sont de la forme service.namespace, pensez à modifier les fichiers de conf en conséquence.</p>
-<p>On peut visualiser le résultat en exposant le service “front” :</p>
-<p><code>sudo k3s kubectl -n rok4 port-forward svc/front 8082:8082</code></p>
+<p>Pour travailler proprement, il faut définir un nouveau namespace dans
+notre cluster k3s afin d’y insérer les nouvelles ressources. Utilisez ce
+yaml pour faire cela.</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apiVersion</span><span class="kw">:</span><span class="at"> v1</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kind</span><span class="kw">:</span><span class="at"> Namespace</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">metadata</span><span class="kw">:</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> rok4</span></span></code></pre></div>
+<p>Injectez ensuite toutes les ressources générées par kompose dans ce
+namespace en adaptant les DNS au format
+<strong>service.namespace</strong>. On peut visualiser le résultat en
+exposant le service “front” :</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> k3s kubectl <span class="at">-n</span> rok4 port-forward svc/front 8082:8082</span></code></pre></div>
 </section>
 <section id="tp-travail-attendu" class="slide level2">
 <h2>TP : TRAVAIL ATTENDU</h2>
-<p><code class="note">Rendez moi au format Markdown + schema (.drawio) par mail à cedric.esnault@ign.fr,  un compte rendu de ces TP avec les différentes étapes de vos recherches. N'hésitez pas à noter les points durs .</code></p>
+<p><code
+class="note">Rendez moi au format Markdown + schema (.drawio) par mail à cedric.esnault@ign.fr,  un compte rendu de ces TP avec les différentes étapes de vos recherches. N'hésitez pas à noter les points durs .</code></p>
 </section></section>
             </div>
         </div>
@@ -1494,13 +1841,13 @@ sys     0m0.010s</code></pre>
                 controls: true,
                 progress: true,
                 history: true,
-                center: false,
+                center: true,
                 minScale: 0.2,
                 maxScale: 1.5,
                 slideNumber: true,
                 autoSlide: 0,
                 theme: 'default',
-                transition: 'default',
+                transition: 'slide',
 
                 // Optional libraries used to extend on reveal.js
                 dependencies: [
