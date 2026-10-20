@@ -116,7 +116,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
                     <h1>Technologies de Cloud Computing</h1>
                     <h2>M-TSI</h2>
                     <h3>Cédric Esnault</h3>
-                    <h4>04/11/2025 - IGN/ENSG</h4>
+                    <h4>21/10/2026 - IGN/ENSG</h4>
                     <aside class="notes">
 
                     </aside>
@@ -628,6 +628,109 @@ risque d’avoir un système inmaintenable</li>
 </aside>
 </section></section>
 <section>
+<section id="edge-computing" class="title-slide slide level1">
+<h1>Edge Computing</h1>
+
+</section>
+<section id="définition" class="slide level2">
+<h2>Définition</h2>
+<p>Traitement des données au plus près de la source (capteurs, appareils
+IoT, utilisateurs).</p>
+<p>Pourquoi ?</p>
+<ul>
+<li class="fragment">Réduire la latence (&lt;10 ms vs 50-200 ms en
+cloud).</li>
+<li class="fragment">Économiser la bande passante (filtrage local des
+données).</li>
+<li class="fragment">Sécurité/Confidentialité (RGPD, données
+sensibles).</li>
+<li class="fragment">Résilience (fonctionne hors ligne).</li>
+</ul>
+<aside class="notes">
+<p>Exemple : Un véhicule autonome ne peut pas attendre 200 ms pour
+freiner. 75% des données seront traitées en edge d’ici 2026
+(Gartner).</p>
+</aside>
+</section>
+<section id="architecture-technologies" class="slide level2">
+<h2>Architecture &amp; Technologies</h2>
+<ul>
+<li class="fragment">Matériel :
+<ul>
+<li class="fragment">Micro-serveurs : Raspberry Pi, NVIDIA Jetson.</li>
+<li class="fragment">Passerelles IoT : Siemens MindSphere, Dell Edge
+Gateway.</li>
+</ul></li>
+<li class="fragment">Logiciel :
+<ul>
+<li class="fragment">Conteneurs : Docker, K3s (Kubernetes léger).</li>
+<li class="fragment">Orchestration : KubeEdge, AWS IoT Greengrass.</li>
+</ul></li>
+<li class="fragment">Réseau :
+<ul>
+<li class="fragment">5G (MEC), LoRaWAN, Wi-Fi 6.</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>MEC = Multi-access Edge Computing (standard pour la 5G). K3s :
+Version allégée de Kubernetes pour l’edge.</p>
+</aside>
+</section>
+<section id="exemples" class="slide level2">
+<h2>Exemples</h2>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 44%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Domaine</strong></th>
+<th><strong>Cas d’usage</strong></th>
+<th><strong>Technologie</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Véhicules</td>
+<td>Détection d’obstacles en temps réel</td>
+<td>NVIDIA DRIVE, Tesla Autopilot</td>
+</tr>
+<tr class="even">
+<td>Industrie 4.0</td>
+<td>Maintenance prédictive des machines</td>
+<td>Siemens MindSphere, Bosch IoT</td>
+</tr>
+<tr class="odd">
+<td>Santé</td>
+<td>Analyse d’images médicales (IRM)</td>
+<td>Philips IntelliSite, NVIDIA Clara</td>
+</tr>
+<tr class="even">
+<td>5G</td>
+<td>Jeux cloud (xCloud), réalité augmentée</td>
+<td>Ericsson Edge Gravity, Vodafone MEC</td>
+</tr>
+<tr class="odd">
+<td>Agriculture</td>
+<td>Drones pour pulvérisation ciblée</td>
+<td>DJI Agras, John Deere See &amp; Spray</td>
+</tr>
+<tr class="even">
+<td>Smart Cities</td>
+<td>Caméras intelligentes (trafic, sécurité)</td>
+<td>Hikvision, NVIDIA Metropolis</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<strong>Pourquoi ces exemples ?</strong> - Véhicules : Latence critique
+(&lt;10 ms). - Industrie : Réduction des coûts réseau (60-90%). - Santé
+: Conformité RGPD (données locales).
+</aside>
+</section></section>
+<section>
 <section id="convergence" class="title-slide slide level1">
 <h1>Convergence</h1>
 
@@ -691,16 +794,59 @@ class="title-slide slide level1">
 <h1>Usages de la virtualisation</h1>
 
 </section>
-<section id="virtualisation-du-système" class="slide level2">
-<h2>Virtualisation du système</h2>
-<p>Plusieurs niveaux</p>
-<ul>
-<li class="fragment">Isolation applicative (Conteneur)</li>
-<li class="fragment">Para-virtualisation (hyperviseur type1)</li>
-<li class="fragment">Virtualisation complète (hyperviseur type1)</li>
-<li class="fragment">Virtualisation complète (hyperviseur type2)</li>
-<li class="fragment">Émulation (cpu différent)</li>
-</ul>
+<section id="types-de-virtualisation" class="slide level2">
+<h2>Types de virtualisation</h2>
+<p>La virtualisation est une <strong>technologie clé</strong> du cloud,
+permettant de <strong>partager les ressources physiques</strong> entre
+plusieurs environnements isolés.</p>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 29%" />
+<col style="width: 17%" />
+<col style="width: 22%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+<th>Exemples</th>
+<th>Avantages</th>
+<th>Inconvénients</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Isolation applicative</strong></td>
+<td>Partage du noyau OS, isolation des processus.</td>
+<td>Docker, LXC</td>
+<td>Léger, rapide</td>
+<td>Moins sécurisé qu’une VM</td>
+</tr>
+<tr class="even">
+<td><strong>Hyperviseur Type 1</strong></td>
+<td>S’exécute directement sur le matériel (bare-metal).</td>
+<td>KVM, VMware ESXi</td>
+<td>Performant, scalable</td>
+<td>Complexité de gestion</td>
+</tr>
+<tr class="odd">
+<td><strong>Hyperviseur Type 2</strong></td>
+<td>S’exécute sur un OS hôte.</td>
+<td>VirtualBox, VMware Workstation</td>
+<td>Simple à déployer</td>
+<td>Performances limitées</td>
+</tr>
+<tr class="even">
+<td><strong>Émulation</strong></td>
+<td>Simule un matériel différent (ex. : ARM sur x86).</td>
+<td>QEMU</td>
+<td>Compatible avec d’autres architectures</td>
+<td>Très lent</td>
+</tr>
+</tbody>
+</table>
 <aside class="notes">
 </aside>
 </section>
@@ -710,7 +856,7 @@ class="title-slide slide level1">
 <li class="fragment">Initialement spécifique au monde Unix</li>
 <li class="fragment">Isolation de l’espace utilisateur</li>
 <li class="fragment">« Partage » du noyau</li>
-<li class="fragment">EX IGN : DockerForge</li>
+<li class="fragment">EX : Docker</li>
 </ul>
 <aside class="notes">
 <p>Maintenant disponible sous Windows</p>
@@ -732,7 +878,7 @@ intègrent des mécanismes permettant d’exécuter des instructions
 directement sur le processeur.</li>
 <li class="fragment">Matériel émulé ET/OU partagé</li>
 <li class="fragment">Ex : VMware vSphère (IGN) / XenServer (ENSG) / KVM
-(Oshimae)</li>
+(Proxmox)</li>
 </ul>
 <aside class="notes">
 </aside>
@@ -766,6 +912,7 @@ title="© Primalmotion-Wikipedia" /></p>
 </section>
 <section id="hyperviseur-de-type-2" class="slide level2">
 <h2>Hyperviseur de type 2</h2>
+<p>Virtualise via un OS hôte complet (ex: virtualbox)</p>
 <ul>
 <li class="fragment">Avantages
 <ul>
@@ -790,7 +937,7 @@ title="© Primalmotion-Wikipedia" /></p>
 <ul>
 <li class="fragment">=&gt; très lent</li>
 </ul></li>
-<li class="fragment">Ex : Android Virtual device …</li>
+<li class="fragment">Ex : Android Virtual Device …</li>
 </ul>
 <aside class="notes">
 </aside>
@@ -798,49 +945,30 @@ title="© Primalmotion-Wikipedia" /></p>
 <section id="virtualisation-du-réseau" class="slide level2">
 <h2>Virtualisation du réseau</h2>
 <ul>
-<li class="fragment">Network Virtualization
+<li class="fragment"><strong>SDN (Software Defined Network)</strong> :
 <ul>
-<li class="fragment">Création de tunnels GRE / VxLAN</li>
-<li class="fragment">OpenVswitch</li>
+<li class="fragment">Séparation du <strong>plan de contrôle</strong>
+(logique) et du <strong>plan de données</strong> (physique).</li>
+<li class="fragment">Exemple : OpenFlow, VMware NSX.</li>
+</ul></li>
+<li class="fragment"><strong>SD-WAN</strong> :
+<ul>
+<li class="fragment">Remplace les réseaux MPLS par des liens internet +
+orchestration logicielle.</li>
+<li class="fragment">Avantages : Réduction des coûts, flexibilité.</li>
+<li class="fragment">SASE pour la sécurité</li>
 </ul></li>
 </ul>
 <aside class="notes">
+<p>Security Access Service Edge <a
+href="https://www.cisco.com/c/dam/global/fr_fr/solutions/enterprise-networks/xa-09-2023-networking-report.pdf"
+class="uri">https://www.cisco.com/c/dam/global/fr_fr/solutions/enterprise-networks/xa-09-2023-networking-report.pdf</a></p>
 </aside>
 </section>
 <section id="virtualisation-du-réseau-1" class="slide level2 figcenter">
 <h2 class="figcenter">Virtualisation du réseau</h2>
 <p><img data-src="img/VN-tunnel.png" /></p>
 <aside class="notes">
-</aside>
-</section>
-<section id="virtualisation-du-réseau-2" class="slide level2">
-<h2>Virtualisation du réseau</h2>
-<ul>
-<li class="fragment">Software Defined Network (SDN)
-<ul>
-<li class="fragment">Séparation du contrôle et des données</li>
-<li class="fragment">openflow</li>
-<li class="fragment">Pilotage des switchs</li>
-</ul></li>
-</ul>
-<aside class="notes">
-</aside>
-</section>
-<section id="virtualisation-du-réseau-3" class="slide level2">
-<h2>Virtualisation du réseau</h2>
-<ul>
-<li class="fragment">SDWAN
-<ul>
-<li class="fragment">Virtualisation des réseaux WAN (MPLS…)</li>
-<li class="fragment">Remplacement par une multitude de réseaux
-internet</li>
-<li class="fragment">Orchestration Logicielle</li>
-<li class="fragment">SASE pour la sécurité</li>
-</ul></li>
-</ul>
-<aside class="notes">
-<p>Security Access Service Edge
-https://www.cisco.com/c/dam/global/fr_fr/solutions/enterprise-networks/xa-09-2023-networking-report.pdf</p>
 </aside>
 </section>
 <section id="virtualisation-du-stockage" class="slide level2">
@@ -985,15 +1113,17 @@ Qos…)</li>
 <section id="électricité" class="slide level2">
 <h2>Électricité</h2>
 <ul>
-<li class="fragment">L’énergie représente ~40% du coût
-d’exploitation</li>
-<li class="fragment">le refroidissement 40% à 50%</li>
-<li class="fragment">Datacenter moderne et optimisé = 1.5 à 3KW/m2</li>
+<li class="fragment">L’énergie représente ~40% du coût d’exploitation
+selon Uptime Institute (2025)</li>
+<li class="fragment">Le refroidissement 40% à 50% de l’énergie
+nécessaire</li>
+<li class="fragment">Un Datacenter moderne et optimisé = 1.5 à
+3KW/m2</li>
 <li class="fragment">Exemple de l’envolée du Bitcoin : si la flambée du
 bitcoin démarrée en 2017 avait continuée , en 2020 le calcul de la
 blockchain aurait consommé toute l’énergie de la planète. Cette
 consommation s’est stabilisée et équivaut aujourd’hui à peu près à la
-consommation de la suisse.</li>
+consommation des pays-bas (~5000 éoliennes).</li>
 <li class="fragment">Le paramètre « <strong>PUE</strong> » (Power Usage
 Effectiveness) est souvent utilisé pour mesurer l’efficience d’un centre
 de données (électricité totale / électricité utilisée par IT). Une
@@ -1002,8 +1132,8 @@ amélioration du PUE est un levier <strong>Green IT.</strong></li>
 <aside class="notes">
 <p>Au moins 77 KWh pour une transaction Bitcoin</p>
 <p>2020 : consommation annuelle du minage de Bitcoin est de 58,07
-terawattheure.(suisse) 2023 : 112 terawattheure.(pays bas == 75% france)
-== 25.986 éoliennes</p>
+terawattheure.(suisse) 2023 : 120 terawattheure.(pays bas == 75% france)
+== 5.986 éoliennes 2026 : ~150 TWh (estimation)</p>
 <p>Requete Google 0.0003kWh 0.2g CO2 , 7g selon chercheur
 Wissner-Gross</p>
 <p>L’envoi d’un mail avec une pièce jointe de 1 Mo dégage 19 grammes de
@@ -1016,10 +1146,12 @@ Wifi) et 6.6 kWh selon the Shift Project</p>
 </section>
 <section id="électricité-1" class="slide level2">
 <h2>Électricité</h2>
-<p>Selon International Energy Agency (IEA), la consommation électrique
-globale des centres de données est estimée à ~ <strong>415 TWh</strong>
-en 2024 (≈ 1,5 % de la consommation mondiale d’électricité) et pourrait
-atteindre ~ 945 TWh en 2030.</p>
+<p>Selon l’<strong>International Energy Agency (IEA)</strong>, la
+consommation électrique globale des centres de données est estimée à
+<strong>~460 TWh en 2024</strong> (≈ <strong>1,8 %</strong> de la
+consommation mondiale d’électricité) et pourrait atteindre <strong>~1
+000 TWh en 2030</strong>, en raison de l’essor de l’IA et des services
+cloud.</p>
 <p>La part des sources renouvelables dans l’électricité des centres de
 données aux États-Unis est encore relativement modérée
 <strong>~20%</strong> avec principalement du : « natural-gas » à plus de
@@ -1162,19 +1294,19 @@ plusieurs déploiements</p>
 </section>
 <section id="factors-1" class="slide level2 factors">
 <h2 class="factors">12 Factors</h2>
-<p><strong>7 Associations de ports</strong></p>
+<p><strong>7 : Associations de ports</strong></p>
 <p>Exportez les services via des associations de ports</p>
-<p><strong>8 Concurrence</strong></p>
+<p><strong>8 : Concurrence</strong></p>
 <p>Grossissez à l’aide du modèle de processus</p>
-<p><strong>9 Jetable</strong></p>
+<p><strong>9 : Jetable</strong></p>
 <p>Maximisez la robustesse avec des démarrages rapides et des arrêts
 gracieux</p>
-<p><strong>10 Parité dev/prod</strong></p>
+<p><strong>10 : Parité dev/prod</strong></p>
 <p>Gardez le développement, la validation et la production aussi proches
 que possible</p>
-<p><strong>11 Logs</strong></p>
+<p><strong>11 : Logs</strong></p>
 <p>Traitez les logs comme des flux d’évènements</p>
-<p><strong>12 Processus d’administration</strong></p>
+<p><strong>12 : Processus d’administration</strong></p>
 <p>Lancez les processus d’administration et de maintenance comme des
 one-off-processes</p>
 </section></section>
@@ -1495,8 +1627,12 @@ ces deux éléments sont en très forte croissance. Cisco estimait qu’en
 l’internet, majoritairement via les plateforme de Cloud publiques. Cela
 représente en 2025 ~<strong>6Zo</strong>/ans de traffic sur
 Internet.</p>
-<p>Traffic mondial des Datacenters (Estimations CISCO): - 2015 : 4.7Zo -
-2020 : 15.3Zo - 2025 : ~24Zo</p>
+<p>Traffic mondial des Datacenters (Estimations CISCO):</p>
+<ul>
+<li class="fragment">2015 : 4.7Zo</li>
+<li class="fragment">2020 : 15.3Zo</li>
+<li class="fragment">2025 : ~24Zo</li>
+</ul>
 <aside class="notes">
 <p>15.3Zo = 213Milliard d’heures de music en streaming = 38 mois
 non-stop pour chaque habitant.</p>
@@ -1622,21 +1758,23 @@ du premier exercice</li>
 <li>Visitez la page <a
 href="https://people.debian.org/~gio/dqib/">https://people.debian.org/~gio/dqib/</a></li>
 <li>Dézipez l’archive pointée par le lien <strong>Images for
-armhf-virt</strong></li>
+arm64-virt</strong></li>
 <li>Lancer l’émulateur à partir des instructions</li>
 <li>Installez les paquets nécessaires à la compilation et à la
-récupération du code</li>
+récupération du code (<em>wget,gcc,libc6-dev</em>)</li>
 <li>Lancez le calcul des 10000 nombres premiers</li>
 </ul>
 <aside class="notes">
-<p>https://people.debian.org/~gio/dqib/
-https://gitlab.com/api/v4/projects/giomasce%2Fdqib/jobs/artifacts/master/download?job=convert_armhf-virt</p>
+<p><a href="https://people.debian.org/~gio/dqib/"
+class="uri">https://people.debian.org/~gio/dqib/</a> <a
+href="https://gitlab.com/api/v4/projects/giomasce%2Fdqib/jobs/artifacts/master/download?job=convert_arm64-virt"
+class="uri">https://gitlab.com/api/v4/projects/giomasce%2Fdqib/jobs/artifacts/master/download?job=convert_arm64-virt</a></p>
 </aside>
 </section>
 <section id="comparaison-systeme-4" class="slide level2">
 <h2>Comparaison systeme</h2>
 <ul>
-<li>Les résultats en <strong>armhf</strong></li>
+<li>Les résultats en <strong>arm64</strong></li>
 </ul>
 <pre><code>Calcul des 10000 premiers nombres premiers
 real    0m36.174s
@@ -1708,8 +1846,8 @@ href="https://github.com/cedricici/findmefast.git">https://github.com/cedricici/
 <li>Connectez vous sur la plateforme Paas Render.com, créez un compte
 puis rendez vous sur le <a
 href="https://dashboard.render.com">Dashboard</a></li>
-<li>Créez un nouveau webservice depuis un dépot git à partir de votre
-<em>Fork</em>.</li>
+<li>Créez un nouveau <strong>webservice</strong> depuis un dépot git à
+partir de votre <em>Fork</em>.</li>
 <li>Lancez un service <strong>Free</strong> basé sur Docker et suivez
 son déploiement.</li>
 </ul>
@@ -1727,6 +1865,86 @@ class="note">Question : Donnez une explication des technologies qui selon vous s
 class="note">Question : expliquez dans ce contexte la notion de "Lock-in"</code></p>
 <p>J’attend pour ces réponses des schémas et des références au
 cours.</p>
+</section>
+<section id="tp-migration" class="slide level2">
+<h2>TP Migration</h2>
+<p>Comprendre les <strong>6 stratégies de migration d’une application
+legacy vers le cloud</strong> (Rehosting, Replatforming, etc.) et les
+appliquer à un cas concret.</p>
+<p>Une entreprise utilise une <strong>application monolithique</strong>
+(PHP + MySQL) hébergée sur un serveur dédié.</p>
+<ul>
+<li class="fragment">Problèmes actuels :
+<ul>
+<li class="fragment">Coûts élevés de maintenance.</li>
+<li class="fragment">Difficulté à scaler pendant les pics de
+trafic.</li>
+<li class="fragment">Pas de redondance (SPOF).</li>
+</ul></li>
+<li class="fragment">Analyse de l’application
+<ul>
+<li class="fragment"><strong>Technologies</strong> : PHP 7.4, MySQL 5.7,
+Apache.</li>
+<li class="fragment"><strong>Trafic</strong> : 5 000 utilisateurs/jour,
+pics à 50 requêtes/seconde.</li>
+<li class="fragment"><strong>Données</strong> : 10 Go (base de données +
+fichiers statiques).</li>
+</ul></li>
+</ul>
+</section>
+<section id="tp-migration-stratégie" class="slide level2">
+<h2>TP Migration : Stratégie</h2>
+<p>Pour chaque stratégie, évaluez :</p>
+<ul>
+<li><strong>Complexité</strong> (0 à 5).</li>
+<li><strong>Coût</strong> (€ à €€€€).</li>
+<li><strong>Avantages/Inconvénients</strong>.</li>
+</ul>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 13%" />
+<col style="width: 14%" />
+<col style="width: 31%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Stratégie</th>
+<th>Complexité</th>
+<th>Coût estimé</th>
+<th>Avantages</th>
+<th>Inconvénients</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rehosting</td>
+<td>1</td>
+<td>€</td>
+<td>Rapide, peu de changements</td>
+<td>Pas d’optimisation cloud</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tp-migration-questions" class="slide level2">
+<h2>TP Migration : Questions</h2>
+<p><code
+class="note">1. Quelle stratégie avez-vous choisie ? Pourquoi ?</code></p>
+<p><code
+class="note">2. Quels risques identifiez-vous dans votre approche ?</code></p>
+<p><code
+class="note">3. Comment optimiser les coûts (ex. : réservation d’instances, conteneurs , Savings plans) ?</code></p>
+<p><code
+class="note">4. Comment sécuriser l’application (ex. : IAM, chiffrement) ?</code></p>
 </section>
 <section id="tp-architecture" class="slide level2">
 <h2>TP Architecture</h2>
@@ -1759,11 +1977,13 @@ applicative. Vous procéderez par instrospection en analysant le contenu
 des images <em>Docker</em> utilisées.</p>
 <p>Votre schéma devra contenir :</p>
 <ul>
-<li>les noeuds, leur rôle et leur scalabilité potentielle</li>
-<li>les liens entre les noeuds</li>
-<li>les flux et les ports réseaux utilisés</li>
-<li>les stockages (types et montages)</li>
-<li>les logiciels utilisés</li>
+<li>les <strong>noeuds</strong>, leur rôle et leur scalabilité
+potentielle</li>
+<li>les <strong>liens</strong> entre les noeuds</li>
+<li>les <strong>flux</strong> et les <strong>ports</strong> réseaux
+utilisés</li>
+<li>les <strong>stockages</strong> (types et montages)</li>
+<li>les <strong>logiciels</strong> utilisés</li>
 </ul>
 </section>
 <section id="tp-architecture-questions" class="slide level2">

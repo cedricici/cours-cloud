@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 int main(int n,char* args[]) {
   int numbers=0;
   int prime=3;

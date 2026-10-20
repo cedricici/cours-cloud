@@ -2,7 +2,7 @@
 title : Technologies de Cloud Computing
 sub-title : M-TSI
 author : Cédric Esnault
-date : 04/11/2025 - IGN/ENSG
+date : 21/10/2026 - IGN/ENSG
 ---
 
 # Cloud Computing #
@@ -185,9 +185,9 @@ of **five essential characteristics**, **three service models**, and **four depl
 
 C'est une application identifié, fournie à la demande pour un utilisateur, l'application et les données sont hébergées dans les Datacenters du fournisseur. En général elle est hautement configurable.
 
-* Wordpress.com
-* Solutions de paiement en ligne
-* Messagerie/Bureautique (office 365)
+- Wordpress.com
+- Solutions de paiement en ligne
+- Messagerie/Bureautique (office 365)
 
 `On peut intégrer les offres de sauvegarde en ligne dans cette catégorie (icloud / dropbox ...).`{.fragment .note}
 
@@ -333,14 +333,14 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 
 ## Architectures ##
 
-* Architecture Scalable
-* Convergence / hyperconvergence
-* Usages de la virtualisation
-  * Système
-  * Stockage
-  * Réseau
-  * ...
-* ressources
+- Architecture Scalable
+- Convergence / hyperconvergence
+- Usages de la virtualisation
+  - Système
+  - Stockage
+  - Réseau
+  - ...
+- ressources
 
 <aside class="notes">
 
@@ -350,30 +350,86 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 
 ## Architectures évolutives ##
 
-* Évolutivité verticale (Scale UP)
-  * Ajouter des ressources au composant (CPU, RAM, Stockage)
-  * Faibles risques d’incompatibilité
-  * Augmente les risques de défaillance (SPOF)
+- Évolutivité verticale (Scale UP)
+  - Ajouter des ressources au composant (CPU, RAM, Stockage)
+  - Faibles risques d’incompatibilité
+  - Augmente les risques de défaillance (SPOF)
 
-* Évolutivité Horizontale (Scale OUT)
-  * Répartir les ressources sur plusieurs composants
-  * Requiert des équipements de partage de charge (LB)
-  * Nécessite une application compatible
-  * Réparti les risques
+- Évolutivité Horizontale (Scale OUT)
+  - Répartir les ressources sur plusieurs composants
+  - Requiert des équipements de partage de charge (LB)
+  - Nécessite une application compatible
+  - Réparti les risques
 
 ## Microservices ##
 
-* Micro service
-  * Répartir les modules applicatifs sur les composants
-  * Nécessite une application dont l’architecture à été prévu dans ce sens
-  * Limite les risques de défaillance complète du système
-  * S'accompagne d'une utilisation massive de services managés
-  * Doit être souvent être complété par de la scalabilité horizontale
-  * Attention à ne pas tomber dans l’excès inverse au risque d'avoir un système inmaintenable
+- Micro service
+  - Répartir les modules applicatifs sur les composants
+  - Nécessite une application dont l’architecture à été prévu dans ce sens
+  - Limite les risques de défaillance complète du système
+  - S'accompagne d'une utilisation massive de services managés
+  - Doit être souvent être complété par de la scalabilité horizontale
+  - Attention à ne pas tomber dans l’excès inverse au risque d'avoir un système inmaintenable
 
 <aside class="notes">
 
 </aside>
+
+# Edge Computing #
+
+## Définition ##
+
+Traitement des données au plus près de la source (capteurs, appareils IoT, utilisateurs).
+
+Pourquoi ?
+
+- Réduire la latence (<10 ms vs 50-200 ms en cloud).
+- Économiser la bande passante (filtrage local des données).
+- Sécurité/Confidentialité (RGPD, données sensibles).
+- Résilience (fonctionne hors ligne).
+
+<aside class="notes">
+
+ Exemple : Un véhicule autonome ne peut pas attendre 200 ms pour freiner. 75% des données seront traitées en edge d’ici 2026 (Gartner).
+ 
+</aside>
+
+## Architecture & Technologies ##
+
+- Matériel :
+  - Micro-serveurs : Raspberry Pi, NVIDIA Jetson.
+  - Passerelles IoT : Siemens MindSphere, Dell Edge Gateway.
+- Logiciel :
+  - Conteneurs : Docker, K3s (Kubernetes léger).
+  - Orchestration : KubeEdge, AWS IoT Greengrass.
+- Réseau :
+  - 5G (MEC), LoRaWAN, Wi-Fi 6.
+
+<aside class="notes"> 
+
+MEC = Multi-access Edge Computing (standard pour la 5G).
+K3s : Version allégée de Kubernetes pour l'edge.
+
+</aside>
+
+## Exemples ##
+
+| **Domaine**   | **Cas d’usage**                          | **Technologie**                     |
+|---------------|------------------------------------------|-------------------------------------|
+| Véhicules     | Détection d’obstacles en temps réel      | NVIDIA DRIVE, Tesla Autopilot       |
+| Industrie 4.0 | Maintenance prédictive des machines      | Siemens MindSphere, Bosch IoT       |
+| Santé         | Analyse d’images médicales (IRM)         | Philips IntelliSite, NVIDIA Clara   |
+| 5G            | Jeux cloud (xCloud), réalité augmentée   | Ericsson Edge Gravity, Vodafone MEC |
+| Agriculture   | Drones pour pulvérisation ciblée         | DJI Agras, John Deere See & Spray   |
+| Smart Cities  | Caméras intelligentes (trafic, sécurité) | Hikvision, NVIDIA Metropolis        |
+
+<aside class="notes"> 
+**Pourquoi ces exemples ?**
+- Véhicules : Latence critique (<10 ms).
+- Industrie : Réduction des coûts réseau (60-90%).
+- Santé : Conformité RGPD (données locales).
+</aside>
+
 
 # Convergence #
 
@@ -434,15 +490,19 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 
 # Usages de la virtualisation #
 
-## Virtualisation du système ##
 
- Plusieurs niveaux
+## Types de virtualisation
 
-* Isolation applicative (Conteneur)
-* Para-virtualisation (hyperviseur type1)
-* Virtualisation complète (hyperviseur type1)
-* Virtualisation complète (hyperviseur type2)
-* Émulation (cpu différent)
+La virtualisation est une **technologie clé** du cloud, permettant de **partager les ressources physiques** entre plusieurs environnements isolés.
+
+
+| Type                      | Description                                         | Exemples                       | Avantages                              | Inconvénients            |
+|---------------------------|-----------------------------------------------------|--------------------------------|----------------------------------------|--------------------------|
+| **Isolation applicative** | Partage du noyau OS, isolation des processus.       | Docker, LXC                    | Léger, rapide                          | Moins sécurisé qu’une VM |
+| **Hyperviseur Type 1**    | S’exécute directement sur le matériel (bare-metal). | KVM, VMware ESXi               | Performant, scalable                   | Complexité de gestion    |
+| **Hyperviseur Type 2**    | S’exécute sur un OS hôte.                           | VirtualBox, VMware Workstation | Simple à déployer                      | Performances limitées    |
+| **Émulation**             | Simule un matériel différent (ex. : ARM sur x86).   | QEMU                           | Compatible avec d’autres architectures | Très lent                |
+
 
 <aside class="notes">
 
@@ -453,7 +513,7 @@ Avec ces **Function As A Service**, vous poussez le code d'une fonction dans le 
 - Initialement spécifique au monde Unix
 - Isolation de l'espace utilisateur
 - « Partage » du noyau
-- EX IGN : DockerForge
+- EX : Docker
 
 <aside class="notes">
 
@@ -475,7 +535,7 @@ Maintenant disponible sous Windows
 - Exploitation matériel (Intel VT / AMD-V)
 - Para-virtualisation possible : les OS invités intègrent des mécanismes permettant d’exécuter des instructions directement sur le processeur.
 - Matériel émulé ET/OU partagé
-- Ex : VMware vSphère (IGN) / XenServer (ENSG) / KVM (Oshimae)
+- Ex : VMware vSphère (IGN) / XenServer (ENSG) / KVM (Proxmox)
 
 <aside class="notes">
 
@@ -506,6 +566,8 @@ Maintenant disponible sous Windows
 
 ## Hyperviseur de type 2 ##
 
+Virtualise via un OS hôte complet (ex: virtualbox)
+
 - Avantages
   - Simplicité de mise en œuvre
   - OS variés
@@ -523,19 +585,25 @@ Maintenant disponible sous Windows
 - changement de plateforme (ARM sur X86)
 - Tout est émulé
   - => très lent
-- Ex : Android Virtual device ...
+- Ex : Android Virtual Device ...
 
 <aside class="notes">
 
 </aside>
 
-## Virtualisation du réseau ##
-
-- Network Virtualization
-  - Création de tunnels GRE / VxLAN
-  - OpenVswitch
+## Virtualisation du réseau
+- **SDN (Software Defined Network)** :
+  - Séparation du **plan de contrôle** (logique) et du **plan de données** (physique).
+  - Exemple : OpenFlow, VMware NSX.
+- **SD-WAN** :
+  - Remplace les réseaux MPLS par des liens internet + orchestration logicielle.
+  - Avantages : Réduction des coûts, flexibilité.
+  - SASE pour la sécurité
 
 <aside class="notes">
+
+Security Access Service Edge
+<https://www.cisco.com/c/dam/global/fr_fr/solutions/enterprise-networks/xa-09-2023-networking-report.pdf>
 
 </aside>
 
@@ -544,33 +612,6 @@ Maintenant disponible sous Windows
 ![](img/VN-tunnel.png)
 
 <aside class="notes">
-
-</aside>
-
-## Virtualisation du réseau ##
-
-- Software Defined Network (SDN)
-  - Séparation du contrôle et des données
-  - openflow
-  - Pilotage des switchs
-
-<aside class="notes">
-
-</aside>
-
-## Virtualisation du réseau ##
-
-- SDWAN
-  - Virtualisation des réseaux WAN (MPLS...)
-  - Remplacement par une multitude de réseaux internet
-  - Orchestration Logicielle
-  - SASE pour la sécurité
-
-<aside class="notes">
-
-Security Access Service Edge
-https://www.cisco.com/c/dam/global/fr_fr/solutions/enterprise-networks/xa-09-2023-networking-report.pdf
-
 
 </aside>
 
@@ -683,10 +724,10 @@ Le stockage Objet, S3 en tête,  est le nouveau standard de fait de stockage vir
 
 ## Électricité ##
 
-- L’énergie représente ~40% du coût d'exploitation
-- le refroidissement 40% à 50%
-- Datacenter moderne et optimisé = 1.5 à 3KW/m2
-- Exemple de l’envolée du Bitcoin : si la flambée du bitcoin démarrée en 2017 avait continuée , en 2020 le calcul de la blockchain aurait consommé toute l'énergie de la planète. Cette consommation s'est stabilisée et équivaut aujourd'hui à peu près à la consommation de la suisse.
+- L’énergie représente ~40% du coût d'exploitation selon Uptime Institute (2025)
+- Le refroidissement 40% à 50% de l'énergie nécessaire
+- Un Datacenter moderne et optimisé = 1.5 à 3KW/m2
+- Exemple de l’envolée du Bitcoin : si la flambée du bitcoin démarrée en 2017 avait continuée , en 2020 le calcul de la blockchain aurait consommé toute l'énergie de la planète. Cette consommation s'est stabilisée et équivaut aujourd'hui à peu près à la consommation des pays-bas (~5000 éoliennes).
 - Le paramètre « **PUE** » (Power Usage Effectiveness) est souvent utilisé pour mesurer l’efficience d’un centre de données (électricité totale / électricité utilisée par IT). Une amélioration du PUE est un levier **Green IT.**
 
 <aside class="notes">
@@ -694,7 +735,8 @@ Le stockage Objet, S3 en tête,  est le nouveau standard de fait de stockage vir
 Au moins 77 KWh pour une transaction Bitcoin
 
 2020 : consommation annuelle du minage de Bitcoin est de 58,07 terawattheure.(suisse)
-2023 : 112 terawattheure.(pays bas == 75% france) == 25.986 éoliennes 
+2023 : 120 terawattheure.(pays bas == 75% france) == 5.986 éoliennes
+2026 : ~150 TWh (estimation)
 
 Requete Google 0.0003kWh 0.2g CO2 , 7g selon chercheur Wissner-Gross
 
@@ -707,11 +749,9 @@ un film de 60mn sur Netflix = entre 0.03kWh (en SD sur un smartphone en Wifi) et
 
 ## Électricité ##
 
-Selon International Energy Agency (IEA), la consommation électrique globale des centres de données est estimée à ~ **415 TWh** en 2024 (≈ 1,5 % de la consommation mondiale d’électricité) et pourrait atteindre ~ 945 TWh en 2030.
+Selon l'**International Energy Agency (IEA)**, la consommation électrique globale des centres de données est estimée à **~460 TWh en 2024** (≈ **1,8 %** de la consommation mondiale d’électricité) et pourrait atteindre **~1 000 TWh en 2030**, en raison de l'essor de l'IA et des services cloud.
 
-La part des sources renouvelables dans l’électricité des centres de données aux États-Unis est encore relativement modérée **~20%** avec principalement du : « natural-gas » à plus de 40% selon un rapport de 2024. 
-
-
+La part des sources renouvelables dans l’électricité des centres de données aux États-Unis est encore relativement modérée **~20%** avec principalement du : « natural-gas » à plus de 40% selon un rapport de 2024.
 
 # Migration dans le Cloud #
 
@@ -780,10 +820,10 @@ Pour tirer parti des avantages du Cloud computing, il faut repenser la manière 
 On parle d'application Cloud native.
 Les piliers d'une application Cloud native sont :
 
-* Automatisation (Infra-As-Code)
-* Conteneurisation (Micro-services)
-* Stockage externalisé (Object Storage, BDaaS)
-* Observabilité (Monitor and logs)
+- Automatisation (Infra-As-Code)
+- Conteneurisation (Micro-services)
+- Stockage externalisé (Object Storage, BDaaS)
+- Observabilité (Monitor and logs)
 
 <aside class="notes">
 
@@ -798,7 +838,6 @@ Beaucoup de notions sont mises en oeuvre lors de la création d'un application C
 
 [Infra As Code](#/infraascode), [12 factors](#/factors) , [Stateless](#/stateless), [API](#/abstraction-api), [webservices](#/webservices), [Devops](#/devops),
 [Object Storage](#/object-storage), [NoSQL](#/nosql), [Message Queue](#/messagequeue), [CDN](#/cdn)
-
 
 ## 12 Factors ##{.factors}
 
@@ -828,31 +867,29 @@ Exécutez l’application comme un ou plusieurs processus sans état
 
 ## 12 Factors ##{.factors}
 
-**7 Associations de ports**
+**7 : Associations de ports**
 
 Exportez les services via des associations de ports
 
-**8 Concurrence**
+**8 : Concurrence**
 
 Grossissez à l’aide du modèle de processus
 
-**9 Jetable**
+**9 : Jetable**
 
 Maximisez la robustesse avec des démarrages rapides et des arrêts gracieux
 
-**10 Parité dev/prod**
+**10 : Parité dev/prod**
 
 Gardez le développement, la validation et la production aussi proches que possible
 
-**11 Logs**
+**11 : Logs**
 
 Traitez les logs comme des flux d’évènements
 
-**12 Processus d’administration**
+**12 : Processus d’administration**
 
 Lancez les processus d’administration et de maintenance comme des one-off-processes
-
-
 
 # Mots clés #
 
@@ -911,7 +948,6 @@ l'**Infrastructure As Code** désigne les technique permettant de définir une i
   GitOPs
 
 </aside>
-
 
 ## Object Storage ##
 
@@ -1059,8 +1095,6 @@ Kubernetes à permis le passage en production des applications basées sur des c
 
 Par sa conception Kubernetes est facilement modifiable pour s'adapter aux besoins les plus divers.
 
-
-
 # Enjeux - Avenir #
 
 ## Responsabilité ##
@@ -1114,10 +1148,10 @@ Par sa conception Kubernetes est facilement modifiable pour s'adapter aux besoin
 Le **Cloud** et l'**IoT** sont très liés et ces deux éléments sont en très forte croissance. Cisco estimait qu'en 2021, un habitant consommerait à lui seul 200Gb de donnée par jour sur l'internet, majoritairement via les plateforme de Cloud publiques. Cela représente en 2025 ~**6Zo**/ans de traffic sur Internet.
 
 Traffic mondial des Datacenters (Estimations CISCO):
+
 - 2015 : 4.7Zo
 - 2020 : 15.3Zo
 - 2025 : ~24Zo
-
 
 <aside class="notes">
 
@@ -1226,25 +1260,27 @@ sys     0m0.004s
 ## Comparaison systeme ##
 
 > - Lancement dans un émulateur arm
+>
 ```
 sudo apt install qemu-system-arm
 ```
+>
 > - Visitez la page [https://people.debian.org/~gio/dqib/](https://people.debian.org/~gio/dqib/)
-> - Dézipez l'archive pointée par le lien **Images for armhf-virt**
+> - Dézipez l'archive pointée par le lien **Images for arm64-virt**
 > - Lancer l'émulateur à partir des instructions
-> - Installez les paquets nécessaires à la compilation et à la récupération du code
+> - Installez les paquets nécessaires à la compilation et à la récupération du code (*wget,gcc,libc6-dev*)
 > - Lancez le calcul des 10000 nombres premiers
 
 <aside class="notes">
 
-https://people.debian.org/~gio/dqib/
-https://gitlab.com/api/v4/projects/giomasce%2Fdqib/jobs/artifacts/master/download?job=convert_armhf-virt
+<https://people.debian.org/~gio/dqib/>
+<https://gitlab.com/api/v4/projects/giomasce%2Fdqib/jobs/artifacts/master/download?job=convert_arm64-virt>
 
 </aside>
 
 ## Comparaison systeme ##
 
-> - Les résultats en **armhf**
+> - Les résultats en **arm64**
 
 ```
 Calcul des 10000 premiers nombres premiers
@@ -1262,7 +1298,6 @@ sys     0m0.010s
 `Question : pourquoi le temps user dans Docker est-il si petit? est-ce normal?`{.note}
 
 `Question : Donnez une solution pour obtenir le temps user effectif dans le conteneur`{.note}
-
 
 ## TP Saas ##
 
@@ -1298,7 +1333,6 @@ Instanciez vous même le CMS Wordpress
 
 `Question : Quel éléments serait bloquants pour migrer vers Saas`{.note}
 
-
 ## TP Paas ##
 
 **Objectif** : déployer une appli Paas
@@ -1308,7 +1342,7 @@ Ce TP initialement fait sur Heroku.com est maintenant réalisé sur Render.com
 
 > - Forkez le dépot [https://github.com/cedricici/findmefast.git](https://github.com/cedricici/findmefast.git)
 > - Connectez vous sur la plateforme Paas Render.com, créez un compte puis rendez vous sur le [Dashboard](https://dashboard.render.com)
-> - Créez un nouveau webservice depuis un dépot git à partir de votre *Fork*.
+> - Créez un nouveau **webservice** depuis un dépot git à partir de votre *Fork*.
 > - Lancez un service **Free** basé sur Docker et suivez son déploiement.
 
 <aside class="notes">
@@ -1326,6 +1360,44 @@ Ce TP initialement fait sur Heroku.com est maintenant réalisé sur Render.com
 `Question : expliquez dans ce contexte la notion de "Lock-in"`{.note}
 
 J'attend pour ces réponses des schémas et des références au cours.
+
+## TP Migration ##
+
+Comprendre les **6 stratégies de migration d’une application legacy vers le cloud** (Rehosting, Replatforming, etc.) et les appliquer à un cas concret.
+
+Une entreprise utilise une **application monolithique** (PHP + MySQL) hébergée sur un serveur dédié.
+
+- Problèmes actuels :
+  - Coûts élevés de maintenance.
+  - Difficulté à scaler pendant les pics de trafic.
+  - Pas de redondance (SPOF).
+- Analyse de l’application
+  - **Technologies** : PHP 7.4, MySQL 5.7, Apache.
+  - **Trafic** : 5 000 utilisateurs/jour, pics à 50 requêtes/seconde.
+  - **Données** : 10 Go (base de données + fichiers statiques).
+
+## TP Migration  : Stratégie ##
+
+Pour chaque stratégie, évaluez :
+
+> - **Complexité** (0 à 5).
+> - **Coût** (€ à €€€€).
+> - **Avantages/Inconvénients**.
+
+| Stratégie | Complexité | Coût estimé | Avantages                  | Inconvénients            |
+|-----------|------------|-------------|----------------------------|--------------------------|
+| Rehosting | 1          | €           | Rapide, peu de changements | Pas d’optimisation cloud |
+| ...       |            |             |                            |                          |
+
+## TP Migration : Questions ##
+
+`1. Quelle stratégie avez-vous choisie ? Pourquoi ?`{.note}
+
+`2. Quels risques identifiez-vous dans votre approche ?`{.note}
+
+`3. Comment optimiser les coûts (ex. : réservation d’instances, conteneurs , Savings plans) ?`{.note}
+
+`4. Comment sécuriser l’application (ex. : IAM, chiffrement) ?`{.note}
 
 
 ## TP Architecture ##
@@ -1357,11 +1429,11 @@ Vous procéderez par instrospection en analysant le contenu des images *Docker* 
 
 Votre schéma devra contenir :
 
-> - les noeuds, leur rôle et leur scalabilité potentielle
-> - les liens entre les noeuds
-> - les flux et les ports réseaux utilisés
-> - les stockages (types et montages)
-> - les logiciels utilisés
+> - les **noeuds**, leur rôle et leur scalabilité potentielle
+> - les **liens** entre les noeuds
+> - les **flux** et les **ports** réseaux utilisés
+> - les **stockages** (types et montages)
+> - les **logiciels** utilisés
 
 ## TP Architecture : Questions ####
 
@@ -1422,4 +1494,3 @@ sudo k3s kubectl -n rok4 port-forward svc/front 8082:8082
 ## TP : TRAVAIL ATTENDU ##
 
 `Rendez moi au format Markdown + schema (.drawio) par mail à cedric.esnault@ign.fr,  un compte rendu de ces TP avec les différentes étapes de vos recherches. N'hésitez pas à noter les points durs .`{.note}
-
